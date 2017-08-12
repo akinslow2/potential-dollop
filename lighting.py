@@ -31,9 +31,18 @@ def over_under_lamped(lux, category, units_in_lumens):
 					return "Perfect"
 
 
+def space_type_conversion(space_type):
+	with open("space_type_conversion.csv", "rb") as file:
+		reader = csv.reader(file)
+		for row in reader:
+			if row[0] != space_type:
+				continue
+			return row[1]
+
 
 def main():
-	over_under_lamped(-, -, -)
+	
+	over_under_lamped(-, space_type_conversion(-), -)
 
 
 if __name__ == '__main__':
