@@ -65,7 +65,6 @@ def total_energy_calculation(num_lamps_per_fixture, num_fixtures, test_hours, ho
 
 
 def main():
-	
 	watts = fluorescent_lighting_watts("F32T10")
 	#over_under_lamped(-, space_type_conversion(-), -)
 
