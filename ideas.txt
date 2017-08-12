@@ -1,0 +1,10 @@
+For every appliance:
+    get the user inputs (company, model number), if everything is in table, done (energy star)
+    get the rest of data
+    	search table
+	if value not in table, then prompt user
+    then lock rest of data and find best energy usage
+    return:
+	product and hourly energy use
+    save:
+	ideal run hours
