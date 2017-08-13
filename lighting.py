@@ -44,10 +44,28 @@ def fluorescent_lighting_watts(model_number):
 		else:
 			watts += char
 
+
 #This might have to change to incorporate different instances of lighting in 
 #one room, but we will change that later
 def area_energy_calculation(num_lamps_per_fixture, num_fixtures, watts, area):
 	return float(watts * num_fixtures * num_lamps_per_fixture) / area
+
+
+# The parameter room_type needs to provided to the user from watts_per_sqft.csv (it is in the first column)
+# That way we can guarantee that one choice will match
+def light_per_area(watts_per_sqft, room_type):
+	with open("watts_per_sqft.csv", 'r') as file:
+		reader = csv.reader(file)
+
+	for row in reader:
+		if room_type != row[0]:
+			continue
+		if watts_per_sqft > float(row[1]):
+			return "Overuse of watts per sqft"
+		elif watts_per_sqft < float(row[1]):
+			return "Underuse of watts per sqft"
+		else:
+			return "Meets use of watts per sqft"
 
 
 def total_energy_calculation(num_lamps_per_fixture, num_fixtures, test_hours, hours_on, watts):
@@ -58,7 +76,7 @@ def total_energy_calculation(num_lamps_per_fixture, num_fixtures, test_hours, ho
 
 def main():
 	watts = fluorescent_lighting_watts("F32T10")
-	print over_under_lamped(75, "B", True)
+	print over_under_lamped(75, "E", True)
 
 
 if __name__ == '__main__':
