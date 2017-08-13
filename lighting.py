@@ -15,17 +15,9 @@ def over_under_lamped(lux, category, units_in_lumens):
 				continue
 
 			if units_in_lumens:
-				if lux < int(row[1]):
+				if lux < int(row[1 if units_in_lumens else 4]):
 					return "Underlighted"
-				elif lux > int(row[3]):
-					return "Overlighted"
-				else:
-					return "Perfect"
-
-			else: 
-				if lux < int(row[4]):
-					return "Underlighted"
-				elif lux > int(row[6]):
+				elif lux > int(row[3 if units_in_lumens else 6]):
 					return "Overlighted"
 				else:
 					return "Perfect"
@@ -66,7 +58,7 @@ def total_energy_calculation(num_lamps_per_fixture, num_fixtures, test_hours, ho
 
 def main():
 	watts = fluorescent_lighting_watts("F32T10")
-	#over_under_lamped(-, space_type_conversion(-), -)
+	print over_under_lamped(75, "B", True)
 
 
 if __name__ == '__main__':
