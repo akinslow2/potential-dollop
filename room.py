@@ -26,6 +26,10 @@ class Room:
 	# The required keys vary, depending on the object. 
 	# Lighting (if not lighting_finished): "model_number", "number_of_lamps":(INT), "length", "max_width", "test_hours":(INT), "hours_on":(INT), "control_type"
 	# Lighting (if lighting_finished): (above keys), "measured_lux", "space_type(->category: A, B, C, etc.)", "room_type", "room_area":(FLOAT), "units_in_lumens":(Boolean)
+	# HVAC:
+	# Kitchen:
+	# Plug:
+	
 	def new_feature(outputs, feature_type, values, lighting_finished):
 		if feature_type == "Lighting":
 			__add_light_feature(values)
