@@ -15,14 +15,13 @@ class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         define_preaudit_inputs()
         
     }
     
     func define_preaudit_inputs() {
         
-        let preaudit_entries = ["business_name", "business_address", "client_interviewed_name", "client_interviewed_position", "main_client_name", "main_client_position", "main_client_email", "main_client_phone number", "total_square_footage", "facility_type", "age_of_building", "age_of_lighting", "age_of_lighting_controls", "age_of_hvac", "age_of_hvac_controls", "age_of_kitchen_equipment", "lighting_maintenance_interval", "hvac_maintenance_interval", "kitchen_equipment_maintenance_interval", "upgrades_budget", "expected_roi", "utility_company", "rate_structure_electric", "rate_structure_gas", "date_of_interview", "auditors_names", "notes"]
+        let preaudit_entries = ["business_name", "business_address", "client_interviewed_name", "client_interviewed_position", "main_client_name", "main_client_position", "main_client_email", "main_client_phone number", "total_square_footage", "facility_type", "age_of_building", "age_of_lighting", "age_of_lighting_controls", "age_of_hvac", "age_of_hvac_controls", "age_of_kitchen_equipment", "lighting_maintenance_interval", "hvac_maintenance_interval", "kitchen_equipment_maintenance_interval", "upgrades_budget", "expected_roi", "utility_company", "rate_structure_electric", "rate_structure_gas", "date_of_interview", "auditors_names", "evacuation_map_image", "notes"]
         
         var i = 0
         for entry in preaudit_entries {
