@@ -30,7 +30,7 @@ class Room:
 	# Kitchen:
 	# Plug:
 	
-	def new_feature(outputs, feature_type, values, lighting_finished):
+	def new_feature(outputs, feature_type, values, lighting_finished): # Maybe consider just computing lighting specs when it gets saved?
 		if feature_type == "Lighting":
 			__add_light_feature(values)
 
