@@ -3,7 +3,7 @@
 # 21 August 2017
 # Gemini
 
-import ast, os
+import ast, os.path
 
 class Audit:
 
