@@ -33,7 +33,7 @@ def collect_preaudit_parameters(outputs):
 	outputs["rate_structure_electric"] = None
 	outputs["rate_structure_gas"] = None
 	outputs["date_of_interview"] = None
-	outputs["auditors_names"] = {}
+	outputs["auditors_names"] = []
 	outputs["notes"] = None
 
 
@@ -42,6 +42,7 @@ def collect_preaudit_parameters(outputs):
 # (i.e. if x is a list[], x.append())
 # but you can't reassign
 # (i.e. x = [1, 2, 3])
+# Although for dictionaries, I'm not sure if there is another option other than using the equal sign.
 
 def preaudit():
 	if len(sys.argv) != 2:
