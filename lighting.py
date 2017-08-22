@@ -13,14 +13,12 @@ def over_under_lamped(lux, category, units_in_lumens):
 		for row in reader:
 			if row[0] != category:
 				continue
-
-			if units_in_lumens:
-				if lux < int(row[1 if units_in_lumens else 4]):
-					return "Underlighted"
-				elif lux > int(row[3 if units_in_lumens else 6]):
-					return "Overlighted"
-				else:
-					return "Perfect"
+			if lux < int(row[1 if units_in_lumens == "True" else 4]): # Ugly but it's likely gotten stored as a string
+				return "Underlighted"
+			elif lux > int(row[3 if units_in_lumens == "True" else 6]):
+				return "Overlighted"
+			else:
+				return "Neither under- nor overlighted"
 
 
 def space_type_conversion(space_type):
@@ -45,17 +43,13 @@ def fluorescent_lighting_watts(model_number):
 			watts += char
 
 
-#This might have to change to incorporate different instances of lighting in 
-#one room, but we will change that later
-def area_energy_calculation(num_lamps_per_fixture, num_fixtures, watts, area):
-	return float(watts * num_fixtures * num_lamps_per_fixture) / area
-
-
 # The parameter room_type needs to provided to the user from watts_per_sqft.csv (it is in the first column)
 # That way we can guarantee that one choice will match
-def light_per_area(watts_per_sqft, room_type):
+def light_per_area(watts, room_type, area):
 	with open("watts_per_sqft.csv", 'r') as file:
 		reader = csv.reader(file)
+
+	watts_per_sqft = float(watts) / area
 
 	for row in reader:
 		if room_type != row[0]:
@@ -68,16 +62,7 @@ def light_per_area(watts_per_sqft, room_type):
 			return "Meets use of watts per sqft"
 
 
-def total_energy_calculation(num_lamps_per_fixture, num_fixtures, test_hours, hours_on, watts):
+def total_energy_calculation_per_light(num_lamps, test_hours, hours_on, watts):
 	hours_per_year = float(hours_on) / test_hours * 8760
-	total_watts = watts * num_fixtures * num_lamps_per_fixture
+	total_watts = watts * num_lamps
 	return hours_per_year * total_watts
-
-
-def main():
-	watts = fluorescent_lighting_watts("F32T10")
-	print over_under_lamped(75, "E", True)
-
-
-if __name__ == '__main__':
-	main()
