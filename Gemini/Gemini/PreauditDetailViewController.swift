@@ -8,12 +8,91 @@
 
 import UIKit
 
-class PreauditDetailViewController: UIViewController, UITextFieldDelegate {
+class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var label: UILabel!
+    
+    let gas_structures = ["A", "B", "C", "D"]
+    let electric_structures = ["E", "F", "G"]
+    let utility_companies = ["PG&E", "SMUD", "Other"]
+    let facility_types = ["Auditorium"]
+    
+    
+    /*
+    
+    Picker View Start
+ 
+    */
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
+        return 1
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        if activeDetail == "rate_structure_gas" {
+            
+            return gas_structures.count
+            
+        } else if activeDetail == "rate_structure_electric" {
+            
+            return electric_structures.count
+            
+        } else if activeDetail == "utility_company" {
+            
+            return utility_companies.count
+            
+        } else if activeDetail == "facility_type" {
+            
+            return facility_types.count
+            
+        }
+        
+        return 0
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        if activeDetail == "rate_structure_gas" {
+            
+            return gas_structures[row]
+            
+        } else if activeDetail == "rate_structure_electric" {
+            
+            return electric_structures[row]
+            
+        } else if activeDetail == "utility_company" {
+            
+            return utility_companies[row]
+            
+        } else if activeDetail == "facility_type" {
+            
+            return facility_types[row]
+            
+        }
+        
+        return ""
+        
+    }
+    
+    /*
+     
+     Picker View End
+     
+     */
+    
+    /*
+     
+     Keyboard Controls Start
+     
+     */
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
@@ -29,6 +108,12 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate {
         return true
         
     }
+    
+    /*
+     
+     Keyboard Controls End
+     
+     */
     
     @IBAction func donePressed(_ sender: Any) {
         
@@ -50,6 +135,8 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.pickerView.dataSource = self
+        self.pickerView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,7 +159,7 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate {
             textField.alpha = 0
             pickerView.alpha = 1
             
-            //Going to have to set the picker values here...
+            pickerView.reloadAllComponents()
             
         } else if activeDetail == "business_name" || activeDetail == "business_address" || activeDetail == "client_interviewed_name" || activeDetail == "client_interviewed_position" || activeDetail == "main_client_name" || activeDetail == "main_client_position" || activeDetail == "auditors_names" || activeDetail == "notes" {
             
