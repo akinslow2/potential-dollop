@@ -14,6 +14,7 @@
 		2A4B6EAE1F4BD2F700B1CD3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A4B6EAD1F4BD2F700B1CD3B /* Assets.xcassets */; };
 		2A4B6EB11F4BD2F700B1CD3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A4B6EAF1F4BD2F700B1CD3B /* LaunchScreen.storyboard */; };
 		2A81291B1F4CE01D009BCFB9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A81291A1F4CE01D009BCFB9 /* TableViewController.swift */; };
+		2A81291D1F4D0968009BCFB9 /* auditheader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A81291C1F4D0968009BCFB9 /* auditheader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		2A4B6EB01F4BD2F700B1CD3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A4B6EB21F4BD2F700B1CD3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A81291A1F4CE01D009BCFB9 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		2A81291C1F4D0968009BCFB9 /* auditheader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = auditheader.swift; path = ../auditheader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		2A4B6EA21F4BD2F700B1CD3B /* Gemini */ = {
 			isa = PBXGroup;
 			children = (
+				2A81291C1F4D0968009BCFB9 /* auditheader.swift */,
 				2A4B6EA31F4BD2F700B1CD3B /* AppDelegate.swift */,
 				2A4B6EA51F4BD2F700B1CD3B /* ViewController.swift */,
 				2A4B6EA71F4BD2F700B1CD3B /* Main.storyboard */,
@@ -145,6 +148,7 @@
 				2A4B6EAC1F4BD2F700B1CD3B /* Gemini.xcdatamodeld in Sources */,
 				2A4B6EA61F4BD2F700B1CD3B /* ViewController.swift in Sources */,
 				2A4B6EA41F4BD2F700B1CD3B /* AppDelegate.swift in Sources */,
+				2A81291D1F4D0968009BCFB9 /* auditheader.swift in Sources */,
 				2A81291B1F4CE01D009BCFB9 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
