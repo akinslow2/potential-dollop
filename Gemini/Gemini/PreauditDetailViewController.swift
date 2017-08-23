@@ -117,11 +117,11 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
     
     @IBAction func donePressed(_ sender: Any) {
         
-        if textField.alpha == 1 {
+        if !textField.isHidden {
             
             //Store text
             
-        } else if datePicker.alpha == 1 {
+        } else if !datePicker.isHidden {
             
             //Store date
             
@@ -137,6 +137,9 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
         super.viewDidLoad()
         self.pickerView.dataSource = self
         self.pickerView.delegate = self
+        textField.isHidden = true
+        pickerView.isHidden = true
+        datePicker.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -145,41 +148,35 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
     
     override func viewDidAppear(_ animated: Bool) {
         
-        label.text = "Please enter \(activeDetail)"
+        textField.isHidden = true
+        pickerView.isHidden = true
+        datePicker.isHidden = true
+        
+        label.text = "\(activeDetail)"
         
         if activeDetail == "date_of_interview" {
             
             datePicker.isHidden = false
-            textField.isHidden = true
-            pickerView.isHidden = true
             
         } else if activeDetail == "rate_structure_gas" || activeDetail == "rate_structure_electric" || activeDetail == "utility_company" || activeDetail == "facility_type" {
-            
-            datePicker.isHidden = true
-            textField.isHidden = true
+
             pickerView.isHidden = false
             
             pickerView.reloadAllComponents()
             
         } else if activeDetail == "business_name" || activeDetail == "business_address" || activeDetail == "client_interviewed_name" || activeDetail == "client_interviewed_position" || activeDetail == "main_client_name" || activeDetail == "main_client_position" || activeDetail == "auditors_names" || activeDetail == "notes" {
             
-            datePicker.isHidden = true
             textField.isHidden = false
-            pickerView.isHidden = true
             textField.keyboardType = UIKeyboardType.default
             
         } else if activeDetail == "main_client_email" {
             
-            datePicker.isHidden = true
             textField.isHidden = false
-            pickerView.isHidden = true
             textField.keyboardType = UIKeyboardType.emailAddress
             
         } else {
             
-            datePicker.isHidden = true
             textField.isHidden = false
-            pickerView.isHidden = true
             textField.keyboardType = UIKeyboardType.numberPad
         }
         

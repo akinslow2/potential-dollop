@@ -41,9 +41,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func auditButtonPressed(_ sender: Any) {
         
         audit.retrieve_data()
-        
-        performSegue(withIdentifier: "toAudit", sender: nil)
-        
+                
     }
     
     override func viewDidLoad() {
