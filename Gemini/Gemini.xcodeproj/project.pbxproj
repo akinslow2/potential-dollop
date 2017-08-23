@@ -19,6 +19,7 @@
 		2A5AA78A1F4D60C2009140C0 /* auditheader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5AA7891F4D60C2009140C0 /* auditheader.swift */; };
 		2A5AA78C1F4D60C7009140C0 /* roomheader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5AA78B1F4D60C7009140C0 /* roomheader.swift */; };
 		2A5AA78F1F4D6256009140C0 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5AA78E1F4D6256009140C0 /* CSwiftV.swift */; };
+		2A6BB5BC1F4E1D3500952553 /* AuditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6BB5BB1F4E1D3500952553 /* AuditViewController.swift */; };
 		2A81291B1F4CE01D009BCFB9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A81291A1F4CE01D009BCFB9 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		2A5AA78B1F4D60C7009140C0 /* roomheader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = roomheader.swift; path = Sources/roomheader.swift; sourceTree = "<group>"; };
 		2A5AA78D1F4D6253009140C0 /* CSwiftV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CSwiftV.h; path = "CSwiftV-master/Sources/CSwiftV.h"; sourceTree = "<group>"; };
 		2A5AA78E1F4D6256009140C0 /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSwiftV.swift; path = "CSwiftV-master/Sources/CSwiftV.swift"; sourceTree = "<group>"; };
+		2A6BB5BB1F4E1D3500952553 /* AuditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditViewController.swift; sourceTree = "<group>"; };
 		2A81291A1F4CE01D009BCFB9 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +75,7 @@
 			children = (
 				2A4B6EA31F4BD2F700B1CD3B /* AppDelegate.swift */,
 				2A4B6EA51F4BD2F700B1CD3B /* ViewController.swift */,
+				2A6BB5BB1F4E1D3500952553 /* AuditViewController.swift */,
 				2A4B6EA71F4BD2F700B1CD3B /* Main.storyboard */,
 				2A5AA7891F4D60C2009140C0 /* auditheader.swift */,
 				2A5AA78B1F4D60C7009140C0 /* roomheader.swift */,
@@ -172,6 +175,7 @@
 				2A81291B1F4CE01D009BCFB9 /* TableViewController.swift in Sources */,
 				2A5AA78F1F4D6256009140C0 /* CSwiftV.swift in Sources */,
 				2A5AA78C1F4D60C7009140C0 /* roomheader.swift in Sources */,
+				2A6BB5BC1F4E1D3500952553 /* AuditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
