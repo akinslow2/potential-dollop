@@ -103,7 +103,7 @@
                                 <state key="normal" title="Audit"/>
                                 <connections>
                                     <action selector="auditButtonPressed:" destination="g3p-vH-O3d" eventType="touchUpInside" id="DF6-5g-c7v"/>
-                                    <segue destination="LdR-fj-NQf" kind="show" id="aBn-eJ-Dck"/>
+                                    <segue destination="LdR-fj-NQf" kind="show" identifier="toAudit" id="aBn-eJ-Dck"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -127,6 +127,9 @@
                             <constraint firstItem="9F8-U2-mHU" firstAttribute="leading" secondItem="Jar-zT-EUK" secondAttribute="leadingMargin" id="opm-Lh-lXf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="kiF-X8-VxT" id="FEP-gE-eyg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8bv-Rg-G0B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

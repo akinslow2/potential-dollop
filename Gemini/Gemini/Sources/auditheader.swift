@@ -15,16 +15,17 @@ class Audit {
     var audit_name = ""
     var filename = ""
     
+    init() {}
     
     //Constructor: this should load the outputs if they exist or create a saved place for them if they don't
-    init (audit_name_param: String) {
+    func set_name(audit_name_param: String) {
         
-        //Initialization
         audit_name = audit_name_param
-        filename = audit_name + ".json"
+        
+        filename = "./data/" + audit_name + ".json" //Maybe csv? Let's talk
     }
     
-    func retrieve_data() {
+    func retrieve_data() { //Should return the saved dictionary
         
         do {
             
@@ -34,16 +35,16 @@ class Audit {
             
             let output_file_string = try String(contentsOfFile: path!)
             
-            var data: Data = output_file_string.data(using: String.Encoding.utf8)!
-            var error: NSError?
+            let data: Data = output_file_string.data(using: String.Encoding.utf8)!
             
             let anyObj: AnyObject? = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
             
-            print("Error: \(String(describing: error))")
             
             outputs = self.parse_json(anyObject: anyObj!)
             
+            
         } catch { print("There was an error") }
+        
         
     }
     
@@ -58,20 +59,21 @@ class Audit {
     //Basically we have to loop through the values and set them to the keys and values of a new dictionary
     func parse_json(anyObject:AnyObject) -> Dictionary<String, String>{
         
-        var dict: Dictionary<String, String> = {}
+        var dict: Dictionary<String, String> = Dictionary<String, String>()
         
-        if anyObject is Dictionary<AnyObject, AnyObject> {
-            
-            var key:String = String()
-            var value:String = String()
-            
-            for json in anyObject as Dictionary<AnyObject, AnyObject> {
-                
-                
-                
-            }
-            
-        }
+//        if anyObject is Dictionary<AnyObject, AnyObject> {
+//            
+//            var key:String = String()
+//            
+//            var value:String = String()
+//            
+//            for json in anyObject as Dictionary<AnyObject, AnyObject> {
+//                
+//                // Having some difficulty here. Will return
+//                
+//            }
+//            
+//        }
         
         return dict
     }

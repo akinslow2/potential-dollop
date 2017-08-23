@@ -8,14 +8,28 @@
 
 import UIKit
 
+var output = Dictionary<String, String>()
+
 class ViewController: UIViewController {
     
+    var audit = Audit()
+    
+    @IBOutlet weak var textField: UITextField!
+    
     @IBAction func preauditButtonPressed(_ sender: Any) {
-        //save name here
+        
+        output["filename"] = textField.text!
+        
+        performSegue(withIdentifier: "toPreaudit", sender: nil)
+        
     }
 
     @IBAction func auditButtonPressed(_ sender: Any) {
-        //save name here
+        
+        audit.retrieve_data()
+        
+        performSegue(withIdentifier: "toAudit", sender: nil)
+        
     }
     
     override func viewDidLoad() {

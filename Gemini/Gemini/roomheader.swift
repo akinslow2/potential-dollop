@@ -31,19 +31,19 @@ class Room {
     func new_feature(feature_type:String, values:Dictionary<String, String>) {
         if feature_type == "Lighting" {
             
-            __add_light_feature(values)
+            __add_light_feature(values: values)
             
         } else if feature_type == "HVAC" {
             
-            __add_hvac_feature(values)
+            __add_hvac_feature(values: values)
             
         } else if feature_type == "Kitchen Equipment" {
             
-            __add_kitchen_feature(values)
+            __add_kitchen_feature(values: values)
             
         } else if feature_type == "Plug Load" {
             
-            -_add_plug_feature(values)
+            -__add_plug_feature(values: values)
             
         }
         
@@ -86,7 +86,7 @@ class Room {
         
     }
 
-    func __add_plug_features(values:Dictionary<String, String>) {
+    func __add_plug_feature(values:Dictionary<String, String>) {
         
     }
 
