@@ -10,7 +10,7 @@ import UIKit
 
 var output = Dictionary<String, String>()
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     var audit = Audit()
     
@@ -21,6 +21,20 @@ class ViewController: UIViewController {
         output["filename"] = textField.text!
         
         performSegue(withIdentifier: "toPreaudit", sender: nil)
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        self.view.endEditing(true)
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        
+        return true
         
     }
 

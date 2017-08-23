@@ -8,12 +8,27 @@
 
 import UIKit
 
-class PreauditDetailViewController: UIViewController {
+class PreauditDetailViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var label: UILabel!
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        self.view.endEditing(true)
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        
+        textField.resignFirstResponder()
+        
+        return true
+        
+    }
     
     @IBAction func donePressed(_ sender: Any) {
         

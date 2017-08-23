@@ -29,18 +29,20 @@ class Audit {
         
         do {
             
-            let path = Bundle.main.path(forResource: filename, ofType: "json")
+            if let path = Bundle.main.path(forResource: filename, ofType: "json") {
             
-            print(path!)
-            
-            let output_file_string = try String(contentsOfFile: path!)
-            
-            let data: Data = output_file_string.data(using: String.Encoding.utf8)!
-            
-            let anyObj: AnyObject? = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
-            
-            
-            outputs = self.parse_json(anyObject: anyObj!)
+                print(path)
+                
+                let output_file_string = try String(contentsOfFile: path)
+                
+                let data: Data = output_file_string.data(using: String.Encoding.utf8)!
+                
+                let anyObj: AnyObject? = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
+                
+                
+                outputs = self.parse_json(anyObject: anyObj!)
+                
+            }
             
             
         } catch { print("There was an error") }
