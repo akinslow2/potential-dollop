@@ -149,37 +149,37 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
         
         if activeDetail == "date_of_interview" {
             
-            datePicker.alpha = 1
-            textField.alpha = 0
-            pickerView.alpha = 0
+            datePicker.isHidden = false
+            textField.isHidden = true
+            pickerView.isHidden = true
             
         } else if activeDetail == "rate_structure_gas" || activeDetail == "rate_structure_electric" || activeDetail == "utility_company" || activeDetail == "facility_type" {
             
-            datePicker.alpha = 0
-            textField.alpha = 0
-            pickerView.alpha = 1
+            datePicker.isHidden = true
+            textField.isHidden = true
+            pickerView.isHidden = false
             
             pickerView.reloadAllComponents()
             
         } else if activeDetail == "business_name" || activeDetail == "business_address" || activeDetail == "client_interviewed_name" || activeDetail == "client_interviewed_position" || activeDetail == "main_client_name" || activeDetail == "main_client_position" || activeDetail == "auditors_names" || activeDetail == "notes" {
             
-            datePicker.alpha = 0
-            textField.alpha = 1
-            pickerView.alpha = 0
+            datePicker.isHidden = true
+            textField.isHidden = false
+            pickerView.isHidden = true
             textField.keyboardType = UIKeyboardType.default
             
         } else if activeDetail == "main_client_email" {
             
-            datePicker.alpha = 0
-            textField.alpha = 1
-            pickerView.alpha = 0
+            datePicker.isHidden = true
+            textField.isHidden = false
+            pickerView.isHidden = true
             textField.keyboardType = UIKeyboardType.emailAddress
             
         } else {
             
-            datePicker.alpha = 0
-            textField.alpha = 1
-            pickerView.alpha = 0
+            datePicker.isHidden = true
+            textField.isHidden = false
+            pickerView.isHidden = true
             textField.keyboardType = UIKeyboardType.numberPad
         }
         

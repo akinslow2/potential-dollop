@@ -114,13 +114,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter an Audit Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdK-tC-niJ">
-                                <rect key="frame" x="16" y="148" width="208" height="26.5"/>
+                                <rect key="frame" x="16" y="142" width="208" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E.g. 1234.Main.Sunnyvale.CA.2017" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kiF-X8-VxT">
-                                <rect key="frame" x="16" y="220" width="343" height="30"/>
+                                <rect key="frame" x="16" y="214" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -129,13 +129,13 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Format: Number.Street.City.State.Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgx-18-wOD">
-                                <rect key="frame" x="16" y="191" width="275" height="19.5"/>
+                                <rect key="frame" x="16" y="185" width="275" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ty6-CZ-4jM">
-                                <rect key="frame" x="16" y="258" width="58" height="30"/>
+                                <rect key="frame" x="16" y="252" width="58" height="30"/>
                                 <state key="normal" title="Preaudit"/>
                                 <connections>
                                     <action selector="preauditButtonPressed:" destination="g3p-vH-O3d" eventType="touchUpInside" id="tbB-tP-1MS"/>
@@ -143,7 +143,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68R-ah-hur">
-                                <rect key="frame" x="323" y="258" width="36" height="30"/>
+                                <rect key="frame" x="323" y="252" width="36" height="30"/>
                                 <state key="normal" title="Audit"/>
                                 <connections>
                                     <action selector="auditButtonPressed:" destination="g3p-vH-O3d" eventType="touchUpInside" id="DF6-5g-c7v"/>
@@ -151,8 +151,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To Gemini" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9F8-U2-mHU">
-                                <rect key="frame" x="25" y="28" width="325" height="44.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <rect key="frame" x="47.5" y="28" width="281.5" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -233,19 +233,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the desired value:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLW-hn-iOi">
-                                <rect key="frame" x="16" y="28" width="261" height="30"/>
+                                <rect key="frame" x="16" y="72" width="261" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="jw1-3v-4b0">
-                                <rect key="frame" x="0.0" y="126" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="170" width="375" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="525153133.48276901">
                                     <!--2017-08-23 03:52:13 +0000-->
                                 </date>
                             </datePicker>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WJY-rv-QEw">
-                                <rect key="frame" x="16" y="137" width="343" height="30"/>
+                                <rect key="frame" x="16" y="181" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -254,14 +254,14 @@
                                 </connections>
                             </textField>
                             <pickerView alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVb-oX-U7Q">
-                                <rect key="frame" x="0.0" y="126" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="170" width="375" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="F3m-Cb-Mfk" id="Okq-Py-cEp"/>
                                     <outlet property="delegate" destination="F3m-Cb-Mfk" id="M9Q-hY-zKK"/>
                                 </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1b-8f-yi7">
-                                <rect key="frame" x="318" y="369" width="37" height="30"/>
+                                <rect key="frame" x="318" y="413" width="37" height="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="donePressed:" destination="F3m-Cb-Mfk" eventType="touchUpInside" id="TBx-sE-y40"/>
@@ -275,6 +275,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="B1b-8f-yi7" secondAttribute="trailing" constant="4" id="3Bw-zx-x4V"/>
                             <constraint firstItem="WJY-rv-QEw" firstAttribute="trailing" secondItem="3b5-Yz-d1L" secondAttribute="trailingMargin" id="3su-kJ-5WX"/>
                             <constraint firstAttribute="trailing" secondItem="jw1-3v-4b0" secondAttribute="trailing" id="6AZ-mK-y4H"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="B1b-8f-yi7" secondAttribute="trailing" constant="4" id="AQd-bI-TzD"/>
                             <constraint firstItem="GVb-oX-U7Q" firstAttribute="top" secondItem="mLW-hn-iOi" secondAttribute="bottom" constant="68" id="NHq-Y8-X7Y"/>
                             <constraint firstItem="jw1-3v-4b0" firstAttribute="top" secondItem="mLW-hn-iOi" secondAttribute="bottom" constant="68" id="Oz4-Yr-11v"/>
                             <constraint firstItem="B1b-8f-yi7" firstAttribute="top" secondItem="GVb-oX-U7Q" secondAttribute="bottom" constant="27" id="R3p-Eb-hAy"/>
@@ -315,6 +316,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="knL-EN-naq"/>
+        <segue reference="X7y-4y-eVm"/>
     </inferredMetricsTieBreakers>
 </document>
