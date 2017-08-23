@@ -17,67 +17,83 @@ class Audit {
     
     init() {}
     
-    //Constructor: this should load the outputs if they exist or create a saved place for them if they don't
     func set_name(audit_name_param: String) {
         
         audit_name = audit_name_param
         
-        filename = "./data/" + audit_name + ".json" //Maybe csv? Let's talk
+        filename = "data/" + audit_name + ".txt"
     }
     
-    func retrieve_data() { //Should return the saved dictionary
+    func retrieve_data() {
         
         do {
             
-            if let path = Bundle.main.path(forResource: filename, ofType: "json") {
-            
-                print(path)
+            if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
                 
-                let output_file_string = try String(contentsOfFile: path)
+                let path = dir.appendingPathComponent(filename)
                 
-                let data: Data = output_file_string.data(using: String.Encoding.utf8)!
+                let output_file_string = try String(contentsOf: path, encoding: String.Encoding.utf8)
                 
-                let anyObj: AnyObject? = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
+                let array = output_file_string.components(separatedBy: ", ")
                 
+                var iterator = 0
+                var new_dict = Dictionary<String, String>()
                 
-                outputs = self.parse_json(anyObject: anyObj!)
+                for entry in array {
+                    
+                    var key_index_start = entry.index(entry.startIndex, offsetBy: 1)
+                    
+                    if iterator == 0 {
+                        
+                        key_index_start = entry.index(entry.startIndex, offsetBy: 2)
+                        
+                    }
+                    
+                    let key1 = entry.substring(from: key_index_start)
+                    
+                    let key_index_end = key1.characters.index(of: "\"")!
+                    
+                    let key2 = key1.substring(to: key_index_end)
+                    
+                    let value_index = entry.characters.index(of: ":")!
+                    
+                    let value_index_start = entry.index(value_index, offsetBy: 3)
+                    
+                    let value1 = entry.substring(from: value_index_start)
+                    
+                    let value_index_end = value1.characters.index(of: "\"")!
+                    
+                    let value2 = value1.substring(to: value_index_end)
+                    
+                    iterator += 1
+                    
+                    new_dict[key2] = value2
+                }
+                
+                outputs = new_dict
                 
             }
             
             
-        } catch { print("There was an error") }
+        } catch { print("There was an error in retrieving") }
         
         
     }
     
-    //We have to write the json to a string and then save it.
     func save_data() {
         
+        do {
+            
+            if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+                
+                let path = dir.appendingPathComponent(filename)
+                
+                try outputs.description.write(to: path, atomically: false, encoding: String.Encoding.utf8)
+                
+            }
         
+        } catch { print("There was an error in saving")}
         
     }
-    
-    
-    //Basically we have to loop through the values and set them to the keys and values of a new dictionary
-    func parse_json(anyObject:AnyObject) -> Dictionary<String, String>{
-        
-        var dict: Dictionary<String, String> = Dictionary<String, String>()
-        
-//        if anyObject is Dictionary<AnyObject, AnyObject> {
-//            
-//            var key:String = String()
-//            
-//            var value:String = String()
-//            
-//            for json in anyObject as Dictionary<AnyObject, AnyObject> {
-//                
-//                // Having some difficulty here. Will return
-//                
-//            }
-//            
-//        }
-        
-        return dict
-    }
-}
 
+}

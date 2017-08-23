@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Room {
+class Room: Audit {
     
     var lighting = Array<Dictionary<String, String>>()
     var hvac = Array<Dictionary<String, String>>()
@@ -51,7 +51,7 @@ class Room {
     }
 
 
-    func __add_light_feature(values:Dictionary<String, String>) {
+    private func __add_light_feature(values:Dictionary<String, String>) {
         
         let model_number = values["model_number"]!
         
@@ -66,6 +66,7 @@ class Room {
         let energy = total_energy_calculation_per_light(num_lamps: num_lamps!, test_hours: test_hours!, hours_on: hours_on!, watts: Float(watts))
         
         //It looks like they want a lot of other features here (color temp, lamp type, lumens, etc.)
+        
         var new_dict = Dictionary<String, String>()
         
         new_dict["watts"] = String(watts)
@@ -75,7 +76,7 @@ class Room {
         lighting.append(new_dict)
     }
 
-    func __compute_lighting_specs(values:Dictionary<String, String>) {
+    private func __compute_lighting_specs(values:Dictionary<String, String>) {
         
         let lux = Float(values["measured_lux"]!)
         
@@ -135,7 +136,7 @@ class Room {
 
     }
     
-    func __save_type(curr_array:Array<Dictionary<String, String>>, name:String) {
+    private func __save_type(curr_array:Array<Dictionary<String, String>>, name:String) {
         
         var item_number = 0
         
@@ -145,7 +146,7 @@ class Room {
             
             for (key, value) in item {
             
-                output[unique_key + key] = value
+                outputs[unique_key + key] = value
                 
             }
             
@@ -163,7 +164,7 @@ class Room {
  
     */
     
-    func over_under_lamped(lux: Float, category: String, units_in_lumens: Bool) -> String {
+    private func over_under_lamped(lux: Float, category: String, units_in_lumens: Bool) -> String {
         
         let rows = open_csv(filename: "space_unit_levels")
         
@@ -192,7 +193,7 @@ class Room {
         return ""
     }
     
-    func space_type_conversion(space_type: String) -> String {
+    private func space_type_conversion(space_type: String) -> String {
         
         let rows = open_csv(filename: "space_type_conversion")
         
@@ -209,17 +210,21 @@ class Room {
         return ""
     }
         
-    func open_csv(filename:String) -> Array<Dictionary<String, String>> {
+    private func open_csv(filename:String) -> Array<Dictionary<String, String>> {
+        
+        let filename = "sheets/" + filename + ".csv"
         
         var output_file_string = ""
         
         do {
             
-            let path = Bundle.main.path(forResource: "sheets/" + filename, ofType: "csv")
+            if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             
-            print(path!)
-            
-            output_file_string = try String(contentsOfFile: path!)
+                let path = dir.appendingPathComponent(filename)
+                
+                output_file_string = try String(contentsOf: path)
+                
+            }
             
         } catch { print("There was an error") }
         
@@ -239,7 +244,7 @@ class Room {
     
     //The parameter room_type needs to provided to the user from watts_per_sqft.csv (it is in the first column)
     //That way we can guarantee that one choice will match
-    func fluorescent_lighting_watts (model_number:String) -> Int {
+    private func fluorescent_lighting_watts (model_number:String) -> Int {
         
         var in_range = true
         
@@ -273,7 +278,7 @@ class Room {
         
     //The parameter room_type needs to provided to the user from watts_per_sqft.csv (it is in the first column)
     //That way we can guarantee that one choice will match
-    func light_per_area(watts: Int, area: Float, room_type: String) -> String {
+    private func light_per_area(watts: Int, area: Float, room_type: String) -> String {
         
         let watts_per_sqft = Float(watts) / area
         
@@ -308,7 +313,7 @@ class Room {
     }
     
     
-    func total_energy_calculation_per_light(num_lamps: Int, test_hours: Int, hours_on: Int, watts: Float) -> Float {
+    private func total_energy_calculation_per_light(num_lamps: Int, test_hours: Int, hours_on: Int, watts: Float) -> Float {
         
         let hours_per_year = Float(hours_on) / Float(test_hours) * 8760
         
