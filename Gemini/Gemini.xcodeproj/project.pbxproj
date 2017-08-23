@@ -13,6 +13,8 @@
 		2A4B6EAC1F4BD2F700B1CD3B /* Gemini.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A4B6EAA1F4BD2F700B1CD3B /* Gemini.xcdatamodeld */; };
 		2A4B6EAE1F4BD2F700B1CD3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A4B6EAD1F4BD2F700B1CD3B /* Assets.xcassets */; };
 		2A4B6EB11F4BD2F700B1CD3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A4B6EAF1F4BD2F700B1CD3B /* LaunchScreen.storyboard */; };
+		2A5AA77C1F4D36D2009140C0 /* PreauditDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5AA77B1F4D36D2009140C0 /* PreauditDetailViewController.swift */; };
+		2A5AA77E1F4D3EF0009140C0 /* roomheader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5AA77D1F4D3EF0009140C0 /* roomheader.swift */; };
 		2A81291B1F4CE01D009BCFB9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A81291A1F4CE01D009BCFB9 /* TableViewController.swift */; };
 		2A81291D1F4D0968009BCFB9 /* auditheader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A81291C1F4D0968009BCFB9 /* auditheader.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +28,8 @@
 		2A4B6EAD1F4BD2F700B1CD3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A4B6EB01F4BD2F700B1CD3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A4B6EB21F4BD2F700B1CD3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A5AA77B1F4D36D2009140C0 /* PreauditDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreauditDetailViewController.swift; sourceTree = "<group>"; };
+		2A5AA77D1F4D3EF0009140C0 /* roomheader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = roomheader.swift; sourceTree = "<group>"; };
 		2A81291A1F4CE01D009BCFB9 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		2A81291C1F4D0968009BCFB9 /* auditheader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = auditheader.swift; path = ../auditheader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,8 +66,10 @@
 			children = (
 				2A81291C1F4D0968009BCFB9 /* auditheader.swift */,
 				2A4B6EA31F4BD2F700B1CD3B /* AppDelegate.swift */,
+				2A5AA77D1F4D3EF0009140C0 /* roomheader.swift */,
 				2A4B6EA51F4BD2F700B1CD3B /* ViewController.swift */,
 				2A4B6EA71F4BD2F700B1CD3B /* Main.storyboard */,
+				2A5AA77B1F4D36D2009140C0 /* PreauditDetailViewController.swift */,
 				2A81291A1F4CE01D009BCFB9 /* TableViewController.swift */,
 				2A4B6EAD1F4BD2F700B1CD3B /* Assets.xcassets */,
 				2A4B6EAF1F4BD2F700B1CD3B /* LaunchScreen.storyboard */,
@@ -146,10 +152,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A4B6EAC1F4BD2F700B1CD3B /* Gemini.xcdatamodeld in Sources */,
+				2A5AA77C1F4D36D2009140C0 /* PreauditDetailViewController.swift in Sources */,
 				2A4B6EA61F4BD2F700B1CD3B /* ViewController.swift in Sources */,
 				2A4B6EA41F4BD2F700B1CD3B /* AppDelegate.swift in Sources */,
 				2A81291D1F4D0968009BCFB9 /* auditheader.swift in Sources */,
 				2A81291B1F4CE01D009BCFB9 /* TableViewController.swift in Sources */,
+				2A5AA77E1F4D3EF0009140C0 /* roomheader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
