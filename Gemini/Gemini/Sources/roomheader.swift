@@ -212,7 +212,7 @@ class Room: Audit {
         
     private func open_csv(filename:String) -> Array<Dictionary<String, String>> {
         
-        let filename = "sheets/" + filename + ".csv"
+        let filename = filename + ".csv"
         
         var output_file_string = ""
         

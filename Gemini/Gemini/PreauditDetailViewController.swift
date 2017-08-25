@@ -15,10 +15,13 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var label: UILabel!
     
-    let gas_structures = ["A", "B", "C", "D"]
-    let electric_structures = ["E", "F", "G"]
-    let utility_companies = ["PG&E", "SMUD", "Other"]
-    let facility_types = ["Auditorium"]
+    let gas_structures = Array<String>()
+    let electric_structures = Array<String>()
+    let utility_companies = ["PG&E", "SMUD", "CPAU"]
+    let facility_types = Array<String>()
+    var activeDetail = ""
+    var selectedIndexPath = IndexPath()
+    var selectedValueFromPicker = ""
     
     
     /*
@@ -54,6 +57,28 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
         }
         
         return 0
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        if activeDetail == "rate_structure_gas" {
+            
+            selectedValueFromPicker = gas_structures[row]
+            
+        } else if activeDetail == "rate_structure_electric" {
+            
+            selectedValueFromPicker = electric_structures[row]
+            
+        } else if activeDetail == "utility_company" {
+            
+            selectedValueFromPicker = utility_companies[row]
+            
+        } else if activeDetail == "facility_type" {
+            
+            selectedValueFromPicker = facility_types[row]
+            
+        }
         
     }
     
@@ -115,26 +140,99 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
      
      */
     
+    var validInput = false
     @IBAction func donePressed(_ sender: Any) {
         
         if !textField.isHidden {
             
-            //Store text
+            if !(textField.text?.isEmpty)! {
+                
+                validInput = true
+                
+                audit.outputs[activeDetail] = textField.text
+                
+            }
             
         } else if !datePicker.isHidden {
             
-            //Store date
+            validInput = true
+            
+            audit.outputs[activeDetail] = datePicker.description
             
         } else {
             
-            //Store selected item
+            if !selectedValueFromPicker.isEmpty {
+                
+                validInput = true
+                
+                audit.outputs[activeDetail] = selectedValueFromPicker
+                
+            }
+            
+        }
+        
+        performSegue(withIdentifier: "backToPreaudit", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "backToPreaudit" {
+            
+            if validInput {
+                
+                filledRows.append(selectedIndexPath.row)
+                
+            }
             
         }
         
     }
     
+    func open_csv(filename:String) -> Array<Dictionary<String, String>>! {
+        
+        var output_file_string = ""
+        
+        do {
+            
+            guard let path = Bundle.main.path(forResource: filename, ofType: "txt")
+                
+            else {
+                
+                print("Can't find file")
+                
+                return nil
+                
+            }
+                
+                print(path)
+                
+                output_file_string = try String(contentsOfFile: path, encoding: String.Encoding.utf8)
+            
+        } catch {
+            
+            print("There was an error")
+            
+            return nil
+            
+        }
+        
+        let csv = CSwiftV(with: output_file_string)
+        
+        return csv.keyedRows!
+        
+    }
+    
+    func loadPickerValues() {
+        
+        let x = open_csv(filename: "SpaceType")
+        print(x)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadPickerValues()
         self.pickerView.dataSource = self
         self.pickerView.delegate = self
         textField.isHidden = true
@@ -148,6 +246,8 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
     
     override func viewDidAppear(_ animated: Bool) {
         
+        pickerView.reloadAllComponents()
+        selectedValueFromPicker = ""
         textField.isHidden = true
         pickerView.isHidden = true
         datePicker.isHidden = true

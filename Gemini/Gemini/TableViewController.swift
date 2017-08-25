@@ -8,16 +8,15 @@
 
 import UIKit
 
-//Not the best style, will fix later
-var preaudit_entry = ""
-var activeDetail = ""
+var filledRows = Array<Int>()
 
 class TableViewController: UITableViewController {
     
     var output = Dictionary<String, String>()
     var preaudit_inputs = Array<Dictionary<String, String>>()
-    let preaudit_entries = ["business_name", "business_address", "client_interviewed_name", "client_interviewed_position", "main_client_name", "main_client_position", "main_client_email", "main_client_phone_number", "total_square_footage", "facility_type", "age_of_building", "age_of_lighting", "age_of_lighting_controls", "age_of_hvac", "age_of_hvac_controls", "age_of_kitchen_equipment", "lighting_maintenance_interval", "hvac_maintenance_interval", "kitchen_equipment_maintenance_interval", "upgrades_budget", "expected_roi", "utility_company", "rate_structure_electric", "rate_structure_gas", "date_of_interview", "auditors_names", "evacuation_map_image", "notes"]
-
+    let preaudit_entries = ["Business Name", "Business Address", "Client Interviewed Name", "Client Interviewed Position", "Main Client Name", "Main Client Position", "Main Client Email", "Main Client Phone Number", "Total Square Footage", "Facility Type", "Age Of Building", "Age Of Lighting", "Age Of Lighting Controls", "Age Of HVAC", "Age Of HVAC Controls", "Age Of Kitchen Equipment", "Lighting Maintenance Interval", "HVAC Maintenance Interval", "Kitchen Equipment Maintenance Interval", "Upgrades Budget", "Expected ROI", "Utility Company", "Rate Structure Electric", "Rate Structure Gas", "Date Of Interview", "Auditors Names", "Notes"]
+    var activeDetail = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         define_preaudit_inputs()
@@ -42,16 +41,17 @@ class TableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
 
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        
         return 1
+        
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        
         return preaudit_inputs.count
+        
     }
 
     
@@ -59,7 +59,13 @@ class TableViewController: UITableViewController {
         
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
         
-        cell.textLabel?.text = "\(Array(preaudit_inputs[indexPath.row].keys)[0])" //This should be the name of the key
+        cell.textLabel?.text = "\(Array(preaudit_inputs[indexPath.row].keys)[0])"
+        
+        if filledRows.contains(indexPath.row) {
+            
+            cell.accessoryType = UITableViewCellAccessoryType.checkmark
+            
+        }
 
         return cell
     }
@@ -72,6 +78,45 @@ class TableViewController: UITableViewController {
         
     }
             
+    @IBAction func save(_ sender: Any) {
+        
+        for dict in preaudit_inputs {
+            
+            if dict.count > 0 {
+                
+                audit.outputs[(dict.first?.key)!] = dict[(dict.first?.key)!]
+            
+            }
+            
+        }
+        
+        audit.save_data()
+        
+        UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toPreauditDetail" {
+            
+            let detailViewController = segue.destination as! PreauditDetailViewController
+            
+            detailViewController.activeDetail = activeDetail
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+                
+                detailViewController.selectedIndexPath = indexPath
+                
+            }
+            
+        }
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print(filledRows)
+    }
     
     
 

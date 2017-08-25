@@ -8,19 +8,78 @@
 
 import UIKit
 
-var output = Dictionary<String, String>()
+var audit = Audit()
 
 class ViewController: UIViewController, UITextFieldDelegate {
-    
-    var audit = Audit()
     
     @IBOutlet weak var textField: UITextField!
     
     @IBAction func preauditButtonPressed(_ sender: Any) {
         
-        output["filename"] = textField.text!
+        if (textField.text?.isEmpty)! {
+            
+            let alert_controller = UIAlertController(title: "Empty name", message: "Please provide the identifying name", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert_controller.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in
+                
+                self.dismiss(animated: true, completion: nil)
+                
+            }))
+            
+            self.present(alert_controller, animated: true, completion: nil)
+            
+        } else {
         
-        performSegue(withIdentifier: "toPreaudit", sender: nil)
+            audit.outputs["filename"] = textField.text!
+            
+            audit.set_name(audit_name_param: textField.text!)
+            
+            //Reload old inputs if they exist
+        
+            performSegue(withIdentifier: "toPreaudit", sender: nil)
+            
+        }
+        
+    }
+    
+    @IBAction func auditButtonPressed(_ sender: Any) {
+        
+        if (textField.text?.isEmpty)! {
+            
+            let alert_controller = UIAlertController(title: "Empty name", message: "Please provide the identifying name", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert_controller.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in
+                
+                self.dismiss(animated: true, completion: nil)
+                
+            }))
+            
+            self.present(alert_controller, animated: true, completion: nil)
+            
+        } else {
+            
+            audit.set_name(audit_name_param: textField.text!)
+        
+            audit.retrieve_data()
+            
+            if audit.outputs.count == 0 {
+                
+                let alert_controller = UIAlertController(title: "Audit not found", message: "Please provide the audit identifier used in the pre-audit", preferredStyle: UIAlertControllerStyle.alert)
+                
+                alert_controller.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                    
+                    self.dismiss(animated: true, completion: nil)
+                    
+                }))
+                
+                self.present(alert_controller, animated: true, completion: nil)
+                
+            } else {
+                
+                performSegue(withIdentifier: "toAudit", sender: nil)
+            }
+            
+        }
         
     }
     
@@ -36,12 +95,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         return true
         
-    }
-
-    @IBAction func auditButtonPressed(_ sender: Any) {
-        
-        audit.retrieve_data()
-                
     }
     
     override func viewDidLoad() {

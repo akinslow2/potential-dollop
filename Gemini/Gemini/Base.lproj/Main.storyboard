@@ -140,7 +140,6 @@
                                 <state key="normal" title="Preaudit"/>
                                 <connections>
                                     <action selector="preauditButtonPressed:" destination="g3p-vH-O3d" eventType="touchUpInside" id="tbB-tP-1MS"/>
-                                    <segue destination="Ozm-Jl-Kcg" kind="show" identifier="toPreaudit" id="cDJ-9L-sd6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68R-ah-hur">
@@ -148,7 +147,6 @@
                                 <state key="normal" title="Audit"/>
                                 <connections>
                                     <action selector="auditButtonPressed:" destination="g3p-vH-O3d" eventType="touchUpInside" id="DF6-5g-c7v"/>
-                                    <segue destination="LdR-fj-NQf" kind="show" identifier="toAudit" id="khR-YK-Z7a"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To Gemini" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9F8-U2-mHU">
@@ -177,6 +175,8 @@
                     </view>
                     <connections>
                         <outlet property="textField" destination="kiF-X8-VxT" id="FEP-gE-eyg"/>
+                        <segue destination="LdR-fj-NQf" kind="show" identifier="toAudit" id="cGg-O3-12W"/>
+                        <segue destination="Ozm-Jl-Kcg" kind="show" identifier="toPreaudit" id="OjM-5r-JLu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8bv-Rg-G0B" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -210,9 +210,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Preaudit" id="tmo-LC-jZC">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="TTg-gn-1iv">
+                        <barButtonItem key="rightBarButtonItem" title="Save And Exit" id="TTg-gn-1iv">
                             <connections>
-                                <segue destination="g3p-vH-O3d" kind="show" id="yXR-f8-0VB"/>
+                                <action selector="save:" destination="4W0-bR-TtK" id="nTk-KQ-q5v"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -239,7 +239,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="jw1-3v-4b0">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="jw1-3v-4b0">
                                 <rect key="frame" x="0.0" y="96" width="375" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="525153133.48276901">
                                     <!--2017-08-23 03:52:13 +0000-->
@@ -266,7 +266,6 @@
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="donePressed:" destination="F3m-Cb-Mfk" eventType="touchUpInside" id="TBx-sE-y40"/>
-                                    <segue destination="4W0-bR-TtK" kind="show" id="X7y-4y-eVm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -293,6 +292,7 @@
                         <outlet property="label" destination="mLW-hn-iOi" id="y5K-Pn-Qt1"/>
                         <outlet property="pickerView" destination="GVb-oX-U7Q" id="zSK-9u-VGa"/>
                         <outlet property="textField" destination="WJY-rv-QEw" id="ORy-Kp-VyS"/>
+                        <segue destination="4W0-bR-TtK" kind="show" identifier="backToPreaudit" id="MNR-4i-dSK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="knG-YJ-RMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -317,6 +317,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="X7y-4y-eVm"/>
+        <segue reference="MNR-4i-dSK"/>
     </inferredMetricsTieBreakers>
 </document>
