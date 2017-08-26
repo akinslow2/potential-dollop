@@ -37,24 +37,8 @@ class ZoneViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         selectedRow = row
-        
-        if selectedRow == -1 {
             
-            let alert_controller = UIAlertController(title: "Empty zone", message: "Please enter zone type", preferredStyle: UIAlertControllerStyle.alert)
-            
-            alert_controller.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in
-                
-                self.dismiss(animated: true, completion: nil)
-                
-            }))
-            
-            self.present(alert_controller, animated: true, completion: nil)
-            
-        } else {
-            
-            performSegue(withIdentifier: "addZone", sender: self)
-            
-        }
+        performSegue(withIdentifier: "toAuditDetail", sender: self)
         
     }
     
@@ -64,12 +48,10 @@ class ZoneViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         self.zonePicked.dataSource = self
         self.zonePicked.delegate = self
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
@@ -81,9 +63,9 @@ class ZoneViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         if segue.identifier == "addZone" {
             
-            let auditViewController = segue.destination as! AuditViewController
+            let auditTableViewController = segue.destination as! AuditTableViewController
             
-            auditViewController.selectedValue = zones[selectedRow]
+            auditTableViewController.selectedValue = zones[selectedRow]
             
         }
         
