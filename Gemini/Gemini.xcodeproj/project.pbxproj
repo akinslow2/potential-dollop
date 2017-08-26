@@ -22,6 +22,7 @@
 		2A6BB5BC1F4E1D3500952553 /* AuditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6BB5BB1F4E1D3500952553 /* AuditViewController.swift */; };
 		2A81291B1F4CE01D009BCFB9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A81291A1F4CE01D009BCFB9 /* TableViewController.swift */; };
 		2A9526641F51D6DD0058B764 /* CSVs in Resources */ = {isa = PBXBuildFile; fileRef = 2A9526631F51D6DD0058B764 /* CSVs */; };
+		2A9526661F51E7360058B764 /* ZoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9526651F51E7360058B764 /* ZoneViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		2A6BB5BB1F4E1D3500952553 /* AuditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditViewController.swift; sourceTree = "<group>"; };
 		2A81291A1F4CE01D009BCFB9 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		2A9526631F51D6DD0058B764 /* CSVs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CSVs; sourceTree = "<group>"; };
+		2A9526651F51E7360058B764 /* ZoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoneViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				2A4B6EA31F4BD2F700B1CD3B /* AppDelegate.swift */,
 				2A4B6EA51F4BD2F700B1CD3B /* ViewController.swift */,
 				2A6BB5BB1F4E1D3500952553 /* AuditViewController.swift */,
+				2A9526651F51E7360058B764 /* ZoneViewController.swift */,
 				2A5AA77B1F4D36D2009140C0 /* PreauditDetailViewController.swift */,
 				2A9526631F51D6DD0058B764 /* CSVs */,
 				2A81291A1F4CE01D009BCFB9 /* TableViewController.swift */,
@@ -173,6 +176,7 @@
 			files = (
 				2A4B6EAC1F4BD2F700B1CD3B /* Gemini.xcdatamodeld in Sources */,
 				2A5AA77C1F4D36D2009140C0 /* PreauditDetailViewController.swift in Sources */,
+				2A9526661F51E7360058B764 /* ZoneViewController.swift in Sources */,
 				2A5AA78A1F4D60C2009140C0 /* auditheader.swift in Sources */,
 				2A4B6EA61F4BD2F700B1CD3B /* ViewController.swift in Sources */,
 				2A4B6EA41F4BD2F700B1CD3B /* AppDelegate.swift in Sources */,

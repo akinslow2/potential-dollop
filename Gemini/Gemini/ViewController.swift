@@ -62,22 +62,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
             audit.retrieve_data()
             
-            if audit.outputs.count == 0 {
-                
-                let alert_controller = UIAlertController(title: "Audit not found", message: "Please provide the audit identifier used in the pre-audit", preferredStyle: UIAlertControllerStyle.alert)
-                
-                alert_controller.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                    
-                    self.dismiss(animated: true, completion: nil)
-                    
-                }))
-                
-                self.present(alert_controller, animated: true, completion: nil)
-                
-            } else {
-                
+            //Uncomment this when saving actually works
+            
+//            if audit.outputs.count == 0 {
+//                
+//                let alert_controller = UIAlertController(title: "Audit not found", message: "Please provide the audit identifier used in the pre-audit", preferredStyle: UIAlertControllerStyle.alert)
+//                
+//                alert_controller.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+//                    
+//                    self.dismiss(animated: true, completion: nil)
+//                    
+//                }))
+//                
+//                self.present(alert_controller, animated: true, completion: nil)
+//                
+//            } else {
+            
                 performSegue(withIdentifier: "toAudit", sender: nil)
-            }
+            //}
             
         }
         

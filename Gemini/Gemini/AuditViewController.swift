@@ -10,18 +10,12 @@ import UIKit
 
 class AuditViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    var selectedValue = ""
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var addImageButton: UIButton!
     @IBOutlet weak var addRoomButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
-    
-    @IBAction func addRoom(_ sender: Any) {
-        
-    }
-    
-    @IBAction func cancel(_ sender: Any) {
-        
-    }
     
     
     /* 
@@ -55,7 +49,7 @@ class AuditViewController: UIViewController, UINavigationControllerDelegate, UII
         
         imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
         
-        imagePickerController.allowsEditing = false
+        imagePickerController.allowsEditing = true
         
         self.present(imagePickerController, animated: false, completion: nil)
         
