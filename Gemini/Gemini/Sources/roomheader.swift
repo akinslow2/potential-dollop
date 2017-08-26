@@ -168,7 +168,7 @@ class Room: Audit {
         
         let rows = open_csv(filename: "space_unit_levels")
         
-        for row in rows {
+        for row in rows! {
             
             if row["key"] != category { //Key must be revised. Not sure what it should be
                 continue
@@ -197,7 +197,7 @@ class Room: Audit {
         
         let rows = open_csv(filename: "space_type_conversion")
         
-        for row in rows {
+        for row in rows! {
             
             if row["key"] != space_type { //Key must be revised. Not sure what it should be
                 continue
@@ -210,35 +210,30 @@ class Room: Audit {
         return ""
     }
         
-    private func open_csv(filename:String) -> Array<Dictionary<String, String>> {
-        
-        let filename = filename + ".csv"
+    private func open_csv(filename:String) -> Array<Dictionary<String, String>>! {
         
         var output_file_string = ""
         
         do {
             
-            if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            
-                let path = dir.appendingPathComponent(filename)
+            guard let path = Bundle.main.path(forResource: filename, ofType: "txt")
                 
-                output_file_string = try String(contentsOf: path)
-                
-            }
+                else { return nil }
             
-        } catch { print("There was an error") }
+            output_file_string = try String(contentsOfFile: path).replacingOccurrences(of: "\t", with: ",")
+            
+        } catch {
+            
+            print("There was an error")
+            
+            return nil
+            
+        }
         
         let csv = CSwiftV(with: output_file_string)
         
-        if csv != nil { // Need some indication of error, not sure what yet
         
-            return csv.keyedRows!
-            
-        } else {
-            
-            return [Dictionary<String, String>()]
-            
-        }
+        return csv.keyedRows!
         
     }
     
@@ -284,7 +279,7 @@ class Room: Audit {
         
         let rows = open_csv(filename: "watts_per_sqft")
         
-        for row in rows {
+        for row in rows! {
             
             if room_type != row["key"] { // Again, not sure what key should go here
 

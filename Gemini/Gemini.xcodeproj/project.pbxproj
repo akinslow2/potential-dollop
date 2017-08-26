@@ -21,8 +21,7 @@
 		2A5AA78F1F4D6256009140C0 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5AA78E1F4D6256009140C0 /* CSwiftV.swift */; };
 		2A6BB5BC1F4E1D3500952553 /* AuditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6BB5BB1F4E1D3500952553 /* AuditViewController.swift */; };
 		2A81291B1F4CE01D009BCFB9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A81291A1F4CE01D009BCFB9 /* TableViewController.swift */; };
-		2ABD3F881F4FB69100240A6A /* Space Type - Sheet1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 2ABD3F871F4FB69100240A6A /* Space Type - Sheet1.csv */; };
-		2ABD3F8A1F4FB95000240A6A /* SpaceType.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2ABD3F891F4FB95000240A6A /* SpaceType.txt */; };
+		2A9526641F51D6DD0058B764 /* CSVs in Resources */ = {isa = PBXBuildFile; fileRef = 2A9526631F51D6DD0058B764 /* CSVs */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,8 +42,7 @@
 		2A5AA78E1F4D6256009140C0 /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSwiftV.swift; path = "CSwiftV-master/Sources/CSwiftV.swift"; sourceTree = "<group>"; };
 		2A6BB5BB1F4E1D3500952553 /* AuditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditViewController.swift; sourceTree = "<group>"; };
 		2A81291A1F4CE01D009BCFB9 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		2ABD3F871F4FB69100240A6A /* Space Type - Sheet1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Space Type - Sheet1.csv"; sourceTree = "<group>"; };
-		2ABD3F891F4FB95000240A6A /* SpaceType.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SpaceType.txt; path = Gemini/SpaceType.txt; sourceTree = "<group>"; };
+		2A9526631F51D6DD0058B764 /* CSVs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CSVs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +61,6 @@
 			children = (
 				2A4B6EA21F4BD2F700B1CD3B /* Gemini */,
 				2A4B6EA11F4BD2F700B1CD3B /* Products */,
-				2ABD3F891F4FB95000240A6A /* SpaceType.txt */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,11 +79,11 @@
 				2A4B6EA51F4BD2F700B1CD3B /* ViewController.swift */,
 				2A6BB5BB1F4E1D3500952553 /* AuditViewController.swift */,
 				2A5AA77B1F4D36D2009140C0 /* PreauditDetailViewController.swift */,
+				2A9526631F51D6DD0058B764 /* CSVs */,
 				2A81291A1F4CE01D009BCFB9 /* TableViewController.swift */,
 				2A4B6EA71F4BD2F700B1CD3B /* Main.storyboard */,
 				2A5AA7891F4D60C2009140C0 /* auditheader.swift */,
 				2A5AA78B1F4D60C7009140C0 /* roomheader.swift */,
-				2ABD3F871F4FB69100240A6A /* Space Type - Sheet1.csv */,
 				2A5AA78E1F4D6256009140C0 /* CSwiftV.swift */,
 				2A5AA78D1F4D6253009140C0 /* CSwiftV.h */,
 				2A5AA7851F4D50BB009140C0 /* CSwiftV-master */,
@@ -160,10 +157,9 @@
 			files = (
 				2A4B6EB11F4BD2F700B1CD3B /* LaunchScreen.storyboard in Resources */,
 				2A4B6EAE1F4BD2F700B1CD3B /* Assets.xcassets in Resources */,
-				2ABD3F8A1F4FB95000240A6A /* SpaceType.txt in Resources */,
 				2A4B6EA91F4BD2F700B1CD3B /* Main.storyboard in Resources */,
+				2A9526641F51D6DD0058B764 /* CSVs in Resources */,
 				2A5AA7861F4D50BB009140C0 /* CSwiftV-master in Resources */,
-				2ABD3F881F4FB69100240A6A /* Space Type - Sheet1.csv in Resources */,
 				2A5AA7821F4D4F6A009140C0 /* data in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

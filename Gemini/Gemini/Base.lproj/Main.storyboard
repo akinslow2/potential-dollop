@@ -120,7 +120,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E.g. 1234.Main.Sunnyvale.CA.2017" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kiF-X8-VxT">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234" borderStyle="roundedRect" placeholder="E.g. 1234.Main.Sunnyvale.CA.2017" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kiF-X8-VxT">
                                 <rect key="frame" x="16" y="214" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -254,13 +254,6 @@
                                     <outlet property="delegate" destination="F3m-Cb-Mfk" id="tqc-2U-Jr1"/>
                                 </connections>
                             </textField>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVb-oX-U7Q">
-                                <rect key="frame" x="0.0" y="96" width="375" height="216"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="F3m-Cb-Mfk" id="Okq-Py-cEp"/>
-                                    <outlet property="delegate" destination="F3m-Cb-Mfk" id="M9Q-hY-zKK"/>
-                                </connections>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1b-8f-yi7">
                                 <rect key="frame" x="318" y="339" width="37" height="30"/>
                                 <state key="normal" title="Done"/>
@@ -268,6 +261,13 @@
                                     <action selector="donePressed:" destination="F3m-Cb-Mfk" eventType="touchUpInside" id="TBx-sE-y40"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVb-oX-U7Q">
+                                <rect key="frame" x="0.0" y="96" width="375" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="F3m-Cb-Mfk" id="Okq-Py-cEp"/>
+                                    <outlet property="delegate" destination="F3m-Cb-Mfk" id="M9Q-hY-zKK"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
