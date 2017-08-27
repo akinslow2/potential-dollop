@@ -11,18 +11,14 @@ import UIKit
 class AuditDetailViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
     var items = ["Lighting zone", "HVAC zone", "Room"]
     var selectedValue = "Lighting zone"
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        textField.isHidden = true
-        label.isHidden = true
         
         pickerView.dataSource = self
         pickerView.delegate = self
@@ -32,6 +28,24 @@ class AuditDetailViewController: UIViewController, UIPickerViewDataSource, UIPic
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if items == ["Lighting zone", "HVAC zone", "Room"] {
+            
+            doneButton.isHidden = false
+            
+            addButton.isHidden = true
+            
+        } else {
+            
+            doneButton.isHidden = true
+            
+            addButton.isHidden = false
+            
+        }
+        
     }
     
 
