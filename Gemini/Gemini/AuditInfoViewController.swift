@@ -10,8 +10,18 @@ import UIKit
 
 class AuditInfoViewController: UIViewController {
 
+    @IBOutlet weak var modelNumberTextField: UITextField!
+    @IBOutlet weak var productionLabel: UILabel!
+    @IBOutlet weak var sizeLabel: UILabel!
+    @IBOutlet weak var productionTextField: UITextField!
+    @IBOutlet weak var sizeTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        productionLabel.isHidden = true
+        sizeLabel.isHidden = true
+        productionTextField.isHidden = true
+        sizeTextField.isHidden = true
 
         // Do any additional setup after loading the view.
     }
@@ -19,6 +29,21 @@ class AuditInfoViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func searchForModel(_ sender: Any) {
+        
+        //if found, 
+        //add to map/diction/room
+        //calculate retrofit? (it found, it is ideal?)
+        //performSegue
+        //
+        //else
+        //unhide features
+        //add to map
+        //calculate retrofit
+        //wait for other button (save) to segue
+        
     }
     
 

@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Audit Info View Controller-->
         <scene sceneID="GNb-KI-KEF">
             <objects>
-                <viewController id="6Mw-Im-Dbh" sceneMemberID="viewController">
+                <viewController id="6Mw-Im-Dbh" customClass="AuditInfoViewController" customModule="Gemini" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n1I-1M-ir6"/>
                         <viewControllerLayoutGuide type="bottom" id="Pc0-5k-xVC"/>
@@ -68,10 +68,20 @@
                                 <rect key="frame" x="312" y="95" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchForModel:" destination="6Mw-Im-Dbh" eventType="touchUpInside" id="pEH-8X-hTg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="modelNumberTextField" destination="1bO-Bv-Icl" id="Jny-kN-SxU"/>
+                        <outlet property="productionLabel" destination="ml7-U8-f08" id="PyC-Wy-K52"/>
+                        <outlet property="productionTextField" destination="iTB-dI-ELo" id="hIy-Ix-2gt"/>
+                        <outlet property="sizeLabel" destination="bpo-W5-r2q" id="2MF-vW-tWb"/>
+                        <outlet property="sizeTextField" destination="Loe-Tx-PON" id="xjk-qu-alt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdK-qc-fFz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
