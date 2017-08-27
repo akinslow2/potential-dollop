@@ -11,10 +11,29 @@ import UIKit
 class AuditDetailViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var doneButton: UIButton!
-    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var nameField: UITextField!
     var items = ["Lighting zone", "HVAC zone", "Room"]
     var selectedValue = "Lighting zone"
+    
+    @IBAction func addButtonPressed(_ sender: Any) {
+        
+        let name = nameField.text!
+        
+        if name == "" {
+            
+            let alert_controller = UIAlertController(title: "Empty name", message: "Please provide the identifying name", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert_controller.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in
+                
+                self.dismiss(animated: true, completion: nil)
+                
+            }))
+            
+            self.present(alert_controller, animated: true, completion: nil)
+            
+        }
+        
+    }
 
     
     override func viewDidLoad() {
@@ -27,35 +46,32 @@ class AuditDetailViewController: UIViewController, UIPickerViewDataSource, UIPic
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-        if items == ["Lighting zone", "HVAC zone", "Room"] {
-            
-            doneButton.isHidden = false
-            
-            addButton.isHidden = true
-            
-        } else {
-            
-            doneButton.isHidden = true
-            
-            addButton.isHidden = false
-            
-        }
-        
     }
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "backToAuditTable" {
+        if segue.identifier == "toFeatures" {
             
             let auditTableViewController = segue.destination as! AuditTableViewController
             
-            auditTableViewController.selectedValue = selectedValue
+            auditTableViewController.items.append(selectedValue)
+            
+            let featureTableViewController = segue.destination as! FeatureTableViewController
+            
+            if selectedValue == "Lighting zone" {
+            
+                featureTableViewController.curr_features = featureTableViewController.lighting_features
+            
+            } else if selectedValue == "HVAC zone" {
+                
+                featureTableViewController.curr_features = featureTableViewController.hvac_features
+                
+            } else {
+                
+                featureTableViewController.curr_features = featureTableViewController.room_features
+                
+            }
             
         }
         
