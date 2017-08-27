@@ -255,7 +255,7 @@ class Room: Audit {
         
         var summer = hours_on_peak_pricing * fan_energy_rate * peak_price + hours_on_partpeak_pricing * fan_energy_rate * partpeak_price + hours_on_offpeak_pricing * fan_energy_rate * offpeak_price
         
-        var winter: hours_on_partpeak_pricing * fan_energy_rate * partpeak price + hours_on_offpeak_pricing * fan_energy_rate * offpeak_price
+        var winter = hours_on_partpeak_pricing * fan_energy_rate * partpeak_price + hours_on_offpeak_pricing * fan_energy_rate * offpeak_price
         
         var total_electric = summer + winter
         
@@ -373,7 +373,39 @@ class Room: Audit {
         
         return ""
     }
-        
+    
+    /*
+     
+     Function: open_csv
+     --------------------
+     Returns an Optional(Array<Dictionary<String, String>>)
+     of the elements in a csv with the first column as
+     the keys in the array, and the subsequent columns
+     are the values, corresponding to their shared row.
+     
+     For example:
+     Category, Space Type
+     A, Classroom
+     B, Armory
+     ->
+     [{A : Classroom}, {B : Armory}]
+     
+     ***
+     
+     In order to input a file:
+     
+     1. Download as a .txt with \t separated values
+     2. Open in Word and save as a .txt with UTF-8 encoding
+     and LF only
+     3. In Xcode, File -> Add Files to ... -> *Select file and add to "CSVs" folder*
+     
+     ***
+     
+     @param file's name in folder, String
+     
+     Example: (for CSVs/space_type.csv), filename = "space_type"
+     
+     */
     private func open_csv(filename:String) -> Array<Dictionary<String, String>>! {
         
         var output_file_string = ""

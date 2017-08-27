@@ -16,22 +16,30 @@ class AuditInfoViewController: UIViewController {
     @IBOutlet weak var productionTextField: UITextField!
     @IBOutlet weak var sizeTextField: UITextField!
     @IBOutlet weak var doneButton: UIButton!
+    
     var feature = ""
     
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
         productionLabel.isHidden = true
+        
         sizeLabel.isHidden = true
+        
         productionTextField.isHidden = true
+        
         sizeTextField.isHidden = true
+        
         doneButton.isHidden = true
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
+        
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
     @IBAction func searchForModel(_ sender: Any) {
