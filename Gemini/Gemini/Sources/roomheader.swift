@@ -146,7 +146,7 @@ class Room: Audit {
             
             for (key, value) in item {
             
-                outputs[unique_key + key] = value
+                audit.outputs[unique_key + key] = value
                 
             }
             

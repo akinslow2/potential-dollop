@@ -37,9 +37,7 @@ class AuditTableViewController: UITableViewController {
         print(selectedValue)
         
         if selectedValue == "Lighting zone" {
-            
-            print("here I am")
-            
+                        
             items = lighting_items
             
         } else if selectedValue == "HVAC zone" {
