@@ -116,8 +116,172 @@ class Room: Audit {
     }
 
     func __add_kitchen_feature(values:Dictionary<String, String>) {
+        //need some way to break up which item this is for
+        let model_number = values["model_number"]!
+        
+        let company = values["num_lamps"]!
+        
+        let type = values["type"]!
+        
+        if type == "rack_oven" {
+            __compute__rack__oven(model_number: model_number, company: company)
+        } else if type == "convection_oven" {
+            __compute__convection__oven(model_number: model_number, company: company)
+        } else if type == "combination_oven" {
+            __compute__combination__oven(model_number: model_number, company: company)
+        } else if type == "conveyor_ovens" {
+            __compute__conveyor__oven(model_number: model_number, company: company)
+        } else if type == "ice_maker" {
+            __compute__icemaker(model_number: model_number, company: company)
+        } else if type == "freezer" {
+            
+        } else if type == "refrigerator" {
+            //need to check solid door or glass door
+        } else if type == "hot_food_cabinets" {
+            
+        } else if type == "fryer" {
+            
+        } else if type == "steam_cookers" {
+            
+        } else if type == "griddles" {
+            
+        }
         
     }
+    
+    private func __compute__icemaker(model_number:String, company: String){
+        var energy_star = is_energy_star(model_number: model_number, company: company, file_name: csv_file_for_icemaker)
+        if energy_star {
+            //done
+        }
+        
+        //oven length, conveyor width
+        
+        let best_model_num = find_best_model(prod_capacity: prod_capacity, size: size, file_name: csv_file_for_icemaker)
+    }
+    
+    private func __compute__conveyor__oven(model_number:String, company: String){
+        var energy_star = is_energy_star(model_number: model_number, company: company, file_name: csv_file_for_conveyorovens)
+        if energy_star {
+            //done
+        }
+        
+        //oven length, conveyor width
+        //either make this specific to the type of ktichen appliance or just make the parameters generic like "required1, required2" and so on...
+        let best_model_num = find_best_model(prod_capacity: prod_capacity, size: size, file_name: csv_file_for_conveyorovens)
+    }
+    
+    
+    private func __compute__convection__oven(model_number:String, company: String){
+        var energy_star = is_energy_star(model_number: model_number, company: company, file_name: csv_file_for_convectionovens)
+        if energy_star {
+            //done
+        }
+        
+        //size, capacity, fuel type
+        
+        let best_model_num = find_best_model(prod_capacity: prod_capacity, size: size, file_name: csv_file_for_convectionovens)
+    }
+    
+    private func __compute__combination__oven(model_number:String, company: String){
+        var energy_star = is_energy_star(model_number: model_number, company: company, file_name: csv_file_for_combinationovens)
+        if energy_star {
+            //done
+        }
+        
+        //size, fuel type
+        
+        let best_model_num = find_best_model(prod_capacity: prod_capacity, size: size, file_name: csv_file_for_combinationovens)
+    }
+    
+    
+    //Need to make constants for the csvs needed for each type of material
+    private func __compute__rack__oven(model_number:String, company: String){
+        var energy_star = is_energy_star(model_number: model_number, company: company, file_name: csv_file_for_rackovens)
+        
+        if energy_star {
+            //do not need to continue with this method, but should do something
+        }
+        
+        //let prod_capacity
+        //let size
+        //maybe fuel type
+        
+        let best_model_num = find_best_model(prod_capacity: prod_capacity, size: size, file_name: csv_file_for_rackovens)
+    }
+    
+    //For this part, the best model might not have the exact size and capacity, so we may have to have a way to get close
+    //To generalize this method, it may not be prod_capactiy and size each time
+    private func find_best_model(prod_capacity: String, size: String, file_name: String) -> String{
+        let rows = open_csv(filename: file_name)
+        
+        var new_dict = Dictionary<String, Int>()
+        
+        
+        
+        for row in rows! {
+            
+            if row["size"] != size {
+                continue
+            }
+            if row["prod_capacity"] != prod_capacity { //model_number must be revised. Not sure what it should be
+                continue
+            }
+            
+            new_dict[row["model_number"]] = find_energy_cost(preheat_energy: Int(row["preheat_energy"]), idle_energy_rate: Int(row["idle_energy_rate"]), fan_energy_rate: Int(row["fan_energy_rate"]) )
+            return ""
+            
+        }
+        
+        //return the model number with the lowest cost
+        return ""
+    }
+    
+    
+    //most of the info needs to come from the bill, but some will come from the energy star csv
+    //possibly doubles
+    private func find_energy_cost(preheat_energy: Int, idle_energy_rate: Int, fan_energy_rate: Int) -> Int{
+        
+        //still need: winter_rate, summer_rate, hours_on_peak_pricing, hours_on_partpeak_pricing, partpeak_price, hours_on_offpeak_pricing, offpeak_price
+        //also: hours_on_partpeak_pricing(winter), hours_on_offpeak_pricing(winter)
+        
+        var gas_energy = preheat_energy * days_in_operation + (ideal_run_hours * idle_energy_rate)
+        var gas_cost = gas_energy / 99976.1 * (winter_rate + summer_rate) / 2
+        
+        //not sure what this is for
+        //var electric_energy = ideal_run_hours * fan_energy_rate
+        
+        //Electric Cost:
+        
+        var summer = hours_on_peak_pricing * fan_energy_rate * peak_price + hours_on_partpeak_pricing * fan_energy_rate * partpeak_price + hours_on_offpeak_pricing * fan_energy_rate * offpeak_price
+        
+        var winter: hours_on_partpeak_pricing * fan_energy_rate * partpeak price + hours_on_offpeak_pricing * fan_energy_rate * offpeak_price
+        
+        var total_electric = summer + winter
+        
+        var total_cost = total_electric + gas_cost
+        
+
+    }
+    
+    private func is_energy_star(model_number:String, company: String, file_name: String) -> BooleanType {
+        let rows = open_csv(filename: file_name)
+        
+        for row in rows! {
+            
+            if row["company"] != company {
+                continue
+            }
+            if row["model_number"] != model_number { //model_number must be revised. Not sure what it should be
+                continue
+            }
+            return true
+            
+        }
+        
+        return false
+    }
+    
 
     func __add_plug_feature(values:Dictionary<String, String>) {
         
@@ -317,6 +481,7 @@ class Room: Audit {
         
         return hours_per_year * total_watts
     }
+    
     
 }
 
