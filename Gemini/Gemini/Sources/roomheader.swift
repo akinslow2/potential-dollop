@@ -240,6 +240,7 @@ class Room: Audit {
     //The parameter room_type needs to provided to the user from watts_per_sqft.csv (it is in the first column)
     //That way we can guarantee that one choice will match
     private func fluorescent_lighting_watts (model_number:String) -> Int {
+        //Did this work?
         
         var in_range = true
         
