@@ -10,26 +10,78 @@ import UIKit
 
 class ZoneSpecsViewController: UIViewController {
 
+    var spec = ""
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var textField: UITextField!
+    
+    @IBAction func donePressed(_ sender: Any) {
+        
+        if (textField.text?.isEmpty)! {
+            
+            let alert_controller = UIAlertController(title: "Empty name", message: "Please provide a value", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert_controller.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in
+                
+                self.dismiss(animated: true, completion: nil)
+                
+            }))
+            
+            self.present(alert_controller, animated: true, completion: nil)
+            
+        } else {
+            
+            performSegue(withIdentifier: "toFeatureTable", sender: self)
+            
+        }
+        
+    }
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
+        
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        
+        label.text = spec
+        
     }
     
-
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+     
+     Function: touchesBegan
+     -------------------------
+     Returns normal control to the view after
+     a touch outside of the displayed keyboard
+     
+     */
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        self.view.endEditing(true)
+        
     }
-    */
+    
+    /*
+     
+     Function: textFieldShouldReturn
+     --------------------------------
+     Returns normal control to the view a user
+     presses "return" on the keyboard
+     
+     */
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        
+        return true
+        
+    }
+    
 
 }

@@ -6,11 +6,11 @@
 //  Copyright © 2017 Jordan Rosen-Kaplan. All rights reserved.
 //
 
+let feature_references = ["Lighting": "lighting_database", "Combination Oven": "combination_ovens", "Convection Oven": "convection_ovens", "Conveyor Oven": "conveyor_ovens", "Dishwasher": "dishwashers", "Freezer": "freezers", "Fryer": "fryers", "Glass Door Refrigerator": "glass_door_refrig", "Griddle": "griddles", "Hot Food Cabinet": "hfcs", "Ice Maker": "ice_makers", "Pre-Rinser": "pre-rinse", "Rack Oven": "rack_ovens", "Refrigerator": "refrigerators", "Solid Door Freezer": "solid_door_freezers", "Solid Door Refrigerator": "solid_door_refrigerator", "Steam Cooker": "steam_cookers"]
+
 import Foundation
 
 class Room: Audit {
-    
-    let feature_references = {"Lighting": "lighting_database", 
     
     var lighting = Array<Dictionary<String, String>>()
     var hvac = Array<Dictionary<String, String>>()

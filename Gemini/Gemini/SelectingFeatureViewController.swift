@@ -11,7 +11,6 @@ import UIKit
 class SelectingFeatureViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var pickerView: UIPickerView!
-    let features = ["Lighting", "Rack Oven", "Combination Oven", "Convection Oven", "Conveyor Oven", "Ice Maker", "Freezer", "Glass Door Refrigerator", "Solid Door Refrigerator", "Hot Food Cabinet", "Fryer", "Steam Cooker", "Griddle", "TV", "A/C", "Motor", "Lamp", "Walk-in Refrigeration Fan"]
     var selectedFeature = ""
     
     @IBAction func addFeature(_ sender: Any) {
@@ -69,19 +68,19 @@ class SelectingFeatureViewController: UIViewController, UIPickerViewDelegate, UI
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-        return features.count
+        return feature_references.count
         
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        return features[row]
+        return Array(feature_references.keys)[row]
         
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        selectedFeature = features[row]
+        selectedFeature = Array(feature_references.keys)[row]
         
     }
 
@@ -92,6 +91,12 @@ class SelectingFeatureViewController: UIViewController, UIPickerViewDelegate, UI
             let auditInfoViewController = segue.destination as! AuditInfoViewController
             
             auditInfoViewController.feature = selectedFeature
+            
+        } else if segue.identifier == "toZoneSpecs" {
+            
+            let zoneSpecsViewController = segue.destination as! ZoneSpecsViewController
+            
+            zoneSpecsViewController.spec = selectedFeature
             
         }
         

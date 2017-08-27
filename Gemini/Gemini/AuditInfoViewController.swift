@@ -10,6 +10,7 @@ import UIKit
 
 class AuditInfoViewController: UIViewController {
 
+    @IBOutlet weak var companyTextField: UITextField!
     @IBOutlet weak var modelNumberTextField: UITextField!
     @IBOutlet weak var productionLabel: UILabel!
     @IBOutlet weak var sizeLabel: UILabel!
@@ -19,6 +20,23 @@ class AuditInfoViewController: UIViewController {
     
     var feature = ""
     
+    func is_energy_star(model_number: String, company: String, file_name: String) -> Bool {
+        let rows = open_csv(filename: file_name)
+        
+        for row in rows! {
+            
+            if row["company"] != company {
+                continue
+            }
+            if row["model_number"] != model_number { //model_number must be revised. Not sure what it should be
+                continue
+            }
+            return true
+            
+        }
+        
+        return false
+    }
     
     override func viewDidLoad() {
         
@@ -39,11 +57,13 @@ class AuditInfoViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
-        
+    
     }
     
     @IBAction func searchForModel(_ sender: Any) {
         
+        
+        let found = _is_energy_star(is_energy_star(model_number: modelNumberTextField.text!, company: companyTextField.text!, file_name: feature_references[feature]!))
         //if found, 
         //add to map/diction/room
         //calculate retrofit? (it found, it is ideal?)
