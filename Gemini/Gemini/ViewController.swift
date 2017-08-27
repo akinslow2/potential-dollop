@@ -8,12 +8,23 @@
 
 import UIKit
 
-var audit = Audit()
+var audit = Audit(audit_name_param: "A")
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textField: UITextField!
     
+    /*
+     
+     Function: preauditButtonPressed
+     -----------------------------
+     When "preaudit" pressed, checks to ensure
+     name is not empty, loads old inputs for the
+     preaudit if they exist
+     
+     SEGUE~ to Table View Controller
+     
+     */
     @IBAction func preauditButtonPressed(_ sender: Any) {
         
         if (textField.text?.isEmpty)! {
@@ -32,7 +43,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
             audit.outputs["filename"] = textField.text!
             
-            audit.set_name(audit_name_param: textField.text!)
+            audit.change_name(audit_name_param: textField.text!)
             
             //Reload old inputs if they exist
         
@@ -42,6 +53,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    /*
+     
+     Function: auditButtonPressed
+     -----------------------------
+     When "audit" pressed, checks to ensure
+     name is not empty and record exists of preaudit
+     
+     SEGUE~ to Audit Table View Controller
+     
+     */
     @IBAction func auditButtonPressed(_ sender: Any) {
         
         if (textField.text?.isEmpty)! {
@@ -58,11 +79,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
         } else {
             
-            audit.set_name(audit_name_param: textField.text!)
+            audit.change_name(audit_name_param: textField.text!)
         
             audit.retrieve_data()
             
-            //Uncomment this when saving actually works
+            /* Uncomment this when saving actually works */
             
 //            if audit.outputs.count == 0 {
 //                
@@ -79,18 +100,35 @@ class ViewController: UIViewController, UITextFieldDelegate {
 //            } else {
             
                 performSegue(withIdentifier: "toAudit", sender: nil)
-            //}
+//            }
             
         }
         
     }
     
+    /*
+     
+     Function: touchesBegan
+     -------------------------
+     Returns normal control to the view after
+     a touch outside of the displayed keyboard
+     
+     */
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         self.view.endEditing(true)
         
     }
     
+    
+    /*
+     
+     Function: textFieldShouldReturn
+     --------------------------------
+     Returns normal control to the view a user
+     presses "return" on the keyboard
+     
+     */
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         textField.resignFirstResponder()
@@ -99,14 +137,27 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    /*
+     
+     Function: viewDidLoad
+     -------------------------
+     Loads view
+     
+     
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
+    /*
+     
+     Function: didReceiveMemoryWarning
+     --------------------------------
+     Memory warning. Should clear storage here.
+     
+     */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }

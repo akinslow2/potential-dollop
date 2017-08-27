@@ -11,6 +11,9 @@ import UIKit
 class SelectingFeatureViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var pickerView: UIPickerView!
+    let features = ["Lighting", "Rack Oven", "Combination Oven", "Convection Oven", "Conveyor Oven", "Ice Maker", "Freezer", "Glass Door Refrigerator", "Solid Door Refrigerator", "Hot Food Cabinet", "Fryer", "Steam Cooker", "Griddle", "TV", "A/C", "Motor", "Lamp", "Walk-in Refrigeration Fan"]
+    var selectedFeature = ""
+    
     @IBAction func addFeature(_ sender: Any) {
         
         if selectedFeature == "" {
@@ -32,21 +35,30 @@ class SelectingFeatureViewController: UIViewController, UIPickerViewDelegate, UI
         }
         
     }
-    
-    let features = ["Lighting", "Rack Oven", "Combination Oven", "Convection Oven", "Conveyor Oven", "Ice Maker", "Freezer", "Glass Door Refrigerator", "Solid Door Refrigerator", "Hot Food Cabinet", "Fryer", "Steam Cooker", "Griddle", "TV", "A/C", "Motor", "Lamp", "Walk-in Refrigeration Fan"]
-    var selectedFeature = ""
 
+    /*
+     
+     Function: viewDidLoad
+     -------------------------
+     Loads view, sets delegates
+     and dataSource for picker
+     
+     
+     */
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
         pickerView.dataSource = self
+        
         pickerView.delegate = self
-
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
+        
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -73,7 +85,6 @@ class SelectingFeatureViewController: UIViewController, UIPickerViewDelegate, UI
         
     }
 
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toSpecs" {

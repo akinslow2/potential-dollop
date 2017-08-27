@@ -14,15 +14,32 @@ class TableViewController: UITableViewController {
     
     var output = Dictionary<String, String>()
     var preaudit_inputs = Array<Dictionary<String, String>>()
-    let preaudit_entries = ["Business Name", "Business Address", "Client Interviewed Name", "Client Interviewed Position", "Main Client Name", "Main Client Position", "Main Client Email", "Main Client Phone Number", "Total Square Footage", "Facility Type", "Age Of Building", "Age Of Lighting", "Age Of Lighting Controls", "Age Of HVAC", "Age Of HVAC Controls", "Age Of Kitchen Equipment", "Lighting Maintenance Interval", "HVAC Maintenance Interval", "Kitchen Equipment Maintenance Interval", "Upgrades Budget", "Expected ROI", "Utility Company", "Rate Structure Electric", "Rate Structure Gas", "Date Of Interview", "Auditors Names", "Notes"]
     var activeDetail = ""
     
+    let preaudit_entries = ["Business Name", "Business Address", "Client Interviewed Name", "Client Interviewed Position", "Main Client Name", "Main Client Position", "Main Client Email", "Main Client Phone Number", "Total Square Footage", "Facility Type", "Age Of Building", "Age Of Lighting", "Age Of Lighting Controls", "Age Of HVAC", "Age Of HVAC Controls", "Age Of Kitchen Equipment", "Lighting Maintenance Interval", "HVAC Maintenance Interval", "Kitchen Equipment Maintenance Interval", "Upgrades Budget", "Expected ROI", "Utility Company", "Rate Structure Electric", "Rate Structure Gas", "Date Of Interview", "Auditors Names", "Notes"]
+    
+    
+    /*
+     
+     Function: viewDidLoad
+     -------------------------
+     Loads view and calls define_preaudit_inputs()
+     
+     
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         define_preaudit_inputs()
         
     }
-    
+    /*
+ 
+    Function: define_preaudit_inputs
+    ----------------------------------
+    Sets indexed elements of preaudit_entries
+    to the keys of the dictionary preaudit_inputs
+ 
+    */
     func define_preaudit_inputs() {
         
         var i = 0
@@ -36,25 +53,55 @@ class TableViewController: UITableViewController {
         }
         
     }
-
+    
+    /*
+     
+     Function: didReceiveMemoryWarning
+     --------------------------------
+     Memory warning. Should clear storage here.
+     
+     */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
 
+    /*
+     
+     Function: numberOfSections
+     ----------------------------
+     Returns the number of columns in the table
+     
+     */
     override func numberOfSections(in tableView: UITableView) -> Int {
         
         return 1
         
     }
-
+    
+    /*
+     
+     Function: numberOfRowsInSection
+     --------------------------------
+     Returns the size of the number of inputs, 
+     according to the array, preaudit_entries
+     
+     */
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return preaudit_inputs.count
         
     }
 
-    
+    /*
+     
+     Function: cellForRowAt
+     ----------------------------
+     Sets text to indexed element of the array
+     preaudit_entries per row and adds a checkmark
+     if the input was valid.
+     
+     */
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
@@ -70,6 +117,15 @@ class TableViewController: UITableViewController {
         return cell
     }
     
+    /*
+     
+     Function: didSelectRowAt
+     ----------------------------
+     Sets activeDetail to the selected row
+     
+     SEGUE~ to Preaudit Detail View Controller
+     
+     */
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         activeDetail = preaudit_entries[indexPath.row]
@@ -77,7 +133,17 @@ class TableViewController: UITableViewController {
         performSegue(withIdentifier: "toPreauditDetail", sender: nil)
         
     }
-            
+    
+    /*
+     
+     Function: save
+     ----------------
+     Writes all preaudit inputs to audit.outputs, 
+     saves audit.outputs to memory
+     
+     SEGUE~ to initial view controller
+     
+     */
     @IBAction func save(_ sender: Any) {
         
         for dict in preaudit_inputs {
@@ -92,10 +158,18 @@ class TableViewController: UITableViewController {
         
         audit.save_data()
         
-        UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
+        performSegue(withIdentifier: "toBeginning", sender: self)
         
     }
     
+    /*
+     
+     Function: prepare for segue
+     ----------------------------
+     Sets activeDetail for PreauditDetail
+     as well as indexPath
+     
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toPreauditDetail" {
@@ -113,56 +187,5 @@ class TableViewController: UITableViewController {
         }
         
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        print(filledRows)
-    }
-    
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
