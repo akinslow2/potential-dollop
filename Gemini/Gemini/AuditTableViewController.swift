@@ -11,12 +11,8 @@ import UIKit
 class AuditTableViewController: UITableViewController {
     
     var items = Array<String>()
-    //let feature_types = ["Lighting", "Heating", "Ventilation", "Air Conditioning", "Convection Oven", "TV"] //Add more values here!
-    //var selectedValue = ""
     @IBOutlet var table: UITableView!
-    //let lighting_items = ["Measured Lux", "Room Type", "Room Area", "Units in Lumens?"]
-    //let hvac_items = []
-    //let room_items = []
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,23 +26,6 @@ class AuditTableViewController: UITableViewController {
         
         table.reloadData()
         
-//        print(selectedValue)
-//        
-//        if selectedValue == "Lighting zone" {
-//                        
-//            items = lighting_items
-//            
-//        } else if selectedValue == "HVAC zone" {
-//            
-//            //items = hvac_items
-//            
-//        } else {
-//            
-//            //items = room_items
-//            
-//        }
-//        
-//        table.reloadData()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -71,25 +50,4 @@ class AuditTableViewController: UITableViewController {
         return cell
     }
     
-
-    
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        
-//        if items.count > 1 {
-//            
-//            if segue.identifier == "toAuditDetail" {
-//                
-//                let auditDetailViewController = segue.destination as! AuditDetailViewController
-//                
-//                auditDetailViewController.items = feature_types
-//                
-//            }
-//            
-//        }
-//        
-//    }
 }

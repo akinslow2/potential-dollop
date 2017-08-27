@@ -16,6 +16,7 @@ class AuditInfoViewController: UIViewController {
     @IBOutlet weak var productionTextField: UITextField!
     @IBOutlet weak var sizeTextField: UITextField!
     @IBOutlet weak var doneButton: UIButton!
+    var feature = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,9 @@ class AuditInfoViewController: UIViewController {
     }
     
     @IBAction func donePressed(_ sender: Any) {
+        
+        
+        
     }
 
     /*

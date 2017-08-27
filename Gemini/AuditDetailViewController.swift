@@ -17,21 +17,7 @@ class AuditDetailViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     @IBAction func addButtonPressed(_ sender: Any) {
         
-        let name = nameField.text!
-        
-        if name == "" {
-            
-            let alert_controller = UIAlertController(title: "Empty name", message: "Please provide the identifying name", preferredStyle: UIAlertControllerStyle.alert)
-            
-            alert_controller.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in
-                
-                self.dismiss(animated: true, completion: nil)
-                
-            }))
-            
-            self.present(alert_controller, animated: true, completion: nil)
-            
-        }
+       
         
     }
 
@@ -48,14 +34,38 @@ class AuditDetailViewController: UIViewController, UIPickerViewDataSource, UIPic
         super.didReceiveMemoryWarning()
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        let name = nameField.text!
+        
+        if name == "" && identifier == "toFeatures" {
+            
+            let alert_controller = UIAlertController(title: "Empty name", message: "Please provide the identifying name", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert_controller.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in
+                
+                self.dismiss(animated: true, completion: nil)
+                
+            }))
+            
+            self.present(alert_controller, animated: true, completion: nil)
+            
+            return false
+            
+        }
+        
+        return true
+    
+    }
+    
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toFeatures" {
             
-            let auditTableViewController = segue.destination as! AuditTableViewController
-            
-            auditTableViewController.items.append(selectedValue)
+//            let auditTableViewController = segue.destination as! AuditTableViewController
+//            
+//            auditTableViewController.items.append(nameField.text! + " " + selectedValue)
             
             let featureTableViewController = segue.destination as! FeatureTableViewController
             
@@ -72,10 +82,8 @@ class AuditDetailViewController: UIViewController, UIPickerViewDataSource, UIPic
                 featureTableViewController.curr_features = featureTableViewController.room_features
                 
             }
-            
+        
         }
-        
-        
         
     }
     
