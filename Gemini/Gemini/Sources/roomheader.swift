@@ -10,6 +10,8 @@ import Foundation
 
 class Room: Audit {
     
+    let feature_references = {"Lighting": "lighting_database", 
+    
     var lighting = Array<Dictionary<String, String>>()
     var hvac = Array<Dictionary<String, String>>()
     var plug_load = Array<Dictionary<String, String>>()
@@ -228,7 +230,7 @@ class Room: Audit {
                 continue
             }
             
-            new_dict[row["model_number"]] = find_energy_cost(preheat_energy: Int(row["preheat_energy"]), idle_energy_rate: Int(row["idle_energy_rate"]), fan_energy_rate: Int(row["fan_energy_rate"]) )
+            new_dict[row["model_number"]!] = find_energy_cost(preheat_energy: Int(row["preheat_energy"]!)!, idle_energy_rate: Int(row["idle_energy_rate"]!)!, fan_energy_rate: Int(row["fan_energy_rate"]!)!)
             return ""
             
         }
@@ -264,7 +266,7 @@ class Room: Audit {
 
     }
     
-    private func is_energy_star(model_number:String, company: String, file_name: String) -> BooleanType {
+    func is_energy_star(model_number: String, company: String, file_name: String) -> Bool {
         let rows = open_csv(filename: file_name)
         
         for row in rows! {
