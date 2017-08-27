@@ -12,7 +12,7 @@ class AuditTableViewController: UITableViewController {
     
     var items = ["Select type of zone"]
     var selectedValue = ""
-    
+    @IBOutlet var table: UITableView!
     let lighting_items = ["Measured Lux", "Room Type", "Room Area", "Units in Lumens?"]
     //let hvac_items = []
     //let room_items = []
@@ -24,7 +24,8 @@ class AuditTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+                self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,6 +33,8 @@ class AuditTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        print(selectedValue)
         
         if selectedValue == "Lighting zone" {
             
@@ -49,7 +52,7 @@ class AuditTableViewController: UITableViewController {
             
         }
         
-        tableView.reloadData()
+        table.reloadData()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -92,7 +95,7 @@ class AuditTableViewController: UITableViewController {
             
             if segue.identifier == "toAuditDetail" {
                 
-                //set values here!
+                //set values for input
                 
             }
             

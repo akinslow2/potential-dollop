@@ -68,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G1F-EK-Ogf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2468" y="-477"/>
+            <point key="canvasLocation" x="-2809" y="-477"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="di0-1v-zGz">
@@ -95,6 +95,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="KfG-jN-rj6"/>
                     <connections>
+                        <outlet property="table" destination="RJg-Cj-in3" id="Nd8-Is-wbd"/>
                         <segue destination="pxg-g9-MJQ" kind="show" identifier="toAuditDetail" id="34K-0a-Ygf"/>
                     </connections>
                 </tableViewController>

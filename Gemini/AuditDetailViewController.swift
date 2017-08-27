@@ -15,7 +15,7 @@ class AuditDetailViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var button: UIButton!
     var items = ["Lighting zone", "HVAC zone", "Room"]
-    var selectedValue = ""
+    var selectedValue = "Lighting zone"
 
     
     override func viewDidLoad() {
@@ -37,7 +37,7 @@ class AuditDetailViewController: UIViewController, UIPickerViewDataSource, UIPic
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "backToAuditDetail" {
+        if segue.identifier == "backToAuditTable" {
             
             let auditTableViewController = segue.destination as! AuditTableViewController
             
@@ -70,7 +70,7 @@ class AuditDetailViewController: UIViewController, UIPickerViewDataSource, UIPic
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         selectedValue = items[row]
-        
+                
     }
     
 
