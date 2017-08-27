@@ -15,6 +15,7 @@ class AuditInfoViewController: UIViewController {
     @IBOutlet weak var sizeLabel: UILabel!
     @IBOutlet weak var productionTextField: UITextField!
     @IBOutlet weak var sizeTextField: UITextField!
+    @IBOutlet weak var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ class AuditInfoViewController: UIViewController {
         sizeLabel.isHidden = true
         productionTextField.isHidden = true
         sizeTextField.isHidden = true
+        doneButton.isHidden = true
 
         // Do any additional setup after loading the view.
     }
@@ -46,6 +48,8 @@ class AuditInfoViewController: UIViewController {
         
     }
     
+    @IBAction func donePressed(_ sender: Any) {
+    }
 
     /*
     // MARK: - Navigation

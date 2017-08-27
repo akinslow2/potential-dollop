@@ -72,10 +72,19 @@
                                     <action selector="searchForModel:" destination="6Mw-Im-Dbh" eventType="touchUpInside" id="pEH-8X-hTg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O96-1F-bol">
+                                <rect key="frame" x="322" y="319" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="donePressed:" destination="6Mw-Im-Dbh" eventType="touchUpInside" id="tk6-53-LVp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="doneButton" destination="O96-1F-bol" id="cwX-fV-wNT"/>
                         <outlet property="modelNumberTextField" destination="1bO-Bv-Icl" id="Jny-kN-SxU"/>
                         <outlet property="productionLabel" destination="ml7-U8-f08" id="PyC-Wy-K52"/>
                         <outlet property="productionTextField" destination="iTB-dI-ELo" id="hIy-Ix-2gt"/>
