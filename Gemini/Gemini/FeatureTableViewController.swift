@@ -8,6 +8,8 @@
 
 import UIKit
 
+let feature_references = ["Lighting": "lighting_database", "Combination Oven": "combination_ovens", "Convection Oven": "convection_ovens", "Conveyor Oven": "conveyor_ovens", "Dishwasher": "dishwashers", "Freezer": "freezers", "Fryer": "fryers", "Glass Door Refrigerator": "glass_door_refrig", "Griddle": "griddles", "Hot Food Cabinet": "hfcs", "Ice Maker": "ice_makers", "Pre-Rinser": "pre-rinse", "Rack Oven": "rack_ovens", "Refrigerator": "refrigerators", "Solid Door Freezer": "solid_door_freezers", "Solid Door Refrigerator": "solid_door_refrigerator", "Steam Cooker": "steam_cookers"]
+
 class FeatureTableViewController: UITableViewController {
     
     @IBOutlet var table: UITableView!
@@ -15,6 +17,7 @@ class FeatureTableViewController: UITableViewController {
     let lighting_features = ["Room type", "Area", "Units"] // "
     let room_features = ["Room type", "Area", "Lighting Units", "Number of Outlets"] // "
     var curr_features = Array<String>()
+    var curr_spec: String?
     
     /*
      
@@ -109,6 +112,8 @@ class FeatureTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        curr_spec = curr_features[indexPath.row]
+        
         performSegue(withIdentifier: "toZoneSpecs", sender: self)
         
     }
@@ -124,8 +129,29 @@ class FeatureTableViewController: UITableViewController {
         
         if segue.identifier == "toZoneSpecs" {
         
-            //let
+            let zoneSpecsViewController = segue.destination as! ZoneSpecsViewController
+            
+            zoneSpecsViewController.spec = curr_spec!
         
+        } else if segue.identifier == "toFeatureSpecs" {
+            
+            let auditInfoViewController = segue.destination as! AuditInfoViewController
+            
+            if curr_features == hvac_features {
+            
+                auditInfoViewController.feature = "HVAC"
+                
+            } else {
+                
+                auditInfoViewController.feature = "Lighting"
+                
+            }
+            
+            
+        } else if segue.identifier == "selectFeature" {
+            
+            //May need to add some specification for HVAC vs. Room space here at a later point
+            
         }
  
     }

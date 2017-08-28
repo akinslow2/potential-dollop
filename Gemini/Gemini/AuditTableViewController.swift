@@ -22,7 +22,6 @@ class AuditTableViewController: UITableViewController, save_room {
      -------------------------
      Loads view
      
-     
      */
     override func viewDidLoad() {
         super.viewDidLoad()

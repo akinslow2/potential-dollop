@@ -54,11 +54,13 @@ class AuditInfoViewController: UIViewController {
      */
     func open_csv(filename: String) -> Array<Dictionary<String, String>>! {
         
+        let full_filename = "CSVs/" + filename
+        
         var output_file_string = ""
         
         do {
             
-            guard let path = Bundle.main.path(forResource: filename, ofType: "txt")
+            guard let path = Bundle.main.path(forResource: full_filename, ofType: "txt")
                 
                 else { return nil }
             
@@ -74,14 +76,17 @@ class AuditInfoViewController: UIViewController {
         
         let csv = CSwiftV(with: output_file_string)
         
-        
         return csv.keyedRows!
         
     }
     
     func is_energy_star(model_number: String, company: String, file_name: String) -> Bool {
         
-        let rows = open_csv(filename: file_name)
+        print(feature)
+        
+        let reference = feature_references[feature]!
+        
+        let rows = open_csv(filename: reference)
         
         for row in rows! {
             
