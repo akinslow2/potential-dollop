@@ -80,16 +80,22 @@ class AuditInfoViewController: UIViewController {
     }
     
     func is_energy_star(model_number: String, company: String, file_name: String) -> Bool {
+        
         let rows = open_csv(filename: file_name)
         
         for row in rows! {
             
             if row["company"] != company {
+                
                 continue
             }
+            
             if row["model_number"] != model_number { //model_number must be revised. Not sure what it should be
+                
                 continue
+                
             }
+            
             return true
             
         }
@@ -121,39 +127,42 @@ class AuditInfoViewController: UIViewController {
     
     @IBAction func searchForModel(_ sender: Any) {
         
-        //suspend control
+        if !(modelNumberTextField.text?.isEmpty)! && !(companyTextField.text?.isEmpty)! {
         
-        let found = is_energy_star(model_number: modelNumberTextField.text!, company: companyTextField.text!, file_name: feature_references[feature]!)
-        
-        if found {
+            let found = is_energy_star(model_number: modelNumberTextField.text!, company: companyTextField.text!, file_name: feature_references[feature]!)
             
-            //add type here to room class
-            //calculate retrofit
+            if found {
+                
+                //add type here to room class
+                
+                //calculate retrofit
+                
+                performSegue(withIdentifier: "backToFeatures", sender: self)
+                
+            } else {
+                
+                productionLabel.isHidden = false
+                
+                sizeLabel.isHidden = false
+                
+                productionTextField.isHidden = false
+                
+                sizeTextField.isHidden = false
+                
+                doneButton.isHidden = false
+                
+                //add to room
+                
+                //calculate retrofit
+            }
             
-            performSegue(withIdentifier: "backToFeatures", sender: self)
-            
-        } else {
-            
-            productionLabel.isHidden = false
-            
-            sizeLabel.isHidden = false
-            
-            productionTextField.isHidden = false
-            
-            sizeTextField.isHidden = false
-            
-            doneButton.isHidden = false
-            
-            //add to room
-            
-            //calculate retrofit
         }
         
     }
     
     @IBAction func donePressed(_ sender: Any) {
         
-        if productionTextField.text?.isEmpty || sizeTextField.text?.isEmpty {
+        if (productionTextField.text?.isEmpty)! || (sizeTextField.text?.isEmpty)! {
             
             let alert_controller = UIAlertController(title: "Empty value(s)", message: "Please provide values", preferredStyle: UIAlertControllerStyle.alert)
             

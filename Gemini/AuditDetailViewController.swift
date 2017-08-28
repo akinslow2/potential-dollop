@@ -26,8 +26,11 @@ class AuditDetailViewController: UIViewController, UIPickerViewDataSource, UIPic
      
      */
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
         pickerView.dataSource = self
+        
         pickerView.delegate = self
         
     }
@@ -40,7 +43,9 @@ class AuditDetailViewController: UIViewController, UIPickerViewDataSource, UIPic
      
      */
     override func didReceiveMemoryWarning() {
+        
         super.didReceiveMemoryWarning()
+        
     }
     
     /*
