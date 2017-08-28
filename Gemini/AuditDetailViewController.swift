@@ -8,13 +8,20 @@
 
 import UIKit
 
+protocol save_room {
+    
+    func add_room(room_name:String)
+    
+}
+
 class AuditDetailViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var nameField: UITextField!
     var items = ["Lighting zone", "HVAC zone", "Room"]
     var selectedValue = "Lighting zone"
-    var roomTable = AuditTableViewController()
+    var delegate: save_room?
+    //var roomTable = AuditTableViewController()
 
     /*
      
@@ -93,7 +100,7 @@ class AuditDetailViewController: UIViewController, UIPickerViewDataSource, UIPic
         
         if segue.identifier == "toFeatures" {
             
-            roomTable.items.append(nameField.text! + " " + selectedValue)
+            delegate?.add_room(room_name: nameField.text! + "-" + selectedValue)
             
             let featureTableViewController = segue.destination as! FeatureTableViewController
             

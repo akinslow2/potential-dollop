@@ -8,10 +8,13 @@
 
 import UIKit
 
-class AuditTableViewController: UITableViewController {
+class AuditTableViewController: UITableViewController, save_room {
     
     var items = Array<String>()
+    var new_room_sent: String?
     @IBOutlet var table: UITableView!
+    
+    
     
     /*
      
@@ -95,20 +98,15 @@ class AuditTableViewController: UITableViewController {
     
     /*
  
-    Function: prepare for segue
+    Function: add_room
     ------------------------------------
-    Allows the next view controller to modify the table of zones
+    Conforms to protocol save_room
+    Adds room to table
  
     */
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    func add_room(room_name: String) {
         
-        if segue.identifier == "addRoom" {
-            
-            let auditDetailViewController = segue.destination as! AuditDetailViewController
-            
-            auditDetailViewController.roomTable = self
-            
-        }
+        items.append(room_name)
         
     }
     
