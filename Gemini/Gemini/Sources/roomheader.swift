@@ -380,7 +380,7 @@ class Room: Audit {
             if row["company"] != company {
                 continue
             }
-            if row["model_number"] != model_number { //model_number must be revised. Not sure what it should be
+            if row["model_number"] != model_number { //model_number must be revised. Not sure what it should be, depends on the csv
                 continue
             }
             return true

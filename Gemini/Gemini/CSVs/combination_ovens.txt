@@ -1,5 +1,4 @@
-﻿													
-					Convection Mode				Steam Mode					
+﻿
 Company	"Model
 Number"	"Size
 (Steam Pans)"	"Fuel
