@@ -136,17 +136,18 @@ class Room: Audit {
         } else if type == "ice_maker" {
             __compute__icemaker(model_number: model_number, company: company)
         } else if type == "freezer" {
-            
+            __compute__icemaker(model_number: model_number, company: company)
         } else if type == "refrigerator" {
+            __compute__icemaker(model_number: model_number, company: company)
             //need to check solid door or glass door
         } else if type == "hot_food_cabinets" {
-            
+            __compute__icemaker(model_number: model_number, company: company)
         } else if type == "fryer" {
-            
+            __compute__icemaker(model_number: model_number, company: company)
         } else if type == "steam_cookers" {
-            
+            __compute__icemaker(model_number: model_number, company: company)
         } else if type == "griddles" {
-            
+            __compute__icemaker(model_number: model_number, company: company)
         }
         
     }
@@ -213,23 +214,23 @@ class Room: Audit {
     }
     
     //For this part, the best model might not have the exact size and capacity, so we may have to have a way to get close
-    //To generalize this method, it may not be prod_capactiy and size each time
     private func find_best_model(prod_capacity: String, size: String, file_name: String) -> String{
+
+        
         let rows = open_csv(filename: file_name)
         
         var new_dict = Dictionary<String, Int>()
-        
-        
         
         for row in rows! {
             
             if row["size"] != size {
                 continue
             }
-            if row["prod_capacity"] != prod_capacity { //model_number must be revised. Not sure what it should be
+            if row["prod_capacity"] != prod_capacity {
                 continue
             }
             
+            //find energy cost will be different for every type of appliance
             new_dict[row["model_number"]!] = find_energy_cost(preheat_energy: Int(row["preheat_energy"]!)!, idle_energy_rate: Int(row["idle_energy_rate"]!)!, fan_energy_rate: Int(row["fan_energy_rate"]!)!)
             return ""
             
@@ -239,10 +240,116 @@ class Room: Audit {
         return ""
     }
     
+    //this is a much more generalized version but we have the same issue with the multiple different find_energy_costs
+    /*private func find_best_model(required1: String, required2: String, required3: String, required4: String, required5: String, type: String, file_name: String) -> String{
+     var category1 = ""
+     var category2 = ""
+     var category3 = ""
+     var category4 = ""
+     var category5 = ""
+     
+     if type == "rack_oven" {
+     category1 = "prod_capacity"
+     category2 = "size"
+     //category3 = "fuel_type"
+     } else if type == "convection_oven" {
+     category1 = "size"
+     category2 = "capacity"
+     category3 = "fuel_type"
+     } else if type == "combination_oven" {
+     category1 = "size"
+     category2 = "fuel_type"
+     //category3 =
+     } else if type == "conveyor_ovens" {
+     category1 = "oven_length"
+     category2 = "conveyor_width"
+     //category3 =
+     } else if type == "ice_maker" {
+     category1 = "ice_harvest_rate"
+     category2 = "energy_use_rate"
+     category3 = "machine_rate"
+     category4 = "ice_type"
+     } else if type == "freezer" {
+     category1 = "total_volume"
+     category2 = "product_type"
+     category3 = "refrigerated_capacity_volume"
+     } else if type == "refrigerator" {
+     //need to check solid door or glass door
+     category1 = "total_volume"
+     category2 = "product_type"
+     category3 = "refigerated_capacity_volume"
+     } else if type == "hot_food_cabinets" {
+     category1 = "cabinet_volume"
+     category2 = "idle_energy_rate"
+     category3 = "size"
+     } else if type == "fryer" {
+     category1 = "vat_width"
+     category2 = "fuel_type"
+     category3 = "shortening_capacity"
+     category4 = "production_capacity"
+     } else if type == "steam_cookers" {
+     category1 = "fuel_type"
+     category2 = "production_capacity"
+     category3 = "water_use"
+     category4 = "pan_capacity"
+     category5 = "steamer_type"
+     } else if type == "griddles" {
+     category1 = "surface_area"
+     category2 = "nominal_width"
+     category3 = "single_or_double_sided"
+     category4 = "fuel_type"
+     }
+     
+     
+     
+     let rows = open_csv(filename: file_name)
+     
+     var new_dict = Dictionary<String, Int>()
+     
+     for row in rows! {
+     
+     if row[category1] != required1 {
+     continue
+     }
+     if row[category2] != required2 { //model_number must be revised. Not sure what it should be
+     continue
+     }
+     if required3 != "" {
+     if row[category3] != required3 {
+     continue
+     }
+     }
+     if required4 != "" {
+     if row[category4] != required3 {
+     continue
+     }
+     }
+     if required5 != "" {
+     if row[category5] != required3 {
+     continue
+     }
+     }
+     
+     new_dict[row["model_number"]!] = find_energy_cost(preheat_energy: Int(row["preheat_energy"]!)!, idle_energy_rate: Int(row["idle_energy_rate"]!)!, fan_energy_rate: Int(row["fan_energy_rate"]!)!)
+     return ""
+     
+     }
+     
+     //return the model number with the lowest cost
+     return ""
+     }*/
+
+    
     
     //most of the info needs to come from the bill, but some will come from the energy star csv
     //possibly doubles
+    //not sure how to get the bill stuff (hours and rates)
     private func find_energy_cost(preheat_energy: Int, idle_energy_rate: Int, fan_energy_rate: Int) -> Int{
+        
+        //operation hours per week * 52 = ideal run hours
+        //where do we get stuff from the bills?
+        
+        
         
         //still need: winter_rate, summer_rate, hours_on_peak_pricing, hours_on_partpeak_pricing, partpeak_price, hours_on_offpeak_pricing, offpeak_price
         //also: hours_on_partpeak_pricing(winter), hours_on_offpeak_pricing(winter)
@@ -262,7 +369,6 @@ class Room: Audit {
         var total_electric = summer + winter
         
         var total_cost = total_electric + gas_cost
-        
 
     }
     
