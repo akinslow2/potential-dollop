@@ -344,6 +344,8 @@ class Room: Audit {
     //most of the info needs to come from the bill, but some will come from the energy star csv
     //possibly doubles
     //not sure how to get the bill stuff (hours and rates)
+    
+    //This is mostly good for all ovens
     private func find_energy_cost(preheat_energy: Int, idle_energy_rate: Int, fan_energy_rate: Int) -> Int{
         
         //operation hours per week * 52 = ideal run hours
