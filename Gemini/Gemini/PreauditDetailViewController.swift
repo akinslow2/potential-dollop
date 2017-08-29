@@ -14,6 +14,7 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var label: UILabel!
+    var delegate: TableViewControllerDelegate?
     
     let gas_structures = Array<String>() //will be var with data
     let electric_structures = Array<String>() //will be var with data
@@ -23,6 +24,7 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
     var activeDetail = ""
     var selectedIndexPath = IndexPath()
     var selectedValueFromPicker = ""
+    var filledRows = Array<Int>()
     
     
     /*
@@ -210,7 +212,7 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
                 
                 validInput = true
                 
-                audit.outputs[activeDetail] = textField.text
+                delegate?.save_to_outputs(key: activeDetail, value: textField.text!)
                 
             }
             
@@ -218,7 +220,7 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
             
             validInput = true
             
-            audit.outputs[activeDetail] = datePicker.description
+            delegate?.save_to_outputs(key: activeDetail, value: datePicker.description)
             
         } else {
             
@@ -226,7 +228,7 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
                 
                 validInput = true
                 
-                audit.outputs[activeDetail] = selectedValueFromPicker
+                delegate?.save_to_outputs(key: activeDetail, value: selectedValueFromPicker)
                 
             }
             
@@ -251,6 +253,10 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
             if validInput {
                 
                 filledRows.append(selectedIndexPath.row)
+                
+                let tableViewController = segue.destination as! TableViewController
+                
+                tableViewController.filledRows = filledRows
                 
             }
             
@@ -385,7 +391,6 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
      */
     override func viewDidAppear(_ animated: Bool) {
         
-        print(activeDetail)
         selectedValueFromPicker = ""
         textField.isHidden = true
         pickerView.isHidden = true
@@ -405,21 +410,22 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
             
             pickerView.reloadAllComponents()
             
-            print(pickerView.numberOfComponents)
-            
         } else if activeDetail == "Business Name" || activeDetail == "Business Address" || activeDetail == "Client Interviewed Name" || activeDetail == "Clien Interviewed Position" || activeDetail == "Main Client Name" || activeDetail == "Main Client Position" || activeDetail == "Auditors Names" || activeDetail == "Notes" {
             
             textField.isHidden = false
+            
             textField.keyboardType = UIKeyboardType.default
             
         } else if activeDetail == "Main Client Email" {
             
             textField.isHidden = false
+            
             textField.keyboardType = UIKeyboardType.emailAddress
             
         } else {
             
             textField.isHidden = false
+            
             textField.keyboardType = UIKeyboardType.numberPad
         }
         
@@ -433,7 +439,9 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
      
      */
     override func didReceiveMemoryWarning() {
+        
         super.didReceiveMemoryWarning()
+        
     }
 
 }

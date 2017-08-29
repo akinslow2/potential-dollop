@@ -8,11 +8,36 @@
 
 import UIKit
 
-var audit = Audit(audit_name_param: "A")
+protocol ViewControllerDelegate {
+    
+    func save_dict_to_audit(key: String, value: String)
+    
+    func save_dictionary()
+    
+}
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, ViewControllerDelegate {
     
     @IBOutlet weak var textField: UITextField!
+    var audit: Audit?
+    
+    
+    /*
+    
+     Delegate protocols
+    
+    */
+    func save_dict_to_audit(key: String, value: String) {
+        
+        audit?.outputs[key] = value
+        
+    }
+    
+    func save_dictionary() {
+        
+        audit?.save_data()
+        
+    }
     
     /*
      
@@ -40,10 +65,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.present(alert_controller, animated: true, completion: nil)
             
         } else {
-        
-            audit.outputs["filename"] = textField.text!
             
-            audit.change_name(audit_name_param: textField.text!)
+            audit = Audit(audit_name_param: textField.text!)
+        
+            audit?.outputs["filename"] = textField.text!
             
             //Reload old inputs if they exist
         
@@ -79,9 +104,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
         } else {
             
-            audit.change_name(audit_name_param: textField.text!)
-        
-            audit.retrieve_data()
+            audit = Audit(audit_name_param: textField.text!)
+            
+            audit?.retrieve_data()
             
             /* Uncomment this when saving actually works */
             
@@ -137,6 +162,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+                
+        if segue.identifier == "toPreaudit" {
+            
+            let destinationNavController = segue.destination as! UINavigationController
+            
+            let tableViewController = destinationNavController.topViewController as! TableViewController
+            
+            tableViewController.delegate = self
+                        
+        }
+        
+    }
+    
     /*
      
      Function: viewDidLoad
@@ -146,7 +185,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
      
      */
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
     }
 
     /*
@@ -157,7 +198,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
      
      */
     override func didReceiveMemoryWarning() {
+        
         super.didReceiveMemoryWarning()
+        
     }
 
 }

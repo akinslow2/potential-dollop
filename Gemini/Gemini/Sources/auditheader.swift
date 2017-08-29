@@ -14,17 +14,10 @@ class Audit {
     var outputs = Dictionary<String, String>()
     var audit_name = ""
     var filename = ""
+    var room_names = Array<String>()
     
     init(audit_name_param: String) {
     
-        audit_name = audit_name_param
-        
-        filename = "data/" + audit_name + ".txt"
-        
-    }
-    
-    func change_name(audit_name_param: String) {
-        
         audit_name = audit_name_param
         
         filename = "data/" + audit_name + ".txt"
@@ -58,6 +51,8 @@ class Audit {
             
             if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
                 
+                print(outputs.description == "")
+                
                 let path = dir.appendingPathComponent(filename)
                 
                 try outputs.description.write(to: path, atomically: false, encoding: String.Encoding.utf8)
@@ -65,6 +60,12 @@ class Audit {
             }
         
         } catch { print("There was an error in saving")}
+        
+    }
+    
+    func add_room(name: String) {
+        
+        room_names.append(name)
         
     }
     

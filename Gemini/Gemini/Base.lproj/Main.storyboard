@@ -503,6 +503,7 @@
         <!--Preaudit-->
         <scene sceneID="2xh-OG-a5d">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MPr-1s-flM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="4W0-bR-TtK" customClass="TableViewController" customModule="Gemini" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="p0w-wn-9sD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -537,7 +538,6 @@
                         <segue destination="g3p-vH-O3d" kind="show" identifier="toBeginning" id="itc-ow-tWQ"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MPr-1s-flM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1345" y="-472"/>
         </scene>
@@ -622,6 +622,7 @@
         <!--Navigation Controller-->
         <scene sceneID="n2x-lI-Vtp">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bia-PF-lat" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="Ozm-Jl-Kcg" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DC4-y3-Hkl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -631,16 +632,15 @@
                         <segue destination="4W0-bR-TtK" kind="relationship" relationship="rootViewController" id="knL-EN-naq"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bia-PF-lat" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="508" y="-472"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="mZX-Xj-QMb"/>
-        <segue reference="CKF-OS-bt6"/>
-        <segue reference="MNR-4i-dSK"/>
-        <segue reference="fVE-Bc-BhZ"/>
-        <segue reference="hdg-EU-W9Z"/>
+        <segue reference="h81-Vo-Ew4"/>
+        <segue reference="KQM-YZ-9SJ"/>
+        <segue reference="knL-EN-naq"/>
+        <segue reference="itc-ow-tWQ"/>
     </inferredMetricsTieBreakers>
 </document>
