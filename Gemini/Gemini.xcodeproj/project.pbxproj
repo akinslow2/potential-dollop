@@ -21,6 +21,8 @@
 		2A5AA78F1F4D6256009140C0 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5AA78E1F4D6256009140C0 /* CSwiftV.swift */; };
 		2A66E7031F5263A400F86CFE /* AuditInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A66E7021F5263A400F86CFE /* AuditInfoViewController.swift */; };
 		2A66E7051F527D9F00F86CFE /* FeatureTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A66E7041F527D9F00F86CFE /* FeatureTableViewController.swift */; };
+		2A66E7071F52841B00F86CFE /* ZoneSpecsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A66E7061F52841B00F86CFE /* ZoneSpecsViewController.swift */; };
+		2A66E7091F52843200F86CFE /* SelectingFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A66E7081F52843200F86CFE /* SelectingFeatureViewController.swift */; };
 		2A81291B1F4CE01D009BCFB9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A81291A1F4CE01D009BCFB9 /* TableViewController.swift */; };
 		2A9526641F51D6DD0058B764 /* CSVs in Resources */ = {isa = PBXBuildFile; fileRef = 2A9526631F51D6DD0058B764 /* CSVs */; };
 		2A9526681F5206430058B764 /* AuditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9526671F5206430058B764 /* AuditTableViewController.swift */; };
@@ -45,6 +47,8 @@
 		2A5AA78E1F4D6256009140C0 /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSwiftV.swift; path = "CSwiftV-master/Sources/CSwiftV.swift"; sourceTree = "<group>"; };
 		2A66E7021F5263A400F86CFE /* AuditInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditInfoViewController.swift; sourceTree = "<group>"; };
 		2A66E7041F527D9F00F86CFE /* FeatureTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureTableViewController.swift; sourceTree = "<group>"; };
+		2A66E7061F52841B00F86CFE /* ZoneSpecsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoneSpecsViewController.swift; sourceTree = "<group>"; };
+		2A66E7081F52843200F86CFE /* SelectingFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectingFeatureViewController.swift; sourceTree = "<group>"; };
 		2A81291A1F4CE01D009BCFB9 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		2A9526631F51D6DD0058B764 /* CSVs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CSVs; sourceTree = "<group>"; };
 		2A9526671F5206430058B764 /* AuditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditTableViewController.swift; sourceTree = "<group>"; };
@@ -82,13 +86,15 @@
 			isa = PBXGroup;
 			children = (
 				2A4B6EA31F4BD2F700B1CD3B /* AppDelegate.swift */,
-				2A4B6EA71F4BD2F700B1CD3B /* Main.storyboard */,
-				2A4B6EA51F4BD2F700B1CD3B /* ViewController.swift */,
-				2A81291A1F4CE01D009BCFB9 /* TableViewController.swift */,
 				2A5AA77B1F4D36D2009140C0 /* PreauditDetailViewController.swift */,
+				2A81291A1F4CE01D009BCFB9 /* TableViewController.swift */,
+				2A4B6EA51F4BD2F700B1CD3B /* ViewController.swift */,
+				2A4B6EA71F4BD2F700B1CD3B /* Main.storyboard */,
 				2A9526671F5206430058B764 /* AuditTableViewController.swift */,
 				2A9526691F520EE80058B764 /* AuditDetailViewController.swift */,
 				2A66E7041F527D9F00F86CFE /* FeatureTableViewController.swift */,
+				2A66E7081F52843200F86CFE /* SelectingFeatureViewController.swift */,
+				2A66E7061F52841B00F86CFE /* ZoneSpecsViewController.swift */,
 				2A66E7021F5263A400F86CFE /* AuditInfoViewController.swift */,
 				2A5AA7891F4D60C2009140C0 /* auditheader.swift */,
 				2A5AA78B1F4D60C7009140C0 /* roomheader.swift */,
@@ -180,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A66E7071F52841B00F86CFE /* ZoneSpecsViewController.swift in Sources */,
 				2A66E7051F527D9F00F86CFE /* FeatureTableViewController.swift in Sources */,
 				2A4B6EAC1F4BD2F700B1CD3B /* Gemini.xcdatamodeld in Sources */,
 				2A5AA77C1F4D36D2009140C0 /* PreauditDetailViewController.swift in Sources */,
@@ -187,6 +194,7 @@
 				2A4B6EA61F4BD2F700B1CD3B /* ViewController.swift in Sources */,
 				2A66E7031F5263A400F86CFE /* AuditInfoViewController.swift in Sources */,
 				2A9526681F5206430058B764 /* AuditTableViewController.swift in Sources */,
+				2A66E7091F52843200F86CFE /* SelectingFeatureViewController.swift in Sources */,
 				2A95266A1F520EE80058B764 /* AuditDetailViewController.swift in Sources */,
 				2A4B6EA41F4BD2F700B1CD3B /* AppDelegate.swift in Sources */,
 				2A81291B1F4CE01D009BCFB9 /* TableViewController.swift in Sources */,

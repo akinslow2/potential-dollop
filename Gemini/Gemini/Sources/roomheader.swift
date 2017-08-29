@@ -6,6 +6,8 @@
 //  Copyright © 2017 Jordan Rosen-Kaplan. All rights reserved.
 //
 
+let feature_references = ["Lighting": "lighting_database", "Combination Oven": "combination_ovens", "Convection Oven": "convection_ovens", "Conveyor Oven": "conveyor_ovens", "Dishwasher": "dishwashers", "Freezer": "freezers", "Fryer": "fryers", "Glass Door Refrigerator": "glass_door_refrig", "Griddle": "griddles", "Hot Food Cabinet": "hfcs", "Ice Maker": "ice_makers", "Pre-Rinser": "pre-rinse", "Rack Oven": "rack_ovens", "Refrigerator": "refrigerators", "Solid Door Freezer": "solid_door_freezers", "Solid Door Refrigerator": "solid_door_refrigerator", "Steam Cooker": "steam_cookers"]
+
 import Foundation
 
 class Room: Audit {
@@ -228,7 +230,7 @@ class Room: Audit {
                 continue
             }
             
-            new_dict[row["model_number"]] = find_energy_cost(preheat_energy: Int(row["preheat_energy"]), idle_energy_rate: Int(row["idle_energy_rate"]), fan_energy_rate: Int(row["fan_energy_rate"]) )
+            new_dict[row["model_number"]!] = find_energy_cost(preheat_energy: Int(row["preheat_energy"]!)!, idle_energy_rate: Int(row["idle_energy_rate"]!)!, fan_energy_rate: Int(row["fan_energy_rate"]!)!)
             return ""
             
         }
@@ -255,7 +257,7 @@ class Room: Audit {
         
         var summer = hours_on_peak_pricing * fan_energy_rate * peak_price + hours_on_partpeak_pricing * fan_energy_rate * partpeak_price + hours_on_offpeak_pricing * fan_energy_rate * offpeak_price
         
-        var winter: hours_on_partpeak_pricing * fan_energy_rate * partpeak price + hours_on_offpeak_pricing * fan_energy_rate * offpeak_price
+        var winter = hours_on_partpeak_pricing * fan_energy_rate * partpeak_price + hours_on_offpeak_pricing * fan_energy_rate * offpeak_price
         
         var total_electric = summer + winter
         
@@ -264,7 +266,7 @@ class Room: Audit {
 
     }
     
-    private func is_energy_star(model_number:String, company: String, file_name: String) -> BooleanType {
+    func is_energy_star(model_number: String, company: String, file_name: String) -> Bool {
         let rows = open_csv(filename: file_name)
         
         for row in rows! {
@@ -373,7 +375,39 @@ class Room: Audit {
         
         return ""
     }
-        
+    
+    /*
+     
+     Function: open_csv
+     --------------------
+     Returns an Optional(Array<Dictionary<String, String>>)
+     of the elements in a csv with the first column as
+     the keys in the array, and the subsequent columns
+     are the values, corresponding to their shared row.
+     
+     For example:
+     Category, Space Type
+     A, Classroom
+     B, Armory
+     ->
+     [{A : Classroom}, {B : Armory}]
+     
+     ***
+     
+     In order to input a file:
+     
+     1. Download as a .txt with \t separated values
+     2. Open in Word and save as a .txt with UTF-8 encoding
+     and LF only
+     3. In Xcode, File -> Add Files to ... -> *Select file and add to "CSVs" folder*
+     
+     ***
+     
+     @param file's name in folder, String
+     
+     Example: (for CSVs/space_type.csv), filename = "space_type"
+     
+     */
     private func open_csv(filename:String) -> Array<Dictionary<String, String>>! {
         
         var output_file_string = ""

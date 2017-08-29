@@ -8,38 +8,91 @@
 
 import UIKit
 
+let feature_references = ["Lighting": "lighting_database", "Combination Oven": "combination_ovens", "Convection Oven": "convection_ovens", "Conveyor Oven": "conveyor_ovens", "Dishwasher": "dishwashers", "Freezer": "freezers", "Fryer": "fryers", "Glass Door Refrigerator": "glass_door_refrig", "Griddle": "griddles", "Hot Food Cabinet": "hfcs", "Ice Maker": "ice_makers", "Pre-Rinser": "pre-rinse", "Rack Oven": "rack_ovens", "Refrigerator": "refrigerators", "Solid Door Freezer": "solid_door_freezers", "Solid Door Refrigerator": "solid_door_refrigerator", "Steam Cooker": "steam_cookers"]
+
 class FeatureTableViewController: UITableViewController {
     
     @IBOutlet var table: UITableView!
-    
     let hvac_features = ["Room type", "Area"] //there will be more
-    let lighting_features = ["Room type", "Area", "Units"] //there will be more
-    let room_features = ["Room type", "Area", "Lighting Units", "Number of Outlets"] //These are purely for example
+    let lighting_features = ["Room type", "Area", "Units"] // "
+    let room_features = ["Room type", "Area", "Lighting Units", "Number of Outlets"] // "
     var curr_features = Array<String>()
+    var curr_spec: String?
+    
+    /*
+     
+     Function: addFeature
+     -----------------------
+     Dictates segues. 
+     
+     SEGUE~ to Selecting Feature View Controller
+     IF zone is of type "room"
+     
+     SEGUE~ to Audit Info View Controller
+     ELSE
+     
+     */
+    @IBAction func addFeature(_ sender: Any) {
+        
+        if curr_features == room_features {
+            
+            performSegue(withIdentifier: "selectFeature", sender: self)
+            
+        } else {
+            
+            performSegue(withIdentifier: "toFeatureSpecs", sender: self)
+            
+        }
+        
+    }
+
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
     }
 
     override func didReceiveMemoryWarning() {
+        
         super.didReceiveMemoryWarning()
+        
     }
 
-    // MARK: - Table view data source
-
+    /*
+     
+     Function: numberOfSections
+     ----------------------------
+     Returns the number of columns in the table
+     
+     */
     override func numberOfSections(in tableView: UITableView) -> Int {
         
         return 1
         
     }
 
+    /*
+     
+     Function: numberOfRowsInSection
+     --------------------------------
+     Returns the size of the number of inputs,
+     according to the array, curr_features
+     
+     */
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return curr_features.count
         
     }
 
-    
+    /*
+     
+     Function: cellForRowAt
+     ----------------------------
+     Sets text to indexed element of the array curr_features per row
+     
+     */
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "FeaturesCell")
@@ -49,50 +102,57 @@ class FeatureTableViewController: UITableViewController {
         return cell
     }
     
-
     /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+     
+     Function: didSelectRow
+     -------------------------------------
+     SEGUE~ to Zone Specs View Controller
+     
+     */
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        curr_spec = curr_features[indexPath.row]
+        
+        performSegue(withIdentifier: "toZoneSpecs", sender: self)
+        
     }
-    */
-
+    
     /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+     
+     Function: prepare for segue
+     ------------------------------------
+     Modifies Zone Specs View Controller
+     
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "toZoneSpecs" {
+        
+            let zoneSpecsViewController = segue.destination as! ZoneSpecsViewController
+            
+            zoneSpecsViewController.spec = curr_spec!
+        
+        } else if segue.identifier == "toFeatureSpecs" {
+            
+            let auditInfoViewController = segue.destination as! AuditInfoViewController
+            
+            if curr_features == hvac_features {
+            
+                auditInfoViewController.feature = "HVAC"
+                
+            } else {
+                
+                auditInfoViewController.feature = "Lighting"
+                
+            }
+            
+            
+        } else if segue.identifier == "selectFeature" {
+            
+            //May need to add some specification for HVAC vs. Room space here at a later point
+            
+        }
+ 
     }
-    */
-
 }
