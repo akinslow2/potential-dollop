@@ -21,7 +21,7 @@ class SelectingFeatureViewController: UIViewController, UIPickerViewDelegate, UI
             
             alert_controller.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in
                 
-                self.dismiss(animated: true, completion: nil)
+                alert_controller.dismiss(animated: true, completion: nil)
                 
             }))
             
@@ -91,14 +91,6 @@ class SelectingFeatureViewController: UIViewController, UIPickerViewDelegate, UI
             let auditInfoViewController = segue.destination as! AuditInfoViewController
             
             auditInfoViewController.feature = selectedFeature
-            
-            print(selectedFeature)
-            
-        } else if segue.identifier == "toZoneSpecs" {
-            
-            let zoneSpecsViewController = segue.destination as! ZoneSpecsViewController
-            
-            zoneSpecsViewController.spec = selectedFeature
             
         }
         

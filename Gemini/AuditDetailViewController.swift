@@ -103,10 +103,9 @@ class AuditDetailViewController: UIViewController, UIPickerViewDataSource, UIPic
             room?.setTypeOfRoom(room_type_param: selectedValue)
             
             let featureTableViewController = segue.destination as! FeatureTableViewController
-            featureTableViewController.space_type = selectedValue
             
-            print("POOP")
-        
+            featureTableViewController.space_type = selectedValue
+                    
         }
         
     }

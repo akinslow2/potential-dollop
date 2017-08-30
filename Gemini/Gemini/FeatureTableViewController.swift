@@ -16,6 +16,34 @@ class FeatureTableViewController: UITableViewController {
     var filledRows = Array<Int>()
     var curr_row = -1
     
+    @IBAction func saveRoom(_ sender: Any) {
+        
+        if filledRows.count < (room?.general_values_keys.count)! {
+            
+            print(filledRows.count)
+            
+            print(room?.general_values_keys)
+            
+            let alert_controller = UIAlertController(title: "Incomplete Fields", message: "Please fill all required fields for this zone", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert_controller.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in
+                
+                alert_controller.dismiss(animated: true, completion: nil)
+                
+            }))
+            
+            self.present(alert_controller, animated: true, completion: nil)
+            
+        } else {
+            
+            //room.save_room()
+            
+            performSegue(withIdentifier: "saveRoom", sender: self)
+            
+        }
+        
+    }
+    
     /*
      
      Function: addFeature
@@ -155,6 +183,8 @@ class FeatureTableViewController: UITableViewController {
                 auditInfoViewController.feature = "Lighting"
                 
             }
+            
+            auditInfoViewController.filledRows = filledRows
             
             
         } else if segue.identifier == "selectFeature" {

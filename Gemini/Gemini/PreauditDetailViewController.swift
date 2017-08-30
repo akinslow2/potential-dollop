@@ -368,9 +368,9 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
         
         super.viewDidLoad()
         
-        self.pickerView.dataSource = self
+        pickerView.dataSource = self
         
-        self.pickerView.delegate = self
+        pickerView.delegate = self
         
         textField.isHidden = true
         

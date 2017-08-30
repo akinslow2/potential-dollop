@@ -24,8 +24,8 @@ class Room: Audit {
     var room_type = ""
     
     let lighting_specs = ["Space Type", "Measured Lumens", "Area", "Units"]
-    let hvac_specs = [""] 
-    let room_specs_without_lighting = [""]
+    let hvac_specs = Array<String>()
+    let room_specs_without_lighting = Array<String>()
     
     func setName(room_name_passed: String) {
         

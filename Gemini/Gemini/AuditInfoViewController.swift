@@ -21,7 +21,9 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var searchButton: UIButton!
     
     var feature = ""
+    var generalFeature = ""
     var foundFeature: Bool?
+    var filledRows = Array<Int>()
     
     /*
      
@@ -173,7 +175,7 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
         
         dict["model_number"] = modelNumberTextField.text
         
-        if feature == "Kitchen equipment" {
+        if generalFeature == "Kitchen equipment" {
             
             dict["company"] = companyTextField.text
             
@@ -185,11 +187,11 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
                 
             }
             
-        } else if feature == "HVAC" {
+        } else if generalFeature == "HVAC" {
             
             //nothing for now
             
-        } else if feature == "Lighting" {
+        } else if generalFeature == "Lighting" {
             
             dict["number_of_lamps"] = companyTextField.text
             
@@ -215,7 +217,7 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
             
             alert_controller.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in
                 
-                self.dismiss(animated: true, completion: nil)
+                alert_controller.dismiss(animated: true, completion: nil)
                 
             }))
             
@@ -267,7 +269,7 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
         
         if feature != "Lighting" && feature != "HVAC" {
             
-            feature = "Kitchen equipment" //or plug load but we don't have any yet
+            generalFeature = "Kitchen equipment" //or plug load but we don't have any yet
             
             productionLabel.isHidden = true
             
@@ -281,7 +283,15 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
             
         } else if feature == "Lighting" {
             
+            generalFeature = feature
+            
             companyLabel.text = "Number of lamps"
+            
+            companyTextField.keyboardType = UIKeyboardType.numberPad
+            
+            sizeTextField.keyboardType = UIKeyboardType.numberPad
+            
+            productionTextField.keyboardType = UIKeyboardType.numberPad
             
             sizeLabel.text = "Test hours"
             
@@ -296,6 +306,22 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
             productionTextField.isHidden = false
             
             searchButton.isHidden = true
+            
+        } else {
+            
+            generalFeature = feature
+            
+        }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toSpecs" {
+            
+            let featureTableViewController = segue.destination as! FeatureTableViewController
+            
+            featureTableViewController.filledRows = filledRows
             
         }
         

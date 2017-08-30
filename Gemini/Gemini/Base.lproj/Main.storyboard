@@ -287,7 +287,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="ITS-1Y-a60"/>
                         <barButtonItem title="Done" id="R7t-Q3-2Jx">
                             <connections>
-                                <segue destination="cIu-Za-aCY" kind="show" id="KQM-YZ-9SJ"/>
+                                <action selector="saveRoom:" destination="GRS-Ka-4Vk" id="hyT-HQ-7yw"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -297,6 +297,7 @@
                         <segue destination="fTg-ZD-aUi" kind="show" identifier="selectFeature" id="lPD-DO-XZX"/>
                         <segue destination="6Mw-Im-Dbh" kind="show" identifier="toFeatureSpecs" id="mZX-Xj-QMb"/>
                         <segue destination="skt-Ly-Mep" kind="show" identifier="toZoneSpecs" id="fJo-Q4-uXF"/>
+                        <segue destination="cIu-Za-aCY" kind="show" identifier="saveRoom" id="8nH-ws-0mp"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfB-wM-tTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -382,7 +383,7 @@
         <scene sceneID="di0-1v-zGz">
             <objects>
                 <tableViewController id="cIu-Za-aCY" customClass="AuditTableViewController" customModule="Gemini" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="RJg-Cj-in3">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="RJg-Cj-in3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -410,6 +411,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="hYJ-Ko-yC5"/>
                         <barButtonItem title="Save" id="r0E-or-2sg">
                             <connections>
+                                <action selector="saveAudit:" destination="cIu-Za-aCY" id="2tK-jI-e8Y"/>
                                 <segue destination="g3p-vH-O3d" kind="show" id="fVE-Bc-BhZ"/>
                             </connections>
                         </barButtonItem>
@@ -662,10 +664,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="h81-Vo-Ew4"/>
-        <segue reference="hdg-EU-W9Z"/>
+        <segue reference="fVE-Bc-BhZ"/>
+        <segue reference="8nH-ws-0mp"/>
+        <segue reference="NvE-Qg-JLO"/>
         <segue reference="mZX-Xj-QMb"/>
-        <segue reference="itc-ow-tWQ"/>
         <segue reference="knL-EN-naq"/>
     </inferredMetricsTieBreakers>
 </document>

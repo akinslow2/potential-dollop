@@ -113,6 +113,8 @@ class ZoneSpecsViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             
             pickerView.reloadAllComponents()
             
+            selectedValue = picker_values[0]
+            
         } else if spec == "Space Type" {
             
             textField.isHidden = true
@@ -120,6 +122,8 @@ class ZoneSpecsViewController: UIViewController, UIPickerViewDelegate, UIPickerV
             picker_values = room_types
             
             pickerView.reloadAllComponents()
+            
+            selectedValue = picker_values[0]
             
         } else {
             
