@@ -92,6 +92,8 @@ class SelectingFeatureViewController: UIViewController, UIPickerViewDelegate, UI
             
             auditInfoViewController.feature = selectedFeature
             
+            print(selectedFeature)
+            
         } else if segue.identifier == "toZoneSpecs" {
             
             let zoneSpecsViewController = segue.destination as! ZoneSpecsViewController

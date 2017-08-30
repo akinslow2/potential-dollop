@@ -265,7 +265,7 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        if feature != "Lighting" || feature != "HVAC" {
+        if feature != "Lighting" && feature != "HVAC" {
             
             feature = "Kitchen equipment" //or plug load but we don't have any yet
             
