@@ -6,7 +6,7 @@
 //  Copyright © 2017 Jordan Rosen-Kaplan. All rights reserved.
 //
 
-let feature_references = ["Lighting": "lighting_database", "Combination Oven": "combination_ovens", "Convection Oven": "convection_ovens", "Conveyor Oven": "conveyor_ovens", "Dishwasher": "dishwashers", "Freezer": "freezers", "Fryer": "fryers", "Glass Door Refrigerator": "glass_door_refrig", "Griddle": "griddles", "Hot Food Cabinet": "hfcs", "Ice Maker": "ice_makers", "Pre-Rinser": "pre-rinse", "Rack Oven": "rack_ovens", "Refrigerator": "refrigerators", "Solid Door Freezer": "solid_door_freezers", "Solid Door Refrigerator": "solid_door_refrigerator", "Steam Cooker": "steam_cookers"]
+let feature_references = ["Lighting": "lighting_database", "Combination Oven": "combination_ovens", "Convection Oven": "convection_ovens", "Conveyor Oven": "conveyor_ovens", "Dishwasher": "dishwashers", "Freezer": "freezers", "Fryer": "fryers", "Glass Door Refrigerator": "glass_door_refrig", "Griddle": "griddles", "Hot Food Cabinet": "hfcs", "Ice Maker": "ice_makers", "Pre-Rinser": "pre-rinse", "Rack Oven": "rack_ovens", "Refrigerator": "refrigerators", "Solid Door Freezer": "solid_door_freezers", "Solid Door Refrigerator": "solid_door_refrigerators", "Steam Cooker": "steam_cookers"]
 
 import Foundation
 
@@ -19,11 +19,11 @@ class Room: Audit {
     
     var general_values = Dictionary<String, String>()
     var general_values_keys = Array<String>()
-    
+    var feature_table_keys = Array<String>()
     var room_name = ""
     var room_type = ""
     
-    let lighting_specs = ["Space Type", "Measured Lumens", "Area", "Units"]
+    let lighting_specs = ["Space Type", "Measured Lux", "Area", "Units"]
     let hvac_specs = Array<String>()
     let room_specs_without_lighting = Array<String>()
     
@@ -50,6 +50,8 @@ class Room: Audit {
             general_values_keys = lighting_specs + room_specs_without_lighting
             
         }
+        
+        feature_table_keys = general_values_keys
         
         setGeneralValues()
         

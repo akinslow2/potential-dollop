@@ -20,10 +20,6 @@ class FeatureTableViewController: UITableViewController {
         
         if filledRows.count < (room?.general_values_keys.count)! {
             
-            print(filledRows.count)
-            
-            print(room?.general_values_keys)
-            
             let alert_controller = UIAlertController(title: "Incomplete Fields", message: "Please fill all required fields for this zone", preferredStyle: UIAlertControllerStyle.alert)
             
             alert_controller.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in
@@ -59,6 +55,8 @@ class FeatureTableViewController: UITableViewController {
      */
     @IBAction func addFeature(_ sender: Any) {
         
+        print(space_type)
+        
         if space_type == "Room" {
             
             performSegue(withIdentifier: "selectFeature", sender: self)
@@ -76,11 +74,19 @@ class FeatureTableViewController: UITableViewController {
         
         super.viewDidLoad()
         
+        self.navigationItem.hidesBackButton = true
+        
     }
 
     override func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        table.reloadData()
         
     }
 
@@ -107,7 +113,7 @@ class FeatureTableViewController: UITableViewController {
      */
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return (room?.general_values_keys.count)!
+        return (room?.feature_table_keys.count)!
         
     }
 
@@ -122,9 +128,9 @@ class FeatureTableViewController: UITableViewController {
         
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "FeaturesCell")
 
-        cell.textLabel?.text = room?.general_values_keys[indexPath.row]
+        cell.textLabel?.text = room?.feature_table_keys[indexPath.row]
         
-        if filledRows.contains(indexPath.row) {
+        if filledRows.contains(indexPath.row) || indexPath.row >= (room?.general_values_keys.count)! {
             
             cell.accessoryType = .checkmark
             
@@ -143,11 +149,16 @@ class FeatureTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        curr_spec = room?.general_values_keys[indexPath.row]
+        //if zone spec, if indexPath.row < room?.general_values_keys.count
         
-        curr_row = indexPath.row
+        if indexPath.row < (room?.general_values_keys.count)! {
         
-        performSegue(withIdentifier: "toZoneSpecs", sender: self)
+            curr_spec = room?.general_values_keys[indexPath.row]
+            
+            curr_row = indexPath.row
+            
+            performSegue(withIdentifier: "toZoneSpecs", sender: self)
+        }
         
     }
     
@@ -169,7 +180,9 @@ class FeatureTableViewController: UITableViewController {
             zoneSpecsViewController.filledRows = filledRows
             
             zoneSpecsViewController.curr_row = curr_row
-        
+            
+            zoneSpecsViewController.spaceType = space_type
+            
         } else if segue.identifier == "toFeatureSpecs" {
             
             let auditInfoViewController = segue.destination as! AuditInfoViewController
@@ -189,8 +202,11 @@ class FeatureTableViewController: UITableViewController {
             
         } else if segue.identifier == "selectFeature" {
             
-            //May need to add some specification for HVAC vs. Room space here at a later point
+            let selectingFeatureViewController = segue.destination as! SelectingFeatureViewController
             
+            selectingFeatureViewController.filledRows = filledRows
+        
+                        
         }
  
     }

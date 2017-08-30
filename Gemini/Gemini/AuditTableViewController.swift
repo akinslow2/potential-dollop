@@ -32,6 +32,8 @@ class AuditTableViewController: UITableViewController {
         
         super.viewDidLoad()
         
+        self.navigationItem.hidesBackButton = true
+        
     }
 
     /*

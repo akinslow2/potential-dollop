@@ -378,6 +378,9 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
         
         datePicker.isHidden = true
         
+        self.navigationItem.hidesBackButton = true
+
+        
     }
     
     /*

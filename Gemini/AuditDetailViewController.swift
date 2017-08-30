@@ -34,6 +34,8 @@ class AuditDetailViewController: UIViewController, UIPickerViewDataSource, UIPic
         
         nameField.delegate = self
         
+        self.navigationItem.hidesBackButton = true
+        
     }
     
     /*

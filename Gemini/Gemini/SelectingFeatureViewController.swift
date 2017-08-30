@@ -12,6 +12,7 @@ class SelectingFeatureViewController: UIViewController, UIPickerViewDelegate, UI
     
     @IBOutlet weak var pickerView: UIPickerView!
     var selectedFeature = ""
+    var filledRows = Array<Int>()
     
     @IBAction func addFeature(_ sender: Any) {
         
@@ -51,6 +52,8 @@ class SelectingFeatureViewController: UIViewController, UIPickerViewDelegate, UI
         pickerView.dataSource = self
         
         pickerView.delegate = self
+        
+        self.navigationItem.hidesBackButton = true
         
     }
 
@@ -92,7 +95,9 @@ class SelectingFeatureViewController: UIViewController, UIPickerViewDelegate, UI
             
             auditInfoViewController.feature = selectedFeature
             
-        }
+            auditInfoViewController.filledRows = filledRows
+                        
+        } 
         
     }
 

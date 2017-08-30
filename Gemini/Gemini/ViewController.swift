@@ -161,6 +161,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         super.viewDidLoad()
         
+        self.navigationItem.hidesBackButton = true
+
+        
     }
 
     /*

@@ -17,6 +17,7 @@ class ZoneSpecsViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     var picker_values =  Array<String>()
     var filledRows = Array<Int>()
     var curr_row = -1
+    var spaceType: String?
     
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var label: UILabel!
@@ -90,6 +91,8 @@ class ZoneSpecsViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         pickerView.delegate = self
         
         pickerView.dataSource = self
+        
+        self.navigationItem.hidesBackButton = true
         
     }
 
@@ -174,6 +177,8 @@ class ZoneSpecsViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         let featureTableViewController = segue.destination as! FeatureTableViewController
         
         featureTableViewController.filledRows = filledRows
+        
+        featureTableViewController.space_type = spaceType
         
     }
     

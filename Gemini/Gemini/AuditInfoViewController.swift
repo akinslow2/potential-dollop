@@ -124,6 +124,8 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
         companyTextField.delegate = self
         
         modelNumberTextField.delegate = self
+        
+        self.navigationItem.hidesBackButton = true
 
     }
 
@@ -137,7 +139,7 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
         
         if !(modelNumberTextField.text?.isEmpty)! && !(companyTextField.text?.isEmpty)! {
             
-            print(feature)
+            room?.feature_table_keys.append(feature + " " + modelNumberTextField.text!)
         
             let found = is_energy_star(model_number: modelNumberTextField.text!, company: companyTextField.text!, file_name: feature_references[feature]!)
             
@@ -162,6 +164,8 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
                 sizeTextField.isHidden = false
                 
                 doneButton.isHidden = false
+                
+                searchButton.isHidden = true
 
             }
             
@@ -224,6 +228,12 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
             self.present(alert_controller, animated: true, completion: nil)
             
         } else {
+            
+            if feature == "Lighting" {
+                
+                room?.feature_table_keys.append(feature + " " + modelNumberTextField.text!)
+                
+            }
             
             room?.new_feature(feature_type: feature, values: retrieveValues(feature: feature))
             
@@ -317,12 +327,12 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "toSpecs" {
+        if segue.identifier == "backToFeatures" {
             
             let featureTableViewController = segue.destination as! FeatureTableViewController
             
             featureTableViewController.filledRows = filledRows
-            
+                        
         }
         
     }

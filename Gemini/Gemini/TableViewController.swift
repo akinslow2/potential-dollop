@@ -30,6 +30,9 @@ class TableViewController: UITableViewController {
         
         super.viewDidLoad()
         
+        self.navigationItem.hidesBackButton = true
+
+        
         //define_preaudit_inputs()
         
     }
