@@ -8,13 +8,11 @@
 
 import UIKit
 
-class AuditTableViewController: UITableViewController, save_room {
+var room: Room?
+
+class AuditTableViewController: UITableViewController {
     
-    var items = Array<String>()
-    var new_room_sent: String?
     @IBOutlet var table: UITableView!
-    
-    
     
     /*
      
@@ -24,7 +22,9 @@ class AuditTableViewController: UITableViewController, save_room {
      
      */
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
     }
 
     /*
@@ -35,7 +35,9 @@ class AuditTableViewController: UITableViewController, save_room {
      
      */
     override func didReceiveMemoryWarning() {
+        
         super.didReceiveMemoryWarning()
+        
     }
     
     /*
@@ -74,7 +76,7 @@ class AuditTableViewController: UITableViewController, save_room {
      */
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return items.count
+        return audit.room_names.count
         
     }
 
@@ -89,23 +91,9 @@ class AuditTableViewController: UITableViewController, save_room {
         
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
         
-        cell.textLabel?.text = items[indexPath.row]
+        cell.textLabel?.text = audit.room_names[indexPath.row]
 
         return cell
-        
-    }
-    
-    /*
- 
-    Function: add_room
-    ------------------------------------
-    Conforms to protocol save_room
-    Adds room to table
- 
-    */
-    func add_room(room_name: String) {
-        
-        items.append(room_name)
         
     }
     

@@ -1,36 +1,85 @@
-////
-////  roomheader.swift
-////  Gemini
-////
-////  Created by Jordan Rosen-Kaplan on 8/22/17.
-////  Copyright © 2017 Jordan Rosen-Kaplan. All rights reserved.
-////
 //
-//let feature_references = ["Lighting": "lighting_database", "Combination Oven": "combination_ovens", "Convection Oven": "convection_ovens", "Conveyor Oven": "conveyor_ovens", "Dishwasher": "dishwashers", "Freezer": "freezers", "Fryer": "fryers", "Glass Door Refrigerator": "glass_door_refrig", "Griddle": "griddles", "Hot Food Cabinet": "hfcs", "Ice Maker": "ice_makers", "Pre-Rinser": "pre-rinse", "Rack Oven": "rack_ovens", "Refrigerator": "refrigerators", "Solid Door Freezer": "solid_door_freezers", "Solid Door Refrigerator": "solid_door_refrigerator", "Steam Cooker": "steam_cookers"]
+//  roomheader.swift
+//  Gemini
 //
-//import Foundation
+//  Created by Jordan Rosen-Kaplan on 8/22/17.
+//  Copyright © 2017 Jordan Rosen-Kaplan. All rights reserved.
 //
-//class Room: Audit {
-//    
-//    var lighting = Array<Dictionary<String, String>>()
-//    var hvac = Array<Dictionary<String, String>>()
-//    var plug_load = Array<Dictionary<String, String>>()
-//    var kitchen_equipment = Array<Dictionary<String, String>>()
-//    var room_name = ""
-//
-//    init(room_name_passed: String) { room_name = room_name_passed }
-//
-//
-//    //Parameters here have to be supplied by the user or the Swift code
-//    //Note: the parameter "values" is a dictionary
-//    //The required keys vary, depending on the object.
-//    //Lighting (if not lighting_finished): "model_number", "number_of_lamps":(INT), "length", "max_width", "test_hours":(INT), "hours_on":(INT), "control_type"
-//    //Lighting (if lighting_finished): (above keys), "measured_lux", "space_type(->category: A, B, C, etc.)", "room_type", "room_area":(FLOAT), "units_in_lumens":(Boolean)
-//    //HVAC:
-//    //Kitchen:
-//    //Plug:
-//
-//    func new_feature(feature_type:String, values:Dictionary<String, String>) {
+
+let feature_references = ["Lighting": "lighting_database", "Combination Oven": "combination_ovens", "Convection Oven": "convection_ovens", "Conveyor Oven": "conveyor_ovens", "Dishwasher": "dishwashers", "Freezer": "freezers", "Fryer": "fryers", "Glass Door Refrigerator": "glass_door_refrig", "Griddle": "griddles", "Hot Food Cabinet": "hfcs", "Ice Maker": "ice_makers", "Pre-Rinser": "pre-rinse", "Rack Oven": "rack_ovens", "Refrigerator": "refrigerators", "Solid Door Freezer": "solid_door_freezers", "Solid Door Refrigerator": "solid_door_refrigerator", "Steam Cooker": "steam_cookers"]
+
+import Foundation
+
+class Room: Audit {
+    
+    var lighting = Array<Dictionary<String, String>>()
+    var hvac = Array<Dictionary<String, String>>()
+    var plug_load = Array<Dictionary<String, String>>()
+    var kitchen_equipment = Array<Dictionary<String, String>>()
+    
+    var general_values = Dictionary<String, String>()
+    var general_values_keys = Array<String>()
+    
+    var room_name = ""
+    var room_type = ""
+    
+    let lighting_specs = ["Space Type", "Measured Lumens", "Area", "Units"]
+    let hvac_specs = [""] 
+    let room_specs_without_lighting = [""]
+    
+    func setName(room_name_passed: String) {
+        
+        room_name = room_name_passed
+        
+    }
+    
+    func setTypeOfRoom(room_type_param: String) {
+        
+        room_type = room_type_param
+        
+        if room_type_param == "Lighting zone" {
+            
+            general_values_keys = lighting_specs
+            
+        } else if room_type_param == "HVAC zone" {
+            
+            general_values_keys = hvac_specs
+            
+        } else {
+            
+            general_values_keys = lighting_specs + room_specs_without_lighting
+            
+        }
+        
+        setGeneralValues()
+        
+    }
+    
+    private func setGeneralValues() {
+        
+        for key in general_values_keys {
+            
+            general_values[key] = ""
+            
+        }
+        
+        
+    }
+    
+    //This below list of values should really be supplied when the room is closed.
+
+    //Lighting (if lighting_finished): (above keys), "measured_lux", "space_type(->category: A, B, C, etc.)", "room_type", "room_area":(FLOAT), "units_in_lumens":(Boolean)
+    
+
+    //Parameters here have to be supplied by the user or the Swift code
+    //Note: the parameter "values" is a dictionary
+    //The required keys vary, depending on the object.
+    //Lighting (if not lighting_finished): "model_number", "number_of_lamps":(INT), "length", "max_width", "test_hours":(INT), "hours_on":(INT), "control_type"
+    //HVAC:
+    //Kitchen: "model_number", "company"
+    //Plug:
+
+    func new_feature(feature_type:String, values:Dictionary<String, String>) {
 //        
 //        if feature_type == "Lighting" {
 //            
@@ -50,7 +99,7 @@
 //            
 //        }
 //        
-//    }
+    }
 //
 //
 //    private func __add_light_feature(values:Dictionary<String, String>) {
@@ -623,11 +672,11 @@
 //        
 //        return hours_per_year * total_watts
 //    }
-//    
-//    
-//}
-//
-//
-//
-//
-//
+    
+    
+}
+
+
+
+
+

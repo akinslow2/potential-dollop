@@ -8,20 +8,12 @@
 
 import UIKit
 
-protocol save_room {
-    
-    func add_room(room_name:String)
-    
-}
-
-class AuditDetailViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class AuditDetailViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var nameField: UITextField!
     var items = ["Lighting zone", "HVAC zone", "Room"]
     var selectedValue = "Lighting zone"
-    var delegate: save_room?
-    //var roomTable = AuditTableViewController()
 
     /*
      
@@ -39,6 +31,8 @@ class AuditDetailViewController: UIViewController, UIPickerViewDataSource, UIPic
         pickerView.dataSource = self
         
         pickerView.delegate = self
+        
+        nameField.delegate = self
         
     }
     
@@ -74,7 +68,7 @@ class AuditDetailViewController: UIViewController, UIPickerViewDataSource, UIPic
             
             alert_controller.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in
                 
-                self.dismiss(animated: true, completion: nil)
+                alert_controller.dismiss(animated: true, completion: nil)
                 
             }))
             
@@ -100,23 +94,18 @@ class AuditDetailViewController: UIViewController, UIPickerViewDataSource, UIPic
         
         if segue.identifier == "toFeatures" {
             
-            delegate?.add_room(room_name: nameField.text! + "-" + selectedValue)
+            audit.add_room(name: nameField.text! + "-" + selectedValue)
+            
+            room = Room(audit_name_param: "")
+            
+            room?.set_name(audit_name_param: nameField.text! + "-" + selectedValue)
+            
+            room?.setTypeOfRoom(room_type_param: selectedValue)
             
             let featureTableViewController = segue.destination as! FeatureTableViewController
+            featureTableViewController.space_type = selectedValue
             
-            if selectedValue == "Lighting zone" {
-            
-                featureTableViewController.curr_features = featureTableViewController.lighting_features
-            
-            } else if selectedValue == "HVAC zone" {
-                
-                featureTableViewController.curr_features = featureTableViewController.hvac_features
-                
-            } else {
-                
-                featureTableViewController.curr_features = featureTableViewController.room_features
-                
-            }
+            print("POOP")
         
         }
         
@@ -175,7 +164,37 @@ class AuditDetailViewController: UIViewController, UIPickerViewDataSource, UIPic
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         selectedValue = items[row]
-                
+                        
+    }
+    
+    /*
+     
+     Function: touchesBegan
+     -------------------------
+     Returns normal control to the view after
+     a touch outside of the displayed keyboard
+     
+     */
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        self.view.endEditing(true)
+        
+    }
+    
+    /*
+     
+     Function: textFieldShouldReturn
+     --------------------------------
+     Returns normal control to the view a user
+     presses "return" on the keyboard
+     
+     */
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        nameField.resignFirstResponder()
+        
+        return true
+        
     }
     
 

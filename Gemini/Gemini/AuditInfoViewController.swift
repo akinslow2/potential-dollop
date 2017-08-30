@@ -8,8 +8,9 @@
 
 import UIKit
 
-class AuditInfoViewController: UIViewController {
+class AuditInfoViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var companyLabel: UILabel!
     @IBOutlet weak var companyTextField: UITextField!
     @IBOutlet weak var modelNumberTextField: UITextField!
     @IBOutlet weak var productionLabel: UILabel!
@@ -17,8 +18,10 @@ class AuditInfoViewController: UIViewController {
     @IBOutlet weak var productionTextField: UITextField!
     @IBOutlet weak var sizeTextField: UITextField!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var searchButton: UIButton!
     
     var feature = ""
+    var foundFeature: Bool?
     
     /*
      
@@ -112,15 +115,13 @@ class AuditInfoViewController: UIViewController {
         
         super.viewDidLoad()
         
-        productionLabel.isHidden = true
+        sizeTextField.delegate = self
         
-        sizeLabel.isHidden = true
+        productionTextField.delegate = self
         
-        productionTextField.isHidden = true
+        companyTextField.delegate = self
         
-        sizeTextField.isHidden = true
-        
-        doneButton.isHidden = true
+        modelNumberTextField.delegate = self
 
     }
 
@@ -133,12 +134,16 @@ class AuditInfoViewController: UIViewController {
     @IBAction func searchForModel(_ sender: Any) {
         
         if !(modelNumberTextField.text?.isEmpty)! && !(companyTextField.text?.isEmpty)! {
+            
+            print(feature)
         
             let found = is_energy_star(model_number: modelNumberTextField.text!, company: companyTextField.text!, file_name: feature_references[feature]!)
             
+            foundFeature = found
+            
             if found {
                 
-                //add type here to room class
+                room?.new_feature(feature_type: feature, values: retrieveValues(feature: feature))
                 
                 //calculate retrofit
                 
@@ -155,13 +160,50 @@ class AuditInfoViewController: UIViewController {
                 sizeTextField.isHidden = false
                 
                 doneButton.isHidden = false
-                
-                //add to room
-                
-                //calculate retrofit
+
             }
             
         }
+        
+    }
+    
+    func retrieveValues(feature: String) -> Dictionary<String, String> {
+        
+        var dict = Dictionary<String, String>()
+        
+        dict["model_number"] = modelNumberTextField.text
+        
+        if feature == "Kitchen equipment" {
+            
+            dict["company"] = companyTextField.text
+            
+            if !foundFeature! {
+                
+                dict["size"] = sizeTextField.text
+                
+                dict["production_capacity"] = productionTextField.text
+                
+            }
+            
+        } else if feature == "HVAC" {
+            
+            //nothing for now
+            
+        } else if feature == "Lighting" {
+            
+            dict["number_of_lamps"] = companyTextField.text
+            
+            dict["test_hours"] = sizeTextField.text
+            
+            dict["hours_on"] = productionTextField.text
+            
+        } else {
+            
+            //plug load
+            
+        }
+        
+        return dict
         
     }
     
@@ -181,11 +223,79 @@ class AuditInfoViewController: UIViewController {
             
         } else {
             
-            //add to room
+            room?.new_feature(feature_type: feature, values: retrieveValues(feature: feature))
             
             //calculate retrofit
             
             performSegue(withIdentifier: "backToFeatures", sender: self)
+            
+        }
+        
+    }
+    
+    /*
+     
+     Function: touchesBegan
+     -------------------------
+     Returns normal control to the view after
+     a touch outside of the displayed keyboard
+     
+     */
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        self.view.endEditing(true)
+        
+    }
+    
+    /*
+     
+     Function: textFieldShouldReturn
+     --------------------------------
+     Returns normal control to the view a user
+     presses "return" on the keyboard
+     
+     */
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        
+        return true
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if feature != "Lighting" || feature != "HVAC" {
+            
+            feature = "Kitchen equipment" //or plug load but we don't have any yet
+            
+            productionLabel.isHidden = true
+            
+            sizeLabel.isHidden = true
+            
+            productionTextField.isHidden = true
+            
+            sizeTextField.isHidden = true
+            
+            doneButton.isHidden = true
+            
+        } else if feature == "Lighting" {
+            
+            companyLabel.text = "Number of lamps"
+            
+            sizeLabel.text = "Test hours"
+            
+            productionLabel.text = "Hours on"
+            
+            sizeLabel.isHidden = false
+            
+            productionLabel.isHidden = false
+            
+            sizeTextField.isHidden = false
+            
+            productionTextField.isHidden = false
+            
+            searchButton.isHidden = true
             
         }
         

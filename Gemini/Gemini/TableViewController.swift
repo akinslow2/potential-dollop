@@ -8,28 +8,15 @@
 
 import UIKit
 
-protocol TableViewControllerDelegate {
-    
-    func save_to_outputs(key: String, value: String)
-    
-}
-
-class TableViewController: UITableViewController, TableViewControllerDelegate {
+class TableViewController: UITableViewController {
     
     var output = Dictionary<String, String>()
     var preaudit_inputs = Dictionary<String, String>()
     var activeDetail = ""
-    var delegate: ViewControllerDelegate?
     var filledRows = Array<Int>()
     
     let preaudit_entries = ["Business Name", "Business Address", "Client Interviewed Name", "Client Interviewed Position", "Main Client Name", "Main Client Position", "Main Client Email", "Main Client Phone Number", "Total Square Footage", "Facility Type", "Age Of Building", "Age Of Lighting", "Age Of Lighting Controls", "Age Of HVAC", "Age Of HVAC Controls", "Age Of Kitchen Equipment", "Lighting Maintenance Interval", "HVAC Maintenance Interval", "Kitchen Equipment Maintenance Interval", "Upgrades Budget", "Expected ROI", "Utility Company", "Rate Structure Electric", "Rate Structure Gas", "Date Of Interview", "Auditors Names", "Notes"]
     
-    
-    func save_to_outputs(key: String, value: String) {
-        
-        delegate?.save_dict_to_audit(key: key, value: value)
-        
-    }
     
     /*
      
@@ -168,11 +155,11 @@ class TableViewController: UITableViewController, TableViewControllerDelegate {
                 
         for entry in preaudit_inputs.keys {
                 
-            delegate?.save_dict_to_audit(key: entry, value: preaudit_inputs[entry]!)
+            audit.outputs[entry] = preaudit_inputs[entry]
             
         }
         
-        delegate?.save_dictionary()
+        audit.save_data()
         
         performSegue(withIdentifier: "toBeginning", sender: nil)
         
@@ -202,8 +189,8 @@ class TableViewController: UITableViewController, TableViewControllerDelegate {
             
             detailViewController.filledRows = filledRows
             
-            detailViewController.delegate = self
-            
+            detailViewController.entries = preaudit_inputs
+                        
         }
         
     }

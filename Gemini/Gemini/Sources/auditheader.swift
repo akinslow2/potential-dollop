@@ -23,6 +23,14 @@ class Audit {
         filename = "data/" + audit_name + ".txt"
         
     }
+    
+    func set_name(audit_name_param: String) {
+        
+        audit_name = audit_name_param
+        
+        filename = "data/" + audit_name + ".txt"
+        
+    }
 
     
     func retrieve_data() {
@@ -50,16 +58,16 @@ class Audit {
         do {
             
             if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-                
-                print(outputs.description == "")
-                
+                                
                 let path = dir.appendingPathComponent(filename)
+                
+                print(outputs.description)
                 
                 try outputs.description.write(to: path, atomically: false, encoding: String.Encoding.utf8)
                 
             }
         
-        } catch { print("There was an error in saving")}
+        } catch { print("There was an error in saving") }
         
     }
     

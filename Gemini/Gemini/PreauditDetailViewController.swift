@@ -14,7 +14,6 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var label: UILabel!
-    var delegate: TableViewControllerDelegate?
     
     let gas_structures = Array<String>() //will be var with data
     let electric_structures = Array<String>() //will be var with data
@@ -25,6 +24,7 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
     var selectedIndexPath = IndexPath()
     var selectedValueFromPicker = ""
     var filledRows = Array<Int>()
+    var entries = Dictionary<String, String>()
     
     
     /*
@@ -212,7 +212,7 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
                 
                 validInput = true
                 
-                delegate?.save_to_outputs(key: activeDetail, value: textField.text!)
+                audit.outputs[activeDetail] = textField.text
                 
             }
             
@@ -220,7 +220,7 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
             
             validInput = true
             
-            delegate?.save_to_outputs(key: activeDetail, value: datePicker.description)
+            audit.outputs[activeDetail] = datePicker.description
             
         } else {
             
@@ -228,7 +228,7 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
                 
                 validInput = true
                 
-                delegate?.save_to_outputs(key: activeDetail, value: selectedValueFromPicker)
+                audit.outputs[activeDetail] = selectedValueFromPicker
                 
             }
             
@@ -257,6 +257,8 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
                 let tableViewController = segue.destination as! TableViewController
                 
                 tableViewController.filledRows = filledRows
+                
+                tableViewController.preaudit_inputs = entries
                 
             }
             

@@ -8,16 +8,13 @@
 
 import UIKit
 
-let feature_references = ["Lighting": "lighting_database", "Combination Oven": "combination_ovens", "Convection Oven": "convection_ovens", "Conveyor Oven": "conveyor_ovens", "Dishwasher": "dishwashers", "Freezer": "freezers", "Fryer": "fryers", "Glass Door Refrigerator": "glass_door_refrig", "Griddle": "griddles", "Hot Food Cabinet": "hfcs", "Ice Maker": "ice_makers", "Pre-Rinser": "pre-rinse", "Rack Oven": "rack_ovens", "Refrigerator": "refrigerators", "Solid Door Freezer": "solid_door_freezers", "Solid Door Refrigerator": "solid_door_refrigerator", "Steam Cooker": "steam_cookers"]
-
 class FeatureTableViewController: UITableViewController {
     
     @IBOutlet var table: UITableView!
-    let hvac_features = ["Room type", "Area"] //there will be more
-    let lighting_features = ["Room type", "Area", "Units"] // "
-    let room_features = ["Room type", "Area", "Lighting Units", "Number of Outlets"] // "
-    var curr_features = Array<String>()
     var curr_spec: String?
+    var space_type: String?
+    var filledRows = Array<Int>()
+    var curr_row = -1
     
     /*
      
@@ -34,7 +31,7 @@ class FeatureTableViewController: UITableViewController {
      */
     @IBAction func addFeature(_ sender: Any) {
         
-        if curr_features == room_features {
+        if space_type == "Room" {
             
             performSegue(withIdentifier: "selectFeature", sender: self)
             
@@ -82,7 +79,7 @@ class FeatureTableViewController: UITableViewController {
      */
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return curr_features.count
+        return (room?.general_values_keys.count)!
         
     }
 
@@ -97,7 +94,13 @@ class FeatureTableViewController: UITableViewController {
         
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "FeaturesCell")
 
-        cell.textLabel?.text = curr_features[indexPath.row]
+        cell.textLabel?.text = room?.general_values_keys[indexPath.row]
+        
+        if filledRows.contains(indexPath.row) {
+            
+            cell.accessoryType = .checkmark
+            
+        }
 
         return cell
     }
@@ -112,7 +115,9 @@ class FeatureTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        curr_spec = curr_features[indexPath.row]
+        curr_spec = room?.general_values_keys[indexPath.row]
+        
+        curr_row = indexPath.row
         
         performSegue(withIdentifier: "toZoneSpecs", sender: self)
         
@@ -132,12 +137,16 @@ class FeatureTableViewController: UITableViewController {
             let zoneSpecsViewController = segue.destination as! ZoneSpecsViewController
             
             zoneSpecsViewController.spec = curr_spec!
+            
+            zoneSpecsViewController.filledRows = filledRows
+            
+            zoneSpecsViewController.curr_row = curr_row
         
         } else if segue.identifier == "toFeatureSpecs" {
             
             let auditInfoViewController = segue.destination as! AuditInfoViewController
             
-            if curr_features == hvac_features {
+            if space_type == "HVAC zone" {
             
                 auditInfoViewController.feature = "HVAC"
                 

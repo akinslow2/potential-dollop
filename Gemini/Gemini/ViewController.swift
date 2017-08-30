@@ -8,36 +8,11 @@
 
 import UIKit
 
-protocol ViewControllerDelegate {
-    
-    func save_dict_to_audit(key: String, value: String)
-    
-    func save_dictionary()
-    
-}
+let audit = Audit(audit_name_param: "NULL")
 
-class ViewController: UIViewController, UITextFieldDelegate, ViewControllerDelegate {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textField: UITextField!
-    var audit: Audit?
-    
-    
-    /*
-    
-     Delegate protocols
-    
-    */
-    func save_dict_to_audit(key: String, value: String) {
-        
-        audit?.outputs[key] = value
-        
-    }
-    
-    func save_dictionary() {
-        
-        audit?.save_data()
-        
-    }
     
     /*
      
@@ -66,9 +41,9 @@ class ViewController: UIViewController, UITextFieldDelegate, ViewControllerDeleg
             
         } else {
             
-            audit = Audit(audit_name_param: textField.text!)
+            audit.set_name(audit_name_param: textField.text!)
         
-            audit?.outputs["filename"] = textField.text!
+            audit.outputs["filename"] = textField.text!
             
             //Reload old inputs if they exist
         
@@ -96,7 +71,7 @@ class ViewController: UIViewController, UITextFieldDelegate, ViewControllerDeleg
             
             alert_controller.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in
                 
-                self.dismiss(animated: true, completion: nil)
+                alert_controller.dismiss(animated: true, completion: nil)
                 
             }))
             
@@ -104,9 +79,9 @@ class ViewController: UIViewController, UITextFieldDelegate, ViewControllerDeleg
             
         } else {
             
-            audit = Audit(audit_name_param: textField.text!)
+            audit.set_name(audit_name_param: textField.text!)
             
-            audit?.retrieve_data()
+            audit.outputs["filename"] = textField.text!
             
             /* Uncomment this when saving actually works */
             
@@ -162,19 +137,17 @@ class ViewController: UIViewController, UITextFieldDelegate, ViewControllerDeleg
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-                
-        if segue.identifier == "toPreaudit" {
-            
-            let destinationNavController = segue.destination as! UINavigationController
-            
-            let tableViewController = destinationNavController.topViewController as! TableViewController
-            
-            tableViewController.delegate = self
-                        
-        }
-        
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//                
+//        if segue.identifier == "toPreaudit" {
+//            
+//            let destinationNavController = segue.destination as! UINavigationController
+//            
+//            let tableViewController = destinationNavController.topViewController as! TableViewController
+//            
+//        }
+//        
+//    }
     
     /*
      
