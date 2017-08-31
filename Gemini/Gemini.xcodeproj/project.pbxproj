@@ -24,9 +24,12 @@
 		2A66E7071F52841B00F86CFE /* ZoneSpecsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A66E7061F52841B00F86CFE /* ZoneSpecsViewController.swift */; };
 		2A66E7091F52843200F86CFE /* SelectingFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A66E7081F52843200F86CFE /* SelectingFeatureViewController.swift */; };
 		2A81291B1F4CE01D009BCFB9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A81291A1F4CE01D009BCFB9 /* TableViewController.swift */; };
+		2A833B051F57EDCA0063FA88 /* LineChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A833B041F57EDCA0063FA88 /* LineChartViewController.swift */; };
+		2A833B071F57F0980063FA88 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A833B061F57F0980063FA88 /* Charts.framework */; };
 		2A9526641F51D6DD0058B764 /* CSVs in Resources */ = {isa = PBXBuildFile; fileRef = 2A9526631F51D6DD0058B764 /* CSVs */; };
 		2A9526681F5206430058B764 /* AuditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9526671F5206430058B764 /* AuditTableViewController.swift */; };
 		2A95266A1F520EE80058B764 /* AuditDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9526691F520EE80058B764 /* AuditDetailViewController.swift */; };
+		650168BA0A65395019F4B276 /* Pods_Gemini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326F96D68821862FD9F6F472 /* Pods_Gemini.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,9 +53,14 @@
 		2A66E7061F52841B00F86CFE /* ZoneSpecsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoneSpecsViewController.swift; sourceTree = "<group>"; };
 		2A66E7081F52843200F86CFE /* SelectingFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectingFeatureViewController.swift; sourceTree = "<group>"; };
 		2A81291A1F4CE01D009BCFB9 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		2A833B041F57EDCA0063FA88 /* LineChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartViewController.swift; sourceTree = "<group>"; };
+		2A833B061F57F0980063FA88 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Gemini-acjmvnxarvtkvodtrcileryvaprq/Build/Products/Debug-iphonesimulator/Charts/Charts.framework"; sourceTree = "<group>"; };
 		2A9526631F51D6DD0058B764 /* CSVs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CSVs; sourceTree = "<group>"; };
 		2A9526671F5206430058B764 /* AuditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditTableViewController.swift; sourceTree = "<group>"; };
 		2A9526691F520EE80058B764 /* AuditDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuditDetailViewController.swift; path = ../AuditDetailViewController.swift; sourceTree = "<group>"; };
+		326F96D68821862FD9F6F472 /* Pods_Gemini.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gemini.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD9B1B5C7D9FDB2BE69FBC6E /* Pods-Gemini.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gemini.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gemini/Pods-Gemini.release.xcconfig"; sourceTree = "<group>"; };
+		C85EA35E6E46F92D2B9BBAC8 /* Pods-Gemini.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gemini.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gemini/Pods-Gemini.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A833B071F57F0980063FA88 /* Charts.framework in Frameworks */,
+				650168BA0A65395019F4B276 /* Pods_Gemini.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +81,8 @@
 			children = (
 				2A4B6EA21F4BD2F700B1CD3B /* Gemini */,
 				2A4B6EA11F4BD2F700B1CD3B /* Products */,
+				9C964B5CD60B713787CF8E5E /* Pods */,
+				CA2A0E1A2BDC2D25A7EB70DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +102,7 @@
 				2A81291A1F4CE01D009BCFB9 /* TableViewController.swift */,
 				2A4B6EA51F4BD2F700B1CD3B /* ViewController.swift */,
 				2A4B6EA71F4BD2F700B1CD3B /* Main.storyboard */,
+				2A833B041F57EDCA0063FA88 /* LineChartViewController.swift */,
 				2A9526671F5206430058B764 /* AuditTableViewController.swift */,
 				2A9526691F520EE80058B764 /* AuditDetailViewController.swift */,
 				2A66E7041F527D9F00F86CFE /* FeatureTableViewController.swift */,
@@ -111,6 +124,24 @@
 			path = Gemini;
 			sourceTree = "<group>";
 		};
+		9C964B5CD60B713787CF8E5E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C85EA35E6E46F92D2B9BBAC8 /* Pods-Gemini.debug.xcconfig */,
+				AD9B1B5C7D9FDB2BE69FBC6E /* Pods-Gemini.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CA2A0E1A2BDC2D25A7EB70DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A833B061F57F0980063FA88 /* Charts.framework */,
+				326F96D68821862FD9F6F472 /* Pods_Gemini.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,9 +149,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A4B6EB51F4BD2F700B1CD3B /* Build configuration list for PBXNativeTarget "Gemini" */;
 			buildPhases = (
+				EBFCC4926D91ADAC39188D5B /* [CP] Check Pods Manifest.lock */,
 				2A4B6E9C1F4BD2F700B1CD3B /* Sources */,
 				2A4B6E9D1F4BD2F700B1CD3B /* Frameworks */,
 				2A4B6E9E1F4BD2F700B1CD3B /* Resources */,
+				335967961965639E6A9D14A7 /* [CP] Embed Pods Frameworks */,
+				2A748E81273413238BEC1AF4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -181,6 +215,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2A748E81273413238BEC1AF4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gemini/Pods-Gemini-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		335967961965639E6A9D14A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Gemini/Pods-Gemini-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gemini/Pods-Gemini-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBFCC4926D91ADAC39188D5B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gemini-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2A4B6E9C1F4BD2F700B1CD3B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -192,6 +280,7 @@
 				2A5AA77C1F4D36D2009140C0 /* PreauditDetailViewController.swift in Sources */,
 				2A5AA78A1F4D60C2009140C0 /* auditheader.swift in Sources */,
 				2A4B6EA61F4BD2F700B1CD3B /* ViewController.swift in Sources */,
+				2A833B051F57EDCA0063FA88 /* LineChartViewController.swift in Sources */,
 				2A66E7031F5263A400F86CFE /* AuditInfoViewController.swift in Sources */,
 				2A9526681F5206430058B764 /* AuditTableViewController.swift in Sources */,
 				2A66E7091F52843200F86CFE /* SelectingFeatureViewController.swift in Sources */,
@@ -320,6 +409,7 @@
 		};
 		2A4B6EB61F4BD2F700B1CD3B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C85EA35E6E46F92D2B9BBAC8 /* Pods-Gemini.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Gemini/Info.plist;
@@ -332,6 +422,7 @@
 		};
 		2A4B6EB71F4BD2F700B1CD3B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD9B1B5C7D9FDB2BE69FBC6E /* Pods-Gemini.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Gemini/Info.plist;

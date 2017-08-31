@@ -217,9 +217,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZW5-2z-FwP">
-                                <rect key="frame" x="0.0" y="150" width="414" height="216"/>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efr-ov-2Uv">
                                 <rect key="frame" x="20" y="374" width="30" height="30"/>
                                 <state key="normal" title="Add"/>
@@ -234,15 +231,18 @@
                                     <segue destination="GRS-Ka-4Vk" kind="show" identifier="cancelSelect" id="dpU-U9-TTU"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZW5-2z-FwP">
+                                <rect key="frame" x="0.0" y="28" width="414" height="216"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9y3-pf-WiG" firstAttribute="trailing" secondItem="wON-St-xYd" secondAttribute="trailingMargin" id="Jzv-Id-IRK"/>
                             <constraint firstItem="efr-ov-2Uv" firstAttribute="leading" secondItem="wON-St-xYd" secondAttribute="leadingMargin" id="U71-Y8-gKx"/>
-                            <constraint firstItem="ZW5-2z-FwP" firstAttribute="top" secondItem="U90-s5-aK3" secondAttribute="bottom" constant="130" id="iN9-x6-6kW"/>
+                            <constraint firstItem="ZW5-2z-FwP" firstAttribute="top" secondItem="U90-s5-aK3" secondAttribute="bottom" constant="8" id="iN9-x6-6kW"/>
                             <constraint firstAttribute="trailing" secondItem="ZW5-2z-FwP" secondAttribute="trailing" id="iqY-Xc-qVl"/>
-                            <constraint firstItem="efr-ov-2Uv" firstAttribute="top" secondItem="ZW5-2z-FwP" secondAttribute="bottom" constant="8" id="twa-2c-LPf"/>
-                            <constraint firstItem="9y3-pf-WiG" firstAttribute="top" secondItem="ZW5-2z-FwP" secondAttribute="bottom" constant="8" id="ubq-lt-e7L"/>
+                            <constraint firstItem="efr-ov-2Uv" firstAttribute="top" secondItem="ZW5-2z-FwP" secondAttribute="bottom" constant="130" id="twa-2c-LPf"/>
+                            <constraint firstItem="9y3-pf-WiG" firstAttribute="top" secondItem="ZW5-2z-FwP" secondAttribute="bottom" constant="130" id="ubq-lt-e7L"/>
                             <constraint firstItem="ZW5-2z-FwP" firstAttribute="leading" secondItem="wON-St-xYd" secondAttribute="leading" id="x8C-WM-LrJ"/>
                         </constraints>
                     </view>
@@ -379,6 +379,45 @@
             </objects>
             <point key="canvasLocation" x="-2183" y="1206"/>
         </scene>
+        <!--Line Chart View Controller-->
+        <scene sceneID="xPE-Ug-YT9">
+            <objects>
+                <viewController id="FNo-aQ-wl4" customClass="LineChartViewController" customModule="Gemini" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gXJ-ft-Nti"/>
+                        <viewControllerLayoutGuide type="bottom" id="eHE-dV-7AR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ahW-8l-Ryd">
+                        <rect key="frame" x="0.0" y="64" width="414" height="628"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j99-K7-cZz" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="628"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="j99-K7-cZz" firstAttribute="leading" secondItem="ahW-8l-Ryd" secondAttribute="leading" id="77N-bX-848"/>
+                            <constraint firstItem="j99-K7-cZz" firstAttribute="top" secondItem="gXJ-ft-Nti" secondAttribute="bottom" id="CVv-AB-xEB"/>
+                            <constraint firstItem="eHE-dV-7AR" firstAttribute="top" secondItem="j99-K7-cZz" secondAttribute="bottom" id="NjM-XB-VK6"/>
+                            <constraint firstAttribute="trailing" secondItem="j99-K7-cZz" secondAttribute="trailing" id="v4X-cX-vKM"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="439-e4-tu5"/>
+                        <barButtonItem systemItem="done" id="fPx-eT-b1b">
+                            <connections>
+                                <segue destination="g3p-vH-O3d" kind="show" id="rq6-dg-IAi"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="geW-X3-Db2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-281.15942028985512" y="341.57608695652175"/>
+        </scene>
         <!--Zones-->
         <scene sceneID="di0-1v-zGz">
             <objects>
@@ -406,6 +445,12 @@
                         <barButtonItem systemItem="add" id="VUC-L1-ghe">
                             <connections>
                                 <segue destination="pxg-g9-MJQ" kind="show" identifier="addRoom" id="kPy-MT-ytF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="BKh-fI-6F4"/>
+                        <barButtonItem title="Graph" id="6yv-L0-aaZ">
+                            <connections>
+                                <segue destination="FNo-aQ-wl4" kind="show" identifier="toGraph" id="bVb-7B-Jet"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="hYJ-Ko-yC5"/>
@@ -444,7 +489,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgw-HK-sFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-279" y="344"/>
+            <point key="canvasLocation" x="-1271" y="-472"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qYY-i6-vat">
@@ -664,10 +709,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NvE-Qg-JLO"/>
-        <segue reference="mZX-Xj-QMb"/>
-        <segue reference="8nH-ws-0mp"/>
-        <segue reference="fVE-Bc-BhZ"/>
+        <segue reference="bcp-kr-HjG"/>
+        <segue reference="rq6-dg-IAi"/>
         <segue reference="knL-EN-naq"/>
+        <segue reference="dpU-U9-TTU"/>
+        <segue reference="Rpp-Rg-hAr"/>
     </inferredMetricsTieBreakers>
 </document>

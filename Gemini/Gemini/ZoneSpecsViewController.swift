@@ -105,9 +105,7 @@ class ZoneSpecsViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     override func viewDidAppear(_ animated: Bool) {
         
         label.text = spec
-        
-        print(spec)
-        
+                
         if spec == "Units" {
             
             textField.isHidden = true
