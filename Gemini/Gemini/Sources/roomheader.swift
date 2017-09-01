@@ -271,6 +271,8 @@ class Room: Audit {
     
     //this is good for the ovens,
     private func find_best_model(prod_capacity: String, size: String, file_name: String) -> String{
+        
+        var peak_hour_schedule = read_in_hour_data()
 
         
         let rows = open_csv(filename: file_name)
@@ -287,7 +289,7 @@ class Room: Audit {
             }
             
             //find energy cost will be different for every type of appliance
-            new_dict[row["model_number"]!] = find_energy_cost(preheat_energy: Int(row["preheat_energy"]!)!, idle_energy_rate: Int(row["idle_energy_rate"]!)!, fan_energy_rate: Int(row["fan_energy_rate"]!)!)
+            new_dict[row["model_number"]!] = find_energy_cost(preheat_energy: Int(row["preheat_energy"]!)!, idle_energy_rate: Int(row["idle_energy_rate"]!)!, fan_energy_rate: Int(row["fan_energy_rate"]!)!, peak_hour_schedule: peak_hour_schedule)
             
             
         }
@@ -344,21 +346,18 @@ class Room: Audit {
     }
 
     
-    //This is mostly good for all ovens
-    private func find_energy_cost(preheat_energy: Double, idle_energy_rate: Double, fan_energy_rate: Double) -> Double{
+    //This is mostly good for all ovens, ice, fryer, griddles, but sometimes some have different names
+    private func find_energy_cost(preheat_energy: Double, idle_energy_rate: Double, fan_energy_rate: Double, peak_hour_schedule: Dictionary<String, Double>) -> Double{
         
         
         
         //operation hours per week * 52 = ideal run hours
-        //where do we get stuff from the bills?
         
         
         //This has all the rates for each time in the bill
         var pricing_chart = get_bill_data(bill_type: bill_type)
         //bill_type from user
         //*** Compiler Error ***
-        
-        var peak_hour_schedule = read_in_hour_data()
         
         var gas_energy = preheat_energy * days_in_operation + (ideal_run_hours * idle_energy_rate)
         //need days_in_operation, ideal_run_hours
@@ -369,7 +368,7 @@ class Room: Audit {
         
         
         
-        //not sure what this is for
+        //This seems like it is for ideal enery consumption
         //var electric_energy = ideal_run_hours * fan_energy_rate
         
         
@@ -386,6 +385,23 @@ class Room: Audit {
         
         return total_cost
 
+    }
+    
+    private func find_energy_cost_ice(peak_hour_schedule: Dictionary<String, Double>, ice_harvest_rate: Double, energy_use_rate: Double) -> Double {
+        
+        //operation hours per week * 52 = ideal_run_hours
+        
+        //this is for the ideal energy consumption I think
+        //var energy_consumption = ideal_run_hours * ice_harvest_rate * energy_use_rate
+    
+        var hour_energy_use = ice_harvest_rate * energy_use_rate / 24
+        
+
+        var summer = peak_hour_schedule["Summer-On-Peak"] * hour_energy_use * pricing_chart["Summer-On-Peak"] + peak_hour_schedule["Summer-Part-Peak"] * hour_energy_use * pricing_chart["Summer-Part-Peak"] + peak_hour_schedule["Summer-Off-Peak"] * hour_energy_use * pricing_chart["Summer-Off-Peak"] //*** Compiler Error ***
+        
+        var winter = peak_hour_schedule["Winter-On-Peak"] * hour_energy_use * pricing_chart["Winter-On-Peak"] + peak_hour_schedule["Winter-Off-Peak"] * hour_energy_use * pricing_chart["Winter-Off-Peak"]
+        
+        return summer + winter
     }
     
     private func get_bill_data(bill_type: String) -> Dictionary<String, Double> {

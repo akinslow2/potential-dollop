@@ -1,4 +1,4 @@
-IceMaker:
+IceMaker:  
 
 Energy Consumption:
 ideal_run_hours * ice_harvest_rate * energy_use_rate  
