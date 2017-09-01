@@ -204,7 +204,7 @@ class Room: Audit {
     }
     
     private func __compute__icemaker(model_number:String, company: String){
-        var energy_star = is_energy_star(model_number: model_number, company: company, file_name: csv_file_for_icemaker)
+        var energy_star = is_energy_star(model_number: model_number, company: company, file_name: feature_references["Ice Maker"]!)
         if energy_star {
             return
             //done
@@ -212,11 +212,11 @@ class Room: Audit {
         
         //oven length, conveyor width
         
-        let best_model_num = find_best_model(prod_capacity: prod_capacity, size: size, file_name: csv_file_for_icemaker)
+        let best_model_num = find_best_model(prod_capacity: prod_capacity, size: size, file_name: feature_references["Ice Maker"]!) //*** Compiler Error ***
     }
     
     private func __compute__conveyor__oven(model_number:String, company: String){
-        var energy_star = is_energy_star(model_number: model_number, company: company, file_name: csv_file_for_conveyorovens)
+        var energy_star = is_energy_star(model_number: model_number, company: company, file_name: feature_references["Conveyor Oven"]!)
         if energy_star {
             return
             //done
@@ -224,12 +224,12 @@ class Room: Audit {
         
         //oven length, conveyor width
         //either make this specific to the type of ktichen appliance or just make the parameters generic like "required1, required2" and so on...
-        let best_model_num = find_best_model(prod_capacity: prod_capacity, size: size, file_name: csv_file_for_conveyorovens)
+        let best_model_num = find_best_model(prod_capacity: prod_capacity, size: size, file_name: feature_references["Conveyor Oven"]!) //*** Compiler Error ***
     }
     
     
     private func __compute__convection__oven(model_number:String, company: String){
-        var energy_star = is_energy_star(model_number: model_number, company: company, file_name: csv_file_for_convectionovens)
+        var energy_star = is_energy_star(model_number: model_number, company: company, file_name: feature_references["Convection Oven"]!)
         if energy_star {
             return
             //done
@@ -237,11 +237,11 @@ class Room: Audit {
         
         //size, capacity, fuel type
         
-        let best_model_num = find_best_model(prod_capacity: prod_capacity, size: size, file_name: csv_file_for_convectionovens)
+        let best_model_num = find_best_model(prod_capacity: prod_capacity, size: size, file_name: feature_references["Convection Oven"]!) //*** Compiler Error ***
     }
     
     private func __compute__combination__oven(model_number:String, company: String){
-        var energy_star = is_energy_star(model_number: model_number, company: company, file_name: csv_file_for_combinationovens)
+        var energy_star = is_energy_star(model_number: model_number, company: company, file_name: feature_references["Combination Oven"]!)
         if energy_star {
             return
             //done
@@ -249,13 +249,13 @@ class Room: Audit {
         
         //size, fuel type
         
-        let best_model_num = find_best_model(prod_capacity: prod_capacity, size: size, file_name: csv_file_for_combinationovens)
+        let best_model_num = find_best_model(prod_capacity: prod_capacity, size: size, file_name: feature_references["Combination Oven"]!) //*** Compiler Error ***
     }
     
     
     //Need to make constants for the csvs needed for each type of material
     private func __compute__rack__oven(model_number:String, company: String){
-        var energy_star = is_energy_star(model_number: model_number, company: company, file_name: csv_file_for_rackovens)
+        var energy_star = is_energy_star(model_number: model_number, company: company, file_name: feature_references["Rack Oven"]!)
         
         if energy_star {
             return
@@ -266,7 +266,7 @@ class Room: Audit {
         //let size
         //maybe fuel type
         
-        let best_model_num = find_best_model(prod_capacity: prod_capacity, size: size, file_name: csv_file_for_rackovens)
+        let best_model_num = find_best_model(prod_capacity: prod_capacity, size: size, file_name: feature_references["Rack Oven"]!) //*** Compiler Error ***
     }
     
     //For this part, the best model might not have the exact size and capacity, so we may have to have a way to get close
@@ -307,9 +307,12 @@ class Room: Audit {
         
         
         //might need to get a keyset
+        
+        
+        //To Wil: you can use .keys for a keyset and maybe .values for a valueset
         for model in list_of_costs {
-            if list_of_costs[model] < lowest_cost {
-                model_name = model
+            if list_of_costs[model] < lowest_cost { //*** Compiler Error ***
+                model_name = model //*** Compiler Error ***
             }
         }
         
@@ -441,12 +444,12 @@ class Room: Audit {
         
         
         //This has all the rates for each time in the bill
-        var pricing_chart = get_bill_data(bill_type: bill_type)
+        var pricing_chart = get_bill_data(bill_type: bill_type) //*** Compiler Error ***
         //still need: hours_on_peak_pricing, hours_on_partpeak_pricing, hours_on_offpeak_pricing
         //also: hours_on_partpeak_pricing(winter), hours_on_offpeak_pricing(winter)
         
-        var gas_energy = preheat_energy * days_in_operation + (ideal_run_hours * idle_energy_rate)
-        var gas_cost = gas_energy / 99976.1 * (winter_rate + summer_rate) / 2
+        var gas_energy = preheat_energy * days_in_operation + (ideal_run_hours * idle_energy_rate) //*** Compiler Error ***
+        var gas_cost = gas_energy / 99976.1 * (winter_rate + summer_rate) / 2 //*** Compiler Error ***
         
         //not sure what this is for
         //var electric_energy = ideal_run_hours * fan_energy_rate
@@ -454,9 +457,9 @@ class Room: Audit {
         
         
         //Electric Cost:
-        var summer = hours_on_peak_pricing * fan_energy_rate * peak_price + hours_on_partpeak_pricing * fan_energy_rate * partpeak_price + hours_on_offpeak_pricing * fan_energy_rate * offpeak_price
+        var summer = hours_on_peak_pricing * fan_energy_rate * peak_price + hours_on_partpeak_pricing * fan_energy_rate * partpeak_price + hours_on_offpeak_pricing * fan_energy_rate * offpeak_price //*** Compiler Error ***
         
-        var winter = hours_on_partpeak_pricing * fan_energy_rate * partpeak_price + hours_on_offpeak_pricing * fan_energy_rate * offpeak_price
+        var winter = hours_on_partpeak_pricing * fan_energy_rate * partpeak_price + hours_on_offpeak_pricing * fan_energy_rate * offpeak_price //*** Compiler Error ***
         
         var total_electric = summer + winter
         
@@ -465,7 +468,7 @@ class Room: Audit {
     }
     
     private func get_bill_data(bill_type: String) -> Dictionary<String, Double> {
-        let rows = open_csv(filename: bill_csv)
+        let rows = open_csv(filename: bill_csv) //*** Compiler Error ***
         
         var new_dict = Dictionary<String, Double>()
         
