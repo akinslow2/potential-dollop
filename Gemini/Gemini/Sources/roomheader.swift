@@ -269,7 +269,9 @@ class Room: Audit {
         let best_model_num = find_best_model(prod_capacity: prod_capacity, size: size, file_name: feature_references["Rack Oven"]!) //*** Compiler Error ***
     }
     
-    //For this part, the best model might not have the exact size and capacity, so we may have to have a way to get close
+
+    
+    //this is good for the ovens,
     private func find_best_model(prod_capacity: String, size: String, file_name: String) -> String{
 
         
@@ -294,8 +296,6 @@ class Room: Audit {
         
         var best_model = find_lowest_cost_model(list_of_costs: new_dict)
         
-        //find the best based on the lowest energy cost
-        //return the model string to the user
         //need to keep track of the low energy cost as well for the graph
         
         return best_model
@@ -310,7 +310,7 @@ class Room: Audit {
         
         
         //To Wil: you can use .keys for a keyset and maybe .values for a valueset
-        for model in list_of_costs {
+        for model in list_of_costs.keys {
             if list_of_costs[model] < lowest_cost { //*** Compiler Error ***
                 model_name = model //*** Compiler Error ***
             }
@@ -320,6 +320,26 @@ class Room: Audit {
     }
     
     private func read_in_hour_data(){
+        let rows = open_csv(filename: bill_interval_csv)
+        
+        var hour_data = Dictionary<String, Double>()
+        
+        for row in rows {
+            var someString = row["usg_dt"]
+            let firstChar = Int(someString[someString.startIndex])
+            if firstChar == 1 {
+                //format: hour_data["Winter-On-Peak"] += row["usgAmount"]
+                //check for the second character to see if its an int, then concat
+            }
+            if firstChar <= 4 || firstChar >= 11 {
+                //This is winter
+                //need to check date and time to figure out which peak
+                
+            } else {
+                //This is summer
+                //need to check date and time to figure out which peak
+            }
+        }
         
         //just need to check the month to get whether it is summer or winter
             //then get the time to figure out what kind of peak it is
@@ -330,126 +350,35 @@ class Room: Audit {
         
         
     }
-    
-    //this is a much more generalized version but we have the same issue with the multiple different find_energy_costs
-    /*private func find_best_model(required1: String, required2: String, required3: String, required4: String, required5: String, type: String, file_name: String) -> String{
-     var category1 = ""
-     var category2 = ""
-     var category3 = ""
-     var category4 = ""
-     var category5 = ""
-     
-     if type == "rack_oven" {
-     category1 = "prod_capacity"
-     category2 = "size"
-     //category3 = "fuel_type"
-     } else if type == "convection_oven" {
-     category1 = "size"
-     category2 = "capacity"
-     category3 = "fuel_type"
-     } else if type == "combination_oven" {
-     category1 = "size"
-     category2 = "fuel_type"
-     //category3 =
-     } else if type == "conveyor_ovens" {
-     category1 = "oven_length"
-     category2 = "conveyor_width"
-     //category3 =
-     } else if type == "ice_maker" {
-     category1 = "ice_harvest_rate"
-     category2 = "energy_use_rate"
-     category3 = "machine_rate"
-     category4 = "ice_type"
-     } else if type == "freezer" {
-     category1 = "total_volume"
-     category2 = "product_type"
-     category3 = "refrigerated_capacity_volume"
-     } else if type == "refrigerator" {
-     //need to check solid door or glass door
-     category1 = "total_volume"
-     category2 = "product_type"
-     category3 = "refigerated_capacity_volume"
-     } else if type == "hot_food_cabinets" {
-     category1 = "cabinet_volume"
-     category2 = "idle_energy_rate"
-     category3 = "size"
-     } else if type == "fryer" {
-     category1 = "vat_width"
-     category2 = "fuel_type"
-     category3 = "shortening_capacity"
-     category4 = "production_capacity"
-     } else if type == "steam_cookers" {
-     category1 = "fuel_type"
-     category2 = "production_capacity"
-     category3 = "water_use"
-     category4 = "pan_capacity"
-     category5 = "steamer_type"
-     } else if type == "griddles" {
-     category1 = "surface_area"
-     category2 = "nominal_width"
-     category3 = "single_or_double_sided"
-     category4 = "fuel_type"
-     }
-     
-     
-     
-     let rows = open_csv(filename: file_name)
-     
-     var new_dict = Dictionary<String, Int>()
-     
-     for row in rows! {
-     
-     if row[category1] != required1 {
-     continue
-     }
-     if row[category2] != required2 { //model_number must be revised. Not sure what it should be
-     continue
-     }
-     if required3 != "" {
-     if row[category3] != required3 {
-     continue
-     }
-     }
-     if required4 != "" {
-     if row[category4] != required3 {
-     continue
-     }
-     }
-     if required5 != "" {
-     if row[category5] != required3 {
-     continue
-     }
-     }
-     
-     new_dict[row["model_number"]!] = find_energy_cost(preheat_energy: Int(row["preheat_energy"]!)!, idle_energy_rate: Int(row["idle_energy_rate"]!)!, fan_energy_rate: Int(row["fan_energy_rate"]!)!)
-     return ""
-     
-     }
-     
-     //return the model number with the lowest cost
-     return ""
-     }*/
+    //most of the info needs to come from the bill, but some will come from the energy star csv
 
     
-    
-    //most of the info needs to come from the bill, but some will come from the energy star csv
-    //possibly doubles
-    //not sure how to get the bill stuff (hours and rates)
-    
     //This is mostly good for all ovens
-    private func find_energy_cost(preheat_energy: Int, idle_energy_rate: Int, fan_energy_rate: Int) -> Int{
+    private func find_energy_cost(preheat_energy: Double, idle_energy_rate: Double, fan_energy_rate: Double) -> Double{
+        
+        
         
         //operation hours per week * 52 = ideal run hours
         //where do we get stuff from the bills?
         
         
         //This has all the rates for each time in the bill
-        var pricing_chart = get_bill_data(bill_type: bill_type) //*** Compiler Error ***
+        var pricing_chart = get_bill_data(bill_type: bill_type)
+        //bill_type from user
+        //*** Compiler Error ***
+        
+        
         //still need: hours_on_peak_pricing, hours_on_partpeak_pricing, hours_on_offpeak_pricing
         //also: hours_on_partpeak_pricing(winter), hours_on_offpeak_pricing(winter)
         
-        var gas_energy = preheat_energy * days_in_operation + (ideal_run_hours * idle_energy_rate) //*** Compiler Error ***
-        var gas_cost = gas_energy / 99976.1 * (winter_rate + summer_rate) / 2 //*** Compiler Error ***
+        var gas_energy = preheat_energy * days_in_operation + (ideal_run_hours * idle_energy_rate)
+        //need days_in_operation, ideal_run_hours
+        //*** Compiler Error ***
+        var gas_cost = gas_energy / 99976.1 * (winter_rate + summer_rate) / 2
+        //not sure what winter and summer rate are
+        //*** Compiler Error ***
+        
+        
         
         //not sure what this is for
         //var electric_energy = ideal_run_hours * fan_energy_rate
@@ -457,9 +386,11 @@ class Room: Audit {
         
         
         //Electric Cost:
-        var summer = hours_on_peak_pricing * fan_energy_rate * peak_price + hours_on_partpeak_pricing * fan_energy_rate * partpeak_price + hours_on_offpeak_pricing * fan_energy_rate * offpeak_price //*** Compiler Error ***
+        var summer = hours_on_peak_pricing * fan_energy_rate * pricing_chart["Summer-On-Peak"] + hours_on_partpeak_pricing * fan_energy_rate * pricing_chart["Summer-Part-Peak"] + hours_on_offpeak_pricing * fan_energy_rate * pricing_chart["Summer-Off-Peak"] //*** Compiler Error ***
         
-        var winter = hours_on_partpeak_pricing * fan_energy_rate * partpeak_price + hours_on_offpeak_pricing * fan_energy_rate * offpeak_price //*** Compiler Error ***
+        var winter = hours_on_partpeak_pricing * fan_energy_rate * pricing_chart["Winter-On-Peak"] + hours_on_offpeak_pricing * fan_energy_rate * pricing_chart["Winter-Off-Peak"]
+        //just need hours on stuff so that those variables exist
+        //*** Compiler Error ***
         
         var total_electric = summer + winter
         
@@ -468,6 +399,7 @@ class Room: Audit {
     }
     
     private func get_bill_data(bill_type: String) -> Dictionary<String, Double> {
+        //bill_csv needs to be the name of the csv for the bill rates
         let rows = open_csv(filename: bill_csv) //*** Compiler Error ***
         
         var new_dict = Dictionary<String, Double>()
