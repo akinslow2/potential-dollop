@@ -315,6 +315,8 @@ class Room: Audit {
         return model_name
     }
     
+    
+    //making the assumption that every day is a weekday and non-holiday
     private func read_in_hour_data(){
         let rows = open_csv(filename: bill_interval_csv)
         
@@ -324,16 +326,40 @@ class Room: Audit {
             var someString = row["usg_dt"]
             let firstChar = Int(someString[someString.startIndex])
             if firstChar == 1 {
-                //format: hour_data["Winter-On-Peak"] += row["usgAmount"]
                 //check for the second character to see if its an int, then concat
             }
+            
+            
+            //Jordan: Need help indexing into strings
             if firstChar <= 4 || firstChar >= 11 {
-                //This is winter
-                //need to check date and time to figure out which peak
+                var str = row[""]
+                let indexFor = str.characters.indexOf(" ")
+                var firstTimeChar = Int(row["elec_intvl_end_dttm"][indexFor + 1])
+                if  firstTimeChar == 1 || firstTimeChar == 2{
+                    //get the second character
+                } else {
+                    if firstTimeChar >= 8 && firstTimeChar < 21 {
+                        hour_data["Winter-Part-Peak"] += Double(row["usgAmount"])
+                    } else {
+                        hour_data["Winter-Off-Peak"] += Double(row["usgAmount"])
+                    }
+                }
                 
             } else {
-                //This is summer
-                //need to check date and time to figure out which peak
+                var str = row[""]
+                let indexFor = str.characters.indexOf(" ")
+                var firstTimeChar = Int(row["elec_intvl_end_dttm"][indexFor + 1])
+                if  firstTimeChar == 1 || firstTimeChar == 2{
+                    //get the second character
+                } else {
+                    if firstTimeChar >= 12 && firstTimeChar < 18 {
+                        hour_data["Summer-On-Peak"] += Double(row["usgAmount"])
+                    } else if (firstTimeChar >= 8 && firstTimeChar < 12) || (firstTimeChar >= 18 && firstTimeChar < 21){
+                        hour_data["Summer-Part-Peak"] += Double(row["usgAmount"])
+                    } else {
+                        hour_data["Summer-Off-Peak"] += Double(row["usgAmount"])
+                    }
+                }
             }
         }
         
@@ -352,6 +378,7 @@ class Room: Audit {
         
         
         //operation hours per week * 52 = ideal run hours
+        ideal_run_hours = operation_hour_per_week * 52
         
         
         //This has all the rates for each time in the bill
