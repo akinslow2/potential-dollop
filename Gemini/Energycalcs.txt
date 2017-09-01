@@ -1,0 +1,119 @@
+IceMaker:
+
+Energy Consumption:
+ideal_run_hours * ice_harvest_rate * energy_use_rate  
+
+hour energy use = ice harvest rate * energy use rate / 24
+
+COST ($/yr)
+Electric Cost: 
+Summer: hours on peak pricing * hour energy use * peak price + hours on partpeak pricing * hour energy use * partpeak price + hours on offpeak pricing * hour energy use * offpeak price 
+
+Winter: hours on partpeak pricing * hour energy use * partpeak price + hours on offpeak pricing * hour energy use * offpeak price
+
+Total = Summer + Winter
+
+
+Freezer and Fridges:
+
+hourly energy use = daily energy use / 24
+
+ANNUAL ENERGY (kWh):
+Electricity Annual Consumption:
+ideal run hours * hourly energy use   
+
+COST ($/yr)
+Electric Cost: 
+Summer: hours on peak pricing * hourly energy use * peak price + hours on partpeak pricing * hourly energy use * partpeak price + hours on offpeak pricing * hourly energy use * offpeak price 
+
+Winter: hours on partpeak pricing * hourly energy use * partpeak price + hours on offpeak pricing * hourly energy use * offpeak price
+
+Total = Summer + Winter
+
+
+Cabinet (same as freezers and fridges except for hourly energy use vs. energy use):
+
+energy use = cabinet volume * idle energy rate / 1000
+
+ANNUAL ENERGY (kWh):
+Electricity Annual Consumption:
+ideal run hours * energy use 
+
+COST ($/yr)
+Electric Cost: 
+Summer: hours on peak pricing * energy use * peak price + hours on partpeak pricing * energy use * partpeak price + hours on offpeak pricing * energy use * offpeak price 
+
+Winter: hours on partpeak pricing * energy use * partpeak price + hours on offpeak pricing * energy use * offpeak price
+
+Total = Summer + Winter
+
+
+
+Fryer (possibly the same as ovens):
+
+ANNUAL ENERGY:
+(Gas in BTU, Electricity in kWh)
+
+preheat energy * days in operation + (ideal run hours * idle energy rate)
+
+
+
+
+COST ($/yr)
+
+If Gas oven, use gas equations.
+If Electric Oven, use electric equations
+
+Gas Cost = Gas Energy / 99976.1 * (Winter rate + Summer Rate) / 2
+
+Electric Cost: 
+Summer: hours on peak pricing * idle energy rate * peak price + hours on partpeak pricing * idle energy rate * partpeak price + hours on offpeak pricing * idle energy rate * offpeak price 
+
+Winter: hours on partpeak pricing * idle energy rate * partpeak price + hours on offpeak pricing * idle energy rate * offpeak price 
+
+Total Electricity = Summer + Winter
+
+
+
+
+Steam Cookers:
+
+ANNUAL ENERGY:
+(Gas in BTU, Electricity in kWh)
+
+preheat energy * days in operation + (ideal run hours * idle energy rate)
+
+
+
+
+Griddles (very similar to ovens):
+
+ANNUAL ENERGY:
+(Gas in BTU, Electricity in kWh)
+
+preheat energy * days in operation + (ideal run hours * idle energy rate)
+
+COST ($/yr)
+
+If Gas oven, use gas equations.
+If Electric Oven, use electric equations
+
+Gas Cost = Gas Energy / 99976.1 * (Winter rate + Summer Rate) / 2
+
+Electric Cost: 
+Summer: hours on peak pricing * idle energy rate * peak price + hours on partpeak pricing * idle energy rate * partpeak price + hours on offpeak pricing * idle energy rate * offpeak price 
+
+Winter: hours on partpeak pricing * idle energy rate * partpeak price + hours on offpeak pricing * idle energy rate * offpeak price 
+
+Total Electricity = Summer + Winter
+
+
+
+
+
+
+
+
+
+
+
