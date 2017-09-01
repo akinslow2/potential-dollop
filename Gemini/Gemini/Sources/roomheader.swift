@@ -187,18 +187,18 @@ class Room: Audit {
         } else if type == "ice_maker" {
             __compute__icemaker(model_number: model_number, company: company)
         } else if type == "freezer" {
-            __compute__icemaker(model_number: model_number, company: company)
+            __compute__freezer(model_number: model_number, company: company)
         } else if type == "refrigerator" {
-            __compute__icemaker(model_number: model_number, company: company)
+            __compute__refrigerator(model_number: model_number, company: company)
             //need to check solid door or glass door
         } else if type == "hot_food_cabinets" {
-            __compute__icemaker(model_number: model_number, company: company)
+            __compute__hot_foor_cabinets(model_number: model_number, company: company)
         } else if type == "fryer" {
-            __compute__icemaker(model_number: model_number, company: company)
+            __compute__fryer(model_number: model_number, company: company)
         } else if type == "steam_cookers" {
-            __compute__icemaker(model_number: model_number, company: company)
+            __compute__steam_cookers(model_number: model_number, company: company)
         } else if type == "griddles" {
-            __compute__icemaker(model_number: model_number, company: company)
+            __compute__griddles(model_number: model_number, company: company)
         }
         
     }
@@ -223,7 +223,6 @@ class Room: Audit {
         }
         
         //oven length, conveyor width
-        //either make this specific to the type of ktichen appliance or just make the parameters generic like "required1, required2" and so on...
         let best_model_num = find_best_model(prod_capacity: prod_capacity, size: size, file_name: feature_references["Conveyor Oven"]!) //*** Compiler Error ***
     }
     
@@ -259,7 +258,6 @@ class Room: Audit {
         
         if energy_star {
             return
-            //do not need to continue with this method, but should do something
         }
         
         //let prod_capacity
@@ -306,10 +304,6 @@ class Room: Audit {
         var model_name = ""
         
         
-        //might need to get a keyset
-        
-        
-        //To Wil: you can use .keys for a keyset and maybe .values for a valueset
         for model in list_of_costs.keys {
             if list_of_costs[model] < lowest_cost { //*** Compiler Error ***
                 model_name = model //*** Compiler Error ***
@@ -347,10 +341,7 @@ class Room: Audit {
                 //this will depend on the bill_type
             //then add that to the time in a map
         //this map will be returned and then will have the hours for the energy cost calculation
-        
-        
     }
-    //most of the info needs to come from the bill, but some will come from the energy star csv
 
     
     //This is mostly good for all ovens
@@ -367,9 +358,7 @@ class Room: Audit {
         //bill_type from user
         //*** Compiler Error ***
         
-        
-        //still need: hours_on_peak_pricing, hours_on_partpeak_pricing, hours_on_offpeak_pricing
-        //also: hours_on_partpeak_pricing(winter), hours_on_offpeak_pricing(winter)
+        var peak_hour_schedule = read_in_hour_data()
         
         var gas_energy = preheat_energy * days_in_operation + (ideal_run_hours * idle_energy_rate)
         //need days_in_operation, ideal_run_hours
@@ -386,15 +375,16 @@ class Room: Audit {
         
         
         //Electric Cost:
-        var summer = hours_on_peak_pricing * fan_energy_rate * pricing_chart["Summer-On-Peak"] + hours_on_partpeak_pricing * fan_energy_rate * pricing_chart["Summer-Part-Peak"] + hours_on_offpeak_pricing * fan_energy_rate * pricing_chart["Summer-Off-Peak"] //*** Compiler Error ***
+        var summer = peak_hour_schedule["Summer-On-Peak"] * fan_energy_rate * pricing_chart["Summer-On-Peak"] + peak_hour_schedule["Summer-Part-Peak"] * fan_energy_rate * pricing_chart["Summer-Part-Peak"] + peak_hour_schedule["Summer-Off-Peak"] * fan_energy_rate * pricing_chart["Summer-Off-Peak"] //*** Compiler Error ***
         
-        var winter = hours_on_partpeak_pricing * fan_energy_rate * pricing_chart["Winter-On-Peak"] + hours_on_offpeak_pricing * fan_energy_rate * pricing_chart["Winter-Off-Peak"]
-        //just need hours on stuff so that those variables exist
+        var winter = peak_hour_schedule["Winter-On-Peak"] * fan_energy_rate * pricing_chart["Winter-On-Peak"] + peak_hour_schedule["Winter-Off-Peak"] * fan_energy_rate * pricing_chart["Winter-Off-Peak"]
         //*** Compiler Error ***
         
         var total_electric = summer + winter
         
         var total_cost = total_electric + gas_cost
+        
+        return total_cost
 
     }
     
