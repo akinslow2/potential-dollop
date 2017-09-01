@@ -316,6 +316,18 @@ class Room: Audit {
         return model_name
     }
     
+    private func read_in_hour_data(){
+        
+        //just need to check the month to get whether it is summer or winter
+            //then get the time to figure out what kind of peak it is
+                //need to get which time is in which peak from another file
+                //this will depend on the bill_type
+            //then add that to the time in a map
+        //this map will be returned and then will have the hours for the energy cost calculation
+        
+        
+    }
+    
     //this is a much more generalized version but we have the same issue with the multiple different find_energy_costs
     /*private func find_best_model(required1: String, required2: String, required3: String, required4: String, required5: String, type: String, file_name: String) -> String{
      var category1 = ""
