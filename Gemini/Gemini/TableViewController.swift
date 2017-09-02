@@ -32,31 +32,7 @@ class TableViewController: UITableViewController {
         
         self.navigationItem.hidesBackButton = true
 
-        
-        //define_preaudit_inputs()
-        
     }
-//    /*
-// 
-//    Function: define_preaudit_inputs
-//    ----------------------------------
-//    Sets indexed elements of preaudit_entries
-//    to the keys of the dictionary preaudit_inputs
-// 
-//    */
-//    func define_preaudit_inputs() {
-//        
-//        var i = 0
-//        for entry in preaudit_entries {
-//            
-//            var new_entry = Dictionary<String, String>()
-//            new_entry[entry] = ""
-//            preaudit_inputs.append(new_entry)
-//            i += 1
-//            
-//        }
-//        
-//    }
     
     /*
      

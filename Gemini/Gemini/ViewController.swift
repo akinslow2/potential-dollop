@@ -153,7 +153,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
      
      Function: viewDidLoad
      -------------------------
-     Loads view
+     Loads view and hides back button
      
      
      */
