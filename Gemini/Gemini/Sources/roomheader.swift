@@ -169,7 +169,6 @@ class Room: Audit {
     }
 
     func __add_kitchen_feature(values:Dictionary<String, String>) {
-        //need some way to break up which item this is for
         let model_number = values["model_number"]!
         
         let company = values["num_lamps"]!
@@ -307,8 +306,8 @@ class Room: Audit {
         
         
         for model in list_of_costs.keys {
-            if list_of_costs[model] < lowest_cost { //*** Compiler Error ***
-                model_name = model //*** Compiler Error ***
+            if list_of_costs[model]! < lowest_cost {
+                model_name = model
             }
         }
         
@@ -317,7 +316,7 @@ class Room: Audit {
     
     
     //making the assumption that every day is a weekday and non-holiday
-    private func read_in_hour_data(){
+    private func read_in_hour_data() -> Dictionary<String, Double> {
         let rows = open_csv(filename: bill_interval_csv)
         
         var hour_data = Dictionary<String, Double>()
@@ -362,23 +361,18 @@ class Room: Audit {
                 }
             }
         }
-        
-        //just need to check the month to get whether it is summer or winter
-            //then get the time to figure out what kind of peak it is
-                //need to get which time is in which peak from another file
-                //this will depend on the bill_type
-            //then add that to the time in a map
+
         //this map will be returned and then will have the hours for the energy cost calculation
     }
 
     
-    //This is mostly good for all ovens, ice, fryer, griddles, but sometimes some have different names
+    //This is mostly good for all ovens, fryer, griddles, but sometimes some have different names
     private func find_energy_cost(preheat_energy: Double, idle_energy_rate: Double, fan_energy_rate: Double, peak_hour_schedule: Dictionary<String, Double>) -> Double{
         
         
         
         //operation hours per week * 52 = ideal run hours
-        ideal_run_hours = operation_hour_per_week * 52
+        ideal_run_hours = operation_hours_per_week * 52
         
         
         //This has all the rates for each time in the bill
@@ -443,43 +437,43 @@ class Room: Audit {
         
         for row in rows! {
             
-            if row["Name"] == bill_type {
+            if row["Name"]! == bill_type {
                 found = true
-            } else if row["Name"] != bill_type {
+            } else if row["Name"]! != bill_type {
                 if !found {
                     continue
-                } else if row["Name"].length != 0 {
+                } else if row["Name"]!.length != 0 {
                     break
                 }
             }
             
-            if row["Season"] == "Winter"{
+            if row["Season"]! == "Winter"{
                 summer = false
-                if row["Peak"] == "On-Peak" {
-                    new_dict["Winter-On-Peak"] = Double(row["Energy"])
+                if row["Peak"]! == "On-Peak" {
+                    new_dict["Winter-On-Peak"] = Double(row["Energy"]!)
                 } else {
-                    new_dict["Winter-Off-Peak"] = Double(row["Energy"])
+                    new_dict["Winter-Off-Peak"] = Double(row["Energy"]!)
                 }
                 
-            } else if row["Season"] == "Summer" || summer {
+            } else if row["Season"]! == "Summer" || summer {
                 summer = true
-                if row["Peak"] == "Super-Peak" || super_exists {
+                if row["Peak"]! == "Super-Peak" || super_exists {
                     super_exists = true
-                    if row["Peak"] == "Super-Peak" {
-                        new_dict["Summer-On-Peak"] = Double(row["Energy"])
+                    if row["Peak"]! == "Super-Peak" {
+                        new_dict["Summer-On-Peak"] = Double(row["Energy"]!)
                     } else if row["Peak"] = "On-Peak" {
-                        new_dict["Summer-Part-Peak"] = Double(row["Energy"])
+                        new_dict["Summer-Part-Peak"] = Double(row["Energy"]!)
                     } else {
-                        new_dict["Summer-Off-Peak"] = Double(row["Energy"])
+                        new_dict["Summer-Off-Peak"] = Double(row["Energy"]!)
                     }
                     
                 } else {
-                    if row["Peak"] == "On-Peak" {
-                        new_dict["Summer-On-Peak"] = Double(row["Energy"])
+                    if row["Peak"]! == "On-Peak" {
+                        new_dict["Summer-On-Peak"] = Double(row["Energy"]!)
                     } else if row["Peak"] = "Part-Peak" {
-                        new_dict["Summer-Part-Peak"] = Double(row["Energy"])
+                        new_dict["Summer-Part-Peak"] = Double(row["Energy"]!)
                     } else {
-                        new_dict["Summer-Off-Peak"] = Double(row["Energy"])
+                        new_dict["Summer-Off-Peak"] = Double(row["Energy"]!)
                     }
                 }
             }
@@ -493,10 +487,10 @@ class Room: Audit {
         
         for row in rows! {
             
-            if row["company"] != company {
+            if row["company"]! != company {
                 continue
             }
-            if row["model_number"] != model_number { //model_number must be revised. Not sure what it should be, depends on the csv
+            if row["model_number"]! != model_number { //model_number must be revised. Not sure what it should be, depends on the csv
                 continue
             }
             return true
