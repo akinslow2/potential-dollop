@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Parse
 
 class Audit {
     
@@ -35,39 +36,45 @@ class Audit {
     
     func retrieve_data() {
         
-        do {
-            
-            if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-                
-                let path = dir.appendingPathComponent(filename)
-                
-                let output_file_string = try String(contentsOf: path, encoding: String.Encoding.utf8)
-                
-                outputs = rehydrateOutputs(outputFileString: output_file_string)
-                
-            }
-            
-            
-        } catch { print("There was an error in retrieving") }
+        let query = PFObject.query()
         
+        query?.findObjectsInBackground(block: { (objects, error) in
+            
+            if error != nil {
+                
+                print(error)
+                
+            } else if let audits = objects {
+                
+                for audit in audits {
+                    
+                    let keys = audit.allKeys
+                    
+                    if keys.contains(self.audit_name) {
+                        
+                        self.outputs = self.rehydrateOutputs(outputFileString: audit[self.audit_name] as! String)
+                        
+                    }
+                    
+                }
+                    
+            }})
         
     }
     
     func save_data() {
         
-        do {
-            
-            if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-                                
-                let path = dir.appendingPathComponent(filename)
-                
-                print(outputs.description)
-                
-                try outputs.description.write(to: path, atomically: false, encoding: String.Encoding.utf8)
-                
-            }
+        auditObject[audit_name] = outputs.description
         
-        } catch { print("There was an error in saving") }
+        print(auditObject)
+        
+        auditObject.saveInBackground { (success, error) in
+            
+            print("The save success is \(success)")
+            
+        }
+        
+        outputs = Dictionary<String, String>()
         
     }
     

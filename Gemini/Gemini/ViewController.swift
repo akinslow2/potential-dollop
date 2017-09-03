@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Parse
 
-let audit = Audit(audit_name_param: "NULL")
+var audit = Audit(audit_name_param: "NULL")
+var auditObject = PFObject(className: "Audits")
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
@@ -44,6 +46,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             audit.set_name(audit_name_param: textField.text!)
         
             audit.outputs["filename"] = textField.text!
+            
+            
             
             //Reload old inputs if they exist
         
@@ -83,24 +87,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             audit.outputs["filename"] = textField.text!
             
-            /* Uncomment this when saving actually works */
+            print(audit.outputs.count)
             
-//            if audit.outputs.count == 0 {
-//                
-//                let alert_controller = UIAlertController(title: "Audit not found", message: "Please provide the audit identifier used in the pre-audit", preferredStyle: UIAlertControllerStyle.alert)
-//                
-//                alert_controller.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-//                    
-//                    self.dismiss(animated: true, completion: nil)
-//                    
-//                }))
-//                
-//                self.present(alert_controller, animated: true, completion: nil)
-//                
-//            } else {
+            if audit.outputs.count == 1 {
+                
+                let alert_controller = UIAlertController(title: "Audit not found", message: "Please provide the audit identifier used in the pre-audit", preferredStyle: UIAlertControllerStyle.alert)
+                
+                alert_controller.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                    
+                    self.dismiss(animated: true, completion: nil)
+                    
+                }))
+                
+                self.present(alert_controller, animated: true, completion: nil)
+                
+            } else {
             
                 performSegue(withIdentifier: "toAudit", sender: nil)
-//            }
+              }
             
         }
         
@@ -137,17 +141,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//                
-//        if segue.identifier == "toPreaudit" {
-//            
-//            let destinationNavController = segue.destination as! UINavigationController
-//            
-//            let tableViewController = destinationNavController.topViewController as! TableViewController
-//            
-//        }
-//        
-//    }
     
     /*
      
