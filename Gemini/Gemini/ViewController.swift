@@ -86,9 +86,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             audit.outputs["filename"] = textField.text!
             
+            audit.retrieve_data()
+            
             print(audit.outputs.count)
             
-            if audit.outputs.count == 0 {
+            if audit.outputs.count == 1 {
                 
                 let alert_controller = UIAlertController(title: "Audit not found", message: "Please provide the audit identifier used in the pre-audit", preferredStyle: UIAlertControllerStyle.alert)
                 

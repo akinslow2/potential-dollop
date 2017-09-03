@@ -38,37 +38,60 @@ class Audit {
         
         let query = PFObject.query()
         
+        print("Hello")
+        
         query?.findObjectsInBackground(block: { (objects, error) in
             
             if error != nil {
                 
                 print(error)
                 
-            } else if let audits = objects {
+            } else if let objectList = objects {
                 
-                for audit in audits {
+                for object in objectList {
                     
-                    let keys = audit.allKeys
+                    if let audit = object as? PFObject {
                     
-                    if keys.contains(self.audit_name) {
+                        let query1 = PFQuery(className: "Audits")
                         
-                        self.outputs = self.rehydrateOutputs(outputFileString: audit[self.audit_name] as! String)
+                        query1.whereKey("name", equalTo: String(self.audit_name))
                         
+                        query1.findObjectsInBackground(block: { (objects, error) in
+                            
+                            if error != nil {
+                                
+                                print(error)
+                                
+                            } else if let objects = objects {
+                                
+                                if objects.count > 0 {
+                                    
+                                    print(objects)
+                                    
+                                }
+                                
+                            }
+                            
+                        })
+                        
+                            //self.outputs = self.rehydrateOutputs(outputFileString: audit[self.audit_name] as! String)
+                        
+                        }
+                
                     }
                     
                 }
                     
-            }})
+            })
         
     }
     
     func save_data() {
         
-        var auditObject = PFObject(className: "Audits")
-        
-        print(audit_name)
-        
-        auditObject[String(audit_name)] = "outputs"
+        let auditObject = PFObject(className: "Audits")
+                
+        auditObject["name"] = String(audit_name)
+        auditObject["outputs"] = String(outputs.description)
         
         auditObject.saveInBackground { (success, error) in
             

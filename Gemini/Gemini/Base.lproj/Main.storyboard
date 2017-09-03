@@ -541,7 +541,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234" borderStyle="roundedRect" placeholder="E.g. 1234.Main.Sunnyvale.CA.2017" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kiF-X8-VxT">
-                                <rect key="frame" x="20" y="259" width="374" height="30"/>
+                                <rect key="frame" x="20" y="256" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -549,21 +549,21 @@
                                     <outlet property="delegate" destination="g3p-vH-O3d" id="jQZ-sS-fJd"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Format: Number.Street.City.State.Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgx-18-wOD">
-                                <rect key="frame" x="20" y="230" width="275" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Format: Street City State Year (no spaces)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgx-18-wOD">
+                                <rect key="frame" x="20" y="230" width="271.66666666666669" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ty6-CZ-4jM">
-                                <rect key="frame" x="20" y="297" width="58" height="30"/>
+                                <rect key="frame" x="20" y="294" width="58" height="30"/>
                                 <state key="normal" title="Preaudit"/>
                                 <connections>
                                     <action selector="preauditButtonPressed:" destination="g3p-vH-O3d" eventType="touchUpInside" id="tbB-tP-1MS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68R-ah-hur">
-                                <rect key="frame" x="358" y="297" width="36" height="30"/>
+                                <rect key="frame" x="358" y="294" width="36" height="30"/>
                                 <state key="normal" title="Audit"/>
                                 <connections>
                                     <action selector="auditButtonPressed:" destination="g3p-vH-O3d" eventType="touchUpInside" id="DF6-5g-c7v"/>
