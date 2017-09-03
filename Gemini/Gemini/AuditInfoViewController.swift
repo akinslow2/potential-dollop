@@ -229,6 +229,8 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
             
         } else {
             
+            room?.augment_prod_and_size(production: productionTextField.text!, size: sizeTextField.text!)
+            
             if feature == "Lighting" {
                 
                 room?.feature_table_keys.append(feature + " " + modelNumberTextField.text!)

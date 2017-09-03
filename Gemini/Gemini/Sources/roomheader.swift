@@ -22,6 +22,7 @@ class Room: Audit {
     var feature_table_keys = Array<String>()
     var room_name = ""
     var room_type = ""
+    var curr_values = Dictionary<String, String>()
     
     let lighting_specs = ["Space Type", "Measured Lux", "Area", "Units"]
     let hvac_specs = Array<String>()
@@ -82,6 +83,8 @@ class Room: Audit {
 //    Plug:
 
     func new_feature(feature_type:String, values:Dictionary<String, String>) {
+        
+        curr_values = values
 
         if feature_type == "Lighting" {
             
@@ -100,6 +103,14 @@ class Room: Audit {
             __add_plug_feature(values: values)
             
         }
+        
+    }
+    
+    func augment_prod_and_size(production: String, size: String) {
+        
+        curr_values["production"] = production
+        
+        curr_values["size"] = size
         
     }
 
@@ -169,41 +180,47 @@ class Room: Audit {
     }
 
     func __add_kitchen_feature(values:Dictionary<String, String>) {
-        let model_number = values["model_number"]!
+//        let model_number = values["model_number"]!
+//        
+//        let company = values["num_lamps"]!
+//        
+//        let type = values["type"]!
+//        
+//        if type == "rack_oven" {
+//            __compute__rack__oven(model_number: model_number, company: company)
+//        } else if type == "convection_oven" {
+//            __compute__convection__oven(model_number: model_number, company: company)
+//        } else if type == "combination_oven" {
+//            __compute__combination__oven(model_number: model_number, company: company)
+//        } else if type == "conveyor_ovens" {
+//            __compute__conveyor__oven(model_number: model_number, company: company)
+//        } else if type == "ice_maker" {
+//            __compute__icemaker(model_number: model_number, company: company)
+//        } else if type == "freezer" {
+//            __compute__freezer(model_number: model_number, company: company)
+//        } else if type == "refrigerator" {
+//            __compute__refrigerator(model_number: model_number, company: company)
+//            //need to check solid door or glass door
+//        } else if type == "hot_food_cabinets" {
+//            __compute__hot_foor_cabinets(model_number: model_number, company: company)
+//        } else if type == "fryer" {
+//            __compute__fryer(model_number: model_number, company: company)
+//        } else if type == "steam_cookers" {
+//            __compute__steam_cookers(model_number: model_number, company: company)
+//        } else if type == "griddles" {
+//            __compute__griddles(model_number: model_number, company: company)
+//        }
         
-        let company = values["num_lamps"]!
+    }
+    
+    func deliver_prod_size(production: String, size: String) -> Dictionary<String, String> {
         
-        let type = values["type"]!
-        
-        if type == "rack_oven" {
-            __compute__rack__oven(model_number: model_number, company: company)
-        } else if type == "convection_oven" {
-            __compute__convection__oven(model_number: model_number, company: company)
-        } else if type == "combination_oven" {
-            __compute__combination__oven(model_number: model_number, company: company)
-        } else if type == "conveyor_ovens" {
-            __compute__conveyor__oven(model_number: model_number, company: company)
-        } else if type == "ice_maker" {
-            __compute__icemaker(model_number: model_number, company: company)
-        } else if type == "freezer" {
-            __compute__freezer(model_number: model_number, company: company)
-        } else if type == "refrigerator" {
-            __compute__refrigerator(model_number: model_number, company: company)
-            //need to check solid door or glass door
-        } else if type == "hot_food_cabinets" {
-            __compute__hot_foor_cabinets(model_number: model_number, company: company)
-        } else if type == "fryer" {
-            __compute__fryer(model_number: model_number, company: company)
-        } else if type == "steam_cookers" {
-            __compute__steam_cookers(model_number: model_number, company: company)
-        } else if type == "griddles" {
-            __compute__griddles(model_number: model_number, company: company)
-        }
+        return ["production": production, "size": size]
         
     }
     
     private func __compute__icemaker(model_number:String, company: String){
-        var energy_star = is_energy_star(model_number: model_number, company: company, file_name: feature_references["Ice Maker"]!)
+        let energy_star = is_energy_star(model_number: model_number, company: company, file_name: feature_references["Ice Maker"]!)
         if energy_star {
             return
             //done
@@ -211,23 +228,23 @@ class Room: Audit {
         
         //oven length, conveyor width
         
-        let best_model_num = find_best_model(prod_capacity: prod_capacity, size: size, file_name: feature_references["Ice Maker"]!) //*** Compiler Error ***
+        let best_model_num = find_best_model(prod_capacity: curr_values["production"]!, size: curr_values["size"]!, file_name: feature_references["Ice Maker"]!) //*** Compiler Error ***
     }
     
     private func __compute__conveyor__oven(model_number:String, company: String){
-        var energy_star = is_energy_star(model_number: model_number, company: company, file_name: feature_references["Conveyor Oven"]!)
+        let energy_star = is_energy_star(model_number: model_number, company: company, file_name: feature_references["Conveyor Oven"]!)
         if energy_star {
             return
             //done
         }
         
         //oven length, conveyor width
-        let best_model_num = find_best_model(prod_capacity: prod_capacity, size: size, file_name: feature_references["Conveyor Oven"]!) //*** Compiler Error ***
+        let best_model_num = find_best_model(prod_capacity: curr_values["production"]!, size: curr_values["size"]!, file_name: feature_references["Conveyor Oven"]!) //*** Compiler Error ***
     }
     
     
     private func __compute__convection__oven(model_number:String, company: String){
-        var energy_star = is_energy_star(model_number: model_number, company: company, file_name: feature_references["Convection Oven"]!)
+        let energy_star = is_energy_star(model_number: model_number, company: company, file_name: feature_references["Convection Oven"]!)
         if energy_star {
             return
             //done
@@ -235,11 +252,11 @@ class Room: Audit {
         
         //size, capacity, fuel type
         
-        let best_model_num = find_best_model(prod_capacity: prod_capacity, size: size, file_name: feature_references["Convection Oven"]!) //*** Compiler Error ***
+        let best_model_num = find_best_model(prod_capacity: curr_values["production"]!, size: curr_values["size"]!, file_name: feature_references["Convection Oven"]!) //*** Compiler Error ***
     }
     
     private func __compute__combination__oven(model_number:String, company: String){
-        var energy_star = is_energy_star(model_number: model_number, company: company, file_name: feature_references["Combination Oven"]!)
+        let energy_star = is_energy_star(model_number: model_number, company: company, file_name: feature_references["Combination Oven"]!)
         if energy_star {
             return
             //done
@@ -247,13 +264,13 @@ class Room: Audit {
         
         //size, fuel type
         
-        let best_model_num = find_best_model(prod_capacity: prod_capacity, size: size, file_name: feature_references["Combination Oven"]!) //*** Compiler Error ***
+        let best_model_num = find_best_model(prod_capacity: curr_values["production"]!, size: curr_values["size"]!, file_name: feature_references["Combination Oven"]!) //*** Compiler Error ***
     }
     
     
     //Need to make constants for the csvs needed for each type of material
     private func __compute__rack__oven(model_number:String, company: String){
-        var energy_star = is_energy_star(model_number: model_number, company: company, file_name: feature_references["Rack Oven"]!)
+        let energy_star = is_energy_star(model_number: model_number, company: company, file_name: feature_references["Rack Oven"]!)
         
         if energy_star {
             return
@@ -263,7 +280,7 @@ class Room: Audit {
         //let size
         //maybe fuel type
         
-        let best_model_num = find_best_model(prod_capacity: prod_capacity, size: size, file_name: feature_references["Rack Oven"]!) //*** Compiler Error ***
+        let best_model_num = find_best_model(prod_capacity: curr_values["production"]!, size: curr_values["size"]!, file_name: feature_references["Rack Oven"]!) //*** Compiler Error ***
     }
     
 
@@ -301,7 +318,7 @@ class Room: Audit {
     }
     
     private func find_lowest_cost_model(list_of_costs: Dictionary<String, Double>) -> String {
-        var lowest_cost = 10000000000.0
+        let lowest_cost = 10000000000.0
         var model_name = ""
         
         
@@ -317,46 +334,50 @@ class Room: Audit {
     
     //making the assumption that every day is a weekday and non-holiday
     private func read_in_hour_data() -> Dictionary<String, Double> {
-        let rows = open_csv(filename: bill_interval_csv)
+        let rows = open_csv(filename: "Sample Interval Data")
         
         var hour_data = Dictionary<String, Double>()
         
-        for row in rows {
-            var someString = row["usg_dt"]
-            let firstChar = Int(someString[someString.startIndex])
+        for row in rows! {
+            let someString = row["usg_dt"]
+            let firstChar = Int((someString?.components(separatedBy: "")[0])!) //pretty sure this functions to separate string
             if firstChar == 1 {
                 //check for the second character to see if its an int, then concat
             }
             
-            
-            //Jordan: Need help indexing into strings
-            if firstChar <= 4 || firstChar >= 11 {
+            //Wil: what is the variable str?
+            if firstChar! <= 4 || firstChar! >= 11 {
                 var str = row[""]
-                let indexFor = str.characters.indexOf(" ")
-                var firstTimeChar = Int(row["elec_intvl_end_dttm"][indexFor + 1])
-                if  firstTimeChar == 1 || firstTimeChar == 2{
+                let str1 = row["elec_intvl_end_dttm"]?.components(separatedBy: " ")[1]
+                let firstTimeChar = Int((str1?.components(separatedBy: "")[0])!)
+                if  firstTimeChar == 1 || firstTimeChar == 2 {
                     //get the second character
                 } else {
-                    if firstTimeChar >= 8 && firstTimeChar < 21 {
-                        hour_data["Winter-Part-Peak"] += Double(row["usgAmount"])
+                    if firstTimeChar! >= 8 && firstTimeChar! < 21 {
+                        let a = hour_data["Winter-Part-Peak"]
+                        hour_data["Winter-Part-Peak"] = a! + Double(row["usgAmount"]!)!
                     } else {
-                        hour_data["Winter-Off-Peak"] += Double(row["usgAmount"])
+                        let a = hour_data["Winter-Off-Peak"]
+                        hour_data["Winter-Off-Peak"] = a! + Double(row["usgAmount"]!)!
                     }
                 }
                 
             } else {
                 var str = row[""]
-                let indexFor = str.characters.indexOf(" ")
-                var firstTimeChar = Int(row["elec_intvl_end_dttm"][indexFor + 1])
+                let str1 = row["elec_intvl_end_dttm"]?.components(separatedBy: " ")[1]
+                let firstTimeChar = Int((str1?.components(separatedBy: "")[0])!)
                 if  firstTimeChar == 1 || firstTimeChar == 2{
                     //get the second character
                 } else {
-                    if firstTimeChar >= 12 && firstTimeChar < 18 {
-                        hour_data["Summer-On-Peak"] += Double(row["usgAmount"])
-                    } else if (firstTimeChar >= 8 && firstTimeChar < 12) || (firstTimeChar >= 18 && firstTimeChar < 21){
-                        hour_data["Summer-Part-Peak"] += Double(row["usgAmount"])
+                    if firstTimeChar! >= 12 && firstTimeChar! < 18 {
+                        let a = hour_data["Summer-On-Peak"]
+                        hour_data["Summer-On-Peak"] = a! + Double(row["usgAmount"]!)!
+                    } else if (firstTimeChar! >= 8 && firstTimeChar! < 12) || (firstTimeChar! >= 18 && firstTimeChar! < 21){
+                        let a = hour_data["Summer-Part-Peak"]
+                        hour_data["Summer-Part-Peak"] = a! + Double(row["usgAmount"]!)!
                     } else {
-                        hour_data["Summer-Off-Peak"] += Double(row["usgAmount"])
+                        let a = hour_data["Summer-Off-Peak"]
+                        hour_data["Summer-Off-Peak"] = a! + Double(row["usgAmount"]!)!
                     }
                 }
             }
@@ -372,7 +393,7 @@ class Room: Audit {
         
         
         //operation hours per week * 52 = ideal run hours
-        ideal_run_hours = operation_hours_per_week * 52
+      //  ideal_run_hours = operation_hours_per_week * 52
         
         
         //This has all the rates for each time in the bill
@@ -390,7 +411,7 @@ class Room: Audit {
         
         
         //This seems like it is for ideal enery consumption
-        //var electric_energy = ideal_run_hours * fan_energy_rate
+        var electric_energy = ideal_run_hours * fan_energy_rate
         
         
         
@@ -413,21 +434,27 @@ class Room: Audit {
         //operation hours per week * 52 = ideal_run_hours
         
         //this is for the ideal energy consumption I think
-        //var energy_consumption = ideal_run_hours * ice_harvest_rate * energy_use_rate
+        
+        var pricing_chart = get_bill_data(bill_type: bill_type)
+        
+        var energy_consumption = ideal_run_hours * ice_harvest_rate * energy_use_rate
     
         var hour_energy_use = ice_harvest_rate * energy_use_rate / 24
         
 
-        var summer = peak_hour_schedule["Summer-On-Peak"] * hour_energy_use * pricing_chart["Summer-On-Peak"] + peak_hour_schedule["Summer-Part-Peak"] * hour_energy_use * pricing_chart["Summer-Part-Peak"] + peak_hour_schedule["Summer-Off-Peak"] * hour_energy_use * pricing_chart["Summer-Off-Peak"] //*** Compiler Error ***
+        var summer = peak_hour_schedule["Summer-On-Peak"] * hour_energy_use * pricing_chart["Summer-On-Peak"] + peak_hour_schedule["Summer-Part-Peak"] * hour_energy_use * pricing_chart["Summer-Part-Peak"] + peak_hour_schedule["Summer-Off-Peak"] * hour_energy_use * pricing_chart["Summer-Off-Peak"]
         
         var winter = peak_hour_schedule["Winter-On-Peak"] * hour_energy_use * pricing_chart["Winter-On-Peak"] + peak_hour_schedule["Winter-Off-Peak"] * hour_energy_use * pricing_chart["Winter-Off-Peak"]
         
         return summer + winter
+        
     }
     
     private func get_bill_data(bill_type: String) -> Dictionary<String, Double> {
         //bill_csv needs to be the name of the csv for the bill rates
-        let rows = open_csv(filename: bill_csv) //*** Compiler Error ***
+        
+        //come back to this
+        let rows = open_csv(filename: ) //*** Compiler Error ***
         
         var new_dict = Dictionary<String, Double>()
         

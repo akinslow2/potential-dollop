@@ -15,8 +15,8 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var label: UILabel!
     
-    let gas_structures = Array<String>() //will be var with data
-    let electric_structures = Array<String>() //will be var with data
+    var gas_structures = Array<String>() //will be var with data
+    var electric_structures = Array<String>() //will be var with data
     var facility_types = Array<String>()
     let utility_companies = ["PG&E", "SMUD", "CPAU"] //hard coded for now, can easily be changed
     
@@ -335,7 +335,7 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
      */
     func loadPickerValues() {
         
-        if let x = open_csv(filename: "CSVs/space_type") {
+        if let x = open_csv(filename: "space_type") {
         
             for i in x {
                 
@@ -352,6 +352,112 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
             }
             
         }
+        
+        var filename = ""
+        
+        if let company = audit.outputs["Utility Company"] {
+            
+            if company == "CPAU" {
+                
+                filename = "cpau"
+                
+            } else if company == "PG&E" {
+                
+                filename = "pge_electric"
+                
+            } //else if company == "SMUD" {
+                
+            //   filename = ""
+                
+           // }
+            
+        } else {
+            
+            let alert_controller = UIAlertController(title: "No utility company selected", message: "Please provide the utility company", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert_controller.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in
+                
+                alert_controller.dismiss(animated: true, completion: nil)
+                
+            }))
+            
+            self.present(alert_controller, animated: true, completion: nil)
+            
+        }
+        
+        if let y = open_csv(filename: filename) {
+            
+            for i in y {
+                
+                var space = ""
+                
+                for (_, value) in i {
+                    
+                    space += value + " "
+                    
+                }
+                
+                print(space)
+                
+                electric_structures.append(space)
+                
+            }
+            
+        }
+        
+        var filename1 = ""
+        
+        if let company = audit.outputs["Utility Company"] {
+            
+            if company == "CPAU" {
+                
+                filename1 = "cpau"
+                
+            } else if company == "PG&E" {
+                
+                filename = "pge_gas_small" //should check
+                
+            } //else if company == "SMUD" {
+            
+            //   filename = ""
+            
+            // }
+            
+        } else {
+            
+            let alert_controller = UIAlertController(title: "No utility company selected", message: "Please provide the utility company", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert_controller.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { (action) in
+                
+                alert_controller.dismiss(animated: true, completion: nil)
+                
+            }))
+            
+            self.present(alert_controller, animated: true, completion: nil)
+            
+        }
+        
+        if let z = open_csv(filename: filename1) {
+            
+            for i in z {
+                
+                var space = ""
+                
+                for (_, value) in i {
+                    
+                    space += value + " "
+                    
+                    
+                }
+                
+                print(space)
+                
+                gas_structures.append(space)
+                
+            }
+            
+        }
+
         
     }
     

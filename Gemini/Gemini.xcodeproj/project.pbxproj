@@ -29,6 +29,17 @@
 		2A9526641F51D6DD0058B764 /* CSVs in Resources */ = {isa = PBXBuildFile; fileRef = 2A9526631F51D6DD0058B764 /* CSVs */; };
 		2A9526681F5206430058B764 /* AuditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9526671F5206430058B764 /* AuditTableViewController.swift */; };
 		2A95266A1F520EE80058B764 /* AuditDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9526691F520EE80058B764 /* AuditDetailViewController.swift */; };
+		2AE484511F5BBD64002E6EC7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE484471F5BBD64002E6EC7 /* AudioToolbox.framework */; };
+		2AE484521F5BBD64002E6EC7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE484481F5BBD64002E6EC7 /* CFNetwork.framework */; };
+		2AE484531F5BBD64002E6EC7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE484491F5BBD64002E6EC7 /* CoreGraphics.framework */; };
+		2AE484541F5BBD64002E6EC7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE4844A1F5BBD64002E6EC7 /* libsqlite3.tbd */; };
+		2AE484551F5BBD64002E6EC7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE4844B1F5BBD64002E6EC7 /* libz.tbd */; };
+		2AE484561F5BBD64002E6EC7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE4844C1F5BBD64002E6EC7 /* MobileCoreServices.framework */; };
+		2AE484571F5BBD64002E6EC7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE4844D1F5BBD64002E6EC7 /* QuartzCore.framework */; };
+		2AE484581F5BBD64002E6EC7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE4844E1F5BBD64002E6EC7 /* Security.framework */; };
+		2AE484591F5BBD64002E6EC7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE4844F1F5BBD64002E6EC7 /* StoreKit.framework */; };
+		2AE4845A1F5BBD64002E6EC7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE484501F5BBD64002E6EC7 /* SystemConfiguration.framework */; };
+		2AE4845D1F5BBD91002E6EC7 /* ParseBridgingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE4845C1F5BBD91002E6EC7 /* ParseBridgingHeader.m */; };
 		650168BA0A65395019F4B276 /* Pods_Gemini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326F96D68821862FD9F6F472 /* Pods_Gemini.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +69,18 @@
 		2A9526631F51D6DD0058B764 /* CSVs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CSVs; sourceTree = "<group>"; };
 		2A9526671F5206430058B764 /* AuditTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditTableViewController.swift; sourceTree = "<group>"; };
 		2A9526691F520EE80058B764 /* AuditDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuditDetailViewController.swift; path = ../AuditDetailViewController.swift; sourceTree = "<group>"; };
+		2AE484471F5BBD64002E6EC7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		2AE484481F5BBD64002E6EC7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		2AE484491F5BBD64002E6EC7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2AE4844A1F5BBD64002E6EC7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		2AE4844B1F5BBD64002E6EC7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		2AE4844C1F5BBD64002E6EC7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		2AE4844D1F5BBD64002E6EC7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2AE4844E1F5BBD64002E6EC7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		2AE4844F1F5BBD64002E6EC7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		2AE484501F5BBD64002E6EC7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2AE4845B1F5BBD91002E6EC7 /* Gemini-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gemini-Bridging-Header.h"; sourceTree = "<group>"; };
+		2AE4845C1F5BBD91002E6EC7 /* ParseBridgingHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseBridgingHeader.m; sourceTree = "<group>"; };
 		326F96D68821862FD9F6F472 /* Pods_Gemini.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gemini.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD9B1B5C7D9FDB2BE69FBC6E /* Pods-Gemini.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gemini.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gemini/Pods-Gemini.release.xcconfig"; sourceTree = "<group>"; };
 		C85EA35E6E46F92D2B9BBAC8 /* Pods-Gemini.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gemini.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gemini/Pods-Gemini.debug.xcconfig"; sourceTree = "<group>"; };
@@ -68,6 +91,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AE484511F5BBD64002E6EC7 /* AudioToolbox.framework in Frameworks */,
+				2AE484521F5BBD64002E6EC7 /* CFNetwork.framework in Frameworks */,
+				2AE484531F5BBD64002E6EC7 /* CoreGraphics.framework in Frameworks */,
+				2AE484541F5BBD64002E6EC7 /* libsqlite3.tbd in Frameworks */,
+				2AE484551F5BBD64002E6EC7 /* libz.tbd in Frameworks */,
+				2AE484561F5BBD64002E6EC7 /* MobileCoreServices.framework in Frameworks */,
+				2AE484571F5BBD64002E6EC7 /* QuartzCore.framework in Frameworks */,
+				2AE484581F5BBD64002E6EC7 /* Security.framework in Frameworks */,
+				2AE484591F5BBD64002E6EC7 /* StoreKit.framework in Frameworks */,
+				2AE4845A1F5BBD64002E6EC7 /* SystemConfiguration.framework in Frameworks */,
 				2A833B071F57F0980063FA88 /* Charts.framework in Frameworks */,
 				650168BA0A65395019F4B276 /* Pods_Gemini.framework in Frameworks */,
 			);
@@ -120,6 +153,8 @@
 				2A4B6EAF1F4BD2F700B1CD3B /* LaunchScreen.storyboard */,
 				2A4B6EB21F4BD2F700B1CD3B /* Info.plist */,
 				2A4B6EAA1F4BD2F700B1CD3B /* Gemini.xcdatamodeld */,
+				2AE4845C1F5BBD91002E6EC7 /* ParseBridgingHeader.m */,
+				2AE4845B1F5BBD91002E6EC7 /* Gemini-Bridging-Header.h */,
 			);
 			path = Gemini;
 			sourceTree = "<group>";
@@ -136,6 +171,16 @@
 		CA2A0E1A2BDC2D25A7EB70DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2AE484471F5BBD64002E6EC7 /* AudioToolbox.framework */,
+				2AE484481F5BBD64002E6EC7 /* CFNetwork.framework */,
+				2AE484491F5BBD64002E6EC7 /* CoreGraphics.framework */,
+				2AE4844A1F5BBD64002E6EC7 /* libsqlite3.tbd */,
+				2AE4844B1F5BBD64002E6EC7 /* libz.tbd */,
+				2AE4844C1F5BBD64002E6EC7 /* MobileCoreServices.framework */,
+				2AE4844D1F5BBD64002E6EC7 /* QuartzCore.framework */,
+				2AE4844E1F5BBD64002E6EC7 /* Security.framework */,
+				2AE4844F1F5BBD64002E6EC7 /* StoreKit.framework */,
+				2AE484501F5BBD64002E6EC7 /* SystemConfiguration.framework */,
 				2A833B061F57F0980063FA88 /* Charts.framework */,
 				326F96D68821862FD9F6F472 /* Pods_Gemini.framework */,
 			);
@@ -177,6 +222,7 @@
 				TargetAttributes = {
 					2A4B6E9F1F4BD2F700B1CD3B = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -238,11 +284,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Gemini/Pods-Gemini-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -284,6 +334,7 @@
 				2A66E7031F5263A400F86CFE /* AuditInfoViewController.swift in Sources */,
 				2A9526681F5206430058B764 /* AuditTableViewController.swift in Sources */,
 				2A66E7091F52843200F86CFE /* SelectingFeatureViewController.swift in Sources */,
+				2AE4845D1F5BBD91002E6EC7 /* ParseBridgingHeader.m in Sources */,
 				2A95266A1F520EE80058B764 /* AuditDetailViewController.swift in Sources */,
 				2A4B6EA41F4BD2F700B1CD3B /* AppDelegate.swift in Sources */,
 				2A81291B1F4CE01D009BCFB9 /* TableViewController.swift in Sources */,
@@ -412,10 +463,13 @@
 			baseConfigurationReference = C85EA35E6E46F92D2B9BBAC8 /* Pods-Gemini.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Gemini/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = d.Gemini;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gemini/Gemini-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -425,10 +479,12 @@
 			baseConfigurationReference = AD9B1B5C7D9FDB2BE69FBC6E /* Pods-Gemini.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Gemini/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = d.Gemini;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gemini/Gemini-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -6,5 +6,6 @@ target 'Gemini' do
   use_frameworks!
 
   # Pods for Gemini
+	pod 'Parse'
 	pod ‘Charts’, ‘~> 3.0’
 end
