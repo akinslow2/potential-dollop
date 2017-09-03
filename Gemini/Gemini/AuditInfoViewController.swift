@@ -253,6 +253,8 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
                 productionAllowedValsLabel.text = "Possible values: " + productionCapacities.description.replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "")
                 productionAllowedValsLabel.font = productionAllowedValsLabel.font.withSize(10)
                 
+                room?.augment_prod_and_size(production: productionTextField.text!, size: sizeTextField.text!)
+                
             }
             
         }
