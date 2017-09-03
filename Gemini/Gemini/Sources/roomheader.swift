@@ -10,6 +10,23 @@ let feature_references = ["Lighting": "lighting_database", "Combination Oven": "
 
 import Foundation
 
+extension String {
+    
+    subscript (i: Int) -> Character {
+        return self[index(startIndex, offsetBy: i)]
+    }
+    
+    subscript (i: Int) -> String {
+        return String(self[i] as Character)
+    }
+    
+    subscript (r: Range<Int>) -> String {
+        let start = index(startIndex, offsetBy: r.lowerBound)
+        let end = index(startIndex, offsetBy: r.upperBound)
+        return self[Range(start ..< end)]
+    }
+}
+
 class Room: Audit {
     
     var lighting = Array<Dictionary<String, String>>()
@@ -305,7 +322,7 @@ class Room: Audit {
             }
             
             //find energy cost will be different for every type of appliance
-            //new_dict[row["model_number"]!] = find_energy_cost(preheat_energy: Int(row["preheat_energy"]!)!, idle_energy_rate: Int(row["idle_energy_rate"]!)!, fan_energy_rate: Int(row["fan_energy_rate"]!)!, peak_hour_schedule: peak_hour_schedule)
+            new_dict[row["model_number"]!] = find_energy_cost(preheat_energy: Double(row["preheat_energy"]!)!, idle_energy_rate: Double(row["idle_energy_rate"]!)!, fan_energy_rate: Double(row["fan_energy_rate"]!)!, peak_hour_schedule: peak_hour_schedule)
             
             
         }
@@ -340,20 +357,20 @@ class Room: Audit {
         
         for row in rows! {
             let someString = row["usg_dt"]
-            let firstChar = Int((someString?.components(separatedBy: "")[0])!) //pretty sure this functions to separate string
+            let firstChar = Int((someString?[0])!)! //pretty sure this functions to separate string
             if firstChar == 1 {
                 //check for the second character to see if its an int, then concat
             }
             
             //Wil: what is the variable str?
-            if firstChar! <= 4 || firstChar! >= 11 {
+            if firstChar <= 4 || firstChar >= 11 {
                 var str = row[""]
                 let str1 = row["elec_intvl_end_dttm"]?.components(separatedBy: " ")[1]
-                let firstTimeChar = Int((str1?.components(separatedBy: "")[0])!)
+                let firstTimeChar = Int((str1?[0])!)!
                 if  firstTimeChar == 1 || firstTimeChar == 2 {
                     //get the second character
                 } else {
-                    if firstTimeChar! >= 8 && firstTimeChar! < 21 {
+                    if firstTimeChar >= 8 && firstTimeChar < 21 {
                         let a = hour_data["Winter-Part-Peak"]
                         hour_data["Winter-Part-Peak"] = a! + Double(row["usgAmount"]!)!
                     } else {
@@ -384,6 +401,7 @@ class Room: Audit {
         }
 
         //this map will be returned and then will have the hours for the energy cost calculation
+        return hour_data
     }
 
     
@@ -401,7 +419,7 @@ class Room: Audit {
         //bill_type from user
         //*** Compiler Error ***
         
-        var gas_energy = preheat_energy * Int(audit.outputs["days_in_operation"]!)! + Int(audit.outputs["ideal_run_hours"]!)! * idle_energy_rate)
+        var gas_energy = preheat_energy * Double(audit.outputs["days_in_operation"] as! String)! + Double(audit.outputs["ideal_run_hours"] as! String)! * idle_energy_rate
         //need days_in_operation, ideal_run_hours
         
         //*** Compiler Error ***
@@ -411,19 +429,21 @@ class Room: Audit {
         
         
         //This seems like it is for ideal enery consumption
-        var electric_energy = Int(audit.outputs["ideal_run_hours"]!)! * fan_energy_rate
+        var electric_energy = Double(audit.outputs["ideal_run_hours"]!)! * fan_energy_rate
         
         
         
         //Electric Cost:
-        var summer = peak_hour_schedule["Summer-On-Peak"] * fan_energy_rate * pricing_chart["Summer-On-Peak"] + peak_hour_schedule["Summer-Part-Peak"] * fan_energy_rate * pricing_chart["Summer-Part-Peak"] + peak_hour_schedule["Summer-Off-Peak"] * fan_energy_rate * pricing_chart["Summer-Off-Peak"] //*** Compiler Error ***
+        var summer = peak_hour_schedule["Summer-On-Peak"]! * fan_energy_rate * pricing_chart["Summer-On-Peak"]!
+        summer += peak_hour_schedule["Summer-Part-Peak"]! * fan_energy_rate * pricing_chart["Summer-Part-Peak"]!
+        summer += peak_hour_schedule["Summer-Off-Peak"]! * fan_energy_rate * pricing_chart["Summer-Off-Peak"]!
         
-        var winter = peak_hour_schedule["Winter-On-Peak"] * fan_energy_rate * pricing_chart["Winter-On-Peak"] + peak_hour_schedule["Winter-Off-Peak"] * fan_energy_rate * pricing_chart["Winter-Off-Peak"]
+        var winter = peak_hour_schedule["Winter-On-Peak"]! * fan_energy_rate * pricing_chart["Winter-On-Peak"]! + peak_hour_schedule["Winter-Off-Peak"]! * fan_energy_rate * pricing_chart["Winter-Off-Peak"]!
         //*** Compiler Error ***
         
         var total_electric = summer + winter
         
-        var total_cost = total_electric + gas_cost
+        var total_cost = total_electric //+ gas_cost
         
         return total_cost
 
@@ -435,18 +455,22 @@ class Room: Audit {
         
         //this is for the ideal energy consumption I think
         
-        var pricing_chart = get_bill_data(bill_type: bill_type)
+//        var pricing_chart = get_bill_data(bill_type: "pge_electric")
+//        
+//        var energy_consumption = ideal_run_hours * ice_harvest_rate * energy_use_rate
+//    
+//        var hour_energy_use = ice_harvest_rate * energy_use_rate / 24
+//        
+//
+//        var summer = peak_hour_schedule["Summer-On-Peak"] * fan_energy_rate * pricing_chart["Summer-On-Peak"]
+//        summer += peak_hour_schedule["Summer-Part-Peak"] * fan_energy_rate * pricing_chart["Summer-Part-Peak"]
+//        summer += peak_hour_schedule["Summer-Off-Peak"] * fan_energy_rate * pricing_chart["Summer-Off-Peak"]
+//        
+//        var winter = peak_hour_schedule["Winter-On-Peak"]! * hour_energy_use * pricing_chart["Winter-On-Peak"]! + peak_hour_schedule["Winter-Off-Peak"]! * hour_energy_use * pricing_chart["Winter-Off-Peak"]!
+//        
+//        return summer + winter
         
-        var energy_consumption = ideal_run_hours * ice_harvest_rate * energy_use_rate
-    
-        var hour_energy_use = ice_harvest_rate * energy_use_rate / 24
-        
-
-        var summer = peak_hour_schedule["Summer-On-Peak"] * hour_energy_use * pricing_chart["Summer-On-Peak"] + peak_hour_schedule["Summer-Part-Peak"] * hour_energy_use * pricing_chart["Summer-Part-Peak"] + peak_hour_schedule["Summer-Off-Peak"] * hour_energy_use * pricing_chart["Summer-Off-Peak"]
-        
-        var winter = peak_hour_schedule["Winter-On-Peak"] * hour_energy_use * pricing_chart["Winter-On-Peak"] + peak_hour_schedule["Winter-Off-Peak"] * hour_energy_use * pricing_chart["Winter-Off-Peak"]
-        
-        return summer + winter
+        return 0.0
         
     }
     
@@ -454,7 +478,7 @@ class Room: Audit {
         //bill_csv needs to be the name of the csv for the bill rates
         
         //come back to this
-        let rows = open_csv(filename: ) //*** Compiler Error ***
+        let rows = open_csv(filename: "pge_electric") //*** Compiler Error ***
         
         var new_dict = Dictionary<String, Double>()
         
@@ -469,7 +493,7 @@ class Room: Audit {
             } else if row["Name"]! != bill_type {
                 if !found {
                     continue
-                } else if row["Name"]!.length != 0 {
+                } else if !row["Name"]!.isEmpty {
                     break
                 }
             }
@@ -488,7 +512,7 @@ class Room: Audit {
                     super_exists = true
                     if row["Peak"]! == "Super-Peak" {
                         new_dict["Summer-On-Peak"] = Double(row["Energy"]!)
-                    } else if row["Peak"] = "On-Peak" {
+                    } else if row["Peak"] == "On-Peak" {
                         new_dict["Summer-Part-Peak"] = Double(row["Energy"]!)
                     } else {
                         new_dict["Summer-Off-Peak"] = Double(row["Energy"]!)
@@ -497,7 +521,7 @@ class Room: Audit {
                 } else {
                     if row["Peak"]! == "On-Peak" {
                         new_dict["Summer-On-Peak"] = Double(row["Energy"]!)
-                    } else if row["Peak"] = "Part-Peak" {
+                    } else if row["Peak"] == "Part-Peak" {
                         new_dict["Summer-Part-Peak"] = Double(row["Energy"]!)
                     } else {
                         new_dict["Summer-Off-Peak"] = Double(row["Energy"]!)
@@ -507,6 +531,8 @@ class Room: Audit {
 
             
         }
+        
+        return new_dict
     }
     
     func is_energy_star(model_number: String, company: String, file_name: String) -> Bool {
