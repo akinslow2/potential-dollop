@@ -64,17 +64,30 @@ class Audit {
     
     func save_data() {
         
-        auditObject[audit_name] = outputs.description
+        var auditObject = PFObject(className: "Audits")
         
-        print(auditObject)
+        print(audit_name)
+        
+        auditObject[String(audit_name)] = "outputs"
         
         auditObject.saveInBackground { (success, error) in
             
-            print("The save success is \(success)")
+            if error != nil {
+                
+                print(error)
+                
+            } else {
+            
+                print("Saved")
+                
+            }
             
         }
         
         outputs = Dictionary<String, String>()
+        audit_name = ""
+        filename = ""
+        room_names = Array<String>()
         
     }
     

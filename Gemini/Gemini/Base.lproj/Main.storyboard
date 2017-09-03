@@ -407,29 +407,29 @@
             </objects>
             <point key="canvasLocation" x="-2183" y="1206"/>
         </scene>
-        <!--Line Chart View Controller-->
+        <!--Bar Chart View Controller-->
         <scene sceneID="xPE-Ug-YT9">
             <objects>
-                <viewController id="FNo-aQ-wl4" customClass="LineChartViewController" customModule="Gemini" sceneMemberID="viewController">
+                <viewController id="FNo-aQ-wl4" customClass="BarChartViewController" customModule="Gemini" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gXJ-ft-Nti"/>
-                        <viewControllerLayoutGuide type="bottom" id="eHE-dV-7AR"/>
+                        <viewControllerLayoutGuide type="top" id="qoA-Ns-KoS"/>
+                        <viewControllerLayoutGuide type="bottom" id="GJx-WH-OmY"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ahW-8l-Ryd">
+                    <view key="view" contentMode="scaleToFill" id="zny-LZ-pag" customClass="BarLineChartViewBase" customModule="Charts">
                         <rect key="frame" x="0.0" y="64" width="414" height="628"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j99-K7-cZz" customClass="LineChartView" customModule="Charts">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iak-Oj-Z3E" customClass="BarChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="628"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="j99-K7-cZz" firstAttribute="leading" secondItem="ahW-8l-Ryd" secondAttribute="leading" id="77N-bX-848"/>
-                            <constraint firstItem="j99-K7-cZz" firstAttribute="top" secondItem="gXJ-ft-Nti" secondAttribute="bottom" id="CVv-AB-xEB"/>
-                            <constraint firstItem="eHE-dV-7AR" firstAttribute="top" secondItem="j99-K7-cZz" secondAttribute="bottom" id="NjM-XB-VK6"/>
-                            <constraint firstAttribute="trailing" secondItem="j99-K7-cZz" secondAttribute="trailing" id="v4X-cX-vKM"/>
+                            <constraint firstItem="iak-Oj-Z3E" firstAttribute="top" secondItem="qoA-Ns-KoS" secondAttribute="bottom" id="24H-4v-ZLy"/>
+                            <constraint firstAttribute="trailing" secondItem="iak-Oj-Z3E" secondAttribute="trailing" id="9bk-ui-O7S"/>
+                            <constraint firstItem="iak-Oj-Z3E" firstAttribute="leading" secondItem="zny-LZ-pag" secondAttribute="leading" id="F86-Jx-NLY"/>
+                            <constraint firstItem="GJx-WH-OmY" firstAttribute="top" secondItem="iak-Oj-Z3E" secondAttribute="bottom" id="Jcn-aZ-ECX"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -441,6 +441,9 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
+                    <connections>
+                        <outlet property="barChartView" destination="iak-Oj-Z3E" id="sVH-ek-rbg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="geW-X3-Db2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -737,7 +740,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NvE-Qg-JLO"/>
+        <segue reference="dpU-U9-TTU"/>
         <segue reference="Rpp-Rg-hAr"/>
         <segue reference="knL-EN-naq"/>
         <segue reference="rq6-dg-IAi"/>

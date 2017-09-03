@@ -10,7 +10,6 @@ import UIKit
 import Parse
 
 var audit = Audit(audit_name_param: "NULL")
-var auditObject = PFObject(className: "Audits")
 
 class ViewController: UIViewController, UITextFieldDelegate {
     

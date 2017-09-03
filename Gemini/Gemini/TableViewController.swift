@@ -15,7 +15,7 @@ class TableViewController: UITableViewController {
     var activeDetail = ""
     var filledRows = Array<Int>()
     
-    let preaudit_entries = ["Business Name", "Business Address", "Client Interviewed Name", "Client Interviewed Position", "Main Client Name", "Main Client Position", "Main Client Email", "Main Client Phone Number", "Number of Days Operating", "Number of Hours Open Daily", "Total Square Footage", "Facility Type", "Age Of Building", "Age Of Lighting", "Age Of Lighting Controls", "Age Of HVAC", "Age Of HVAC Controls", "Age Of Kitchen Equipment", "Lighting Maintenance Interval", "HVAC Maintenance Interval", "Kitchen Equipment Maintenance Interval", "Upgrades Budget", "Expected ROI", "Utility Company", "Rate Structure Electric", "Rate Structure Gas", "Date Of Interview", "Auditors Names", "Notes"]
+    let preaudit_entries = ["Business Name", "Business Address", "Client Interviewed Name", "Client Interviewed Position", "Main Client Name", "Main Client Position", "Main Client Email", "Main Client Phone Number", "Number of Days Operating", "Number of Hours Open Daily", "Operating Hours", "Total Square Footage", "Facility Type", "Age Of Building", "Age Of Lighting", "Age Of Lighting Controls", "Age Of HVAC", "Age Of HVAC Controls", "Age Of Kitchen Equipment", "Lighting Maintenance Interval", "HVAC Maintenance Interval", "Kitchen Equipment Maintenance Interval", "Upgrades Budget", "Expected ROI", "Utility Company", "Rate Structure Electric", "Rate Structure Gas", "Date Of Interview", "Auditors Names", "Notes"]
     
     
     /*

@@ -533,6 +533,10 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
             
             textField.keyboardType = UIKeyboardType.emailAddress
             
+        } else if activeDetail == "Operating Hours" {
+            
+            textField.placeholder = "Format: xx:xx - xx:xx"
+            
         } else {
             
             textField.isHidden = false
