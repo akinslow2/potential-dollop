@@ -403,6 +403,95 @@ class Room: Audit {
         //this map will be returned and then will have the hours for the energy cost calculation
         return hour_data
     }
+    
+    
+    //This makes a lot of assumptions because I can only count
+    //not sure if this will work because the row-labels are only from the top row
+    private func calculate_winter_rate(gas_energy: Double) -> Double{
+        //super estimation, 6 is to make it likely an overestimation
+        var daily_energy_usage = gas_energy / 6
+        
+        var total_cost = 0
+        
+        let rows = open_csv(filename: "pge_gas_small.txt")
+        
+        var month = 0
+        
+        for row in rows {
+            //get to the first month
+            var running_month_total = 0
+            
+            if daily_energy_usage <= 5.0 {
+                running_month_total = row["0 - 5.0"] * 30
+            } else if daily_energy_usage <= 16.0 {
+                running_month_total = row["5.1 - 16.0"] * 30
+            } else if daily_energy_usage <= 41.0 {
+                running_month_total = row["16.1 - 41.0"] * 30
+            } else if daily_energy_usage <= 123.0 {
+                running_month_total = row["41.1 - 123.0"] * 30
+            } else {
+                running_month_total = row["123.1 & Up"] * 30
+            }
+            
+            running_month_total = running_month_total + (daily_energy_usage * 30 * row["First 4,000 therms"])
+            
+            running_month_total = running_month_total + (daily_energy_usage * 30 * row["Public Purpose Program Surcharge2/"])
+
+            total_cost = total_cost + running_month_total
+            
+            month = month + 1
+            
+            if month == 12 {
+                break
+            }
+            
+        }
+        
+        return total_cost / 12
+        
+    }
+    
+    private func calculate_summer_rate(gas_energy: Double) -> Double {
+        var daily_energy_usage = gas_energy / 6
+        
+        var total_cost = 0
+        
+        let rows = open_csv(filename: "pge_gas_small.txt")
+        
+        var month = 0
+        
+        for row in rows {
+            //get to the first month
+            var running_month_total = 0
+            
+            if daily_energy_usage <= 5.0 {
+                running_month_total = row["0 - 5.0"] * 30
+            } else if daily_energy_usage <= 16.0 {
+                running_month_total = row["5.1 - 16.0"] * 30
+            } else if daily_energy_usage <= 41.0 {
+                running_month_total = row["16.1 - 41.0"] * 30
+            } else if daily_energy_usage <= 123.0 {
+                running_month_total = row["41.1 - 123.0"] * 30
+            } else {
+                running_month_total = row["123.1 & Up"] * 30
+            }
+            
+            running_month_total = running_month_total + (daily_energy_usage * 30 * row["First 4,000 therms"])
+            
+            running_month_total = running_month_total + (daily_energy_usage * 30 * row["Public Purpose Program Surcharge2/"])
+            
+            total_cost = total_cost + running_month_total
+            
+            month = month + 1
+            
+            if month == 12 {
+                break
+            }
+            
+        }
+        
+        return total_cost / 12
+    }
 
     
     //This is mostly good for all ovens, fryer, griddles, but sometimes some have different names
@@ -416,14 +505,16 @@ class Room: Audit {
         
         //This has all the rates for each time in the bill
         var pricing_chart = get_bill_data(bill_type: "pge_electric")
-        //bill_type from user
         //*** Compiler Error ***
         
         var gas_energy = preheat_energy * Double(audit.outputs["days_in_operation"] as! String)! + Double(audit.outputs["ideal_run_hours"] as! String)! * idle_energy_rate
-        //need days_in_operation, ideal_run_hours
+        
+        var winter_rate = calculate_winter_rate(gas_energy: gas_energy)
+        
+        var summer_rate = calculate_summer_rate(gas_energy: gas_energy)
         
         //*** Compiler Error ***
-        //var gas_cost = gas_energy / 99976.1 * (winter_rate + summer_rate) / 2
+        var gas_cost = gas_energy / 99976.1 * (winter_rate + summer_rate) / 2
         //*** Compiler Error ***
         
         
@@ -443,7 +534,7 @@ class Room: Audit {
         
         var total_electric = summer + winter
         
-        var total_cost = total_electric //+ gas_cost
+        var total_cost = total_electric + gas_cost
         
         return total_cost
 
