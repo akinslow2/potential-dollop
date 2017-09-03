@@ -305,7 +305,7 @@ class Room: Audit {
             }
             
             //find energy cost will be different for every type of appliance
-            new_dict[row["model_number"]!] = find_energy_cost(preheat_energy: Int(row["preheat_energy"]!)!, idle_energy_rate: Int(row["idle_energy_rate"]!)!, fan_energy_rate: Int(row["fan_energy_rate"]!)!, peak_hour_schedule: peak_hour_schedule)
+            //new_dict[row["model_number"]!] = find_energy_cost(preheat_energy: Int(row["preheat_energy"]!)!, idle_energy_rate: Int(row["idle_energy_rate"]!)!, fan_energy_rate: Int(row["fan_energy_rate"]!)!, peak_hour_schedule: peak_hour_schedule)
             
             
         }
@@ -397,21 +397,21 @@ class Room: Audit {
         
         
         //This has all the rates for each time in the bill
-        var pricing_chart = get_bill_data(bill_type: bill_type)
+        var pricing_chart = get_bill_data(bill_type: "pge_electric")
         //bill_type from user
         //*** Compiler Error ***
         
-        var gas_energy = preheat_energy * days_in_operation + (ideal_run_hours * idle_energy_rate)
+        var gas_energy = preheat_energy * Int(audit.outputs["days_in_operation"]!)! + Int(audit.outputs["ideal_run_hours"]!)! * idle_energy_rate)
         //need days_in_operation, ideal_run_hours
+        
         //*** Compiler Error ***
-        var gas_cost = gas_energy / 99976.1 * (winter_rate + summer_rate) / 2
-        //not sure what winter and summer rate are
+        //var gas_cost = gas_energy / 99976.1 * (winter_rate + summer_rate) / 2
         //*** Compiler Error ***
         
         
         
         //This seems like it is for ideal enery consumption
-        var electric_energy = ideal_run_hours * fan_energy_rate
+        var electric_energy = Int(audit.outputs["ideal_run_hours"]!)! * fan_energy_rate
         
         
         
