@@ -205,6 +205,8 @@ class FeatureTableViewController: UITableViewController {
             let selectingFeatureViewController = segue.destination as! SelectingFeatureViewController
             
             selectingFeatureViewController.filledRows = filledRows
+            
+            selectingFeatureViewController.space_type = space_type!
         
                         
         }

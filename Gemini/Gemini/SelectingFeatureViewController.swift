@@ -13,6 +13,7 @@ class SelectingFeatureViewController: UIViewController, UIPickerViewDelegate, UI
     @IBOutlet weak var pickerView: UIPickerView!
     var selectedFeature = ""
     var filledRows = Array<Int>()
+    var space_type = ""
     
     @IBAction func addFeature(_ sender: Any) {
         
@@ -96,8 +97,10 @@ class SelectingFeatureViewController: UIViewController, UIPickerViewDelegate, UI
             auditInfoViewController.feature = selectedFeature
             
             auditInfoViewController.filledRows = filledRows
+            
+            auditInfoViewController.space_type = space_type
                         
-        } 
+        }
         
     }
 

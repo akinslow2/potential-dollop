@@ -89,7 +89,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             print(audit.outputs.count)
             
-            if audit.outputs.count == 1 {
+            if audit.outputs.count == 0 {
                 
                 let alert_controller = UIAlertController(title: "Audit not found", message: "Please provide the audit identifier used in the pre-audit", preferredStyle: UIAlertControllerStyle.alert)
                 

@@ -19,11 +19,14 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var sizeTextField: UITextField!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var productionAllowedValsLabel: UILabel!
+    @IBOutlet weak var sizeAllowedValsLabel: UILabel!
     
     var feature = ""
     var generalFeature = ""
     var foundFeature: Bool?
     var filledRows = Array<Int>()
+    var space_type = ""
     
     /*
      
@@ -85,9 +88,35 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    func is_energy_star(model_number: String, company: String, file_name: String) -> Bool {
+    func open_csv_rows(filename: String) -> [[String]]! {
         
-        print(feature)
+        let full_filename = "CSVs/" + filename
+        
+        var output_file_string = ""
+        
+        do {
+            
+            guard let path = Bundle.main.path(forResource: full_filename, ofType: "txt")
+                
+                else { return nil }
+            
+            output_file_string = try String(contentsOfFile: path).replacingOccurrences(of: "\t", with: ",")
+            
+        } catch {
+            
+            print("There was an error")
+            
+            return nil
+            
+        }
+        
+        let csv = CSwiftV(with: output_file_string)
+        
+        return csv.rows
+        
+    }
+    
+    func is_energy_star(model_number: String, company: String, file_name: String) -> Bool {
         
         let reference = feature_references[feature]!
         
@@ -166,7 +195,64 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
                 doneButton.isHidden = false
                 
                 searchButton.isHidden = true
+                
+                var sizes = Array<String>()
+                var productionCapacities = Array<String>()
+                
+                var sizeIndex = -1
+                var productionIndex = -1
+                
+                if feature == "Rack Oven" {
+                    
+                    sizeIndex = 2
+                    productionIndex = 7
+                    
+                } else if feature == "Combination Oven" {
+                    
+                    sizeIndex = 2
+                    productionIndex = 8
+                    
+                } else if feature == "Convection Oven" {
+                    
+                    sizeIndex = 2
+                    productionIndex = 9
+                    
+                }  //Add capabilities for all other features!
+                
+                if sizeIndex != -1 && productionIndex != -1 {
+                
+                    let csv = open_csv_rows(filename: feature_references[feature]!)
+                
+                    for row in csv! {
+                        
+                        if row[0] == "Company" {
+                            
+                            continue
+                            
+                        }
+                        
+                        if !sizes.contains(row[sizeIndex]) {
+                            
+                            sizes.append(row[sizeIndex])
+                            
+                        }
+                        
+                        if !productionCapacities.contains(row[productionIndex]) {
+                            
+                            productionCapacities.append(row[productionIndex])
+                            
+                        }
+                    
+                    }
 
+                }
+                
+                sizeAllowedValsLabel.text = "Possible values: " + sizes.description.replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "")
+                sizeAllowedValsLabel.font = sizeAllowedValsLabel.font.withSize(10)
+                
+                productionAllowedValsLabel.text = "Possible values: " + productionCapacities.description.replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "")
+                productionAllowedValsLabel.font = productionAllowedValsLabel.font.withSize(10)
+                
             }
             
         }
@@ -197,7 +283,7 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
             
         } else if generalFeature == "Lighting" {
             
-            dict["number_of_lamps"] = companyTextField.text
+            dict["num_lamps"] = companyTextField.text
             
             dict["test_hours"] = sizeTextField.text
             
@@ -279,6 +365,8 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         
+        print(feature)
+        
         if feature != "Lighting" && feature != "HVAC" {
             
             generalFeature = "Kitchen equipment" //or plug load but we don't have any yet
@@ -334,6 +422,8 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
             let featureTableViewController = segue.destination as! FeatureTableViewController
             
             featureTableViewController.filledRows = filledRows
+            
+            featureTableViewController.space_type = space_type
                         
         }
         
