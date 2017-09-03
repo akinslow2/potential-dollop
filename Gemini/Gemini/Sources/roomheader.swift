@@ -281,7 +281,8 @@ class Room: Audit {
         
         //size, fuel type
         
-        let best_model_num = find_best_model(prod_capacity: curr_values["production"]!, size: curr_values["size"]!, file_name: feature_references["Combination Oven"]!) //*** Compiler Error ***
+        let best_model_num = find_best_model(prod_capacity: curr_values["production"]!, size: curr_values["size"]!, file_name: feature_references["Combination Oven"]!)
+        //*** Compiler Error ***
     }
     
     
@@ -302,7 +303,6 @@ class Room: Audit {
     
 
     
-    //this is good for the ovens,
     private func find_best_model(prod_capacity: String, size: String, file_name: String) -> String{
         
         var peak_hour_schedule = read_in_hour_data()
@@ -497,16 +497,10 @@ class Room: Audit {
     //This is mostly good for all ovens, fryer, griddles, but sometimes some have different names
     private func find_energy_cost(preheat_energy: Double, idle_energy_rate: Double, fan_energy_rate: Double, peak_hour_schedule: Dictionary<String, Double>) -> Double{
         
+        var pricing_chart = get_bill_data(bill_type: audits.output["Electric Rate Structure"])
         
         
-        //operation hours per week * 52 = ideal run hours
-      //  ideal_run_hours = operation_hours_per_week * 52
-        
-        
-        //This has all the rates for each time in the bill
-        var pricing_chart = get_bill_data(bill_type: "pge_electric")
-        //*** Compiler Error ***
-        
+        //weekly
         var gas_energy = preheat_energy * Double(audit.outputs["days_in_operation"] as! String)! + Double(audit.outputs["ideal_run_hours"] as! String)! * idle_energy_rate
         
         var winter_rate = calculate_winter_rate(gas_energy: gas_energy)
@@ -529,8 +523,8 @@ class Room: Audit {
         summer += peak_hour_schedule["Summer-Part-Peak"]! * fan_energy_rate * pricing_chart["Summer-Part-Peak"]!
         summer += peak_hour_schedule["Summer-Off-Peak"]! * fan_energy_rate * pricing_chart["Summer-Off-Peak"]!
         
-        var winter = peak_hour_schedule["Winter-On-Peak"]! * fan_energy_rate * pricing_chart["Winter-On-Peak"]! + peak_hour_schedule["Winter-Off-Peak"]! * fan_energy_rate * pricing_chart["Winter-Off-Peak"]!
-        //*** Compiler Error ***
+        var winter = peak_hour_schedule["Winter-On-Peak"]! * fan_energy_rate * pricing_chart["Winter-On-Peak"]!
+        winter += peak_hour_schedule["Winter-Off-Peak"]! * fan_energy_rate * pricing_chart["Winter-Off-Peak"]!
         
         var total_electric = summer + winter
         
@@ -792,6 +786,33 @@ class Room: Audit {
         
         
         return csv.keyedRows!
+        
+    }
+    
+    private func open_csv_rows(filename:String) -> Array< Array<String> >! {
+        
+        var output_file_string = ""
+        
+        do {
+            
+            guard let path = Bundle.main.path(forResource: filename, ofType: "txt")
+                
+                else { return nil }
+            
+            output_file_string = try String(contentsOfFile: path).replacingOccurrences(of: "\t", with: ",")
+            
+        } catch {
+            
+            print("There was an error")
+            
+            return nil
+            
+        }
+        
+        let csv = CSwiftV(with: output_file_string)
+        
+        
+        return csv.rows!
         
     }
     
