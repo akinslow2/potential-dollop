@@ -801,7 +801,7 @@ class Room: Audit {
         
         var total_cost = 0.0
         
-        let rows = open_csv(filename: "pge_gas_small.txt")
+        let rows = open_csv(filename: "pge_gas_small")
         
         var month = 0
         
@@ -844,7 +844,7 @@ class Room: Audit {
         
         var total_cost = 0.0
         
-        let rows = open_csv(filename: "pge_gas_small.txt")
+        let rows = open_csv(filename: "pge_gas_small")
         
         var month = 0
         
@@ -1016,10 +1016,10 @@ class Room: Audit {
         
         for row in rows! {
             
-            if row["company"]! != company {
+            if row["Company"]! != company {
                 continue
             }
-            if row["model_number"]! != model_number { //model_number must be revised. Not sure what it should be, depends on the csv
+            if row["Model Number"]! != model_number { //model_number must be revised. Not sure what it should be, depends on the csv
                 continue
             }
             return true
