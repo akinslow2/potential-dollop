@@ -579,7 +579,7 @@ class Room: Audit {
             //find energy cost will be different for every type of appliance
             
             //Wil: what find_energy_cost should be used here?
-            new_dict[row["Model Number"]!] = find_energy_cost(preheat_energy: Double(row["Preheat Energy (Btu)"]!)!, idle_energy_rate: Double(row["Idle Energy Rate (Btu/h or kW)"]!)!, fan_energy_rate: Double(row["Fan/Control Energy Rate (kW)"]!)!)
+            new_dict[row["Model Number"]!] = find_energy_cost_oven(preheat_energy: Double(row["Preheat Energy (Btu)"]!)!, idle_energy_rate: Double(row["Idle Energy Rate (Btu/h or kW)"]!)!, fan_energy_rate: Double(row["Fan/Control Energy Rate (kW)"]!)!)
             
             
         }
@@ -700,26 +700,41 @@ class Room: Audit {
         return model_name
     }
     
+    private func total_cost() -> Double{
+        var hour_data = read_in_hour_data()
+        var pricing_data = get_bill_data(bill_type: audit.outputs["Electric Rate Structure"])
+        
+        var total_cost = hour_data["Winter-Part-Peak"] * pricing-data["Winter-Part-Peak"]
+        total_cost = total_cost + hour_data["Winter-Off-Peak"] * pricing-data["Winter-Off-Peak"]
+        total_cost = total_cost + hour_data["Summer-On-Peak"] * pricing-data["Summer-On-Peak"]
+        total_cost = total_cost + hour_data["Summer-Part-Peak"] * pricing-data["Summer-Part-Peak"]
+        total_cost = total_cost + hour_data["Summer-Off-Peak"] * pricing-data["Summer-Off-Peak"]
+        
+        return total_cost
+    }
     
     //making the assumption that every day is a weekday and non-holiday
-    /*private func read_in_hour_data() -> Dictionary<String, Double> {
+    private func read_in_hour_data() -> Dictionary<String, Double> {
         let rows = open_csv(filename: "Sample Interval Data")
         
         var hour_data = Dictionary<String, Double>()
         
         for row in rows! {
             let someString = row["usg_dt"]
-            let firstChar = Int((someString?[0])!)! //pretty sure this functions to separate string
+            let firstChar = Int((someString?[0])!)!
             if firstChar == 1 {
-                //check for the second character to see if its an int, then concat
+                if let digit = Int(someString?[1]) {
+                    firstChar = Int(String(firstChar) + someString?[1])
+                }
             }
             
-            //Wil: what is the variable str?
             if firstChar <= 4 || firstChar >= 11 {
                 let str1 = row["elec_intvl_end_dttm"]?.components(separatedBy: " ")[1]
                 let firstTimeChar = Int((str1?[0])!)!
                 if  firstTimeChar == 1 || firstTimeChar == 2 {
-                    //get the second character
+                    if let digit = Int(someString?[1]) {
+                        firstChar = Int(String(firstChar) + someString?[1])
+                    }
                 } else {
                     if firstTimeChar >= 8 && firstTimeChar < 21 {
                         let a = hour_data["Winter-Part-Peak"]
@@ -735,7 +750,9 @@ class Room: Audit {
                 let str1 = row["elec_intvl_end_dttm"]?.components(separatedBy: " ")[1]
                 let firstTimeChar = Int((str1?.components(separatedBy: "")[0])!)
                 if  firstTimeChar == 1 || firstTimeChar == 2{
-                    //get the second character
+                    if let digit = Int(someString?[1]) {
+                        firstChar = Int(String(firstChar) + someString?[1])
+                    }
                 } else {
                     if firstTimeChar! >= 12 && firstTimeChar! < 18 {
                         let a = hour_data["Summer-On-Peak"]
@@ -753,7 +770,7 @@ class Room: Audit {
      
         //this map will be returned and then will have the hours for the energy cost calculation
         return hour_data
-    }*/
+    }
     
     
     private func calculate_all_peak_hours() -> Dictionary<String, Int> {
@@ -811,20 +828,20 @@ class Room: Audit {
             
             if daily_energy_usage <= 5.0 {
                 
-                running_month_total = Double(row["0 - 5.0"]!)! * 30.0
+                running_month_total = Double(row[2]!)! * 30.0
             } else if daily_energy_usage <= 16.0 {
-                running_month_total = Double(row["5.1 - 16.0"]!)! * 30.0
+                running_month_total = Double(row[3]!)! * 30.0
             } else if daily_energy_usage <= 41.0 {
-                running_month_total = Double(row["16.1 - 41.0"]!)! * 30.0
+                running_month_total = Double(row[4]!)! * 30.0
             } else if daily_energy_usage <= 123.0 {
-                running_month_total = Double(row["41.1 - 123.0"]!)! * 30.0
+                running_month_total = Double(row[5]!)! * 30.0
             } else {
-                running_month_total = Double(row["123.1 & Up"]!)! * 30.0
+                running_month_total = Double(row[6]!)! * 30.0
             }
             //8
-            running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row["First 4,000 therms"]!)!)
+            running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row[8]!)!)
             
-            running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row["Public Purpose Program Surcharge2/"]!)!)
+            running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row[16]!)!)
 
             total_cost += running_month_total
             
@@ -841,11 +858,12 @@ class Room: Audit {
     }
     
     private func calculate_summer_rate(gas_energy: Double) -> Double {
+        //super estimation, 6 is to make it likely an overestimation
         var daily_energy_usage = gas_energy / 6
         
         var total_cost = 0.0
         
-        let rows = open_csv(filename: "pge_gas_small")
+        let rows = open_csv_rows(filename: "pge_gas_small")
         
         var month = 0
         
@@ -854,25 +872,21 @@ class Room: Audit {
             var running_month_total = 0.0
             
             if daily_energy_usage <= 5.0 {
-                //2
-                running_month_total = Double(row["0 - 5.0"]!)! * 30.0
+                
+                running_month_total = Double(row[2]!)! * 30.0
             } else if daily_energy_usage <= 16.0 {
-                //3
-                running_month_total = Double(row["5.1 - 16.0"]!)! * 30.0
+                running_month_total = Double(row[3]!)! * 30.0
             } else if daily_energy_usage <= 41.0 {
-                //4
-                running_month_total = Double(row["16.1 - 41.0"]!)! * 30.0
+                running_month_total = Double(row[4]!)! * 30.0
             } else if daily_energy_usage <= 123.0 {
-                //5
-                running_month_total = Double(row["41.1 - 123.0"]!)! * 30.0
+                running_month_total = Double(row[5]!)! * 30.0
             } else {
-                //6
-                running_month_total = Double(row["123.1 & Up"]!)! * 30.0
+                running_month_total = Double(row[6]!)! * 30.0
             }
-            //10
-            running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row["First 4,000 therms"]!)!)
+            //8
+            running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row[10]!)!)
             
-            running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row["Public Purpose Program Surcharge2/"]!)!)
+            running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row[16]!)!)
             
             total_cost += running_month_total
             
