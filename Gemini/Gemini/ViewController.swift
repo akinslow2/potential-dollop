@@ -11,6 +11,7 @@ import Parse
 
 var audit = Audit(audit_name_param: "NULL")
 
+
 class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textField: UITextField!
@@ -56,17 +57,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    /*
-     
-     Function: auditButtonPressed
-     -----------------------------
-     When "audit" pressed, checks to ensure
-     name is not empty and record exists of preaudit
-     
-     SEGUE~ to Audit Table View Controller
-     
-     */
-    @IBAction func auditButtonPressed(_ sender: Any) {
+    @IBAction func retrievePressed(_ sender: Any) {
         
         if (textField.text?.isEmpty)! {
             
@@ -81,33 +72,46 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.present(alert_controller, animated: true, completion: nil)
             
         } else {
-            
+        
             audit.set_name(audit_name_param: textField.text!)
             
             audit.outputs["filename"] = textField.text!
             
             audit.retrieve_data()
-            
-            print(audit.outputs.count)
-            
-            if audit.outputs.count == 1 {
-                
-                let alert_controller = UIAlertController(title: "Audit not found", message: "Please provide the audit identifier used in the pre-audit", preferredStyle: UIAlertControllerStyle.alert)
-                
-                alert_controller.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                    
-                    self.dismiss(animated: true, completion: nil)
-                    
-                }))
-                
-                self.present(alert_controller, animated: true, completion: nil)
-                
-            } else {
-            
-                performSegue(withIdentifier: "toAudit", sender: nil)
-              }
-            
+        
         }
+        
+        
+    }
+    /*
+     
+     Function: auditButtonPressed
+     -----------------------------
+     When "audit" pressed, checks to ensure
+     name is not empty and record exists of preaudit
+     
+     SEGUE~ to Audit Table View Controller
+     
+     */
+    @IBAction func auditButtonPressed(_ sender: Any) {
+            
+        if audit.outputs.count == 1 {
+            
+            let alert_controller = UIAlertController(title: "Audit not found", message: "Please provide the audit identifier used in the pre-audit", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert_controller.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                
+                self.dismiss(animated: true, completion: nil)
+                
+            }))
+            
+            self.present(alert_controller, animated: true, completion: nil)
+            
+        } else {
+        
+            performSegue(withIdentifier: "toAudit", sender: nil)
+            
+          }
         
     }
     

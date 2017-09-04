@@ -10,12 +10,15 @@ import Foundation
 import UIKit
 import Parse
 
+let queue = DispatchQueue(label: "Retrieve", attributes: .concurrent)
+
 class Audit {
     
     var outputs = Dictionary<String, String>()
     var audit_name = ""
     var filename = ""
     var room_names = Array<String>()
+    var audit_entry: PFObject?
     
     init(audit_name_param: String) {
     
@@ -36,55 +39,92 @@ class Audit {
     
     func retrieve_data() {
         
-        let query = PFObject.query()
+        queue.sync {
         
-        print("Hello")
-        
-        query?.findObjectsInBackground(block: { (objects, error) in
+            let query = PFQuery(className: "Audits")
             
-            if error != nil {
+            query.findObjectsInBackground { (objects, error) in
                 
-                print(error)
-                
-            } else if let objectList = objects {
-                
-                for object in objectList {
+                if error != nil {
                     
-                    if let audit = object as? PFObject {
+                    print(error)
                     
-                        let query1 = PFQuery(className: "Audits")
+                } else {
+                    
+                    for object in objects! {
                         
-                        query1.whereKey("name", equalTo: String(self.audit_name))
+                        print(object["name"])
+                        print(self.audit_name)
                         
-                        query1.findObjectsInBackground(block: { (objects, error) in
                             
-                            if error != nil {
+                        if object["name"] as! String != self.audit_name {
                                 
-                                print(error)
+                            continue
                                 
-                            } else if let objects = objects {
+                        } else {
                                 
-                                if objects.count > 0 {
-                                    
-                                    print(objects)
-                                    
-                                }
-                                
-                            }
+                            self.outputs = self.rehydrateOutputs(outputFileString: object["outputs"] as! String)
                             
-                        })
-                        
-                            //self.outputs = self.rehydrateOutputs(outputFileString: audit[self.audit_name] as! String)
-                        
+                             print(self.outputs)
+                            
                         }
-                
+                            
                     }
                     
                 }
-                    
-            })
-        
+                
+            }
+                
+        }
     }
+    
+//        let query = PFObject.query()
+//        
+//        print("Hello")
+//        
+//        query?.findObjectsInBackground(block: { (objects, error) in
+//            
+//            if error != nil {
+//                
+//                print(error)
+//                
+//            } else if let objectList = objects {
+//                
+//                for object in objectList {
+//                    
+//                    if let audit = object as? PFObject {
+//                    
+//                        let query1 = PFQuery(className: "Audits")
+//                        
+//                        query1.whereKey("name", equalTo: String(self.audit_name))
+//                        
+//                        query1.findObjectsInBackground(block: { (objects, error) in
+//                            
+//                            if error != nil {
+//                                
+//                                print(error)
+//                                
+//                            } else if let objects = objects {
+//                                
+//                                if objects.count > 0 {
+//                                    
+//                                    print(objects)
+//                                    
+//                                }
+//                                
+//                            }
+//                            
+//                        })
+//                        
+//                            //self.outputs = self.rehydrateOutputs(outputFileString: audit[self.audit_name] as! String)
+//                        
+//                        }
+//                
+//                    }
+//                    
+//                }
+//                    
+//            })
     
     func save_data() {
         
