@@ -15,7 +15,22 @@ class BarChartViewController: UIViewController {
     
     @IBOutlet weak var barChartView: BarChartView!
     let categories = ["Actual", "Theoretical"]
-    var cost = [10.0, 4.0]
+    var cost = [0.0, 0.0]
+    
+    func set_cost() {
+        
+        cost[0] = (room?.total_cost())! / 52.0
+        
+        var theoreticalCost = 0.0
+        
+        for (_, value) in (room?.models_to_cost)! {
+            
+            theoreticalCost += value
+            
+        }
+        
+        cost[1] = theoreticalCost
+    }
     
     /*
      
@@ -56,6 +71,8 @@ class BarChartViewController: UIViewController {
      */
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        set_cost()
         
         barChartView.delegate = self as? ChartViewDelegate
         barChartView.noDataText = "You need to provide data for the chart."

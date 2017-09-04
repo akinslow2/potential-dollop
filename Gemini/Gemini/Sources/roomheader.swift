@@ -702,9 +702,9 @@ class Room: Audit {
         return model_name
     }
     
-    private func total_cost() -> Double{
+    func total_cost() -> Double{
         var hour_data = read_in_hour_data()
-        var pricing_data = get_bill_data(bill_type: audit.outputs["Electric Rate Structure"]!)
+        var pricing_data = get_bill_data(bill_type: audit.outputs["Rate Structure Electric"]!)
         
         var total_cost = hour_data["Winter-Part-Peak"]! * pricing_data["Winter-Part-Peak"]!
         total_cost = total_cost + hour_data["Winter-Off-Peak"]! * pricing_data["Winter-Off-Peak"]!
@@ -717,7 +717,7 @@ class Room: Audit {
     
     //making the assumption that every day is a weekday and non-holiday
     private func read_in_hour_data() -> Dictionary<String, Double> {
-        let rows = open_csv(filename: "Sample Interval Data")
+        let rows = open_csv(filename: "sample_interval_data")
         
         var hour_data = Dictionary<String, Double>()
         
@@ -1110,9 +1110,11 @@ class Room: Audit {
         
         var output_file_string = ""
         
+        let full_filename = "CSVs/" + filename
+        
         do {
             
-            guard let path = Bundle.main.path(forResource: filename, ofType: "txt")
+            guard let path = Bundle.main.path(forResource: full_filename, ofType: "txt")
                 
                 else { return nil }
             
@@ -1255,7 +1257,7 @@ class Room: Audit {
     //This is for all ovens except for combination
     private func find_energy_cost_oven(preheat_energy: Double, idle_energy_rate: Double, fan_energy_rate: Double) -> Double{
         
-        var pricing_chart = get_bill_data(bill_type: audit.outputs["Electric Rate Structure"]!)
+        var pricing_chart = get_bill_data(bill_type: audit.outputs["Rate Structure Electric"]!)
         
         
         //weekly
@@ -1290,7 +1292,7 @@ class Room: Audit {
     
     private func find_energy_cost_combination_fryer_griddle(preheat_energy: Double, idle_energy_rate: Double) -> Double{
         
-        var pricing_chart = get_bill_data(bill_type: audit.outputs["Electric Rate Structure"]!)
+        var pricing_chart = get_bill_data(bill_type: audit.outputs["Rate Structure Electric"]!)
         
         
         //weekly
@@ -1330,7 +1332,7 @@ class Room: Audit {
     //
     private func find_energy_cost_ice(energy_use_rate: Double, ice_harvest_rate: Double) -> Double{
         
-        var pricing_chart = get_bill_data(bill_type: audit.outputs["Electric Rate Structure"]!)
+        var pricing_chart = get_bill_data(bill_type: audit.outputs["Rate Structure Electric"]!)
         
         var hour_energy_use = ice_harvest_rate * energy_use_rate / 24.0
         
@@ -1355,7 +1357,7 @@ class Room: Audit {
     
     private func find_energy_cost_freeze_fridge() -> Double{
         
-        var pricing_chart = get_bill_data(bill_type: audit.outputs["Electric Rate Structure"]!)
+        var pricing_chart = get_bill_data(bill_type: audit.outputs["Rate Structure Electric"]!)
 
         //I do not know how to get this
         var hour_energy_use = 10.0
@@ -1380,7 +1382,7 @@ class Room: Audit {
     
     private func find_energy_cost_cabinet(cabinet_volume: Double, idle_energy_rate: Double) -> Double{
         
-        var pricing_chart = get_bill_data(bill_type: audit.outputs["Electric Rate Structure"]!)
+        var pricing_chart = get_bill_data(bill_type: audit.outputs["Rate Structure Electric"]!)
         
         
         var energy_use = cabinet_volume * idle_energy_rate / 1000.0
@@ -1405,7 +1407,7 @@ class Room: Audit {
 
     private func find_energy_cost_steam_cooker(preheat_energy: Double, idle_energy_rate: Double) -> Double{
         
-        //var pricing_chart = get_bill_data(bill_type: audit.outputs["Electric Rate Structure"])
+        //var pricing_chart = get_bill_data(bill_type: audit.outputs["Rate Structure Electric"])
         
         
         //weekly

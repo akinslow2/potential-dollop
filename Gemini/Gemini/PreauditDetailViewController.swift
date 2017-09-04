@@ -16,7 +16,7 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
     @IBOutlet weak var label: UILabel!
     
     var gas_structures = Array<String>() //will be var with data
-    var electric_structures = Array<String>() //will be var with data
+    var electric_structures = ["A1", "A1 TOU", "A6 TOU", "A10", "E19", "E19 TOU"]
     var facility_types = Array<String>()
     let utility_companies = ["PG&E", "SMUD", "CPAU"] //hard coded for now, can easily be changed
     
