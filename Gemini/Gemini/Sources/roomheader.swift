@@ -816,33 +816,33 @@ class Room: Audit {
         //super estimation, 6 is to make it likely an overestimation
         var daily_energy_usage = gas_energy / 6
         
-        var total_cost = 0
+        var total_cost = 0.0
         
         let rows = open_csv(filename: "pge_gas_small.txt")
         
         var month = 0
         
-        for row in rows {
+        for row in rows! {
             //get to the first month
-            var running_month_total = 0
+            var running_month_total = 0.0
             
             if daily_energy_usage <= 5.0 {
-                running_month_total = row["0 - 5.0"] * 30
+                running_month_total = Double(row["0 - 5.0"]!)! * 30.0
             } else if daily_energy_usage <= 16.0 {
-                running_month_total = row["5.1 - 16.0"] * 30
+                running_month_total = Double(row["5.1 - 16.0"]!)! * 30.0
             } else if daily_energy_usage <= 41.0 {
-                running_month_total = row["16.1 - 41.0"] * 30
+                running_month_total = Double(row["16.1 - 41.0"]!)! * 30.0
             } else if daily_energy_usage <= 123.0 {
-                running_month_total = row["41.1 - 123.0"] * 30
+                running_month_total = Double(row["41.1 - 123.0"]!)! * 30.0
             } else {
-                running_month_total = row["123.1 & Up"] * 30
+                running_month_total = Double(row["123.1 & Up"]!)! * 30.0
             }
             
-            running_month_total = running_month_total + (daily_energy_usage * 30 * row["First 4,000 therms"])
+            running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row["First 4,000 therms"]!)!)
             
-            running_month_total = running_month_total + (daily_energy_usage * 30 * row["Public Purpose Program Surcharge2/"])
+            running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row["Public Purpose Program Surcharge2/"]!)!)
 
-            total_cost = total_cost + running_month_total
+            total_cost += running_month_total
             
             month = month + 1
             
@@ -852,40 +852,40 @@ class Room: Audit {
             
         }
         
-        return total_cost / 12
+        return Double(total_cost / 12)
         
     }
     
     private func calculate_summer_rate(gas_energy: Double) -> Double {
         var daily_energy_usage = gas_energy / 6
         
-        var total_cost = 0
+        var total_cost = 0.0
         
         let rows = open_csv(filename: "pge_gas_small.txt")
         
         var month = 0
         
-        for row in rows {
+        for row in rows! {
             //get to the first month
-            var running_month_total = 0
+            var running_month_total = 0.0
             
             if daily_energy_usage <= 5.0 {
-                running_month_total = row["0 - 5.0"] * 30
+                running_month_total = Double(row["0 - 5.0"]!)! * 30.0
             } else if daily_energy_usage <= 16.0 {
-                running_month_total = row["5.1 - 16.0"] * 30
+                running_month_total = Double(row["5.1 - 16.0"]!)! * 30.0
             } else if daily_energy_usage <= 41.0 {
-                running_month_total = row["16.1 - 41.0"] * 30
+                running_month_total = Double(row["16.1 - 41.0"]!)! * 30.0
             } else if daily_energy_usage <= 123.0 {
-                running_month_total = row["41.1 - 123.0"] * 30
+                running_month_total = Double(row["41.1 - 123.0"]!)! * 30.0
             } else {
-                running_month_total = row["123.1 & Up"] * 30
+                running_month_total = Double(row["123.1 & Up"]!)! * 30.0
             }
             
-            running_month_total = running_month_total + (daily_energy_usage * 30 * row["First 4,000 therms"])
+            running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row["First 4,000 therms"]!)!)
             
-            running_month_total = running_month_total + (daily_energy_usage * 30 * row["Public Purpose Program Surcharge2/"])
+            running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row["Public Purpose Program Surcharge2/"]!)!)
             
-            total_cost = total_cost + running_month_total
+            total_cost += running_month_total
             
             month = month + 1
             
@@ -895,14 +895,18 @@ class Room: Audit {
             
         }
         
-        return total_cost / 12
+        return Double(total_cost / 12)
     }
 
     
     //This is mostly good for all ovens, fryer, griddles, but sometimes some have different names
     /*private func find_energy_cost(preheat_energy: Double, idle_energy_rate: Double, fan_energy_rate: Double) -> Double{
         
+<<<<<<< HEAD
         var pricing_chart = get_bill_data(bill_type: audit.outputs["Electric Rate Structure"])
+=======
+        var pricing_chart = get_bill_data(bill_type: audit.outputs["Electric Rate Structure"]!)
+>>>>>>> c25266544e80c33120c997805c9dcd00ac21f5be
         
         
         //weekly
@@ -1216,7 +1220,7 @@ class Room: Audit {
         let csv = CSwiftV(with: output_file_string)
         
         
-        return csv.rows!
+        return csv.rows
         
     }
     

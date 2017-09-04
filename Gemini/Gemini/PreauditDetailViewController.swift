@@ -535,6 +535,10 @@ class PreauditDetailViewController: UIViewController, UITextFieldDelegate, UIPic
             
         } else if activeDetail == "Operating Hours" {
             
+            textField.isHidden = false
+            
+            textField.keyboardType = UIKeyboardType.numbersAndPunctuation
+            
             textField.placeholder = "Format: xx:xx - xx:xx"
             
         } else {
