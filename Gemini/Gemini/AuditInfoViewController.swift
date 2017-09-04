@@ -88,6 +88,38 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    /*
+     
+     Function: open_csv
+     --------------------
+     Returns an Optional(Array<Dictionary<String, String>>)
+     of the elements in a csv with the first column as
+     the keys in the array, and the subsequent columns
+     are the values, corresponding to their shared row.
+     
+     For example:
+     Category, Space Type
+     A, Classroom
+     B, Armory
+     ->
+     [["Category", "Space Type"], ["A", "Classroom"], ["B", "Armory"]]
+     
+     ***
+     
+     In order to input a file:
+     
+     1. Download as a .txt with \t separated values
+     2. Open in Word and save as a .txt with UTF-8 encoding
+     and LF only
+     3. In Xcode, File -> Add Files to ... -> *Select file and add to "CSVs" folder*
+     
+     ***
+     
+     @param file's name in folder, String
+     
+     Example: (for CSVs/space_type.csv), filename = "space_type"
+     
+     */
     func open_csv_rows(filename: String) -> [[String]]! {
         
         let full_filename = "CSVs/" + filename
@@ -116,6 +148,14 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    /*
+     
+     Function: is_energy_star
+     --------------------------------
+     True if the model is an energy star rated appliance
+     False otherwise
+     
+     */
     func is_energy_star(model_number: String, company: String, file_name: String) -> Bool {
         
         let reference = feature_references[feature]!
@@ -142,6 +182,16 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     
+    /*
+     
+     Function: viewDidLoad
+     -------------------------
+     Loads view, sets delegates
+     and dataSource for textfields, and hides
+     back button
+     
+     
+     */
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -158,6 +208,13 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
 
     }
 
+    /*
+     
+     Function: didReceiveMemoryWarning
+     --------------------------------
+     Memory warning. Should clear storage here.
+     
+     */
     override func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
@@ -265,6 +322,14 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    /*
+     
+     Function: retrieveValues
+     --------------------------------
+     Adds all the given values to a dictionary and then 
+     passes the dictionary on to the room class
+     
+     */
     func retrieveValues(feature: String) -> Dictionary<String, String> {
         
         var dict = Dictionary<String, String>()
@@ -305,6 +370,16 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    /*
+     
+     Function: donePressed
+     --------------------------------
+     If all values are entered, then it augments the proper data, 
+     adds the new feature, and 
+     
+     SEGUE~ to FeatureTableViewController
+     
+     */
     @IBAction func donePressed(_ sender: Any) {
         
         if (productionTextField.text?.isEmpty)! || (sizeTextField.text?.isEmpty)! {
@@ -369,6 +444,14 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    /*
+     
+     Function: viewDidAppear
+     --------------------------------
+     Sets all textfields and labels to the appropriate
+     type of data to be entered
+     
+     */
     override func viewDidAppear(_ animated: Bool) {
         
         print(feature)
@@ -421,6 +504,14 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    /*
+     
+     Function: prepare for segue
+     --------------------------------
+     If segue to FeatureTableViewController
+     THEN sets filledRows and space_type
+     
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "backToFeatures" {
