@@ -29,6 +29,9 @@ extension String {
 
 class Room: Audit {
     
+    //at this point, i think cost is weekly
+    var models_to_cost = Dictionary<String, Double>()
+    
     var lighting = Array<Dictionary<String, String>>()
     var hvac = Array<Dictionary<String, String>>()
     var plug_load = Array<Dictionary<String, String>>()
@@ -219,7 +222,7 @@ class Room: Audit {
 //            __compute__refrigerator(model_number: model_number, company: company)
 //            //need to check solid door or glass door
 //        } else if type == "hot_food_cabinets" {
-//            __compute__hot_foor_cabinets(model_number: model_number, company: company)
+//            __compute__hot_food_cabinets(model_number: model_number, company: company)
 //        } else if type == "fryer" {
 //            __compute__fryer(model_number: model_number, company: company)
 //        } else if type == "steam_cookers" {
@@ -235,6 +238,61 @@ class Room: Audit {
         return ["production": production, "size": size]
         
     }
+    private func __compute__griddle(model_number:String, company: String){
+        let energy_star = is_energy_star(model_number: model_number, company: company, file_name: feature_references["Convection Oven"]!)
+        if energy_star {
+            return
+            //done
+        }
+        
+        //size, capacity, fuel type
+        
+        let best_model_num = find_best_model_griddle(surface_area: curr_values["size"]!, size: curr_values["capacity"]!, nominal_width: curr_values["width"], fuel_type: curr_values["fuel_type"], file_name: feature_references["Griddle"]!) //*** Compiler Error ***
+    }
+    private func __compute__steam__cooker(model_number:String, company: String){
+        let energy_star = is_energy_star(model_number: model_number, company: company, file_name: feature_references["Convection Oven"]!)
+        if energy_star {
+            return
+            //done
+        }
+        
+        //size, capacity, fuel type
+        
+        let best_model_num = find_best_model_steam_cooker(prod_capacity: curr_values["production"]!, pan_capacity: curr_values["pan"]!, fuel_type: curr_values["fuel_type"], water_use: curr_values["Water Use"], steamer_type: curr_values["Type"], file_name: feature_references["Convection Oven"]!) //*** Compiler Error ***
+    }
+    private func __compute__fryer(model_number:String, company: String){
+        let energy_star = is_energy_star(model_number: model_number, company: company, file_name: feature_references["Convection Oven"]!)
+        if energy_star {
+            return
+            //done
+        }
+        
+        //size, capacity, fuel type
+        
+        let best_model_num = find_best_model_fryer(prod_capacity: curr_values["production"]!, shortening_capacity: curr_values["shortening capacity"]!, vat_width: curr-values["Vat Width"], fuel_type: curr_values["Fuel Type"], file_name: feature_references["Convection Oven"]!) //*** Compiler Error ***
+    }
+    private func __compute__hot_food_cabinet(model_number:String, company: String){
+        let energy_star = is_energy_star(model_number: model_number, company: company, file_name: feature_references["Convection Oven"]!)
+        if energy_star {
+            return
+            //done
+        }
+        
+        //size, capacity, fuel type
+        
+        let best_model_num = find_best_model_cabinet(cabinet_volume: curr_values["Cabinet Volume"]!, size: curr_values["size"]!, idle_energy_rate: curr_values["Energy Rate"], file_name: feature_references["Convection Oven"]!) //*** Compiler Error ***
+    }
+    private func __compute__freezer__fridge(model_number:String, company: String){
+        let energy_star = is_energy_star(model_number: model_number, company: company, file_name: feature_references["Convection Oven"]!)
+        if energy_star {
+            return
+            //done
+        }
+        
+        //size, capacity, fuel type
+        
+        let best_model_num = find_best_model_fridge_freezer(prod_type: curr_values["Product Type"]!, total_volume: curr_values["total volume"]!, fridge_capacity: curr_values["Fridge Capacity"], file_name: feature_references["Convection Oven"]!) //*** Compiler Error ***
+    }
     
     private func __compute__icemaker(model_number:String, company: String){
         let energy_star = is_energy_star(model_number: model_number, company: company, file_name: feature_references["Ice Maker"]!)
@@ -243,9 +301,9 @@ class Room: Audit {
             //done
         }
         
-        //oven length, conveyor width
+        //ice harvest rate, enery use rate, ice type, machine type
         
-        let best_model_num = find_best_model(prod_capacity: curr_values["production"]!, size: curr_values["size"]!, file_name: feature_references["Ice Maker"]!) //*** Compiler Error ***
+        let best_model_num = find_best_model_ice(ice_harvest_rate: curr_values["Ice Harvest Rate"]!, energy_use_rate: curr_values["Energy Use Rate"]!, ice_type: curr_values["Ice Type"], machine_type: curr_values["Machine Type"], file_name: feature_references["Ice Maker"]!) //*** Compiler Error ***
     }
     
     private func __compute__conveyor__oven(model_number:String, company: String){
@@ -256,7 +314,7 @@ class Room: Audit {
         }
         
         //oven length, conveyor width
-        let best_model_num = find_best_model(prod_capacity: curr_values["production"]!, size: curr_values["size"]!, file_name: feature_references["Conveyor Oven"]!) //*** Compiler Error ***
+        let best_model_num = find_best_model_conveyor(oven_length: curr_values["oven length"]!, conveyor_width: curr_values["conveyor width"]!, file_name: feature_references["Conveyor Oven"]!) //*** Compiler Error ***
     }
     
     
@@ -269,7 +327,7 @@ class Room: Audit {
         
         //size, capacity, fuel type
         
-        let best_model_num = find_best_model(prod_capacity: curr_values["production"]!, size: curr_values["size"]!, file_name: feature_references["Convection Oven"]!) //*** Compiler Error ***
+        let best_model_num = find_best_model_convection(capacity: curr_values["capacity"]!, size: curr_values["size"]!, fuel_type: curr_values["Fuel Type"], file_name: feature_references["Convection Oven"]!) //*** Compiler Error ***
     }
     
     private func __compute__combination__oven(model_number:String, company: String){
@@ -281,7 +339,7 @@ class Room: Audit {
         
         //size, fuel type
         
-        let best_model_num = find_best_model(prod_capacity: curr_values["production"]!, size: curr_values["size"]!, file_name: feature_references["Combination Oven"]!)
+        let best_model_num = find_best_model_combination(fuel_type: curr_values["Fuel Type"]!, size: curr_values["size"]!, file_name: feature_references["Combination Oven"]!)
         //*** Compiler Error ***
     }
     
@@ -296,17 +354,325 @@ class Room: Audit {
         
         //let prod_capacity
         //let size
-        //maybe fuel type
         
-        let best_model_num = find_best_model(prod_capacity: curr_values["production"]!, size: curr_values["size"]!, file_name: feature_references["Rack Oven"]!) //*** Compiler Error ***
+        let best_model_num = find_best_model_rack(prod_capacity: curr_values["production"]!, size: curr_values["size"]!, file_name: feature_references["Rack Oven"]!) //*** Compiler Error ***
     }
     
-
     
-    private func find_best_model(prod_capacity: String, size: String, file_name: String) -> String{
+    
+    
+    /* This is all the code to find the best model for all the different kitchen items */
+    
+    
+    
+    private func find_best_model_griddle(surface_area: String, size: String, nominal_width: String, fuel_type: String, file_name: String) -> String{
         
-        var peak_hour_schedule = read_in_hour_data()
-
+        //var peak_hour_schedule = read_in_hour_data()
+        
+        
+        let rows = open_csv(filename: file_name)
+        
+        var new_dict = Dictionary<String, Double>()
+        
+        for row in rows! {
+            
+            if row["size"] != size {
+                continue
+            }
+            if row["surface_area"] != surface_area {
+                continue
+            }
+            if row["nominal_width"] != nominal_width {
+                continue
+            }
+            if row["fuel_type"] != fuel_type {
+                continue
+            }
+            
+            //find energy cost will be different for every type of appliance
+            new_dict[row["model_number"]!] = find_energy_cost_combination_fryer_griddle(preheat_energy: Double(row["preheat_energy"]!)!, idle_energy_rate: Double(row["idle_energy_rate"]!)!)
+            
+            
+        }
+        
+        var best_model = find_lowest_cost_model(list_of_costs: new_dict)
+        
+        //need to keep track of the low energy cost as well for the graph
+        
+        return best_model
+    }
+    private func find_best_model_steam_cooker(prod_capacity: String, pan_capacity: String, fuel_type: String, water_use: String, steamer_type: String, file_name: String) -> String{
+        
+        //var peak_hour_schedule = read_in_hour_data()
+        
+        
+        let rows = open_csv(filename: file_name)
+        
+        var new_dict = Dictionary<String, Double>()
+        
+        for row in rows! {
+            
+            if row["pan_capacity"] != pan_capacity {
+                continue
+            }
+            if row["prod_capacity"] != prod_capacity {
+                continue
+            }
+            if row["fuel_type"] != fuel_type {
+                continue
+            }
+            if row["water_use"] != water_use {
+                continue
+            }
+            if row["steamer_type"] != steamer_type {
+                continue
+            }
+            
+            //find energy cost will be different for every type of appliance
+            new_dict[row["model_number"]!] = find_energy_cost_steam_cooker(preheat_energy: Double(row["preheat_energy"]!)!, idle_energy_rate: Double(row["idle_energy_rate"]!)!)
+            
+            
+        }
+        
+        var best_model = find_lowest_cost_model(list_of_costs: new_dict)
+        
+        //need to keep track of the low energy cost as well for the graph
+        
+        return best_model
+    }
+    private func find_best_model_fryer(prod_capacity: String, shortening_capacity: String, vat_width: String, fuel_type: String, file_name: String) -> String{
+        
+        //var peak_hour_schedule = read_in_hour_data()
+        
+        
+        let rows = open_csv(filename: file_name)
+        
+        var new_dict = Dictionary<String, Double>()
+        
+        for row in rows! {
+            
+            if row["shortening_capacity"] != shortening_capacity {
+                continue
+            }
+            if row["prod_capacity"] != prod_capacity {
+                continue
+            }
+            if row["vat_width"] != vat_width {
+                continue
+            }
+            if row["fuel_type"] != fuel_type {
+                continue
+            }
+            
+            //find energy cost will be different for every type of appliance
+            new_dict[row["model_number"]!] = find_energy_cost_combination_fryer_griddle(preheat_energy: Double(row["preheat_energy"]!)!, idle_energy_rate: Double(row["idle_energy_rate"]!)!)
+            
+            
+        }
+        
+        var best_model = find_lowest_cost_model(list_of_costs: new_dict)
+        
+        //need to keep track of the low energy cost as well for the graph
+        
+        return best_model
+    }
+    private func find_best_model_cabinet(cabinet_volume: String, size: String, idle_energy_rate: String, file_name: String) -> String{
+        
+        //var peak_hour_schedule = read_in_hour_data()
+        
+        
+        let rows = open_csv(filename: file_name)
+        
+        var new_dict = Dictionary<String, Double>()
+        
+        for row in rows! {
+            
+            if row["cabinet_volume"] != cabinet_volume {
+                continue
+            }
+            if row["size"] != size {
+                continue
+            }
+            if row["idle_energy_rate"] != idle_energy_rate {
+                continue
+            }
+            
+            //find energy cost will be different for every type of appliance
+            new_dict[row["model_number"]!] = find_energy_cost_cabinet(cabinet_volume: Double(row["cabinet_volume"]!)!, idle_energy_rate: Double(row["idle_energy_rate"]!)!)
+            
+            
+        }
+        
+        var best_model = find_lowest_cost_model(list_of_costs: new_dict)
+        
+        //need to keep track of the low energy cost as well for the graph
+        
+        return best_model
+    }
+    private func find_best_model_fridge_freezer(prod_type: String, total_volume: String, fridge_capacity: String, file_name: String) -> String{
+        
+        //var peak_hour_schedule = read_in_hour_data()
+        
+        
+        let rows = open_csv(filename: file_name)
+        
+        var new_dict = Dictionary<String, Double>()
+        
+        for row in rows! {
+            
+            if row["prod_type"] != prod_type {
+                continue
+            }
+            if row["total_volume"] != total_volume {
+                continue
+            }
+            if row["fridge_capacity"] != fridge_capacity {
+                continue
+            }
+            
+            //find energy cost will be different for every type of appliance
+            new_dict[row["model_number"]!] = find_energy_cost_freeze_fridge()
+            
+            
+        }
+        
+        var best_model = find_lowest_cost_model(list_of_costs: new_dict)
+        
+        //need to keep track of the low energy cost as well for the graph
+        
+        return best_model
+    }
+    private func find_best_model_ice(ice_harvest_rate: String, energy_use_rate: String, ice_type: String, machine_type: String, file_name: String) -> String{
+        
+        //var peak_hour_schedule = read_in_hour_data()
+        
+        
+        let rows = open_csv(filename: file_name)
+        
+        var new_dict = Dictionary<String, Double>()
+        
+        for row in rows! {
+            
+            if row["ice_harvest_rate"] != ice_harvest_rate {
+                continue
+            }
+            if row["energy_use_rate"] != energy_use_rate {
+                continue
+            }
+            if row["ice_type"] != ice_type {
+                continue
+            }
+            if row["machine_type"] != machine_type {
+                continue
+            }
+            
+            //find energy cost will be different for every type of appliance
+            new_dict[row["model_number"]!] = find_energy_cost_ice(energy_use_rate: Double(row["energy_use_rate"]!)!, ice_harvest_rate: Double(row["ice_harvest_rate"]!)!)
+            
+            
+        }
+        
+        var best_model = find_lowest_cost_model(list_of_costs: new_dict)
+        
+        //need to keep track of the low energy cost as well for the graph
+        
+        return best_model
+    }
+    private func find_best_model_conveyor(oven_length: String, conveyor_width: String, file_name: String) -> String{
+        
+        //var peak_hour_schedule = read_in_hour_data()
+        
+        
+        let rows = open_csv(filename: file_name)
+        
+        var new_dict = Dictionary<String, Double>()
+        
+        for row in rows! {
+            
+            if row["oven_length"] != oven_length {
+                continue
+            }
+            if row["conveyor_width"] != conveyor_width {
+                continue
+            }
+            
+            //find energy cost will be different for every type of appliance
+            new_dict[row["model_number"]!] = find_energy_cost(preheat_energy: Double(row["preheat_energy"]!)!, idle_energy_rate: Double(row["idle_energy_rate"]!)!, fan_energy_rate: Double(row["fan_energy_rate"]!)!)
+            
+            
+        }
+        
+        var best_model = find_lowest_cost_model(list_of_costs: new_dict)
+        
+        //need to keep track of the low energy cost as well for the graph
+        
+        return best_model
+    }
+    private func find_best_model_convection(capacity: String, size: String, fuel_type: String, file_name: String) -> String{
+        
+        //var peak_hour_schedule = read_in_hour_data()
+        
+        
+        let rows = open_csv(filename: file_name)
+        
+        var new_dict = Dictionary<String, Double>()
+        
+        for row in rows! {
+            
+            if row["capacity"] != capacity {
+                continue
+            }
+            if row["size"] != size {
+                continue
+            }
+            if row["fuel_type"] != fuel_type {
+                continue
+            }
+            
+            //find energy cost will be different for every type of appliance
+            new_dict[row["model_number"]!] = find_energy_cost_oven(preheat_energy: Double(row["preheat_energy"]!)!, idle_energy_rate: Double(row["idle_energy_rate"]!)!, fan_energy_rate: Double(row["fan_energy_rate"]!)!)
+            
+            
+        }
+        
+        var best_model = find_lowest_cost_model(list_of_costs: new_dict)
+        
+        //need to keep track of the low energy cost as well for the graph
+        
+        return best_model
+    }
+    private func find_best_model_combination(fuel_type: String, size: String, file_name: String) -> String{
+        
+        //var peak_hour_schedule = read_in_hour_data()
+        
+        
+        let rows = open_csv(filename: file_name)
+        
+        var new_dict = Dictionary<String, Double>()
+        
+        for row in rows! {
+            
+            if row["fuel_type"] != fuel_type {
+                continue
+            }
+            if row["size"] != size {
+                continue
+            }
+            
+            //find energy cost will be different for every type of appliance
+            new_dict[row["model_number"]!] = find_energy_cost_combination_fryer_griddle(preheat_energy: Double(row["preheat_energy"]!)!, idle_energy_rate: Double(row["idle_energy_rate"]!)!)
+            
+            
+        }
+        
+        var best_model = find_lowest_cost_model(list_of_costs: new_dict)
+        
+        //need to keep track of the low energy cost as well for the graph
+        
+        return best_model
+    }
+    //only for ovens
+    private func find_best_model_rack(prod_capacity: String, size: String, file_name: String) -> String{
         
         let rows = open_csv(filename: file_name)
         
@@ -322,17 +688,20 @@ class Room: Audit {
             }
             
             //find energy cost will be different for every type of appliance
-            new_dict[row["model_number"]!] = find_energy_cost(preheat_energy: Double(row["preheat_energy"]!)!, idle_energy_rate: Double(row["idle_energy_rate"]!)!, fan_energy_rate: Double(row["fan_energy_rate"]!)!, peak_hour_schedule: peak_hour_schedule)
+            new_dict[row["model_number"]!] = find_energy_cost_oven(preheat_energy: Double(row["preheat_energy"]!)!, idle_energy_rate: Double(row["idle_energy_rate"]!)!, fan_energy_rate: Double(row["fan_energy_rate"]!)!)
             
             
         }
         
         var best_model = find_lowest_cost_model(list_of_costs: new_dict)
         
-        //need to keep track of the low energy cost as well for the graph
-        
         return best_model
     }
+    
+    
+    /* end of the best model code */
+    
+    
     
     private func find_lowest_cost_model(list_of_costs: Dictionary<String, Double>) -> String {
         let lowest_cost = 10000000000.0
@@ -344,13 +713,14 @@ class Room: Audit {
                 model_name = model
             }
         }
+        models_to_cost[model_name] = lowest_cost
         
         return model_name
     }
     
     
     //making the assumption that every day is a weekday and non-holiday
-    private func read_in_hour_data() -> Dictionary<String, Double> {
+    /*private func read_in_hour_data() -> Dictionary<String, Double> {
         let rows = open_csv(filename: "Sample Interval Data")
         
         var hour_data = Dictionary<String, Double>()
@@ -364,7 +734,6 @@ class Room: Audit {
             
             //Wil: what is the variable str?
             if firstChar <= 4 || firstChar >= 11 {
-                var str = row[""]
                 let str1 = row["elec_intvl_end_dttm"]?.components(separatedBy: " ")[1]
                 let firstTimeChar = Int((str1?[0])!)!
                 if  firstTimeChar == 1 || firstTimeChar == 2 {
@@ -399,9 +768,45 @@ class Room: Audit {
                 }
             }
         }
-
+     
         //this map will be returned and then will have the hours for the energy cost calculation
         return hour_data
+    }*/
+    
+    
+    private func calculate_all_peak_hours() -> Dictionary<String, Int> {
+        var opening = audit.outputs["Operating Hours"]?.components(separatedBy: " ")[0]
+        var closing = audit.outputs["Operating Hours"]?.components(separatedBy: " ")[1]
+        
+        var opening_hour = Int("1")
+        //opening_hour is the first two numbers
+        var closing_hour = Int("2")
+        
+        var hour_data = Dictionary<String, Int>()
+        
+        for i in 1...24 {
+            if i <= opening_hour || i > closing_hour {
+                continue
+            }
+            if i! >= 12 && i! < 18 {
+                hour_data["Summer-On-Peak"] += 1
+            } else if (i! >= 8 && i! < 12) || (i! >= 18 && i! < 21){
+                hour_data["Summer-Part-Peak"] += 1
+            } else {
+                hour_data["Summer-Off-Peak"] += 1
+            }
+            
+            if i >= 8 && i < 21 {
+                hour_data["Winter-Part-Peak"] += 1
+            } else {
+                hour_data["Winter-Off-Peak"] += 1
+            }
+            
+            
+        }
+        
+        return hour_data
+        
     }
     
     
@@ -495,9 +900,9 @@ class Room: Audit {
 
     
     //This is mostly good for all ovens, fryer, griddles, but sometimes some have different names
-    private func find_energy_cost(preheat_energy: Double, idle_energy_rate: Double, fan_energy_rate: Double, peak_hour_schedule: Dictionary<String, Double>) -> Double{
+    /*private func find_energy_cost(preheat_energy: Double, idle_energy_rate: Double, fan_energy_rate: Double) -> Double{
         
-        var pricing_chart = get_bill_data(bill_type: audits.output["Electric Rate Structure"])
+        var pricing_chart = get_bill_data(bill_type: audit.outputs["Electric Rate Structure"])
         
         
         //weekly
@@ -507,16 +912,16 @@ class Room: Audit {
         
         var summer_rate = calculate_summer_rate(gas_energy: gas_energy)
         
-        //*** Compiler Error ***
+
         var gas_cost = gas_energy / 99976.1 * (winter_rate + summer_rate) / 2
-        //*** Compiler Error ***
+
         
         
         
         //This seems like it is for ideal enery consumption
-        var electric_energy = Double(audit.outputs["ideal_run_hours"]!)! * fan_energy_rate
+        //var electric_energy = Double(audit.outputs["ideal_run_hours"]!)! * fan_energy_rate
         
-        
+        var peak_hour_schedule = calculate_all_peak_hours()
         
         //Electric Cost:
         var summer = peak_hour_schedule["Summer-On-Peak"]! * fan_energy_rate * pricing_chart["Summer-On-Peak"]!
@@ -532,7 +937,7 @@ class Room: Audit {
         
         return total_cost
 
-    }
+    }*/
     
     private func find_energy_cost_ice(peak_hour_schedule: Dictionary<String, Double>, ice_harvest_rate: Double, energy_use_rate: Double) -> Double {
         
@@ -560,7 +965,6 @@ class Room: Audit {
     }
     
     private func get_bill_data(bill_type: String) -> Dictionary<String, Double> {
-        //bill_csv needs to be the name of the csv for the bill rates
         
         //come back to this
         let rows = open_csv(filename: "pge_electric") //*** Compiler Error ***
@@ -895,6 +1299,207 @@ class Room: Audit {
         let total_watts = watts * Float(num_lamps)
         
         return hours_per_year * total_watts
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    /* This is all the different energy cost equations for each individual type of kitchen item */
+    
+    
+    //This is for all ovens except for combination
+    private func find_energy_cost_oven(preheat_energy: Double, idle_energy_rate: Double, fan_energy_rate: Double) -> Double{
+        
+        var pricing_chart = get_bill_data(bill_type: audit.outputs["Electric Rate Structure"])
+        
+        
+        //weekly
+        var gas_energy = preheat_energy * Double(audit.outputs["days_in_operation"] as! String)! + Double(audit.outputs["ideal_run_hours"] as! String)! * idle_energy_rate
+        
+        var winter_rate = calculate_winter_rate(gas_energy: gas_energy)
+        
+        var summer_rate = calculate_summer_rate(gas_energy: gas_energy)
+        
+        
+        var gas_cost = gas_energy / 99976.1 * (winter_rate + summer_rate) / 2
+        
+        
+        var peak_hour_schedule = calculate_all_peak_hours()
+        
+        //Electric Cost:
+        var summer = peak_hour_schedule["Summer-On-Peak"]! * fan_energy_rate * pricing_chart["Summer-On-Peak"]!
+        summer += peak_hour_schedule["Summer-Part-Peak"]! * fan_energy_rate * pricing_chart["Summer-Part-Peak"]!
+        summer += peak_hour_schedule["Summer-Off-Peak"]! * fan_energy_rate * pricing_chart["Summer-Off-Peak"]!
+        
+        var winter = peak_hour_schedule["Winter-On-Peak"]! * fan_energy_rate * pricing_chart["Winter-On-Peak"]!
+        winter += peak_hour_schedule["Winter-Off-Peak"]! * fan_energy_rate * pricing_chart["Winter-Off-Peak"]!
+        
+        
+        var total_electric = summer + winter
+        
+        var total_cost = total_electric + gas_cost
+        
+        return total_cost
+        
+    }
+    
+    private func find_energy_cost_combination_fryer_griddle(preheat_energy: Double, idle_energy_rate: Double) -> Double{
+        
+        var pricing_chart = get_bill_data(bill_type: audit.outputs["Electric Rate Structure"])
+        
+        
+        //weekly
+        var gas_energy = preheat_energy * Double(audit.outputs["days_in_operation"] as! String)! + Double(audit.outputs["ideal_run_hours"] as! String)! * idle_energy_rate
+        
+        var winter_rate = calculate_winter_rate(gas_energy: gas_energy)
+        
+        var summer_rate = calculate_summer_rate(gas_energy: gas_energy)
+        
+        
+        var gas_cost = gas_energy / 99976.1 * (winter_rate + summer_rate) / 2
+        
+        
+        
+        
+        //This seems like it is for ideal enery consumption
+        //var electric_energy = Double(audit.outputs["ideal_run_hours"]!)! * fan_energy_rate
+        
+        var peak_hour_schedule = calculate_all_peak_hours()
+        
+        //Electric Cost:
+        var summer = peak_hour_schedule["Summer-On-Peak"]! * idle_energy_rate * pricing_chart["Summer-On-Peak"]!
+        summer += peak_hour_schedule["Summer-Part-Peak"]! * idle_energy_rate * pricing_chart["Summer-Part-Peak"]!
+        summer += peak_hour_schedule["Summer-Off-Peak"]! * idle_energy_rate * pricing_chart["Summer-Off-Peak"]!
+        
+        var winter = peak_hour_schedule["Winter-On-Peak"]! * idle_energy_rate * pricing_chart["Winter-On-Peak"]!
+        winter += peak_hour_schedule["Winter-Off-Peak"]! * idle_energy_rate * pricing_chart["Winter-Off-Peak"]!
+        
+        var total_electric = summer + winter
+        
+        var total_cost = total_electric + gas_cost
+        
+        return total_cost
+        
+    }
+    
+    //
+    private func find_energy_cost_ice(energy_use_rate: Double, ice_harvest_rate: Double) -> Double{
+        
+        var pricing_chart = get_bill_data(bill_type: audit.outputs["Electric Rate Structure"])
+        
+        var hour_energy_use = ice_harvest_rate * energy_use_rate / 24
+        
+        
+        var peak_hour_schedule = calculate_all_peak_hours()
+        
+        //Electric Cost:
+        var summer = peak_hour_schedule["Summer-On-Peak"]! * hour_energy_use * pricing_chart["Summer-On-Peak"]!
+        summer += peak_hour_schedule["Summer-Part-Peak"]! * hour_energy_use * pricing_chart["Summer-Part-Peak"]!
+        summer += peak_hour_schedule["Summer-Off-Peak"]! * hour_energy_use * pricing_chart["Summer-Off-Peak"]!
+        
+        var winter = peak_hour_schedule["Winter-On-Peak"]! * hour_energy_use * pricing_chart["Winter-On-Peak"]!
+        winter += peak_hour_schedule["Winter-Off-Peak"]! * hour_energy_use * pricing_chart["Winter-Off-Peak"]!
+        
+        var total_electric = summer + winter
+        
+        var total_cost = total_electric
+        
+        return total_cost
+        
+    }
+    
+    private func find_energy_cost_freeze_fridge() -> Double{
+        
+        var pricing_chart = get_bill_data(bill_type: audit.outputs["Electric Rate Structure"])
+
+        //I do not know how to get this
+        var hour_energy_use = 10
+        
+        var peak_hour_schedule = calculate_all_peak_hours()
+        
+        //Electric Cost:
+        var summer = peak_hour_schedule["Summer-On-Peak"]! * hour_energy_use * pricing_chart["Summer-On-Peak"]!
+        summer += peak_hour_schedule["Summer-Part-Peak"]! * hour_energy_use * pricing_chart["Summer-Part-Peak"]!
+        summer += peak_hour_schedule["Summer-Off-Peak"]! * hour_energy_use * pricing_chart["Summer-Off-Peak"]!
+        
+        var winter = peak_hour_schedule["Winter-On-Peak"]! * hour_energy_use * pricing_chart["Winter-On-Peak"]!
+        winter += peak_hour_schedule["Winter-Off-Peak"]! * hour_energy_use * pricing_chart["Winter-Off-Peak"]!
+        
+        var total_electric = summer + winter
+        
+        var total_cost = total_electric
+        
+        return total_cost
+        
+    }
+    
+    private func find_energy_cost_cabinet(cabinet_volume: Double, idle_energy_rate: Double) -> Double{
+        
+        var pricing_chart = get_bill_data(bill_type: audit.outputs["Electric Rate Structure"])
+        
+        
+        var energy_use = cabinet_volume * idle_energy_rate / 1000
+        
+        var peak_hour_schedule = calculate_all_peak_hours()
+        
+        //Electric Cost:
+        var summer = peak_hour_schedule["Summer-On-Peak"]! * energy_use * pricing_chart["Summer-On-Peak"]!
+        summer += peak_hour_schedule["Summer-Part-Peak"]! * energy_use * pricing_chart["Summer-Part-Peak"]!
+        summer += peak_hour_schedule["Summer-Off-Peak"]! * energy_use * pricing_chart["Summer-Off-Peak"]!
+        
+        var winter = peak_hour_schedule["Winter-On-Peak"]! * energy_use * pricing_chart["Winter-On-Peak"]!
+        winter += peak_hour_schedule["Winter-Off-Peak"]! * energy_use * pricing_chart["Winter-Off-Peak"]!
+        
+        var total_electric = summer + winter
+        
+        var total_cost = total_electric + gas_cost
+        
+        return total_cost
+        
+    }
+
+    private func find_energy_cost_steam_cooker(preheat_energy: Double, idle_energy_rate: Double) -> Double{
+        
+        //var pricing_chart = get_bill_data(bill_type: audit.outputs["Electric Rate Structure"])
+        
+        
+        //weekly
+        var gas_energy = preheat_energy * Double(audit.outputs["days_in_operation"] as! String)! + Double(audit.outputs["ideal_run_hours"] as! String)! * idle_energy_rate
+        
+        var winter_rate = calculate_winter_rate(gas_energy: gas_energy)
+        
+        var summer_rate = calculate_summer_rate(gas_energy: gas_energy)
+        
+        
+        var gas_cost = gas_energy / 99976.1 * (winter_rate + summer_rate) / 2
+        
+        
+        
+        
+        //This seems like it is for ideal enery consumption
+        //var electric_energy = Double(audit.outputs["ideal_run_hours"]!)! * fan_energy_rate
+        
+        /*var peak_hour_schedule = calculate_all_peak_hours()
+        
+        //Electric Cost:
+        var summer = peak_hour_schedule["Summer-On-Peak"]! * fan_energy_rate * pricing_chart["Summer-On-Peak"]!
+        summer += peak_hour_schedule["Summer-Part-Peak"]! * fan_energy_rate * pricing_chart["Summer-Part-Peak"]!
+        summer += peak_hour_schedule["Summer-Off-Peak"]! * fan_energy_rate * pricing_chart["Summer-Off-Peak"]!
+        
+        var winter = peak_hour_schedule["Winter-On-Peak"]! * fan_energy_rate * pricing_chart["Winter-On-Peak"]!
+        winter += peak_hour_schedule["Winter-Off-Peak"]! * fan_energy_rate * pricing_chart["Winter-Off-Peak"]!
+        
+        var total_electric = summer + winter*/
+        
+        var total_cost = gas_cost
+        
+        return total_cost
+        
     }
     
     
