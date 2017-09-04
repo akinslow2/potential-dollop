@@ -126,11 +126,13 @@ class Room: Audit {
         
     }
     
-    func augment_prod_and_size(production: String, size: String) {
+    func augment(values: Dictionary<String, String>) {
         
-        curr_values["production"] = production
-        
-        curr_values["size"] = size
+        for (key, value) in values {
+            
+            curr_values[key] = value
+            
+        }
         
     }
 
@@ -702,13 +704,13 @@ class Room: Audit {
     
     private func total_cost() -> Double{
         var hour_data = read_in_hour_data()
-        var pricing_data = get_bill_data(bill_type: audit.outputs["Electric Rate Structure"])
+        var pricing_data = get_bill_data(bill_type: audit.outputs["Electric Rate Structure"]!)
         
-        var total_cost = hour_data["Winter-Part-Peak"] * pricing-data["Winter-Part-Peak"]
-        total_cost = total_cost + hour_data["Winter-Off-Peak"] * pricing-data["Winter-Off-Peak"]
-        total_cost = total_cost + hour_data["Summer-On-Peak"] * pricing-data["Summer-On-Peak"]
-        total_cost = total_cost + hour_data["Summer-Part-Peak"] * pricing-data["Summer-Part-Peak"]
-        total_cost = total_cost + hour_data["Summer-Off-Peak"] * pricing-data["Summer-Off-Peak"]
+        var total_cost = hour_data["Winter-Part-Peak"]! * pricing_data["Winter-Part-Peak"]!
+        total_cost = total_cost + hour_data["Winter-Off-Peak"]! * pricing_data["Winter-Off-Peak"]!
+        total_cost = total_cost + hour_data["Summer-On-Peak"]! * pricing_data["Summer-On-Peak"]!
+        total_cost = total_cost + hour_data["Summer-Part-Peak"]! * pricing_data["Summer-Part-Peak"]!
+        total_cost = total_cost + hour_data["Summer-Off-Peak"]! * pricing_data["Summer-Off-Peak"]!
         
         return total_cost
     }
@@ -721,10 +723,10 @@ class Room: Audit {
         
         for row in rows! {
             let someString = row["usg_dt"]
-            let firstChar = Int((someString?[0])!)!
+            var firstChar = Int((someString?[0])!)!
             if firstChar == 1 {
-                if let digit = Int(someString?[1]) {
-                    firstChar = Int(String(firstChar) + someString?[1])
+                if let digit = Int((someString?[1])!) {
+                    firstChar = Int(String(firstChar) + (someString?[1])!)!
                 }
             }
             
@@ -732,8 +734,8 @@ class Room: Audit {
                 let str1 = row["elec_intvl_end_dttm"]?.components(separatedBy: " ")[1]
                 let firstTimeChar = Int((str1?[0])!)!
                 if  firstTimeChar == 1 || firstTimeChar == 2 {
-                    if let digit = Int(someString?[1]) {
-                        firstChar = Int(String(firstChar) + someString?[1])
+                    if let digit = Int((someString?[1])!) {
+                        firstChar = Int(String(firstChar) + (someString?[1])!)!
                     }
                 } else {
                     if firstTimeChar >= 8 && firstTimeChar < 21 {
@@ -750,8 +752,8 @@ class Room: Audit {
                 let str1 = row["elec_intvl_end_dttm"]?.components(separatedBy: " ")[1]
                 let firstTimeChar = Int((str1?.components(separatedBy: "")[0])!)
                 if  firstTimeChar == 1 || firstTimeChar == 2{
-                    if let digit = Int(someString?[1]) {
-                        firstChar = Int(String(firstChar) + someString?[1])
+                    if let digit = Int((someString?[1])!) {
+                        firstChar = Int(String(firstChar) + (someString?[1])!)!
                     }
                 } else {
                     if firstTimeChar! >= 12 && firstTimeChar! < 18 {
@@ -828,20 +830,20 @@ class Room: Audit {
             
             if daily_energy_usage <= 5.0 {
                 
-                running_month_total = Double(row[2]!)! * 30.0
+                running_month_total = Double(row[2])! * 30.0
             } else if daily_energy_usage <= 16.0 {
-                running_month_total = Double(row[3]!)! * 30.0
+                running_month_total = Double(row[3])! * 30.0
             } else if daily_energy_usage <= 41.0 {
-                running_month_total = Double(row[4]!)! * 30.0
+                running_month_total = Double(row[4])! * 30.0
             } else if daily_energy_usage <= 123.0 {
-                running_month_total = Double(row[5]!)! * 30.0
+                running_month_total = Double(row[5])! * 30.0
             } else {
-                running_month_total = Double(row[6]!)! * 30.0
+                running_month_total = Double(row[6])! * 30.0
             }
             //8
-            running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row[8]!)!)
+            running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row[8])!)
             
-            running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row[16]!)!)
+            running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row[16])!)
 
             total_cost += running_month_total
             
@@ -873,20 +875,20 @@ class Room: Audit {
             
             if daily_energy_usage <= 5.0 {
                 
-                running_month_total = Double(row[2]!)! * 30.0
+                running_month_total = Double(row[2])! * 30.0
             } else if daily_energy_usage <= 16.0 {
-                running_month_total = Double(row[3]!)! * 30.0
+                running_month_total = Double(row[3])! * 30.0
             } else if daily_energy_usage <= 41.0 {
-                running_month_total = Double(row[4]!)! * 30.0
+                running_month_total = Double(row[4])! * 30.0
             } else if daily_energy_usage <= 123.0 {
-                running_month_total = Double(row[5]!)! * 30.0
+                running_month_total = Double(row[5])! * 30.0
             } else {
-                running_month_total = Double(row[6]!)! * 30.0
+                running_month_total = Double(row[6])! * 30.0
             }
             //8
-            running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row[10]!)!)
+            running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row[10])!)
             
-            running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row[16]!)!)
+            running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row[16])!)
             
             total_cost += running_month_total
             

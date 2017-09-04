@@ -9,7 +9,7 @@
 import UIKit
 
 class AuditInfoViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var companyLabel: UILabel!
     @IBOutlet weak var companyTextField: UITextField!
     @IBOutlet weak var modelNumberTextField: UITextField!
@@ -90,7 +90,7 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
     
     /*
      
-     Function: open_csv
+     Function: open_csv_rows
      --------------------
      Returns an Optional(Array<Dictionary<String, String>>)
      of the elements in a csv with the first column as
@@ -205,9 +205,9 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
         modelNumberTextField.delegate = self
         
         self.navigationItem.hidesBackButton = true
-
+        
     }
-
+    
     /*
      
      Function: didReceiveMemoryWarning
@@ -218,7 +218,7 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
-    
+        
     }
     
     @IBAction func searchForModel(_ sender: Any) {
@@ -226,7 +226,7 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
         if !(modelNumberTextField.text?.isEmpty)! && !(companyTextField.text?.isEmpty)! {
             
             room?.feature_table_keys.append(feature + " " + modelNumberTextField.text!)
-        
+            
             let found = is_energy_star(model_number: modelNumberTextField.text!, company: companyTextField.text!, file_name: feature_references[feature]!)
             
             foundFeature = found
@@ -241,92 +241,112 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
                 
             } else {
                 
-                productionLabel.isHidden = false
-                
-                sizeLabel.isHidden = false
-                
-                productionTextField.isHidden = false
-                
-                sizeTextField.isHidden = false
-                
-                doneButton.isHidden = false
-                
-                searchButton.isHidden = true
-                
-                var sizes = Array<String>()
-                var productionCapacities = Array<String>()
-                
-                var sizeIndex = -1
-                var productionIndex = -1
-                
-                if feature == "Rack Oven" {
+                if feature == "Conveyor Oven" || feature == "Combination Oven" || feature == "Rack Oven" {
                     
-                    sizeIndex = 2
-                    productionIndex = 7
+                    change_display()
                     
-                } else if feature == "Combination Oven" {
+                    var a = Array<String>()
+                    var b = Array<String>()
                     
-                    sizeIndex = 2
-                    productionIndex = 8
+                    var aIndex = -1
+                    var bIndex = -1
                     
-                } else if feature == "Convection Oven" {
-                    
-                    sizeIndex = 2
-                    productionIndex = 9
-                    
-                }  //Add capabilities for all other features!
-                
-                if sizeIndex != -1 && productionIndex != -1 {
-                
-                    let csv = open_csv_rows(filename: feature_references[feature]!)
-                
-                    for row in csv! {
+                    if feature == "Rack Oven" {
                         
-                        if row[0] == "Company" {
-                            
-                            continue
-                            
-                        }
+                        aIndex = 4
+                        bIndex = 7
+                        sizeLabel.text = "Size"
+                        productionLabel.text = "Production Capacity"
                         
-                        if !sizes.contains(row[sizeIndex]) {
-                            
-                            sizes.append(row[sizeIndex])
-                            
-                        }
+                    } else if feature == "Combination Oven" {
                         
-                        if !productionCapacities.contains(row[productionIndex]) {
-                            
-                            productionCapacities.append(row[productionIndex])
-                            
-                        }
-                    
+                        aIndex = 4
+                        bIndex = 8
+                        sizeLabel.text = "Size"
+                        productionLabel.text = "Fuel Type"
+                        
+                    } else if feature == "Conveyor Oven" {
+                        
+                        aIndex = 3
+                        bIndex = 8
+                        sizeLabel.text = "Oven Length"
+                        productionLabel.text = "Conveyor Width"
+                        
                     }
-
+                    
+                    if aIndex != -1 && bIndex != -1 {
+                        
+                        let csv = open_csv_rows(filename: feature_references[feature]!)
+                        
+                        for row in csv! {
+                            
+                            if row[0] == "Company" {
+                                
+                                continue
+                                
+                            }
+                            
+                            if !a.contains(row[aIndex]) {
+                                
+                                a.append(row[aIndex])
+                                
+                            }
+                            
+                            if !b.contains(row[bIndex]) {
+                                
+                                b.append(row[bIndex])
+                                
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                    sizeAllowedValsLabel.text = "Possible values: " + a.description.replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "")
+                    sizeAllowedValsLabel.font = sizeAllowedValsLabel.font.withSize(10)
+                    
+                    productionAllowedValsLabel.text = "Possible values: " + b.description.replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "")
+                    productionAllowedValsLabel.font = productionAllowedValsLabel.font.withSize(10)
+                    
+                } else {
+                    
+                    print("Hello")
+                    
+                    performSegue(withIdentifier: "toExtra", sender: self)
+                    
                 }
                 
-                sizeAllowedValsLabel.text = "Possible values: " + sizes.description.replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "")
-                sizeAllowedValsLabel.font = sizeAllowedValsLabel.font.withSize(10)
-                
-                productionAllowedValsLabel.text = "Possible values: " + productionCapacities.description.replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: "[", with: "").replacingOccurrences(of: "]", with: "")
-                productionAllowedValsLabel.font = productionAllowedValsLabel.font.withSize(10)
-                
-                if feature.contains("Oven") && feature != "Conveyor Oven" && feature != "Convection Oven" {
-                
-                    room?.augment_prod_and_size(production: productionTextField.text!, size: sizeTextField.text!)
-                
-                } //else if
-                
             }
-            
+                
         }
         
     }
+    
+    
+    func change_display() {
+        
+        productionLabel.isHidden = false
+        
+        sizeLabel.isHidden = false
+        
+        productionTextField.isHidden = false
+        
+        sizeTextField.isHidden = false
+        
+        doneButton.isHidden = false
+        
+        searchButton.isHidden = true
+        
+    }
+    
+    
+    
     
     /*
      
      Function: retrieveValues
      --------------------------------
-     Adds all the given values to a dictionary and then 
+     Adds all the given values to a dictionary and then
      passes the dictionary on to the room class
      
      */
@@ -342,9 +362,25 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
             
             if !foundFeature! {
                 
-                dict["size"] = sizeTextField.text
-                
-                dict["production_capacity"] = productionTextField.text
+                if feature == "Conveyor Oven" {
+                    
+                    dict["oven_length"] = sizeTextField.text!
+                    
+                    dict["conveyor_width"] = productionTextField.text!
+                    
+                } else if feature == "Combination Oven" {
+                    
+                    dict["fuel type"] = productionTextField.text!
+                    
+                    dict["size"] = sizeTextField.text!
+                    
+                } else if feature == "Rack Oven" {
+                    
+                    dict["size"] = sizeTextField.text
+                    
+                    dict["production_capacity"] = productionTextField.text
+                    
+                }
                 
             }
             
@@ -374,8 +410,8 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
      
      Function: donePressed
      --------------------------------
-     If all values are entered, then it augments the proper data, 
-     adds the new feature, and 
+     If all values are entered, then it augments the proper data,
+     adds the new feature, and
      
      SEGUE~ to FeatureTableViewController
      
@@ -396,7 +432,7 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
             
         } else {
             
-            room?.augment_prod_and_size(production: productionTextField.text!, size: sizeTextField.text!)
+            room?.augment(values: retrieveValues(feature: feature))
             
             if feature == "Lighting" {
                 
@@ -405,8 +441,6 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
             }
             
             room?.new_feature(feature_type: feature, values: retrieveValues(feature: feature))
-            
-            //calculate retrofit
             
             performSegue(withIdentifier: "backToFeatures", sender: self)
             
@@ -521,9 +555,23 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
             featureTableViewController.filledRows = filledRows
             
             featureTableViewController.space_type = space_type
-                        
+            
+        } else if segue.identifier == "toExtra" {
+            
+            let extraInfoViewController = segue.destination as! ExtraInfoViewController
+            
+            extraInfoViewController.filledRows = filledRows
+            
+            extraInfoViewController.feature = feature
+            
+            extraInfoViewController.generalFeature = generalFeature
+            
+            extraInfoViewController.foundFeature = foundFeature
+            
+            extraInfoViewController.space_type = space_type
+            
         }
         
     }
-
+    
 }

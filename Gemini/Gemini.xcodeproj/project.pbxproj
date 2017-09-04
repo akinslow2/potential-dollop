@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A04C5FC1F5D168200360CC2 /* ExtraInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A04C5FB1F5D168200360CC2 /* ExtraInfoViewController.swift */; };
 		2A4B6EA41F4BD2F700B1CD3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4B6EA31F4BD2F700B1CD3B /* AppDelegate.swift */; };
 		2A4B6EA61F4BD2F700B1CD3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4B6EA51F4BD2F700B1CD3B /* ViewController.swift */; };
 		2A4B6EA91F4BD2F700B1CD3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A4B6EA71F4BD2F700B1CD3B /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A04C5FB1F5D168200360CC2 /* ExtraInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraInfoViewController.swift; sourceTree = "<group>"; };
 		2A4B6EA01F4BD2F700B1CD3B /* Gemini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gemini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A4B6EA31F4BD2F700B1CD3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A4B6EA51F4BD2F700B1CD3B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				2A66E7081F52843200F86CFE /* SelectingFeatureViewController.swift */,
 				2A66E7061F52841B00F86CFE /* ZoneSpecsViewController.swift */,
 				2A66E7021F5263A400F86CFE /* AuditInfoViewController.swift */,
+				2A04C5FB1F5D168200360CC2 /* ExtraInfoViewController.swift */,
 				2A5AA7891F4D60C2009140C0 /* auditheader.swift */,
 				2A5AA78B1F4D60C7009140C0 /* roomheader.swift */,
 				2A5AA78E1F4D6256009140C0 /* CSwiftV.swift */,
@@ -339,6 +342,7 @@
 				2A66E7091F52843200F86CFE /* SelectingFeatureViewController.swift in Sources */,
 				2AE4845D1F5BBD91002E6EC7 /* ParseBridgingHeader.m in Sources */,
 				2A95266A1F520EE80058B764 /* AuditDetailViewController.swift in Sources */,
+				2A04C5FC1F5D168200360CC2 /* ExtraInfoViewController.swift in Sources */,
 				2A4B6EA41F4BD2F700B1CD3B /* AppDelegate.swift in Sources */,
 				2A81291B1F4CE01D009BCFB9 /* TableViewController.swift in Sources */,
 				2A80053E1F5C8EFB009C080D /* BarChartViewController.swift in Sources */,
