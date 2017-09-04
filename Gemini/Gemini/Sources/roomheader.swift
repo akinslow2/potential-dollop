@@ -200,36 +200,35 @@ class Room: Audit {
     }
 
     func __add_kitchen_feature(values:Dictionary<String, String>) {
-//        let model_number = values["model_number"]!
-//        
-//        let company = values["num_lamps"]!
-//        
-//        let type = values["type"]!
-//        
-//        if type == "rack_oven" {
-//            __compute__rack__oven(model_number: model_number, company: company)
-//        } else if type == "convection_oven" {
-//            __compute__convection__oven(model_number: model_number, company: company)
-//        } else if type == "combination_oven" {
-//            __compute__combination__oven(model_number: model_number, company: company)
-//        } else if type == "conveyor_ovens" {
-//            __compute__conveyor__oven(model_number: model_number, company: company)
-//        } else if type == "ice_maker" {
-//            __compute__icemaker(model_number: model_number, company: company)
-//        } else if type == "freezer" {
-//            __compute__freezer(model_number: model_number, company: company)
-//        } else if type == "refrigerator" {
-//            __compute__refrigerator(model_number: model_number, company: company)
-//            //need to check solid door or glass door
-//        } else if type == "hot_food_cabinets" {
-//            __compute__hot_food_cabinets(model_number: model_number, company: company)
-//        } else if type == "fryer" {
-//            __compute__fryer(model_number: model_number, company: company)
-//        } else if type == "steam_cookers" {
-//            __compute__steam_cookers(model_number: model_number, company: company)
-//        } else if type == "griddles" {
-//            __compute__griddles(model_number: model_number, company: company)
-//        }
+        let model_number = values["model_number"]!
+        
+        let company = values["num_lamps"]!
+        
+        let type = values["type"]!
+        
+        if type == "rack_oven" {
+            __compute__rack__oven(model_number: model_number, company: company)
+        } else if type == "convection_oven" {
+            __compute__convection__oven(model_number: model_number, company: company)
+        } else if type == "combination_oven" {
+            __compute__combination__oven(model_number: model_number, company: company)
+        } else if type == "conveyor_ovens" {
+            __compute__conveyor__oven(model_number: model_number, company: company)
+        } else if type == "ice_maker" {
+            __compute__icemaker(model_number: model_number, company: company)
+        } else if type == "freezer" {
+            __compute__freezer__fridge(model_number: model_number, company: company)
+        } else if type == "refrigerator" {
+            __compute__freezer__fridge(model_number: model_number, company: company)
+        } else if type == "hot_food_cabinets" {
+            __compute__hot_food_cabinets(model_number: model_number, company: company)
+        } else if type == "fryer" {
+            __compute__fryer(model_number: model_number, company: company)
+        } else if type == "steam_cookers" {
+            __compute__steam_cookers(model_number: model_number, company: company)
+        } else if type == "griddles" {
+            __compute__griddles(model_number: model_number, company: company)
+        }
         
     }
     
@@ -245,11 +244,10 @@ class Room: Audit {
             //done
         }
         
-        //size, capacity, fuel type
         
         let best_model_num = find_best_model_griddle(surface_area: curr_values["size"]!, size: curr_values["capacity"]!, nominal_width: curr_values["width"], fuel_type: curr_values["fuel_type"], file_name: feature_references["Griddle"]!) //*** Compiler Error ***
     }
-    private func __compute__steam__cooker(model_number:String, company: String){
+    private func __compute__steam__cookers(model_number:String, company: String){
         let energy_star = is_energy_star(model_number: model_number, company: company, file_name: feature_references["Convection Oven"]!)
         if energy_star {
             return
@@ -271,7 +269,7 @@ class Room: Audit {
         
         let best_model_num = find_best_model_fryer(prod_capacity: curr_values["production"]!, shortening_capacity: curr_values["shortening capacity"]!, vat_width: curr-values["Vat Width"], fuel_type: curr_values["Fuel Type"], file_name: feature_references["Convection Oven"]!) //*** Compiler Error ***
     }
-    private func __compute__hot_food_cabinet(model_number:String, company: String){
+    private func __compute__hot_food_cabinets(model_number:String, company: String){
         let energy_star = is_energy_star(model_number: model_number, company: company, file_name: feature_references["Convection Oven"]!)
         if energy_star {
             return
@@ -312,8 +310,6 @@ class Room: Audit {
             return
             //done
         }
-        
-        //oven length, conveyor width
         let best_model_num = find_best_model_conveyor(oven_length: curr_values["oven length"]!, conveyor_width: curr_values["conveyor width"]!, file_name: feature_references["Conveyor Oven"]!) //*** Compiler Error ***
     }
     
@@ -325,8 +321,6 @@ class Room: Audit {
             //done
         }
         
-        //size, capacity, fuel type
-        
         let best_model_num = find_best_model_convection(capacity: curr_values["capacity"]!, size: curr_values["size"]!, fuel_type: curr_values["Fuel Type"], file_name: feature_references["Convection Oven"]!) //*** Compiler Error ***
     }
     
@@ -337,7 +331,6 @@ class Room: Audit {
             //done
         }
         
-        //size, fuel type
         
         let best_model_num = find_best_model_combination(fuel_type: curr_values["Fuel Type"]!, size: curr_values["size"]!, file_name: feature_references["Combination Oven"]!)
         //*** Compiler Error ***
@@ -351,9 +344,6 @@ class Room: Audit {
         if energy_star {
             return
         }
-        
-        //let prod_capacity
-        //let size
         
         let best_model_num = find_best_model_rack(prod_capacity: curr_values["production"]!, size: curr_values["size"]!, file_name: feature_references["Rack Oven"]!) //*** Compiler Error ***
     }
@@ -376,21 +366,21 @@ class Room: Audit {
         
         for row in rows! {
             
-            if row["size"] != size {
+            if row["Single or Double Sided"] != size {
                 continue
             }
-            if row["surface_area"] != surface_area {
+            if row["Surface Area (ft²)"] != surface_area {
                 continue
             }
-            if row["nominal_width"] != nominal_width {
+            if row["Nominal Width (ft)"] != nominal_width {
                 continue
             }
-            if row["fuel_type"] != fuel_type {
+            if row["Fuel Type"] != fuel_type {
                 continue
             }
             
             //find energy cost will be different for every type of appliance
-            new_dict[row["model_number"]!] = find_energy_cost_combination_fryer_griddle(preheat_energy: Double(row["preheat_energy"]!)!, idle_energy_rate: Double(row["idle_energy_rate"]!)!)
+            new_dict[row["Model Number"]!] = find_energy_cost_combination_fryer_griddle(preheat_energy: Double(row["Preheat Energy (Btu)"]!)!, idle_energy_rate: Double(row["Idle Energy Rate (Btu/h or kW)"]!)!)
             
             
         }
@@ -412,24 +402,24 @@ class Room: Audit {
         
         for row in rows! {
             
-            if row["pan_capacity"] != pan_capacity {
+            if row["Pan Capacity"] != pan_capacity {
                 continue
             }
-            if row["prod_capacity"] != prod_capacity {
+            if row["Production Capacity (lb/h)"] != prod_capacity {
                 continue
             }
-            if row["fuel_type"] != fuel_type {
+            if row["Fuel Type"] != fuel_type {
                 continue
             }
-            if row["water_use"] != water_use {
+            if row["Water Use (gph)"] != water_use {
                 continue
             }
-            if row["steamer_type"] != steamer_type {
+            if row["Steamer Type"] != steamer_type {
                 continue
             }
             
             //find energy cost will be different for every type of appliance
-            new_dict[row["model_number"]!] = find_energy_cost_steam_cooker(preheat_energy: Double(row["preheat_energy"]!)!, idle_energy_rate: Double(row["idle_energy_rate"]!)!)
+            new_dict[row["Model Number"]!] = find_energy_cost_steam_cooker(preheat_energy: Double(row["Preheat Energy (Btu)"]!)!, idle_energy_rate: Double(row["Idle Energy Rate (Btu/h or kW)"]!)!)
             
             
         }
@@ -451,21 +441,21 @@ class Room: Audit {
         
         for row in rows! {
             
-            if row["shortening_capacity"] != shortening_capacity {
+            if row["Shortening Capacity (lb)"] != shortening_capacity {
                 continue
             }
-            if row["prod_capacity"] != prod_capacity {
+            if row["Production Capacity (lbs/h)"] != prod_capacity {
                 continue
             }
-            if row["vat_width"] != vat_width {
+            if row["Vat Width"] != vat_width {
                 continue
             }
-            if row["fuel_type"] != fuel_type {
+            if row["Fuel Type"] != fuel_type {
                 continue
             }
             
             //find energy cost will be different for every type of appliance
-            new_dict[row["model_number"]!] = find_energy_cost_combination_fryer_griddle(preheat_energy: Double(row["preheat_energy"]!)!, idle_energy_rate: Double(row["idle_energy_rate"]!)!)
+            new_dict[row["Model Number"]!] = find_energy_cost_combination_fryer_griddle(preheat_energy: Double(row["Preheat Energy (Btu)"]!)!, idle_energy_rate: Double(row["Idle Energy Rate (Btu/h or kW)"]!)!)
             
             
         }
@@ -487,18 +477,18 @@ class Room: Audit {
         
         for row in rows! {
             
-            if row["cabinet_volume"] != cabinet_volume {
+            if row["Cabinet Volume (cu. ft.)"] != cabinet_volume {
                 continue
             }
-            if row["size"] != size {
+            if row["Size"] != size {
                 continue
             }
-            if row["idle_energy_rate"] != idle_energy_rate {
+            if row["Idle Energy Rate (Btu/h or kW)"] != idle_energy_rate {
                 continue
             }
             
             //find energy cost will be different for every type of appliance
-            new_dict[row["model_number"]!] = find_energy_cost_cabinet(cabinet_volume: Double(row["cabinet_volume"]!)!, idle_energy_rate: Double(row["idle_energy_rate"]!)!)
+            new_dict[row["Model Number"]!] = find_energy_cost_cabinet(cabinet_volume: Double(row["Cabinet Volume (cu. ft.)"]!)!, idle_energy_rate: Double(row["Idle Energy Rate (Btu/h or kW)"]!)!)
             
             
         }
@@ -520,18 +510,15 @@ class Room: Audit {
         
         for row in rows! {
             
-            if row["prod_type"] != prod_type {
+            if row["Style Type"] != prod_type {
                 continue
             }
-            if row["total_volume"] != total_volume {
-                continue
-            }
-            if row["fridge_capacity"] != fridge_capacity {
+            if row["Total Volume (cu. ft.)"] != total_volume {
                 continue
             }
             
             //find energy cost will be different for every type of appliance
-            new_dict[row["model_number"]!] = find_energy_cost_freeze_fridge()
+            new_dict[row["Model Number"]!] = find_energy_cost_freeze_fridge()
             
             
         }
@@ -553,21 +540,21 @@ class Room: Audit {
         
         for row in rows! {
             
-            if row["ice_harvest_rate"] != ice_harvest_rate {
+            if row["Ice Harvest Rate (lbs/day)"] != ice_harvest_rate {
                 continue
             }
-            if row["energy_use_rate"] != energy_use_rate {
+            if row["Energy Use Rate (kWh/100 lbs)"] != energy_use_rate {
                 continue
             }
-            if row["ice_type"] != ice_type {
+            if row["Ice Type"] != ice_type {
                 continue
             }
-            if row["machine_type"] != machine_type {
+            if row["Machine Type"] != machine_type {
                 continue
             }
             
             //find energy cost will be different for every type of appliance
-            new_dict[row["model_number"]!] = find_energy_cost_ice(energy_use_rate: Double(row["energy_use_rate"]!)!, ice_harvest_rate: Double(row["ice_harvest_rate"]!)!)
+            new_dict[row["Model Number"]!] = find_energy_cost_ice(energy_use_rate: Double(row["Energy Use Rate (kWh/100 lbs)"]!)!, ice_harvest_rate: Double(row["Ice Harvest Rate (lbs/day)"]!)!)
             
             
         }
@@ -588,16 +575,12 @@ class Room: Audit {
         var new_dict = Dictionary<String, Double>()
         
         for row in rows! {
-            
-            if row["oven_length"] != oven_length {
-                continue
-            }
-            if row["conveyor_width"] != conveyor_width {
+            if row["Conveyor Width (in)"] != conveyor_width {
                 continue
             }
             
             //find energy cost will be different for every type of appliance
-            new_dict[row["model_number"]!] = find_energy_cost(preheat_energy: Double(row["preheat_energy"]!)!, idle_energy_rate: Double(row["idle_energy_rate"]!)!, fan_energy_rate: Double(row["fan_energy_rate"]!)!)
+            new_dict[row["Model Number"]!] = find_energy_cost(preheat_energy: Double(row["Preheat Energy (Btu)"]!)!, idle_energy_rate: Double(row["Idle Energy Rate (Btu/h or kW)"]!)!, fan_energy_rate: Double(row["Fan/Control Energy Rate (kW)"]!)!)
             
             
         }
@@ -619,18 +602,18 @@ class Room: Audit {
         
         for row in rows! {
             
-            if row["capacity"] != capacity {
+            if row["Production Capacity (lbs/h)"] != capacity {
                 continue
             }
-            if row["size"] != size {
+            if row["Oven Size"] != size {
                 continue
             }
-            if row["fuel_type"] != fuel_type {
+            if row["Fuel Type"] != fuel_type {
                 continue
             }
             
             //find energy cost will be different for every type of appliance
-            new_dict[row["model_number"]!] = find_energy_cost_oven(preheat_energy: Double(row["preheat_energy"]!)!, idle_energy_rate: Double(row["idle_energy_rate"]!)!, fan_energy_rate: Double(row["fan_energy_rate"]!)!)
+            new_dict[row["Model Number"]!] = find_energy_cost_oven(preheat_energy: Double(row["Preheat Energy (Btu)"]!)!, idle_energy_rate: Double(row["Idle Energy Rate (Btu/h or kW)"]!)!, fan_energy_rate: Double(row["Fan/Control Energy Rate (kW)"]!)!)
             
             
         }
@@ -652,15 +635,15 @@ class Room: Audit {
         
         for row in rows! {
             
-            if row["fuel_type"] != fuel_type {
+            if row["Fuel Type"] != fuel_type {
                 continue
             }
-            if row["size"] != size {
+            if row["Size (Steam Pans)"] != size {
                 continue
             }
             
             //find energy cost will be different for every type of appliance
-            new_dict[row["model_number"]!] = find_energy_cost_combination_fryer_griddle(preheat_energy: Double(row["preheat_energy"]!)!, idle_energy_rate: Double(row["idle_energy_rate"]!)!)
+            new_dict[row["Model Number"]!] = find_energy_cost_combination_fryer_griddle(preheat_energy: Double(row["Preheat Energy (Btu)"]!)!, idle_energy_rate: Double(row["Idle Energy Rate (Btu/h or kW)"]!)!)
             
             
         }
@@ -680,15 +663,15 @@ class Room: Audit {
         
         for row in rows! {
             
-            if row["size"] != size {
+            if row["Size"] != size {
                 continue
             }
-            if row["prod_capacity"] != prod_capacity {
+            if row["Production Capacity (lbs/h)"] != prod_capacity {
                 continue
             }
             
             //find energy cost will be different for every type of appliance
-            new_dict[row["model_number"]!] = find_energy_cost_oven(preheat_energy: Double(row["preheat_energy"]!)!, idle_energy_rate: Double(row["idle_energy_rate"]!)!, fan_energy_rate: Double(row["fan_energy_rate"]!)!)
+            new_dict[row["Model Number"]!] = find_energy_cost_oven(preheat_energy: Double(row["Preheat Energy (Btu)"]!)!, idle_energy_rate: Double(row["Idle Energy Rate (Btu/h or kW)"]!)!, fan_energy_rate: Double(row["Fan/Control Energy Rate (kW)"]!)!)
             
             
         }
