@@ -1,0 +1,140 @@
+﻿Qualified Griddles												Updated 	 5/17/2017
+"Qualifying gas griddle models must have a tested heavy-load cooking energy efficiency of 38% or greater and an idle energy rate of 2,650 Btu/h per ft_ of cooking surface or less,"													
+utilizing ASTM Standard F1275. Qualifying electric griddle models must have a tested heavy-load cooking energy efficiency of 70% or greater and an idle energy rate of 355 Watts													
+"per ft_ of cooking surface or less, utilizing ASTM Standard F1275."													
+"NOTE: Program criteria are subject to change. Check your utility rebate application for terms and conditions, and effective program dates."													
+						Preheat Energy		Idle Energy					
+Company	Model Number	"Single or
+Double
+Sided"	"Fuel
+Type"	"Nominal
+Width
+(ft)"	"Surface
+Area
+(ft_)"	"Gas
+(Btu)"	"Electric
+(Wh)"	"Gas
+(Btu)"	"Electric
+(Wh)"	"Energy
+Efficiency
+(%)"	"Production
+Capacity
+(lbs/h)"	"Rebate
+(per unit)"	"PG&E
+Measure
+Code"
+AccuTemp	GGF1201A2400	Single	Gas	2	4.73	"3,787"	-	"2,534"	-	47%	7.1	$200	FS003
+AccuTemp	GGF1201A2450	Single	Gas	2	5.00	"3,201"	-	"1,772"	-	54%	8.1	$200	FS003
+AccuTemp	GGF1201A3600	Single	Gas	3	7.22	"3,787"	-	"2,534"	-	47%	7.1	$300	FS003
+AccuTemp	GGF1201A3650	Single	Gas	3	7.50	"3,207"	-	"1,580"	-	54%	7.8	$300	FS003
+AccuTemp	GGF1201A4800	Single	Gas	4	9.47	"3,787"	-	"2,534"	-	47%	7.1	$400	FS003
+AccuTemp	GGF1201A4850	Single	Gas	4	10.00	"3,207"	-	"1,580"	-	54%	7.8	$400	FS003
+Accutemp	GGF1201B2400	Single	Gas	2	4.00	"3,787"	-	"2,534"	-	47%	7.1	$200	FS003
+AccuTemp	GGF1201B2450	Single	Gas	2	4.00	"3,201"	-	"1,772"	-	54%	8.1	$200	FS003
+AccuTemp	GGF1201B3600	Single	Gas	3	6.00	"3,787"	-	"2,534"	-	47%	7.1	$300	FS003
+AccuTemp	GGF1201B3650	Single	Gas	3	6.00	"3,207"	-	"1,580"	-	54%	7.8	$300	FS003
+AccuTemp	GGF1201B4800	Single	Gas	4	8.00	"3,787"	-	"2,534"	-	47%	7.1	$400	FS003
+AccuTemp	GGF1201B4850	Single	Gas	4	8.00	"3,207"	-	"1,580"	-	54%	7.8	$400	FS003
+Anetsberger	TM24x36G	Single	Gas	3	6.00	"2,196"	-	"2,491"	-	40%	6.7	$300	FS003
+Anetsberger	TM24x48G	Single	Gas	4	8.00	"2,196"	-	"2,491"	-	40%	6.7	$400	FS003
+Anetsberger	TM24x60G	Single	Gas	5	10.00	"2,196"	-	"2,491"	-	40%	6.7	$500	FS003
+Anetsberger	TM24x72G	Single	Gas	6	12.00	"2,196"	-	"2,491"	-	40%	6.7	$600	FS003
+Electrolux	ARG36FL	Single	Gas	3	5.62	"2,967"	-	"2,462"	-	40%	7.5	$300	FS003
+Garland	MW26W	Double	Gas	3	6.00	"1,533"	293	566	180	52%	7.6	$300	FS003
+Garland	MWG-2W	Double	Gas	3	6.00	"1,533"	293	566	180	52%	7.6	$300	FS003
+Garland	XG24	Double	Gas	2	4.00	"2,485"	310	"1,077"	135	51%	14.6	$200	FS003
+Garland	XG36	Double	Gas	3	6.00	"2,485"	310	"1,077"	135	51%	14.6	$300	FS003
+Jade	JGT-2418	Single	Gas	2	3.00	"2,803"	-	"2,588"	-	40%	6.6	$200	FS003
+Jade	JGT-2424	Single	Gas	2	4.00	"2,803"	-	"2,588"	-	40%	6.6	$200	FS003
+Jade	JGT-2436	Single	Gas	3	6.00	"2,803"	-	"2,588"	-	40%	6.6	$300	FS003
+Jade	JGT-2442	Single	Gas	4	7.00	"2,803"	-	"2,588"	-	40%	6.6	$400	FS003
+Jade	JGT-2448	Single	Gas	4	8.00	"2,803"	-	"2,588"	-	40%	6.6	$400	FS003
+Jade	JGT-2454	Single	Gas	5	9.00	"2,803"	-	"2,588"	-	40%	6.6	$500	FS003
+Jade	JGT-2460	Single	Gas	5	10.00	"2,803"	-	"2,588"	-	40%	6.6	$500	FS003
+Jade 	JGT-2472	Single	Gas	6	12.00	"2,803"	-	"2,588"	-	40%	6.6	$600	FS003
+Jade	JGT-2484	Single	Gas	7	14.00	"2,803"	-	"2,588"	-	40%	6.6	$700	FS003
+Taylor Company	C811-**	Double	Gas	3	6.00	"2,817"	275	"1,418"	154	51%	11.9	$300	FS003
+Taylor Company	C813-**	Double	Gas	3	6.00	"2,817"	275	"1,418"	154	51%	11.9	$300	FS003
+Taylor Company	C835-**	Double	Gas	3	6.00	"3,036"	267	"1,293"	163	48%	8.6	$300	FS003
+Taylor Company	C845-**	Double	Gas	3	6.00	"2,817"	275	"1,418"	154	51%	11.9	$300	FS003
+Taylor Company	L811-**	Double	Gas	3	6.00	"2,587"	260	"1,368"	170	69%	16.5	$300	FS003
+Taylor Company	L813-**	Double	Gas	3	6.00	"2,587"	260	"1,368"	170	69%	16.5	$300	FS003
+Taylor Company	L819-**	Double	Gas	2	4.00	"2,515"	263	"1,519"	184	63%	18.4	$200	FS003
+Vulcan	VCCG24-IC02	Single	Gas	2	4.00	"2,032"	-	"2,291"	-	38%	7.8	$200	FS003
+Vulcan	VCCG24-IS02	Single	Gas	2	4.00	"2,977"	-	"2,169"	-	40%	7.2	$200	FS003
+Vulcan	VCCG36-AR01	Single	Gas	3	6.00	"3,388"	-	"2,141"	-	39%	8.3	$300	FS003
+Vulcan	VCCG36-IC02	Single	Gas	3	6.00	"2,032"	-	"2,291"	-	38%	7.8	$300	FS003
+Vulcan	VCCG36-IS02	Single	Gas	3	6.00	"2,977"	-	"2,169"	-	40%	7.2	$300	FS003
+Vulcan	VCCG48-IC02	Single	Gas	4	8.00	"2,032"	-	"2,291"	-	38%	7.8	$400	FS003
+Vulcan	VCCG48-IS02	Single	Gas	4	8.00	"2,977"	-	"2,169"	-	40%	7.2	$400	FS003
+Vulcan	VCCG60-IC02	Single	Gas	5	10.00	"2,032"	-	"2,291"	-	38%	7.8	$500	FS003
+Vulcan	VCCG60-IS02	Single	Gas	5	10.00	"2,977"	-	"2,169"	-	40%	7.2	$500	FS003
+Vulcan	VCCG72-IS02	Single	Gas	6	12.00	"2,977"	-	"2,169"	-	40%	7.2	$600	FS003
+Wolf	IRG-36	Single	Gas	3	6.00	"2,900"	-	"2,483"	-	42%	7.2	$300	FS003
+Wolf	IRG-48	Single	Gas	4	8.00	"2,900"	-	"2,483"	-	42%	7.2	$400	FS003
+Wolf	IRG-60	Single	Gas	5	10.00	"2,900"	-	"2,483"	-	42%	7.2	$500	FS003
+Wolf	IRG-72	Single	Gas	6	12.00	"2,900"	-	"2,483"	-	42%	7.2	$600	FS003
+AccuTemp	EGD****B3600	Single	Electric	3	5.55	-	668	-	342	73%	8.0	$450	FS002
+AccuTemp	EGD****B4800	Single	Electric	4	7.13	-	668	-	342	73%	8.0	$600	FS002
+AccuTemp	EGF****A2400	Single	Electric	2	4.70	-	668	-	342	73%	8.0	$300	FS002
+AccuTemp	EGF****A2450	Single	Electric	2	6.00	-	472	-	228	86%	8.8	$300	FS002
+AccuTemp	EGF****A3600	Single	Electric	3	7.13	-	668	-	342	73%	8.0	$450	FS002
+AccuTemp	EGF****A3650	Single	Electric	3	9.00	-	480	-	226	86%	8.2	$450	FS002
+AccuTemp	EGF****A4800	Single	Electric	4	9.43	-	668	-	342	73%	8.0	$600	FS002
+AccuTemp	EGF****B2400	Single	Electric	2	3.88	-	668	-	342	73%	8.0	$300	FS002
+AccuTemp	EGF****B3600	Single	Electric	3	5.82	-	668	-	342	73%	8.0	$450	FS002
+AccuTemp	EGF****B4800	Single	Electric	4	7.77	-	668	-	342	73%	8.0	$600	FS002
+AccuTemp	EGF****C2201	Single	Electric	2	4.75	-	668	-	342	73%	8.0	$300	FS002
+Garland	MWE-2W	Double	Electric	3	6.00	-	575	-	300	76%	8.3	$450	FS002
+Garland	MWE2S	Double	Electric	3	6.00	-	575	-	300	76%	8.3	$450	FS002
+Garland	MWE3W-1	Double	Electric	3	6.00	-	662	-	307	78%	11.4	$450	FS002
+Garland	XE24	Double	Electric	2	4.00	-	878	-	255	75%	17.6	$300	FS002
+Garland	XE36	Double	Electric	3	6.00	-	878	-	255	75%	17.6	$450	FS002
+Imperial	ITG-24-E	Single	Electric	2	4.00	-	285	-	210	77%	5.0	$300	FS002
+Imperial	ITG-36-E	Single	Electric	3	6.00	-	285	-	210	77%	5.0	$450	FS002
+Imperial	ITG-48-E	Single	Electric	4	8.00	-	285	-	210	77%	5.0	$600	FS002
+Imperial	ITG-60-E	Single	Electric	5	10.00	-	285	-	210	77%	5.0	$750	FS002
+Imperial	ITG-72-E	Single	Electric	6	12.00	-	285	-	210	77%	5.0	$900	FS002
+Keating	ES24x30FT	Single	Electric	2	4.00	-	438	-	247	72%	5.1	$300	FS002
+Keating	ES27x30FT	Single	Electric	2	4.50	-	438	-	247	72%	5.1	$300	FS002
+Keating	ES30x30FT	Single	Electric	3	5.00	-	438	-	247	72%	5.1	$450	FS002
+Keating	ES36x30FT	Single	Electric	3	6.00	-	438	-	247	72%	5.1	$450	FS002
+Keating	ES36x36FT	Single	Electric	3	9.00	-	438	-	247	72%	5.1	$450	FS002
+Keating	ES42x30FT	Single	Electric	4	7.00	-	438	-	247	72%	5.1	$600	FS002
+Keating	ES48x30FT	Single	Electric	4	8.00	-	438	-	247	72%	5.1	$600	FS002
+Keating	ES48x36FT	Single	Electric	4	10.00	-	438	-	247	72%	5.1	$600	FS002
+Keating	ES60x30FT	Single	Electric	5	10.00	-	438	-	247	72%	5.1	$750	FS002
+Keating	ES60x36FT	Single	Electric	5	12.50	-	438	-	247	72%	5.1	$750	FS002
+Keating	ES72x30FT	Single	Electric	6	12.00	-	438	-	247	72%	5.1	$900	FS002
+Keating	ES72x36FT	Single	Electric	6	15.00	-	438	-	247	72%	5.1	$900	FS002
+Lang	124ZTC	Single	Electric	2	3.83	-	577	-	268	75%	6.8	$300	FS002
+Lang	136ZTC	Single	Electric	3	6.00	-	577	-	268	75%	6.8	$450	FS002
+Lang	148ZTC	Single	Electric	4	7.67	-	577	-	268	75%	6.8	$600	FS002
+Lang	160ZTC	Single	Electric	5	9.58	-	577	-	268	75%	6.8	$750	FS002
+Lang	172ZTC	Single	Electric	6	11.50	-	577	-	268	75%	6.8	$900	FS002
+Taylor Company	C810-**	Double	Electric	3	6.00	-	637	-	320	77%	11.2	$450	FS002
+Taylor Company	C812-**	Double	Electric	3	6.00	-	637	-	320	77%	11.2	$450	FS002
+Taylor Company	C832-**	Double	Electric	3	6.00	-	637	-	307	76%	8.6	$450	FS002
+Taylor Company	C842-**	Double	Electric	3	6.00	-	637	-	320	77%	11.2	$450	FS002
+Taylor Company	L810-**	Double	Electric	3	6.00	-	728	-	318	87%	17.1	$450	FS002
+Taylor Company	L812-**	Double	Electric	3	6.00	-	728	-	318	87%	17.1	$450	FS002
+Taylor Company	L820-**	Double	Electric	2	4.05	-	640	-	294	87%	17.7	$300	FS002
+Vulcan	HEG24E	Single	Electric	2	3.00	-	305	-	330	77%	6.8	$300	FS002
+Vulcan	HEG36E	Single	Electric	3	6.00	-	305	-	330	77%	6.8	$450	FS002
+Vulcan	HEG48E	Single	Electric	4	8.00	-	305	-	330	77%	6.8	$600	FS002
+Vulcan	HEG60E	Single	Electric	5	10.00	-	305	-	330	77%	6.8	$750	FS002
+Vulcan	HEG72E	Single	Electric	6	12.00	-	305	-	330	77%	6.8	$900	FS002
+Vulcan	RRE24	Single	Electric	2	4.00	-	315	-	322	76%	7.4	$300	FS002
+Vulcan	RRE36	Single	Electric	3	6.00	-	315	-	322	76%	7.4	$450	FS002
+Vulcan	RRE48	Single	Electric	4	8.00	-	315	-	322	76%	7.4	$600	FS002
+Wells	G-13	Single	Electric	2	2.75	-	420	-	242	75%	5.2	$300	FS002
+Wells	G-19	Single	Electric	3	4.36	-	420	-	242	75%	5.2	$450	FS002
+Wells	G-23	Single	Electric	3	6.00	-	420	-	242	75%	5.2	$450	FS002
+Wells	G-24	Single	Electric	4	7.91	-	420	-	242	75%	5.2	$600	FS002
+Wells	G-60	Single	Electric	6	11.29	-	420	-	242	75%	5.2	$900	FS002
+Wolf	WEG24E	Single	Electric	2	4.00	-	305	-	330	77%	6.8	$300	FS002
+Wolf	WEG36E	Single	Electric	3	6.00	-	305	-	330	77%	6.8	$450	FS002
+Wolf	WEG48E	Single	Electric	4	8.00	-	305	-	330	77%	6.8	$600	FS002
+Wolf	WEG60E	Single	Electric	5	10.00	-	305	-	330	77%	6.8	$750	FS002
+Wolf	WEG72E	Single	Electric	6	12.00	-	305	-	330	77%	6.8	$900	FS002
+													

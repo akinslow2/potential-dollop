@@ -1,0 +1,133 @@
+﻿Qualified Solid Door Freezers					Updated 	 5/17/2017
+Qualifying models must meet ENERGY STAR® Version 4.0 specification and must be listed in the California Energy Commission database.						
+Products on this list qualify for purchases from the date they are added until the date they are removed.						
+"NOTE: Program criteria are subject to change. Check your utility rebate application for terms and conditions, and effective program dates."						
+Company	Model Number	Style Type	"Total
+Volume
+(cu. ft.)"	"Daily
+Energy Use
+(kWh)"	"Rebate
+(per unit)"	"PG&E
+Measure
+Code"
+ACCUCOLD	ACF332D*	Undercounter	2.50	1.36	$75	F179
+Accucold by Summit Appliance	ALF62*	Undercounter	3.50	1.37	$75	F179
+Accucold by Summit Appliance	FS24L*	Other	2.10	1.14	$75	F179
+Arctic Air	F22CW	Reach-in	18.50	3.17	$100	F180
+Atosa	MBF8003	Reach-in	64.88	10.70	$350	F182
+Atosa	MBF8503	Reach-in	44.77	9.99	$160	F181
+Atosa	MBF8504	Reach-in	67.99	10.70	$350	F182
+Beverage-Air	3801 THERMO	Reach-in	27.11	4.45	$100	F180
+Beverage-Air	BT30CW-EXPR	Reach-in	25.70	4.60	$100	F180
+Beverage-Air	BT30CWFMS	Reach-in	27.11	4.45	$100	F180
+Beverage-Air	F-27SFC	Reach-in	27.11	4.45	$100	F180
+Continental Refrigerator	CGC50***	Reach-in	16.22	3.04	$100	F180
+Excellence	DBF20S	Reach-in	19.70	4.11	$100	F180
+Frigidaire	FCCS071QW*	Reach-in	7.36	0.70	$75	F179
+Frigidaire	FCCS161QW*	Reach-in	15.58	1.01	$100	F180
+Frigidaire	FCCS181QW*	Reach-in	17.51	1.18	$100	F180
+Frigidaire	FCCS20***	Reach-in	19.85	1.54	$100	F180
+Frigidaire	FCFS181LQB*	Reach-in	17.89	2.87	$100	F180
+Frigidaire	FCFS181LQBA	Reach-in	17.89	4.27	$100	F180
+Frigidaire	FCFS20****	Reach-in	19.40	3.19	$100	F180
+Gibson	GCBM18FQW*	Reach-in	17.89	2.87	$100	F180
+Gibson	RR18F*	Reach-in	18.00	3.19	$100	F180
+Hoshizaki	CF2S-FS*	Reach-in	47.20	10.56	$160	F181
+Hoshizaki America	CF2S-HS	Reach-in	47.00	9.52	$160	F181
+Kelvinator	KCBM180FQY*	Reach-in	17.89	2.87	$100	F180
+Kelvinator	KCBM180FQYA	Reach-in	17.89	4.27	$100	F180
+Kelvinator	KCCF070QW*	Reach-in	7.36	0.70	$75	F179
+Kelvinator	KCCF160QW*	Reach-in	15.58	1.01	$100	F180
+Kelvinator	KCCF160QWA	Reach-in	15.58	1.41	$100	F180
+Kelvinator	KCCF180QW*	Reach-in	17.51	1.18	$100	F180
+Kelvinator	KCCF180QWA	Reach-in	17.51	1.51	$100	F180
+Kelvinator	KCCF220QW*	Reach-in	21.57	1.25	$100	F180
+Kelvinator	KCCF220QWA	Reach-in	21.57	1.74	$100	F180
+Kelvinator	KCS05***	Reach-in	4.98	0.82	$75	F179
+Kelvinator	KCS13***	Reach-in	12.86	1.20	$75	F179
+Kelvinator	KCS20***	Reach-in	19.85	1.54	$100	F180
+Kelvinator	KFS22****	Reach-in	19.40	3.19	$100	F180
+Liebherr	GFT50S2HC	Reach-in	43.31	8.82	$160	F181
+Norlake	LF041WWW/OM	Reach-in	3.50	0.81	$75	F179
+Summit	VT65M*	Reach-in	3.50	1.45	$75	F179
+Summit Commercial	FS20L*	Reach-in	1.60	1.04	$75	F179
+Summit Commercial	FS21L*	Other	1.40	1.00	$75	F179
+Summit Commercial	FS22L*	Reach-in	1.42	1.04	$75	F179
+Traulsen	ALT232WUT-FHS-eS	Reach-in	50.53	11.04	$350	F182
+Traulsen	ALT232WUT-HHS-eS	Reach-in	50.40	11.02	$350	F182
+Traulsen	ALT332NUT***	Reach-in	69.10	13.94	$350	F182
+Traulsen	ALT332WUT-FHS-eS	Reach-in	77.45	14.67	$350	F182
+Traulsen	ALT332WUT-HHS-eS	Reach-in	77.26	14.65	$350	F182
+Traulsen	G22000	Reach-in	45.89	9.86	$160	F181
+Traulsen	G22001	Reach-in	45.89	9.86	$160	F181
+Traulsen	G22002	Reach-in	45.89	9.86	$160	F181
+Traulsen	G22003	Reach-in	45.89	9.86	$160	F181
+Traulsen	G22010	Reach-in	46.02	9.89	$160	F181
+Traulsen	G22011	Reach-in	46.02	9.89	$160	F181
+Traulsen	G22012	Reach-in	46.02	9.89	$160	F181
+Traulsen	G22013	Reach-in	46.02	9.89	$160	F181
+Traulsen	G31000-032	Reach-in	69.15	13.55	$350	F182
+Traulsen	G31001-032	Reach-in	69.15	13.55	$350	F182
+Traulsen	G31002-032	Reach-in	69.15	13.55	$350	F182
+Traulsen	G31003-032	Reach-in	69.15	13.55	$350	F182
+Traulsen	G31010-032	Reach-in	69.35	13.58	$350	F182
+Traulsen	G31011-032	Reach-in	69.35	13.58	$350	F182
+Traulsen	G31012-032	Reach-in	69.35	13.58	$350	F182
+Traulsen	G31013-032	Reach-in	69.35	13.58	$350	F182
+Traulsen	RLT232WUT-FHS-eS	Reach-in	50.53	11.04	$350	F182
+Traulsen	RLT232WUT-HHS-eS	Reach-in	50.40	11.02	$350	F182
+Traulsen	RLT332NUT***	Reach-in	69.10	13.94	$350	F182
+Traulsen	RLT332WUT-FHS-eS	Reach-in	77.45	14.67	$350	F182
+Traulsen	RLT332WUT-HHS-eS	Reach-in	77.26	14.65	$350	F182
+True	T-49F-HC	Reach-in	41.47	8.57	$160	F181
+True	TS-49F-HC	Reach-in	41.47	8.57	$160	F181
+True	TUC-27F-ADA-HC	Undercounter	7.07	2.22	$75	F179
+True	TUC-27F-ADA-HC~SPEC1	Undercounter	7.07	2.22	$75	F179
+True	TUC-27F-HC	Undercounter	7.07	2.22	$75	F179
+True	TUC-27F-HC~SPEC1	Undercounter	7.07	2.22	$75	F179
+True	TUC-27F-LP-HC	Undercounter	7.07	2.22	$75	F179
+True	TUC-27F-LP-HC~SPEC1	Undercounter	7.07	2.22	$75	F179
+True	TUC-48F-ADA-HC	Undercounter	12.85	3.56	$75	F179
+True	TUC-48F-ADA-HC~SPEC1	Undercounter	12.85	3.56	$75	F179
+True	TUC-48F-HC	Work-Top Table	12.85	3.56	$75	F179
+True	TUC-48F-HC	Undercounter	12.85	3.56	$75	F179
+True	TUC-48F-HC~SPEC1	Work-Top Table	12.85	3.56	$75	F179
+True	TUC-48F-HC~SPEC1	Undercounter	12.85	3.56	$75	F179
+True	TUC-48F-LP-HC	Undercounter	12.85	3.56	$75	F179
+True	TUC-48F-LP-HC~SPEC1	Undercounter	12.85	3.56	$75	F179
+True	TWT-27F-HC	Work-Top Table	7.07	2.22	$75	F179
+True	TWT-27F-HC~SPEC1	Work-Top Table	7.07	2.22	$75	F179
+True	TWT-48F-HC	Work-Top Table	12.85	3.56	$75	F179
+True	TWT-48F-HC~SPEC1	Work-Top Table	12.85	3.56	$75	F179
+Turbo Air	EF19-1-N	Reach-in	18.44	4.37	$100	F180
+Turbo Air	EF19-2-N	Reach-in	18.44	4.37	$100	F180
+Turbo Air	EF24-1-N	Reach-in	21.70	4.77	$100	F180
+Turbo Air	EF24-2-N	Reach-in	21.70	4.77	$100	F180
+Turbo Air	EF47-2-N	Reach-in	42.10	5.27	$160	F181
+Turbo Air	EF47-4-N	Reach-in	42.10	5.27	$160	F181
+Turbo Air	JRF-45	Reach-in	35.97	5.89	$160	F181
+Turbo Air	JRF-65	Reach-in	61.84	8.29	$350	F182
+Turbo Air	JUF-36-N	Reach-in	6.37	2.11	$75	F179
+Turbo Air	JUF-60-N	Reach-in	13.58	3.71	$75	F179
+Turbo Air	JURF-72-N	Reach-in	17.76	4.22	$100	F180
+Turbo Air	M3F19-1-N	Reach-in	18.44	4.37	$100	F180
+Turbo Air	M3F19-2-N	Reach-in	18.44	4.37	$100	F180
+Turbo Air	M3RF19-2-N	Reach-in	16.28	3.77	$100	F180
+Turbo Air	M3RF45-2	Reach-in	35.97	5.89	$160	F181
+Turbo Air	M3RF45-2-N	Reach-in	35.97	5.25	$160	F181
+Turbo Air	MUF-28-711	Reach-in	6.97	1.96	$75	F179
+Turbo Air	PRO-50-4F-N	Reach-in	48.70	9.18	$160	F181
+Turbo Air	PRO-50F-N	Reach-in	48.70	9.18	$160	F181
+Turbo Air	TSF-35SD-N	Reach-in	29.00	5.45	$100	F180
+Turbo Air	TSF-49SD	Reach-in	39.90	7.66	$160	F181
+Turbo Air	TSF-72SD	Reach-in	63.80	11.57	$350	F182
+US Refrigeration	USBV-48F	Reach-in	44.77	9.99	$160	F181
+US Refrigeration	USBV-70F	Reach-in	67.99	10.70	$350	F182
+US Refrigeration	USTV-70F	Reach-in	64.88	10.70	$350	F182
+Vencold	VC-F20SD	Reach-in	19.70	4.11	$100	F180
+"Zero Zone, Inc."	1RVZC30****	Reach-in	32.86	6.39	$160	F181
+"Zero Zone, Inc."	2RVZC30****	Reach-in	64.49	10.80	$350	F182
+"Zero Zone, Inc."	3RVZC30****	Reach-in	96.12	15.21	$350	F182
+"Zero Zone, Inc."	4RVZC30****	Reach-in	127.74	19.62	$350	F182
+"Zero Zone, Inc."	5RVZC30****	Reach-in	159.37	24.03	$350	F182
+						

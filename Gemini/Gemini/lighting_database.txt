@@ -1,0 +1,2211 @@
+﻿Manufacturer	Model Number	Rough Shape	Exact Lamp Shape 	Wattage	Color Temperature	Length (in inches)	Width (in inches)	Light Quality CRI	Base Type	Lumens
+Overdrive	9W/ODT2S	bulbous		8.566					E26	627.95
+Overdrive	9W/ODT2S/41K	bulbous		8.566					E26	627.95
+Overdrive	9W/ODT2S/50K	bulbous		8.566					E26	627.95
+Overdrive	13W/ODT2S	bulbous		12.33					E26	907.62
+Overdrive	13W/ODT2S/41K	bulbous		12.33					E26	907.62
+Overdrive	13W/ODT2S/50K	bulbous		12.33					E26	907.62
+Overdrive	18W/ODT2S	bulbous		16.92					E26	1238.5
+Overdrive	18W/ODT2S/41K	bulbous		16.92					E26	1238.5
+Overdrive	18W/ODT2S/50K	bulbous		16.92					E26	1238.5
+Overdrive	23W/ODT2S/27K	bulbous		21.64					E26	1615.9
+Overdrive	23W/ODT2S/41K	bulbous		21.64					E26	1615.9
+Overdrive	23W/ODT2S/50K	bulbous		21.64					E26	1615.9
+Overdrive	26W/ODT2S	bulbous		24.36					E26	1782.8
+Overdrive	26W/ODT2S/41K	bulbous		24.36					E26	1782.8
+Overdrive	26W/ODT2S/50K	bulbous		24.36					E26	1782.8
+Overdrive	40W/ODSP	bulbous		38.51					E26	2685.2
+Overdrive	40W/ODSP/41K	bulbous		38.51					E26	2685.2
+Overdrive	40W/ODSP/50K	bulbous		38.51					E26	2685.2
+SYLVANIA	29379	bulbous		7.3					E26	539
+SYLVANIA	29707	bulbous		7.5					E26	520
+SYLVANIA	29791	bulbous		10.7					E26	554
+SYLVANIA	29401; 26944	bulbous		10.58					E26	762
+SYLVANIA	29378	bulbous		10.2					E26	769
+SYLVANIA	26921	bulbous		10.6					E26	762
+SYLVANIA	26335	bulbous		13					E26	922
+SYLVANIA	26903; 28919; 29727; 29735	bulbous		12.7					E26	900
+SYLVANIA	26942	bulbous		12.6					E26	817
+SYLVANIA	29972; 29727; 29898	bulbous		13					E26	922
+SYLVANIA	29036	bulbous		12.7					E26	900
+SYLVANIA	29781	bulbous		12.6					E26	899
+SYLVANIA	29567	bulbous		12.3					E26	899
+SYLVANIA	26331	bulbous		13					E26	922
+SYLVANIA	26370; 26371; 28895; 28896	bulbous		13					E26	922
+SYLVANIA	29978	bulbous		13					E26	922
+SYLVANIA	26337	bulbous		13					E26	922
+SYLVANIA	26372	bulbous		12.9					E26	921
+SYLVANIA	26373; 26374	bulbous		12.9					E26	922
+SYLVANIA	26339	bulbous		12.9					E26	922
+SYLVANIA	26375	bulbous		12.8					E26	829
+SYLVANIA	26376	bulbous		12.9					E26	819
+SYLVANIA	26340	bulbous		12.9					E26	819
+SYLVANIA	26377; 26378; 28897	bulbous		12.9					E26	836
+SYLVANIA	26333	bulbous		12.9					E26	836
+SYLVANIA	29912	bulbous		13					E26	922
+SYLVANIA	29926	bulbous		13					E26	922
+SYLVANIA	29925	bulbous		13					E26	922
+SYLVANIA	28901	bulbous		13					E26	922
+SYLVANIA	28900	bulbous		13					E26	922
+SYLVANIA	26912; 29036	bulbous		12.7					E26	900
+SYLVANIA	29782	bulbous		13.1					E26	880
+SYLVANIA	28961	bulbous		12.9					E26	816
+SYLVANIA	26900	bulbous		13.8					E26	966
+SYLVANIA	29454	bulbous		13.8					E26	966
+SYLVANIA	26913	bulbous		18.4					E26	1323
+SYLVANIA	26924	bulbous		19.8					E26	1452
+SYLVANIA	29728; 29973	bulbous		19.1					E26	1296
+SYLVANIA	29899	bulbous		18.8					E26	1332
+SYLVANIA	26347; 26348	bulbous		19.8					E26	1367
+SYLVANIA	26341	bulbous		19.8					E26	1367
+SYLVANIA	26349	bulbous		19.8					E26	1336
+SYLVANIA	28904	bulbous		19.8					E26	1367
+SYLVANIA	28903	bulbous		19.8					E26	1367
+SYLVANIA	26336	bulbous		23.2					E26	1640
+SYLVANIA	26939	bulbous		23.4					E26	1678
+SYLVANIA	29974	bulbous		23.7					E26	1695
+SYLVANIA	29729	bulbous		23.2					E26	1640
+SYLVANIA	26353; 26354; 28898; 28899	bulbous		23.2					E26	1640
+SYLVANIA	26344	bulbous		23.2					E26	1640
+SYLVANIA	26332	bulbous		23.2					E26	1640
+SYLVANIA	26355	bulbous		22.9					E26	1663
+SYLVANIA	26356; 26357	bulbous		23					E26	1655
+SYLVANIA	26345	bulbous		23					E26	1655
+SYLVANIA	26358	bulbous		22.9					E26	1636
+SYLVANIA	26359	bulbous		22.9					E26	1630
+SYLVANIA	26346	bulbous		22.9					E26	1630
+SYLVANIA	26351; 26352	bulbous		23					E26	1629
+SYLVANIA	26334	bulbous		23					E26	1629
+SYLVANIA	28953	bulbous		23.2					E26	1640
+SYLVANIA	28945	bulbous		23.2					E26	1640
+SYLVANIA	29928	bulbous		23.2					E26	1640
+SYLVANIA	29927	bulbous		23.2					E26	1640
+SYLVANIA	28905	bulbous		23.2					E26	1640
+SYLVANIA	28902	bulbous		23.2					E26	1640
+SYLVANIA	29453; 26899	bulbous		24.3					E26	1657
+SYLVANIA	29026	bulbous		24.8					E26	1671
+SYLVANIA	28967; 29792	bulbous		28.3					E26	1998
+SYLVANIA	29395	bulbous		29.6					E26	2082
+SYLVANIA	29793	bulbous		30					E26	2039
+SYLVANIA	28973	bulbous		31.5					E26	2195
+SYLVANIA	29913	bulbous		31.5					E26	2195
+SYLVANIA	26930; 26933	bulbous		31.5					E26	2195
+SYLVANIA	27714	bulbous		40.5					E26	2812
+SYLVANIA	29786; 26951	bulbous		40.5					E26	2812
+SYLVANIA	29508; 28970	bulbous		58.8					E26	4459
+SYLVANIA	21095	bulbous		5.5					E26	300
+Feit Electric	ESL9TM/ECO	bulbous							E26	
+Threshold	ESL13T/ECO	bulbous							E26	
+Kailin	KL1206-13W	bulbous							E26	
+Threshold	ESL23TM/ECO	bulbous							E26	
+Kailin	KL1206-23W	bulbous							E26	
+TOPSTAR	601289	bulbous							E26	
+TOPSTAR	603528	bulbous							E26	
+Tospo	TP120-32HFS(T3) 2700K	bulbous							E26	
+Tospo	TP120-42HFS(T4) 2700K	bulbous							E26	
+Tospo	TP120-13MSL(1C) 2700K	bulbous							E26	
+Tospo	TP120-13MSL(1C) 6500K	bulbous							E26	
+Tospo	TP120-13MSL(1C) 5000K	bulbous							E26	
+Tospo	TP120-13MSL(1C) 4100K	bulbous							E26	
+Tospo	TP120-13MSL(1C) 3500K	bulbous							E26	
+Tospo	TP120-13MSL(1C) 3000K	bulbous							E26	
+Tospo	TP120-13MSL(1C) 2700K	bulbous							E26	
+Modern \ by dwell maganize\	0	bulbous							E26	
+Modern \ by dwell maganize\	0	bulbous							E26	
+Modern	0	bulbous							E26	
+Modern	0	bulbous							E26	
+PILLOWFORT	0	bulbous							E26	
+PILLOWFORT	0	bulbous							E26	
+THRESHOLD	0	bulbous							E26	
+THRESHOLD	0	bulbous							E26	
+RE	0	bulbous							E26	
+RE	0	bulbous							E26	
+TOSPO	1	bulbous							E26	
+Tospo	TP120-23/HFS E26 2700K	bulbous							E26	
+Tospo	TP120-23/HFS E26 3000K	bulbous							E26	
+Tospo	TP120-23/HFS E26 3500K	bulbous							E26	
+Tospo	TP120-23/HFS E26 4100K	bulbous							E26	
+Tospo	TP120-23/HFS E26 5000K	bulbous							E26	
+Tospo	TP120-23/HFS E26 6500K	bulbous							E26	
+Tospo	TP120-13/HFS E26 2700K	bulbous							E26	
+Tospo	TP120-26HFS(T2) 5000K	bulbous							E26	
+Tospo	TP120-26HFS(T2) 4100K	bulbous							E26	
+Tospo	TP120-26HFS(T2) 3500K	bulbous							E26	
+Tospo	TP120-26HFS(T2) 3000K	bulbous							E26	
+Tospo	TP120-26HFS(T2) 2700K	bulbous							E26	
+Philips	EL/A SWP 9W*	bulbous							E26	
+Philips	EL/A SWP 14W*	bulbous							E26	
+Philips	EL/A SWP 20W*	bulbous							E26	
+Philips	EL/Can T2 5W*	bulbous							E26	
+Philips	EL/A Fan 5W*	bulbous							E26	
+Philips	EL/A G25 T3 9W*	bulbous							E26	
+Philips	EL/A G40 23W 120V*	bulbous							E26	
+Philips	EL/O 14W Prisma*	bulbous							E26	
+Philips	EL/O 18W*	bulbous							E26	
+Philips	EL/mdTQS 9W T2*	bulbous							E26	
+Philips	EL/mdTQS 13W T2*	bulbous							E26	
+Philips	EL/mdTQS 13W T2 3.5K*	bulbous							E26	
+Philips	EL/mdTQS 13W T2 4.1K*	bulbous							E26	
+Philips	EL/mdTQS 13W T2 5K*	bulbous							E26	
+Philips	EL/mdTQS 13W T2 6.5K*	bulbous							E26	
+Philips	EL/mdTQS 18W T2*	bulbous							E26	
+Philips	EL/mdTQS 23W T2*	bulbous							E26	
+Philips	EL/mdTQS 23W T2 3.5K*	bulbous							E26	
+Philips	EL/mdTQS 23W T2 4.1K*	bulbous							E26	
+Philips	EL/mdTQS 23W T2 5K*	bulbous							E26	
+Philips	EL/mdTQS 26W T2*	bulbous							E26	
+Philips	EL/mdTQS 26W T2 4.1K	bulbous							E26	
+Philips	EL/mdTQS 26W T2 5K*	bulbous							E26	
+Philips	EL/A T2 SC 14W*	bulbous							E26	
+Philips	EL/A T2 SC 14W 6.5K*	bulbous							E26	
+Philips	EL/A T2 SC 9W*	bulbous							E26	
+Philips	SLS Universal 14W*	bulbous							E26	
+Philips	SLS Universal 20W*	bulbous							E26	
+Philips	SLS Universal 25W*	bulbous							E26	
+Philips	EL/dT42W LL*	bulbous							E26	
+Philips	EL/mdT 20W 1% DIM*	bulbous							E26	
+Philips	EL/O 18W Tuffguard	bulbous							E26	
+Philips	EL/md T D2D	bulbous							E26	
+Philips	EL/mdTQS 18W T2 6.5K*	bulbous							E26	
+MaxLite	SKS13T2CW-149	bulbous							E26	
+MaxLite	SKS13T2DL-149	bulbous							E26	
+MaxLite	SKS13T2DL/4P-149	bulbous							E26	
+MaxLite	SKS23T2WW/4P-149	bulbous							E26	
+MaxLite	SKS13T2WW-133	bulbous							E26	
+MaxLite	SKB14EAWW-133	bulbous							E26	
+MaxLite	SKS13T2WW-149	bulbous							E26	
+MaxLite	SKS13T2WW-149/BP	bulbous							E26	
+MaxLite	SKS13T2WW/4P-149	bulbous							E26	
+MaxLite	SKS18T2WW-149	bulbous							E26	
+MaxLite	SKS18T2WW/4P-149	bulbous							E26	
+MaxLite	SKS18T2CW-149	bulbous							E26	
+MaxLite	SKS18T2CW/4P-149	bulbous							E26	
+MaxLite	SKS18T2DL-149	bulbous							E26	
+MaxLite	SKS18T2DL/4P-149	bulbous							E26	
+MaxLite	SKS23T2WW-149	bulbous							E26	
+MaxLite	SKS23T2CW-149	bulbous							E26	
+MaxLite	SKS23T2DL-149	bulbous							E26	
+MaxLite	HCS253WWW6-110	bulbous							E26	
+MaxLite	SKS30EA3WW-110	bulbous							E26	
+MaxLite	HCB13WW6-107	bulbous							E26	
+MaxLite	SKB18EAWW	bulbous							E26	
+MaxLite	HCB18WW6	bulbous							E26	
+MaxLite	SKM11EGWW	bulbous							E26	
+MaxLite	HCG14WW6	bulbous							E26	
+MaxLite	SKS18EADL-107	bulbous							E26	
+MaxLite	MLM30SCW	bulbous							E26	
+MaxLite	MLM30SWW-110	bulbous							E26	
+MaxLite	SKS13EAWW-133	bulbous							E26	
+MaxLite	SKB13EAWW-107	bulbous							E26	
+MaxLite	SKS14EAWW-133	bulbous							E26	
+MaxLite	MLS32T4WW	bulbous							E26	
+Eiko	SL-SP20/5500K	bulbous							E26	
+Eiko	SP105/41/MED	bulbous							E26	
+Eiko	SP105/50/MED	bulbous							E26	
+Eiko	SP10T2/27K	bulbous							E26	
+Eiko	SP10T2/41K	bulbous							E26	
+Eiko	SP10T2/50K	bulbous							E26	
+Eiko	SP10T2/65K	bulbous							E26	
+Eiko	SP13/27K	bulbous							E26	
+Eiko	SP13/27K	bulbous							E26	
+Eiko	SP13/27K-DIM	bulbous							E26	
+Eiko	SP13/35K	bulbous							E26	
+Eiko	SP13/35K	bulbous							E26	
+Eiko	SP13/41K	bulbous							E26	
+Eiko	SP13/41K	bulbous							E26	
+Eiko	SP13/41K-DIM	bulbous							E26	
+Eiko	SP13/50K	bulbous							E26	
+Eiko	SP13/50K	bulbous							E26	
+Eiko	SP13/65K	bulbous							E26	
+Eiko	SP13/65K	bulbous							E26	
+Eiko	SP13A19/27K	bulbous							E26	
+Eiko	SP13A19/27K	bulbous							E26	
+Eiko	SP13A19/41K	bulbous							E26	
+Eiko	SP13A19/41K	bulbous							E26	
+Eiko	SP15G25/27K	bulbous							E26	
+Eiko	SP15G25/41K	bulbous							E26	
+Eiko	SP19/27K	bulbous							E26	
+Eiko	SP19/27K	bulbous							E26	
+Eiko	SP19/27K-DIM	bulbous							E26	
+Eiko	SP19/35K	bulbous							E26	
+Eiko	SP19/41K	bulbous							E26	
+Eiko	SP19/41K	bulbous							E26	
+Eiko	SP19/41K-DIM	bulbous							E26	
+Eiko	SP19/50K	bulbous							E26	
+Eiko	SP19/50K	bulbous							E26	
+Eiko	SP19/65K	bulbous							E26	
+Eiko	SP23/27K	bulbous							E26	
+Eiko	SP23/27K	bulbous							E26	
+Eiko	SP23/27K-DIM	bulbous							E26	
+Eiko	SP23/35K	bulbous							E26	
+Eiko	SP23/41K	bulbous							E26	
+Eiko	SP23/41K	bulbous							E26	
+Eiko	SP23/41K-DIM	bulbous							E26	
+Eiko	SP23/50K	bulbous							E26	
+Eiko	SP23/50K	bulbous							E26	
+Eiko	SP23/65K	bulbous							E26	
+Eiko	SP27/27K	bulbous							E26	
+Eiko	SP27/27K	bulbous							E26	
+Eiko	SP27/35K	bulbous							E26	
+Eiko	SP27/35K	bulbous							E26	
+Eiko	SP27/41K	bulbous							E26	
+Eiko	SP27/41K	bulbous							E26	
+Eiko	SP27/50K	bulbous							E26	
+Eiko	SP27/50K	bulbous							E26	
+Eiko	SP32/27K	bulbous							E26	
+Eiko	SP32/27K	bulbous							E26	
+Eiko	SP32/35K	bulbous							E26	
+Eiko	SP32/35K	bulbous							E26	
+Eiko	SP32/41K	bulbous							E26	
+Eiko	SP32/41K	bulbous							E26	
+Eiko	SP32/50K	bulbous							E26	
+Eiko	SP32/50K	bulbous							E26	
+Eiko	SP42/27K	bulbous							E26	
+Eiko	SP42/27K	bulbous							E26	
+Eiko	SP42/35K	bulbous							E26	
+Eiko	SP42/35K	bulbous							E26	
+Eiko	SP42/41K	bulbous							E26	
+Eiko	SP42/41K	bulbous							E26	
+Eiko	SP42/50K	bulbous							E26	
+Eiko	SP42/50K	bulbous							E26	
+Eiko	SP5B13/E26/27K	bulbous							E26	
+Eiko	SP5B13/E26/41K	bulbous							E26	
+Eiko	SP65/41/MED	bulbous							E26	
+Eiko	SP65/50/MED	bulbous							E26	
+Eiko	SP7B13/41K	bulbous							E26	
+Eiko	SP85/41/MED	bulbous							E26	
+Eiko	SP85/50/MED	bulbous							E26	
+Eiko	SP9A19/27K	bulbous							E26	
+Eiko	SP9A19/41K	bulbous							E26	
+Eiko	SP9A19/41K	bulbous							E26	
+Eiko	SP9G25/27K	bulbous							E26	
+Eiko	SP9G25/27K	bulbous							E26	
+Eiko	SP9G25/41K	bulbous							E26	
+Superior LifeÂ®	70423	bulbous							E26	
+Superior LifeÂ®	70424	bulbous							E26	
+Day-Brite	70425	bulbous							E26	
+Sky-Brite	70426	bulbous							E26	
+Superior LifeÂ®	70427	bulbous							E26	
+Superior LifeÂ®	70428	bulbous							E26	
+Superior LifeÂ®	70440	bulbous							E26	
+Day-Brite	70429	bulbous							E26	
+Superior LifeÂ®	70431	bulbous							E26	
+Superior LifeÂ®	70432	bulbous							E26	
+Day-Brite	70433	bulbous							E26	
+Sky-Brite	70434	bulbous							E26	
+Superior LifeÂ®	70435	bulbous							E26	
+Sky-Brite	82344	bulbous							E26	
+Superior LifeÂ®	81633	bulbous							E26	
+Sky-Brite	81632	bulbous							E26	
+Sky-Brite	70436	bulbous							E26	
+Day-Brite	70438	bulbous							E26	
+SYLVANIA	29026	bulbous							E26	
+BUYERS CHOICE	26334	bulbous							E26	
+SYLVANIA	29901	bulbous							E26	
+BUYERS CHOICE	26332	bulbous							E26	
+ESSENTIAL EVERYDAY	28969	bulbous							E26	
+BUYERS CHOICE	26331	bulbous							E26	
+ShopRite	28913	bulbous							E26	
+ShopRite	29746	bulbous							E26	
+HOME 360	29606	bulbous							E26	
+HOME 360	29615	bulbous							E26	
+ESSENTIAL EVERYDAY	28943; 28945	bulbous							E26	
+DOMESTIX	28909	bulbous							E26	
+ShopRite	28912	bulbous							E26	
+ShopRite	29737	bulbous							E26	
+SYLVANIA	29468	bulbous							E26	
+HOME 360	29571	bulbous							E26	
+ShopRite	28911	bulbous							E26	
+ShopRite	29745	bulbous							E26	
+ESSENTIAL EVERYDAY	28940; 28944	bulbous							E26	
+HOME 360	29369	bulbous							E26	
+DOMESTIX	28908	bulbous							E26	
+ESSENTIAL EVERYDAY	28988	bulbous							E26	
+DOMESTIX	28608	bulbous							E26	
+ShopRite	29737	bulbous							E26	
+ShopRite	28902	bulbous							E26	
+ShopRite	28905	bulbous							E26	
+HOME 360	29927	bulbous							E26	
+HOME 360	29928	bulbous							E26	
+DOMESTIX	28953	bulbous							E26	
+ShopRite	28903	bulbous							E26	
+ShopRite	28904	bulbous							E26	
+ShopRite	28900	bulbous							E26	
+ShopRite	28901	bulbous							E26	
+HOME 360	29925	bulbous							E26	
+HOME 360	29926	bulbous							E26	
+DOMESTIX	29912	bulbous							E26	
+DOMESTIX	29911	bulbous							E26	
+SYLVANIA	26370; 26371;28895; 28896	bulbous							E26	
+Feit Electric	ESL25TM/ECO	bulbous							E26	
+Feit Electric	ESL13T2C	bulbous							E26	
+Utilitech	002196/LBP13T/27K	bulbous							E26	
+Utilitech	0275632 / LBP12GTM2/27K	bulbous							E26	
+Utilitech	77180 / L13T4/35K(N)	bulbous							E26	
+Safeway	BPESL13T/2/SAFE/BG	bulbous							E26	
+Feit Electric	BPESL13T/3/ECO	bulbous							E26	
+Feit Electric	BPESL13T/D	bulbous							E26	
+Feit Electric	BPESL13T/D(N)	bulbous							E26	
+Feit Electric	BPESL13T/D/3	bulbous							E26	
+Feit Electric	BPESL13T/D/3(N)	bulbous							E26	
+Feit Electric	BPESL13T/ECO	bulbous							E26	
+Feit Electric	BPESL13T/ECO(H)	bulbous							E26	
+Feit Electric	BPESL13TC/2	bulbous							E26	
+Feit Electric	BPESL13TC/D/2	bulbous							E26	
+Feit Electric	BPESL14T2/2/RP	bulbous							E26	
+Feit Electric	BPESL14T2/D/2/RP	bulbous							E26	
+Feit Electric	BPESL18T2/2/RP	bulbous							E26	
+Feit Electric	BPESL18T2/D/2/RP	bulbous							E26	
+Safeway	BPESL18TM/2/SAFE/BG	bulbous							E26	
+Feit Electric	BPESL23T2/2/RP	bulbous							E26	
+Feit Electric	BPESL23T2/D/2/RP	bulbous							E26	
+Safeway	BPESL23TM/2/SAFE/BG	bulbous							E26	
+Feit Electric	BPESL23TM/D	bulbous							E26	
+Feit Electric	BPESL23TM/D/3	bulbous							E26	
+Feit Electric	BPESL23TM/ECO	bulbous							E26	
+Feit Electric	ESL13T/12	bulbous							E26	
+Maintenance Warehouse	ESL13T/12/HDS / 313258	bulbous							E26	
+Feit Electric	ESL13T/3/ECO	bulbous							E26	
+Feit Electric	ESL13T/3/ECO(H)	bulbous							E26	
+Feit Electric	ESL13T/4	bulbous							E26	
+Feit Electric	ESL13T/4(H)	bulbous							E26	
+Feit Electric	ESL13T/4(N)	bulbous							E26	
+Maintenance Warehouse	ESL13T/41K/12/HDS / 313264	bulbous							E26	
+Feit Electric	ESL13T/BW	bulbous							E26	
+Feit Electric	ESL13T/BW(N)	bulbous							E26	
+Feit Electric	ESL13T/BW/3	bulbous							E26	
+Feit Electric	ESL13T/D	bulbous							E26	
+Feit Electric	ESL13T/D(N)	bulbous							E26	
+Feit Electric	ESL13T/D/3	bulbous							E26	
+Feit Electric	ESL13T/D/3(N)	bulbous							E26	
+Feit Electric	ESL13T/D/4	bulbous							E26	
+Feit Electric	ESL13T/D/4(N)	bulbous							E26	
+Feit Electric	ESL13T/ECO/41K	bulbous							E26	
+Feit Electric	ESL13T/ECO/CAN	bulbous							E26	
+Feit Electric	ESL18TM/BW/4	bulbous							E26	
+Feit Electric	ESL23TM/12	bulbous							E26	
+Feit Electric	ESL23TM/12(N)	bulbous							E26	
+Maintenance Warehouse	ESL23TM/12/HDS / 313266	bulbous							E26	
+Feit Electric	ESL23TM/4(N)	bulbous							E26	
+Feit Electric	ESL23TM/4/RP	bulbous							E26	
+Maintenance Warehouse	ESL23TM/41K/12/HDS / 313268	bulbous							E26	
+Feit Electric	ESL23TM/BW/3	bulbous							E26	
+Feit Electric	ESL23TM/D	bulbous							E26	
+Feit Electric	ESL23TM/D/3	bulbous							E26	
+Feit Electric	ESL23TM/D/4	bulbous							E26	
+Safeway	ESL23TM/D/4/SAFE	bulbous							E26	
+Feit Electric	ESL23TM/ECO	bulbous							E26	
+Feit Electric	ESL23TM/ECO/41K	bulbous							E26	
+Feit Electric	ESL25TM/ECO/41K	bulbous							E26	
+Maintenance Warehouse	ESL27TM/12/HDS / 313276	bulbous							E26	
+Maintenance Warehouse	ESL27TM/41K/12/HDS / 313284	bulbous							E26	
+Feit Electric	ESL30/100T/D	bulbous							E26	
+Feit Electric	ESL30/100T/ECO	bulbous							E26	
+Feit Electric	ESL30T/ECO/41K	bulbous							E26	
+Feit Electric	ESL50/150T/ECO	bulbous							E26	
+Feit Electric	ESL9TM/3/ECO	bulbous							E26	
+Feit Electric	ESL9TM/4	bulbous							E26	
+Feit Electric	ESL9TM/BW	bulbous							E26	
+Feit Electric	ESL9TM/BW/3	bulbous							E26	
+Feit Electric	ESL9TM/D/3	bulbous							E26	
+KAILIN	0	bulbous							E26	
+KAILIN	0	bulbous							E26	
+MaxLite	MLS13T2WW	bulbous							E26	
+Topstar	BLQA26E-T3	bulbous							E26	
+Topstar	BLQA13E-T3	bulbous							E26	
+Topstar	BLQA09-T3	bulbous							E26	
+Homelite	HLT3S13W/2700K	bulbous							E26	
+Feit	ESL13T/ECO	bulbous							E26	
+TOSPO	649088	bulbous							E26	
+Joinan	SPS23W	bulbous							E26	
+Joinan	SPS13W	bulbous							E26	
+Lumapro	2CUR9	bulbous							E26	
+Lumapro	2CUT1	bulbous							E26	
+Lumapro	2CUT2	bulbous							E26	
+Lumapro	2CUT3	bulbous							E26	
+Lumapro	2CUT5	bulbous							E26	
+Lumapro	2CUT6	bulbous							E26	
+Lumapro	2CUT7	bulbous							E26	
+Lumapro	2CUT8	bulbous							E26	
+Lumapro	2CUU4	bulbous							E26	
+Lumapro	2CUU6	bulbous							E26	
+Westinghouse	36607	bulbous							E26	
+Westinghouse	36609	bulbous							E26	
+Westinghouse	36660	bulbous							E26	
+Westinghouse	37714	bulbous							E26	
+Westinghouse	37900	bulbous							E26	
+Westinghouse	37934	bulbous							E26	
+Westinghouse	37941	bulbous							E26	
+Westinghouse	37942	bulbous							E26	
+Westinghouse	37943	bulbous							E26	
+Westinghouse	37944	bulbous							E26	
+Lumapro	3TFP5	bulbous							E26	
+Westinghouse	37945	bulbous							E26	
+Westinghouse	37946	bulbous							E26	
+Westinghouse	37951	bulbous							E26	
+Westinghouse	37952	bulbous							E26	
+Westinghouse	37953	bulbous							E26	
+Westinghouse	37954	bulbous							E26	
+Westinghouse	38001	bulbous							E26	
+Westinghouse	38002	bulbous							E26	
+Westinghouse	38003	bulbous							E26	
+Westinghouse	38004	bulbous							E26	
+Lumapro	3EMY1	bulbous							E26	
+Westinghouse	38005	bulbous							E26	
+Lumapro	2CUU7	bulbous							E26	
+Westinghouse	37996	bulbous							E26	
+Westinghouse	375100	bulbous							E26	
+Westinghouse	7225	bulbous							E26	
+Westinghouse	7226	bulbous							E26	
+Lumapro	2CUT9	bulbous							E26	
+Lumapro	2CUU1	bulbous							E26	
+Lumapro	2CUU2	bulbous							E26	
+Westinghouse	37716	bulbous							E26	
+Westinghouse	37958	bulbous							E26	
+Westinghouse	37959	bulbous							E26	
+Westinghouse	37960	bulbous							E26	
+Westinghouse	37961	bulbous							E26	
+Westinghouse	37901	bulbous							E26	
+Westinghouse	37902	bulbous							E26	
+Westinghouse	38010	bulbous							E26	
+GE	FLE15HT3/2/SXE/SW	bulbous							E26	
+GE	FLE15HT3/2/XL/SW	bulbous							E26	
+GE	FLE20/2/A19XL/SW	bulbous							E26	
+GE	FLE20/2/T19XL/SW	bulbous							E26	
+GE	FLE15HT3/2/SX/SW	bulbous							E26	
+GE	FLE20AG21/2/HB/SW	bulbous							E26	
+GE	FLE15HT3XXLL	bulbous							E26	
+GE	FLE15HT3/2/DV/SW	bulbous							E26	
+GE	FLE20AG21/2/RVL	bulbous							E26	
+GE	FLE20HT2/2/12E/SS	bulbous							E26	
+GE	FLE20HT2/2/12H/SW	bulbous							E26	
+GE	FLE15AG19/2/HB/XLESW	bulbous							E26	
+GE	FLE20HT2/2/12E/SW	bulbous							E26	
+GE	FLE15AG19/2/HB/SWXL	bulbous							E26	
+Everyday Living	FLE20HT3/2/10E/SS	bulbous							E26	
+GE	FLE20HT3/2/10E/SS	bulbous							E26	
+GE	FLE20HT3/2/10H/CW	bulbous							E26	
+GE	FLE15/G25/2/HB/SW	bulbous							E26	
+GE	FLE20HT3/2/10E/CW	bulbous							E26	
+Biolife	FLE15/2/A21XL/SW	bulbous							E26	
+GE	FLE15/2/A21XL/SW	bulbous							E26	
+ACE	FLE20HT3/2/10E/SW	bulbous							E26	
+GE	FLE14HT3/2/DME/SW	bulbous							E26	
+GE	FLE14HT3/2/DM/SW	bulbous							E26	
+GE	FLE14HT3/2/10E/SW	bulbous							E26	
+GE	FLE14HT3/2/10H/SW	bulbous							E26	
+Best Choice	FLE20HT3/2/10E/SW	bulbous							E26	
+GE	FLE14HT3/2/10H/D	bulbous							E26	
+GE	FLE14HT3/2/10E/CW	bulbous							E26	
+Everyday Living	FLE20HT3/2/10H/SW	bulbous							E26	
+GE	FLE14HT3/2/10H/CW	bulbous							E26	
+Everyday Living	FLE20HT3/2/10E/SW	bulbous							E26	
+GE	FLE14HT3/2/10E/SS	bulbous							E26	
+Everyday Living	FLE14HT3/2/10E/SS	bulbous							E26	
+GE	FLE20HT3/2/10H/SW	bulbous							E26	
+GE	FLE20HT3/2/10E/SW	bulbous							E26	
+GE	FLE14/2/TC16/SW	bulbous							E26	
+Centrifuge	FLE20HT3/2/10E/SW	bulbous							E26	
+LumaPro	FLE20HT3/2/10E/SW	bulbous							E26	
+Rite Aid	FLE20HT3/2/10E/SW	bulbous							E26	
+Smart living	FLE20HT3/2/10H/SW	bulbous							E26	
+Utilitech	UT20/10HSW	bulbous							E26	
+Utilitech	UT20/10E/SW	bulbous							E26	
+Publix	FLE20HT3/2/10E/SW	bulbous							E26	
+GE	FLE13HT3/2/RVL	bulbous							E26	
+Smart living	FLE13HT3/2/10R/SW	bulbous							E26	
+Rite Aid	FLE13HT3/2/10R/SW	bulbous							E26	
+GE	FLE13HT3/2/10R/SW	bulbous							E26	
+GE	FLE20HT3XXLL	bulbous							E26	
+Best choice	FLE13HT3/2/10R/SW	bulbous							E26	
+GE	FLE20HT3/2/SX/SW	bulbous							E26	
+Smart living	FLE13HT3/2/10E/SW	bulbous							E26	
+GE	FLE20HT3/2/SXE/SW	bulbous							E26	
+Utilitech	UT13/10E/SW	bulbous							E26	
+Rite Aid	FLE13HT3/2/10E/SW	bulbous							E26	
+GE	FLE20HT3/2/XL/SW	bulbous							E26	
+Publix	FLE13HT3/2/10E/SW	bulbous							E26	
+Centrifuge	FLE13HT3/2/10E/SW	bulbous							E26	
+GE	FLE23HT2/2/12E/SW	bulbous							E26	
+GE	FLE13HT3/2/10E/SW	bulbous							E26	
+GE	FLE23HT2/2/12H/SW	bulbous							E26	
+Everyday Living	FLE13HT3/2/10E/SW	bulbous							E26	
+Everyday Living	FLE23HT3/2/10E/SS	bulbous							E26	
+Dollar General	FLE13HT3/2/10E/SW	bulbous							E26	
+Total Home	FLE13HT3/2/10E/SW	bulbous							E26	
+GE	FLE23HT3/2/10E/SS	bulbous							E26	
+GE	FLE13HT3/2/10E/SS	bulbous							E26	
+Best Choice	FLE23HT3/2/10E/SW	bulbous							E26	
+GE	FLE13HT2/2/6H/D	bulbous							E26	
+GE	FLE13HT2/2/12HE/SS	bulbous							E26	
+LumaPro	FLE13HT2/2/12E/SW	bulbous							E26	
+Everyday Living	FLE23HT3/2/10E/SW	bulbous							E26	
+GE	FLE13HT2/2/12E/SW	bulbous							E26	
+GE	FLE13HT2/2/12H1/SW	bulbous							E26	
+GE	FLE23HT3/2/10E/SW	bulbous							E26	
+GE	FLE13HT2/2/12H1/D	bulbous							E26	
+Centrifuge	FLE23HT3/2/10E/SW	bulbous							E26	
+Publix	FLE23HT3/2/10E/SW	bulbous							E26	
+Everyday Living	FLE11/2/G25XL/SW	bulbous							E26	
+GE	FLE11/2/G25XL/SW	bulbous							E26	
+GE	FLE11/2/G25XL/D	bulbous							E26	
+GE	FLE11/2/A19XL/SW	bulbous							E26	
+GE	FLE11/2/A17XL1/SW	bulbous							E26	
+Rite Aid	FLE23HT3/2/10E/SW	bulbous							E26	
+GE	FLE11/2/A17XL1/D	bulbous							E26	
+GE	FLE10HT3/2/XL/SW	bulbous							E26	
+GE	FLE10HT3/2/SXE/SW	bulbous							E26	
+GE	FLE10HT3/2/RVL	bulbous							E26	
+Smart living	FLE23HT3/2/10E/SW	bulbous							E26	
+GE	FLE10HT2/2/6H/D	bulbous							E26	
+GE	FLE10HT2/2/6H/CW	bulbous							E26	
+GE	FLE10HT2/2/6H/CW	bulbous							E26	
+GE	FLE10HT2/2/12E/SW	bulbous							E26	
+GE	FLE10HT2/2/12H1/SW	bulbous							E26	
+GE	FLE23HT3/2/SW	bulbous							E26	
+GE	FLE10HT2/2/12E/SS	bulbous							E26	
+Centrifuge	FLE23HT3/2/SW	bulbous							E26	
+GE	FLE20HT3/2/6H/RVL	bulbous							E26	
+GE	FLE20HT3/2/6H/850	bulbous							E26	
+Smart living	FLE23HT3/2/SW	bulbous							E26	
+GE	FLE32HT3/2/D3/D	bulbous							E26	
+GE	FLE32HT3/2/D3/841	bulbous							E26	
+ACE	FLE9HT3/2/10R/SW	bulbous							E26	
+GE	FLE9HT3/2/10R/SW	bulbous							E26	
+Everyday Living	FLE9HT3/2/10R/SW	bulbous							E26	
+GE	FLE9HT3/2/10R/D	bulbous							E26	
+Publix	FLE9HT3/2/10E/SW	bulbous							E26	
+GE	FLE23HT3XXLL	bulbous							E26	
+Centrifuge	FLE9HT3/2/10E/SW	bulbous							E26	
+GE	FLE9HT3/2/10E/SW	bulbous							E26	
+GE	FLE23HT3/2/SX/SW	bulbous							E26	
+GE	FLE9HT3/2/10E/SS	bulbous							E26	
+Everyday Living	FLE9HT3/2/10E/SS	bulbous							E26	
+GE	FLE23HT3/2/XL/SW	bulbous							E26	
+GE	FLE9HT3/2/10E/CW	bulbous							E26	
+GE	FLE25AG23/2/HB/RVL	bulbous							E26	
+GE	FLE9/2/CAM/XL/SW	bulbous							E26	
+GE	FLE9/2/CAM/827	bulbous							E26	
+GE	FLE26/2/T21XL/SW	bulbous							E26	
+GE	FLE55HT5/2/SW	bulbous							E26	
+GE	FLE26HT3/2/D	bulbous							E26	
+GE	FLE26HT3/2/D3/SW	bulbous							E26	
+GE	FLE26HT3/2/DME/SW	bulbous							E26	
+GE	FLE26HT3/2/DV/SW	bulbous							E26	
+GE	FLE26HT3/2/RVL	bulbous							E26	
+GE	FLE42HLX/2/XLE/SW	bulbous							E26	
+GE	FLE26HT3/2/SW	bulbous							E26	
+GE	FLE42HLX/2/XL1/SW	bulbous							E26	
+GE	FLE26HT3/2/SXE/SW	bulbous							E26	
+GE	FLE26HT3/2/XL/SW	bulbous							E26	
+Ace	FLE29HLX/2/D3/SW	bulbous							E26	
+GE	FLE32HLX/2/SW	bulbous							E26	
+GE	FLE32HT3/2/D3/SW	bulbous							E26	
+GE	FLE32HT3/2/D3E/SW	bulbous							E26	
+Ecosmart	772-869	bulbous							E26	
+Ecosmart	772-879	bulbous							E26	
+ECOSMART	252763	bulbous							E26	
+ECOSMART	423599	bulbous							E26	
+ECOSMART	161167	bulbous							E26	
+ECOSMART	191055	bulbous							E26	
+Ecosmart	EDXO-14, 772-869-ES5M814	bulbous							E26	
+Ecosmart	772-879-ES5M809 EDO-09	bulbous							E26	
+TCP	41314A	bulbous							E26	
+TCP	2G2514	bulbous							E26	
+TCP	806009352	bulbous							E26	
+TCP	1902741K	bulbous							E26	
+TCP	1ES13	bulbous							E26	
+TCP	1ES23	bulbous							E26	
+TCP	48909	bulbous							E26	
+TCP	4891841K	bulbous							E26	
+TCP	4892350K	bulbous							E26	
+TCP	4892750K	bulbous							E26	
+TCP	4893235K	bulbous							E26	
+TCP	4894230K	bulbous							E26	
+TCP	4T21341K	bulbous							E26	
+TCP	4T22341K	bulbous							E26	
+TCP	80100950	bulbous							E26	
+TCP	80101450	bulbous							E26	
+TCP	80101950	bulbous							E26	
+TCP	80102350	bulbous							E26	
+TCP	80102750	bulbous							E26	
+TCP	801042	bulbous							E26	
+BROADA	0	bulbous							E26	
+FEIT	ESL13T/ECO	bulbous							E26	
+Homelite	HLT3S13W/2700	bulbous							E26	
+JOINAN	SPS23W	bulbous							E26	
+JOINAN	SPS13W	bulbous							E26	
+Topstar	BLQA26-T3	bulbous							E26	
+Maxlite	MLS13T2WW	bulbous							E26	
+TOPSTAR	BLQA09-T3	bulbous							E26	
+PLUS	0	bulbous							E26	
+PLUS	0	bulbous							E26	
+Energy Wiser	CF14A19/WW	bulbous							E26	
+Energy Wiser	CF32T4/WW	bulbous							E26	
+Energy Wiser	CF18SD/LM	bulbous							E26	
+Energy Wiser	CF18WW/LM	bulbous							E26	
+Energy Wiser	CF13SD/LM	bulbous							E26	
+Energy Wiser	CF13WW/LM	bulbous							E26	
+Energy Wiser	CF25C/3WAY	bulbous							E26	
+Energy Wiser	CF19G30WW/E	bulbous							E26	
+Energy Wiser	CF14G25CW/E	bulbous							E26	
+Energy Wiser	CF14G25WW/E	bulbous							E26	
+Energy Wiser	CF7/ETF	bulbous							E26	
+Energy Wiser	CF55C/SD	bulbous							E26	
+Energy Wiser	CF55C/WW	bulbous							E26	
+Energy Wiser	CF40C/SD	bulbous							E26	
+Energy Wiser	CF40C/WW	bulbous							E26	
+Energy Wiser	CF32C/SD	bulbous							E26	
+Energy Wiser	CF23C/WW/DM	bulbous							E26	
+Energy Wiser	CF18C/WW/DM	bulbous							E26	
+Energy Wiser	CF15C/WW/DM	bulbous							E26	
+Energy Wiser	CF26WW/3WAY	bulbous							E26	
+Energy Wiser	CF13CW/LM/4PK	bulbous							E26	
+Energy Wiser	CF13WW/T3/4PK	bulbous							E26	
+Energy Wiser	CF23SD/LM	bulbous							E26	
+Energy Wiser	CF23WW/LM	bulbous							E26	
+Energy Wiser	CF9WW/LM	bulbous							E26	
+Energy Wiser	CF5WW/LM	bulbous							E26	
+Ecosmart	772-869	bulbous							E26	
+JOYYEN	C75W	bulbous		5					E12	
+JOYYEN	120V5W	bulbous		5					E12	
+JOYYEN	A15 E12S 120V/15W	bulbous		15					E12	
+JOYYEN	A15 E12S 120V/40W	bulbous		40					E12	
+JOYYEN	A15 E12S 120V/60W	bulbous		60					E12	
+JOYYEN	A15 E12 120V/60W	bulbous		60					E12	
+JOYYEN	B10 E12 120V/60W	bulbous		60					E12	
+RY	C32-60	bulbous		60					E12	
+RY	A15-40	bulbous		40					E12	
+EVERY DAY LIVING	60CAC/EDL	bulbous		59.2					E12	
+GE	60CAC/F	bulbous		59.2					E12	
+GE	60CAC2L/CL	bulbous		59.4					E12	
+GE	60CACF/2X	bulbous		59.4					E12	
+GE	60GC/CL	bulbous		58.7					E12	
+GE	60GC/2X/CL	bulbous		57.74					E12	
+GE	6T4 1/2/1	bulbous		6.5					E12	
+GE	25BC	bulbous		24.9					E12	
+GE	25BC10/CF/33/C	bulbous		25.2					E12	
+GE	15S11/CL	bulbous		15.5					E12	
+GE	15F10/AU/E12	bulbous		15					E12	
+GE	15CAC2L	bulbous		15.2					E12	
+GE	15CAC	bulbous		15.2					E12	
+GE	15BC10/CF	bulbous		14.5					E12	
+GE	15BC/RVL/CF	bulbous		14.5					E12	
+GE	15BC/CF	bulbous		15.2					E12	
+GE	25BC/RVL	bulbous		24.9					E12	
+GE	25BC/2L/CL	bulbous		25.3					E12	
+GE	25BC/H	bulbous		25.4					E12	
+GE	25BC8/CF	bulbous		25.3					E12	
+EVERY DAY LIVING	25CAC/EDL	bulbous		25.1					E12	
+GE	25CAC/F	bulbous		25.1					E12	
+GE	25CAC/C/CF	bulbous		25.3					E12	
+GE	25CAC/2X	bulbous		25.1					E12	
+GE	25CAC/L	bulbous		25.1					E12	
+GE	25CAC2XCF	bulbous		24.5					E12	
+GE	25GC/AU	bulbous		24.6					E12	
+GE	25GC/CL	bulbous		24.6					E12	
+GE	25GC/RVL	bulbous		24.6					E12	
+GE	29BC/H/CL	bulbous		29.1					E12	
+GE	3S6 130V	bulbous		3.1					E12	
+GE	40A15CA/CRV/CF	bulbous		40.1					E12	
+GE	40A15CA/W/CF	bulbous		40.1					E12	
+GE	40BC/CF/33/C	bulbous		40.4					E12	
+GE	40BC	bulbous		40.1					E12	
+GE	40BC/RVL	bulbous		40.1					E12	
+GE	40BC/CF	bulbous		39.7					E12	
+GE	40BC10RVL/CF	bulbous		39.7					E12	
+GE	40CAC/CL/CF	bulbous		39.9					E12	
+GE	40CAC/FR/CF	bulbous		39.9					E12	
+GE	40CAC/H	bulbous		41.4					E12	
+GE	40CAC/2X/BB	bulbous		40					E12	
+GE	40CAC/LL/BB	bulbous		40					E12	
+GE	40CAC/LL/F	bulbous		40					E12	
+GE	40CAC2XCF	bulbous		39.4					E12	
+GE	40GC/AU	bulbous		39.5					E12	
+GE	40GC/RVL	bulbous		39.5					E12	
+GE	43CAC/H/CL	bulbous		43.5					E12	
+GE	43GC/H/SW	bulbous		44.7					E12	
+GE	4C7/CL	bulbous		4.1					E12	
+Smart Living	4C7/CL/SL	bulbous		4.1					E12	
+GE	4C7/S	bulbous		4.1					E12	
+Total Home	4C7/S/Home	bulbous		4.1					E12	
+GE	5C7/W	bulbous		5					E12	
+GE	60A15CA/CRV	bulbous		59					E12	
+GE	60A15CA/RVL/W	bulbous		59					E12	
+GE	60A15/CA/CL/H	bulbous		57					E12	
+GE	60BC	bulbous		59.3					E12	
+GE	60BC/RVL	bulbous		59.3					E12	
+GE	60BC/PR0 130V	bulbous		59.5					E12	
+GE	60BC/2L/CL	bulbous		59.7					E12	
+GE	60BC10/CF	bulbous		59.4					E12	
+GE	60BC10/CF/33/C	bulbous		58.3					E12	
+GE	60BC10/CF/33/F	bulbous		58.3					E12	
+GE	60CAC/CL	bulbous		59.2					E12	
+GE	60CAC/DG	bulbous		59.2					E12	
+TM	1	bulbous		25					E12	
+YM	1	bulbous		15					E12	
+YM	1	bulbous		60					E12	
+YM	1	bulbous		40					E12	
+SMART LIVING	13241; 13196	bulbous		4					E12	
+SYLVANIA	13542	bulbous		4					E12	
+SYLVANIA	13549	bulbous		4					E12	
+Essentials Everyday	13250; 13253	bulbous		4					E12	
+Smart Living	13241	bulbous		4					E12	
+SYLVANIA	13523	bulbous		4					E12	
+SYLVANIA	13553	bulbous		4					E12	
+SYLVANIA	13540	bulbous		7					E12	
+SYLVANIA	13657	bulbous		15					E12	
+SYLVANIA	13315	bulbous		15					E12	
+SYLVANIA	13201	bulbous		15					E12	
+SYLVANIA	13448	bulbous		15					E12	
+SYLVANIA	13616	bulbous		15					E12	
+Essentials Everyday	13510	bulbous		25					E12	
+SYLVANIA	13317	bulbous		25					E12	
+SYLVANIA	13306	bulbous		25					E12	
+SYLVANIA	13452	bulbous		25					E12	
+SYLVANIA	13748	bulbous		25					E12	
+SYLVANIA	13194	bulbous		25					E12	
+SYLVANIA	13309	bulbous		40					E12	
+SYLVANIA	13319	bulbous		40					E12	
+SYLVANIA	13320	bulbous		40					E12	
+SYLVANIA	13396	bulbous		40					E12	
+SYLVANIA	13456	bulbous		40					E12	
+SYLVANIA	13457	bulbous		40					E12	
+SYLVANIA	13648	bulbous		40					E12	
+SYLVANIA	11534	bulbous		60					E12	
+SYLVANIA	13665	bulbous		60					E12	
+SYLVANIA	13647	bulbous		25					E12	
+YM	1	bulbous		60					E12	
+YM	1	bulbous		25					E12	
+TM	1	bulbous		25					E12	
+Feit Electric Company	15CFF-130	bulbous		14.1					E12	
+Feit Electric	BP15T6-130	bulbous		15.01					E12	
+Feit Electric	BP15T6-145	bulbous		14.64					E12	
+Feit Electric	BP15T7	bulbous		15.19					E12	
+Feit Electric	BP25CTC	bulbous		25.19					E12	
+Feit Electric	BP25CFC	bulbous		25.19					E12	
+Feit Electric	25CTC-130	bulbous		25.19					E12	
+Feit Electric	25CFC/10K	bulbous		24.95					E12	
+Feit Electric	25CTFP-130	bulbous		25.55					E12	
+Feit Electric	BP25G161/2/W	bulbous		24.4					E12	
+Feit Electric	BP25T6	bulbous		25.62					E12	
+Feit Electric	BP3CFC/FL	bulbous		0.82					E12	
+Feit Electric	BP40CTC	bulbous		40.91					E12	
+Feit Electric	40CTF-130	bulbous		40.91					E12	
+Feit Electric	40CFF-130	bulbous		40.91					E12	
+Feit Electric	40CFC/TL	bulbous		40.91					E12	
+Feit Electric	40CFC/15-130	bulbous		40.91					E12	
+Feit Electric	40CFC	bulbous		40.91					E12	
+Western Family	BP40CFC/WF	bulbous		40.91					E12	
+Feit Electric	40CFC/10K	bulbous		40.69					E12	
+Feit Electric	40CFFP-130	bulbous		40.21					E12	
+Feit Electric	BP40G161/2/W	bulbous		41.17					E12	
+Feit Electric	BP4C7/W/4	bulbous		3.95					E12	
+Feit Electric	4C7	bulbous		3.95					E12	
+Western Family	BP60CFC/WF	bulbous		59.98					E12	
+Feit Electric	60CFC/10K	bulbous		59.48					E12	
+Feit Electric	BP60G161/2/W	bulbous		59.46					E12	
+Feit Electric	60G161/2/W-130	bulbous		59.46					E12	
+Feit Electric	BP6S6/R	bulbous		5.91					E12	
+Feit Electric	BP6S6	bulbous		5.91					E12	
+Feit Electric	6S6-145	bulbous		6.73					E12	
+Feit Electric	BP7C7/W	bulbous		7.07					E12	
+Feit Electric	BP7C7/4	bulbous		7.07					E12	
+Western Family	BP7C7/4/WF	bulbous		7.07					E12	
+Feit Electric	7G161/2/CL/2	bulbous		6.9					E12	
+Feit Electric	BP10CFCP	bulbous		9.92					E12	
+Feit Electric	BP10C71/2/RP	bulbous		9.92					E12	
+Great Value	BP15C71/2/GV	bulbous		13.9					E12	
+Feit Electric	BP15T4C/2/RP	bulbous		14.65					E12	
+Great Value	BP20G121/2/GV	bulbous		19.6					E12	
+Feit Electric	BP25A15C/W/CF	bulbous		25.32					E12	
+Feit Electric	BP25A15C/CL/CF	bulbous		25.32					E12	
+Feit Electric	BP40A15N/CL/CF	bulbous		39.62					E12	
+Feit Electric	40A15N/CL-130	bulbous		39.62					E12	
+Feit Electric	BP40CFT/RP	bulbous		38.8					E12	
+Feit Electric	BP60A15C/W/CF	bulbous		58.55					E12	
+Feit Electric	BP60A15C/CL/CF	bulbous		58.55					E12	
+Feit Electric	BP7CFC	bulbous		7.43					E12	
+Feit Electric	7CFC	bulbous		7.43					E12	
+Feit Electric	BP7ST12	bulbous		6.47					E12	
+Feit Electric	BPQ25CFC/2	bulbous		26.54					E12	
+Utilitech	LBPQ40A15C/CL/2	bulbous		39.01					E12	
+Utilitech	LBPQ40CFC/2	bulbous		39.07					E12	
+Western Family	BPQ40CFC/2/WF	bulbous		39.07					E12	
+BHG	C7-12007-E12	bulbous		7					E12	
+Westinghouse	368300	bulbous		40					E12	
+Westinghouse	367500	bulbous		40					E12	
+Westinghouse	368700	bulbous		60					E12	
+Westinghouse	366200	bulbous		60					E12	
+Westinghouse	360900	bulbous		60					E12	
+Westinghouse	394700	bulbous		60					E12	
+Westinghouse	342400	bulbous		25					E12	
+Westinghouse	624400	bulbous		40					E12	
+Westinghouse	624500	bulbous		60					E12	
+Westinghouse	356900	bulbous		20					E12	
+Westinghouse	394200	bulbous		40					E12	
+Westinghouse	401400	bulbous		40					E12	
+Westinghouse	5107	bulbous		40					E12	
+Ace Hardware	3020112	bulbous		40					E12	
+Ace Hardware	3020146	bulbous		40					E12	
+Ace Hardware	3019999	bulbous		40					E12	
+Ace Hardware	3020013	bulbous		40					E12	
+Westinghouse	411713	bulbous		60					E12	
+Westinghouse	302300	bulbous		25					E12	
+Westinghouse	302600	bulbous		60					E12	
+Westinghouse	413300	bulbous		40					E12	
+Westinghouse	3720700	bulbous		10					E12	
+Westinghouse	6042700	bulbous		40					E12	
+Westinghouse	6065500	bulbous		60					E12	
+Westinghouse	368600	bulbous		40					E12	
+Westinghouse	361100	bulbous		25					E12	
+Westinghouse	363600	bulbous		25					E12	
+Westinghouse	367400	bulbous		25					E12	
+Westinghouse	367800	bulbous		25					E12	
+Westinghouse	368200	bulbous		25					E12	
+Westinghouse	358200	bulbous		15					E12	
+Westinghouse	367300	bulbous		15					E12	
+Westinghouse	367100	bulbous		10					E12	
+Westinghouse	625400	bulbous		40					E12	
+Westinghouse	374200	bulbous		40					E12	
+Westinghouse	381600	bulbous		40					E12	
+Westinghouse	327500	bulbous		40					E12	
+Westinghouse	377900	bulbous		40					E12	
+Westinghouse	402300	bulbous		40					E12	
+Westinghouse	625200	bulbous		60					E12	
+Westinghouse	625500	bulbous		60					E12	
+Westinghouse	402400	bulbous		40					E12	
+Westinghouse	378600	bulbous		40					E12	
+Westinghouse	383900	bulbous		60					E12	
+Westinghouse	328900	bulbous		40					E12	
+Westinghouse	328100	bulbous		40					E12	
+Westinghouse	370100	bulbous		60					E12	
+Westinghouse	352000	bulbous		25					E12	
+Westinghouse	322000	bulbous		25					E12	
+Westinghouse	382200	bulbous		25					E12	
+Westinghouse	326300	bulbous		60					E12	
+Westinghouse	402700	bulbous		60					E12	
+Westinghouse	375300	bulbous		25					E12	
+Westinghouse	327400	bulbous		25					E12	
+Westinghouse	328400	bulbous		60					E12	
+Westinghouse	377400	bulbous		25					E12	
+Westinghouse	377800	bulbous		25					E12	
+Westinghouse	378200	bulbous		25					E12	
+Westinghouse	625300	bulbous		20					E12	
+Westinghouse	372000	bulbous		15					E12	
+Westinghouse	381400	bulbous		15					E12	
+Westinghouse	325000	bulbous		15					E12	
+Westinghouse	327300	bulbous		15					E12	
+Westinghouse	327700	bulbous		15					E12	
+Westinghouse	383100	bulbous		10					E12	
+Westinghouse	375500	bulbous		7.5					E12	
+Westinghouse	354200	bulbous		7.5					E12	
+Westinghouse	324200	bulbous		7.5					E12	
+Westinghouse	322800	bulbous		7.5					E12	
+Westinghouse	379100	bulbous		7					E12	
+Westinghouse	379200	bulbous		7					E12	
+Westinghouse	3720600	bulbous		7					E12	
+Westinghouse	479400	bulbous		4					E12	
+Westinghouse	379400	bulbous		4					E12	
+Westinghouse	479500	bulbous		4					E12	
+SHARPER IMAGE	N	bulbous		12					E12	
+JOYYEN	C7 E12 120V/5W	bulbous		5					E12	
+JOYYEN	B10 E12 120V/15W	bulbous		15					E12	
+JOYYEN	B10 E12 120V/25W	bulbous		25					E12	
+JOYYEN	A15 E12 120V/15W	bulbous		15					E12	
+JOYYEN	A15 E12 120V/25W	bulbous		25					E12	
+JOYYEN	A15 E12S 120V/25W	bulbous		25					E12	
+JOYYEN	A15 E12 120V/40W	bulbous		40					E12	
+JOYYEN	B10 E12 120V/40W	bulbous		40					E12	
+RY	C32-40	bulbous		40					E12	
+RY	A15-60	bulbous		60					E12	
+Philips	15T6/CL 120V	bulbous		15.25					E12	
+Philips	25B10 1/2 E12/EV/CL 120 BD	bulbous		25.6					E12	
+GE	60CAC/CL/CF	bulbous		59.5					E12	
+GE	60CAC2X/CL	bulbous		59.4					E12	
+GE	60CACF/2L	bulbous		59.4					E12	
+GE	60CAC2XCF	bulbous		58.6					E12	
+GE	60GC/W	bulbous		58.7					E12	
+GE	60GC/CL/H	bulbous		59.3					E12	
+GE	6S6/120V	bulbous		6.4					E12	
+GE	6S6/130V	bulbous		25.1					E12	
+GE	7C7 120V	bulbous		7.4					E12	
+GE	7C7/CL 130V	bulbous		7.2					E12	
+GE	25BC10/CF/33/F	bulbous		25.2					E12	
+GE	15T7C	bulbous		15.1					E12	
+GE	15T6 120V	bulbous		15					E12	
+GE	15F10/CL/E12	bulbous		15					E12	
+GE	15BC/AU/CF	bulbous		15.2					E12	
+GE	10S11	bulbous		9.9					E12	
+GE	25BC/RVL/CF	bulbous		25					E12	
+GE	25BC10CF	bulbous		25					E12	
+GE	25CAC/C	bulbous		25.1					E12	
+GE	25CAC/F/CF	bulbous		25.3					E12	
+GE	25CAC/F/2L	bulbous		25.1					E12	
+GE	25GC/W	bulbous		24.6					E12	
+GE	29BC/H/SW	bulbous		29.7					E12	
+GE	29BC/H/RVL/CL	bulbous		29.1					E12	
+GE	29GC/H/CL	bulbous		29.1					E12	
+GE	29GC/H/SW	bulbous		29.7					E12	
+GE	3CAC/FF	bulbous		0.9					E12	
+GE	40A15CA/C/CF	bulbous		40.1					E12	
+GE	40A15CA/RV/CF/W	bulbous		40.1					E12	
+GE	40A15CF/CA/H	bulbous		41.4					E12	
+GE	40BC/CF/33/F	bulbous		40.4					E12	
+GE	40BC/CL/PRO 130V	bulbous		39.9					E12	
+GE	40BC/H	bulbous		40.1					E12	
+GE	40BC/2L/CL	bulbous		40.2					E12	
+GE	40BC8/CF	bulbous		40.7					E12	
+GE	40CAC/CL	bulbous		40.2					E12	
+DO IT BEST	40CAC/DIB	bulbous		40.2					E12	
+EVERY DAY LIVING	40CAC/EDL	bulbous		40.2					E12	
+GE	40CAC/F	bulbous		40.2					E12	
+GE	40CAC/2X/F	bulbous		40					E12	
+GE	40CAC/PRO 130V	bulbous		40					E12	
+GE	40GC/CL	bulbous		39.5					E12	
+GE	40GC/W	bulbous		39.5					E12	
+GE	40GC/W/RVL	bulbous		39.5					E12	
+GE	40GC/CL/H	bulbous		41.4					E12	
+GE	43BC/H/CL	bulbous		44.6					E12	
+GE	43BC/H/SW	bulbous		44.6					E12	
+GE	43BC/H/RVL/CL	bulbous		43.5					E12	
+GE	43GC/H/CL	bulbous		44.7					E12	
+BEST CHOICE	4C7/BC	bulbous		4.1					E12	
+GE	4C7/BL	bulbous		4.1					E12	
+EVERY DAY LIVING	4C7/CL EDL	bulbous		4.1					E12	
+GE	4C7/PK	bulbous		4.1					E12	
+HOME	4C7/RA	bulbous		4.1					E12	
+GE	4C7/W	bulbous		4.1					E12	
+BEST CHOICE	4C7/W/BC	bulbous		4.1					E12	
+EVERY DAY LIVING	4C7/W/EDL	bulbous		4.1					E12	
+Total Home	4C7/W/Home	bulbous		4.1					E12	
+GE	4C7/CL/2X	bulbous		4.12					E12	
+GE	4C7/W/2X	bulbous		4.1					E12	
+GE	5C7/CL	bulbous		5					E12	
+GE	60A15CA/C/CF	bulbous		59					E12	
+GE	60A15CA/W/CF	bulbous		59					E12	
+DO IT BEST	60BC/DIB	bulbous		59.3					E12	
+GE	60BC10/2L/CF/CL	bulbous		58.4					E12	
+GE	60BC/RVL/CF	bulbous		59.4					E12	
+YM	1	bulbous		25					E12	
+YM	1	bulbous		40					E12	
+YM	1	bulbous		60					E12	
+YM	1	bulbous		40					E12	
+YM	1	bulbous		25					E12	
+YM	1	bulbous		60					E12	
+YM	1	bulbous		25					E12	
+SYLVANIA	11688	bulbous		3					E12	
+HOMELIFE	13208; 13265	bulbous		4					E12	
+Smart Living	13196	bulbous		4					E12	
+Home 360	14575	bulbous		4					E12	
+HOMELIFE	13212	bulbous		4					E12	
+Electrix	15427; 15859	bulbous		4					E12	
+SYLVANIA	13608	bulbous		7					E12	
+SYLVANIA	13609	bulbous		7					E12	
+SYLVANIA	13623	bulbous		7					E12	
+SYLVANIA	13544	bulbous		7					E12	
+SYLVANIA	11687	bulbous		7.5					E12	
+SYLVANIA	13636	bulbous		10					E12	
+SYLVANIA	13307	bulbous		15					E12	
+SYLVANIA	13434	bulbous		15					E12	
+SYLVANIA	13316	bulbous		25					E12	
+SYLVANIA	13308	bulbous		25					E12	
+SYLVANIA	13395	bulbous		25					E12	
+SYLVANIA	13453	bulbous		25					E12	
+SYLVANIA	13678	bulbous		25					E12	
+Electrix	15855	bulbous		25					E12	
+Essentials Everyday	13509	bulbous		40					E12	
+SYLVANIA	13328	bulbous		40					E12	
+SYLVANIA	10777	bulbous		60					E12	
+SYLVANIA	10894	bulbous		60					E12	
+SYLVANIA	13460	bulbous		60					E12	
+Everyday Essentials	13507	bulbous		60					E12	
+SYLVANIA	13649	bulbous		60					E12	
+SYLVANIA	13666	bulbous		60					E12	
+SYLVANIA	10183; 13061	bulbous		10					E12	
+YM	1	bulbous		60					E12	
+YM	1	bulbous		60					E12	
+Feit Electric	BP15CFC	bulbous		14.1					E12	
+Feit Electric	15CTF-130	bulbous		14.1					E12	
+Feit Electric Company	15CFC-130	bulbous		14.1					E12	
+Feit Electric	BP15CFCP	bulbous		16.53					E12	
+Feit Electric	15G161/2-130	bulbous		14.89					E12	
+Feit Electric	15T6-145	bulbous		14.64					E12	
+Feit Electric	15T7C-130	bulbous		15.19					E12	
+Feit Electric	BP25CTF	bulbous		25.19					E12	
+Feit Electric	BP25CTC/4	bulbous		25.19					E12	
+Feit Electric	BP25CFF	bulbous		25.19					E12	
+Feit Electric	25CTF-130	bulbous		25.19					E12	
+Feit Electric	25CFF-130	bulbous		25.19					E12	
+Feit Electric	25CFC-130	bulbous		25.19					E12	
+Feit Electric	25CFC/15-130	bulbous		25.19					E12	
+Feit Electric	25CFC	bulbous		25.19					E12	
+Western Family	BP25CFC/WF	bulbous		25.19					E12	
+Feit Electric	BP25CFCP	bulbous		25.55					E12	
+Feit Electric	25CFCP-130	bulbous		25.55					E12	
+Feit Electric	BP25G161/2	bulbous		24.4					E12	
+Feit Electric	25T6	bulbous		25.62					E12	
+Feit Electric	BP25T8	bulbous		25.5					E12	
+Feit Electric	3CFC/FLM	bulbous		0.82					E12	
+Feit Electric Company	3EFC/FL	bulbous		0.82					E12	
+Feit Electric	BP40CTF	bulbous		40.91					E12	
+Feit Electric	BP40CTC/4	bulbous		40.91					E12	
+Feit Electric	BP40CFF	bulbous		40.91					E12	
+Feit Electric	BP40CFD	bulbous		40.91					E12	
+Feit Electric	BP40CFC	bulbous		40.91					E12	
+Feit Electric	40CTC-130	bulbous		40.91					E12	
+Feit Electric	40CTC	bulbous		40.91					E12	
+Feit Electric	40CFC-130	bulbous		40.91					E12	
+Living Solutions	BP40CFC/4/WGLS	bulbous		40.91					E12	
+Feit Electric	BP40CTCP	bulbous		40.21					E12	
+Feit Electric	BP40G161/2	bulbous		41.17					E12	
+Feit Electric	40G161/2-130	bulbous		41.17					E12	
+Feit Electric	40G161/2/W-130	bulbous		41.17					E12	
+Feit Electric	BP4C7/4	bulbous		3.95					E12	
+Feit Electric	BP4C7	bulbous		3.95					E12	
+Living Solutions	BP4C7/W/4/WGLS	bulbous		3.95					E12	
+Living Solutions	BP4C7/4/WGLS	bulbous		3.95					E12	
+Our Family	BP4C7/W/4/OF	bulbous		3.95					E12	
+Our Family	BP4C7/4/OF	bulbous		3.95					E12	
+Safeway	BP4C7/4/SAFE	bulbous		3.95					E12	
+Sunny Select	BP4C7/W/SSI	bulbous		3.95					E12	
+Sunny Select	BP4C7/W/4/SSI	bulbous		3.95					E12	
+Western Family	BP4C7/W/4/WF	bulbous		3.95					E12	
+Western Family	BP4C7/4/WF	bulbous		3.95					E12	
+Feit Electric	BP60CTF	bulbous		59.98					E12	
+Feit Electric	BP60CTC	bulbous		59.98					E12	
+Feit Electric	BP60CFF	bulbous		59.98					E12	
+Feit Electric	BP60CFD	bulbous		59.98					E12	
+Feit Electric	BP60CFC	bulbous		59.98					E12	
+Feit Electric	60CTC-130	bulbous		59.98					E12	
+Feit Electric	60CFF-130	bulbous		59.98					E12	
+Feit Electric	60CFC-130	bulbous		59.98					E12	
+Feit Electric	60CFC/15-130	bulbous		59.98					E12	
+Living Solutions	BP60CFC/4/WGLS	bulbous		59.98					E12	
+Feit Electric	BP60G161/2	bulbous		59.46					E12	
+Feit Electric	60G161/2/W	bulbous		59.46					E12	
+Feit Electric	6S6-130	bulbous		5.91					E12	
+Feit Electric	BP7C7/W/4	bulbous		7.07					E12	
+Feit Electric	BP7C7/G	bulbous		7.07					E12	
+Feit Electric	BP7C7	bulbous		7.07					E12	
+Feit Electric	7C7-130	bulbous		7.07					E12	
+Feit Electric	7C7	bulbous		7.07					E12	
+Living Solutions	BP7C7/4/WGLS	bulbous		7.07					E12	
+Feit Electric	7G121/2/CL/2	bulbous		7					E12	
+Feit Electric	BP40A15C/W/CF	bulbous		39.62					E12	
+Feit Electric	BP40A15C/CL/CF	bulbous		39.62					E12	
+Feit Electric	BPQ40CFC/2	bulbous		39.07					E12	
+Feit Electric	BPQ40G161/2/2	bulbous		38.57					E12	
+Westinghouse	367900	bulbous		40					E12	
+Westinghouse	361200	bulbous		40					E12	
+Westinghouse	368400	bulbous		60					E12	
+Westinghouse	366300	bulbous		60					E12	
+Westinghouse	352100	bulbous		35					E12	
+Westinghouse	354800	bulbous		10					E12	
+Westinghouse	384300	bulbous		20					E12	
+Westinghouse	394600	bulbous		40					E12	
+Westinghouse	5106	bulbous		25					E12	
+Ace Hardware	3020104	bulbous		25					E12	
+Ace Hardware	3020138	bulbous		25					E12	
+Ace Hardware	3019981	bulbous		25					E12	
+Ace Hardware	3020005	bulbous		25					E12	
+Ace Hardware	3020120	bulbous		60					E12	
+Ace Hardware	3020153	bulbous		60					E12	
+Westinghouse	302500	bulbous		40					E12	
+Westinghouse	358300	bulbous		15					E12	
+Westinghouse	388300	bulbous		15					E12	
+Westinghouse	3635700	bulbous		60					E12	
+Westinghouse	3720800	bulbous		15					E12	
+Westinghouse	6064500	bulbous		25					E12	
+Westinghouse	368500	bulbous		25					E12	
+Westinghouse	388200	bulbous		15					E12	
+Westinghouse	368100	bulbous		15					E12	
+Westinghouse	367000	bulbous		7.5					E12	
+Westinghouse	452500	bulbous		6					E12	
+Westinghouse	625100	bulbous		40					E12	
+Westinghouse	382300	bulbous		40					E12	
+Westinghouse	375400	bulbous		40					E12	
+Westinghouse	377500	bulbous		40					E12	
+Westinghouse	327900	bulbous		40					E12	
+Westinghouse	378300	bulbous		40					E12	
+Westinghouse	328300	bulbous		40					E12	
+Westinghouse	394100	bulbous		60					E12	
+Westinghouse	394300	bulbous		60					E12	
+Westinghouse	374500	bulbous		60					E12	
+Westinghouse	328600	bulbous		40					E12	
+Westinghouse	384000	bulbous		60					E12	
+Westinghouse	376200	bulbous		60					E12	
+Westinghouse	326200	bulbous		60					E12	
+Westinghouse	376300	bulbous		60					E12	
+Westinghouse	381500	bulbous		25					E12	
+Westinghouse	374100	bulbous		25					E12	
+Westinghouse	378400	bulbous		60					E12	
+Westinghouse	327800	bulbous		25					E12	
+Westinghouse	402800	bulbous		60					E12	
+Westinghouse	378700	bulbous		60					E12	
+Westinghouse	328700	bulbous		60					E12	
+Westinghouse	328200	bulbous		25					E12	
+Westinghouse	378500	bulbous		25					E12	
+Westinghouse	328500	bulbous		25					E12	
+Westinghouse	625000	bulbous		20					E12	
+Westinghouse	372300	bulbous		15					E12	
+Westinghouse	322600	bulbous		15					E12	
+Westinghouse	382100	bulbous		15					E12	
+Westinghouse	374000	bulbous		15					E12	
+Westinghouse	375200	bulbous		15					E12	
+Westinghouse	377300	bulbous		15					E12	
+Westinghouse	377700	bulbous		15					E12	
+Westinghouse	323000	bulbous		15					E12	
+Westinghouse	327200	bulbous		10					E12	
+Westinghouse	324100	bulbous		7.5					E12	
+Westinghouse	374700	bulbous		7					E12	
+Westinghouse	369100	bulbous		7					E12	
+Westinghouse	3720200	bulbous		7					E12	
+Westinghouse	402500	bulbous		6					E12	
+Westinghouse	360100	bulbous		4					E12	
+Westinghouse	379500	bulbous		4					E12	
+KEE TAT	120V60WC32E12L	bulbous		60					E12	
+KEE TAT	120V60WA15E12R	bulbous		60					E12	
+TULA	1000157	bulbous		12					E12	
+Philips	20T6-1/2IF E17FR 120V	bulbous		21.3					E17	
+GE	6S6	bulbous		6.3					E17	
+GE	20T61/2/F	bulbous		20.2					E17	
+GE	15T7N	bulbous		15.3					E17	
+GE	25R14/N 130V	bulbous		24.9					E17	
+GE	25T 6 1/2 130V	bulbous		25.3					E17	
+GE	40S11N/1	bulbous		39					E17	
+GE	40S11N/F	bulbous		39					E17	
+GE	40T61/2	bulbous		39.8					E17	
+GE	40T8N 130V	bulbous		37.6					E17	
+Feit Electric	10S11N	bulbous		9.7					E17	
+Feit Electric	BP15T7N	bulbous		14.98					E17	
+Feit Electric	BP20T61/2	bulbous		21.38					E17	
+Feit Electric	25T61/2-130	bulbous		25.38					E17	
+Feit Electric	25T61/2/IF-130	bulbous		25.38					E17	
+Feit Electric	BP25T8N	bulbous		25.51					E17	
+Living Solutions	BP25T8N/WGLS	bulbous		25.51					E17	
+Feit Electric	BP40S11N/IF	bulbous		39.56					E17	
+Feit Electric	BP40S11N	bulbous		39.56					E17	
+Western Family	BP40S11N/WF	bulbous		39.56					E17	
+Feit Electric	BP40T61/2	bulbous		39.6					E17	
+Feit Electric	BP25S11N	bulbous		25.22					E17	
+Great Value	BP25S11N/2/GV	bulbous		25.22					E17	
+Feit Electric	BP40T8N/MW/RP	bulbous		39.63					E17	
+Feit Electric	40T8N	bulbous		39.63					E17	
+Westinghouse	353400	bulbous		25					E17	
+Westinghouse	370500	bulbous		25					E17	
+Westinghouse	393600	bulbous		40					E17	
+Westinghouse	362900	bulbous		40					E17	
+Westinghouse	375900	bulbous		40					E17	
+Westinghouse	402000	bulbous		40					E17	
+Westinghouse	356800	bulbous		10					E17	
+Westinghouse	431900	bulbous		20					E17	
+Westinghouse	431600	bulbous		20					E17	
+Westinghouse	432100	bulbous		25					E17	
+Westinghouse	372400	bulbous		25					E17	
+Sun Light	SL-S35-CL-E17	bulbous		25					E17	
+General electric	SL7-5W	bulbous		4.8					E17	
+GE	25 T6 1/2	bulbous		25.7					E17	
+GE	10S11/F	bulbous		10					E17	
+GE	25R14/N	bulbous		25.1					E17	
+GE	25T7N	bulbous		25					E17	
+GE	40A15N/C/CF	bulbous		39.9					E17	
+GE	40A15N/W/CF	bulbous		39.9					E17	
+GE	40R14/N	bulbous		39.6					E17	
+GE	40T61/2/2F	bulbous		39.8					E17	
+Feit Electric	BP10S11N	bulbous		9.7					E17	
+Feit Electric	10S11N/IF-130	bulbous		9.7					E17	
+Feit Electric	15T7N-130	bulbous		14.98					E17	
+Feit Electric	BP25T61/2	bulbous		25.38					E17	
+Feit Electric	25T8N	bulbous		25.51					E17	
+Feit Electric	BP40S11N/2/RP	bulbous		39.56					E17	
+Feit Electric	40S11N-130	bulbous		39.56					E17	
+Feit Electric	BP40T61/2/IF	bulbous		39.6					E17	
+Feit Electric	7A15N/CL/2	bulbous		7.1					E17	
+Feit Electric	BP25T7N	bulbous		25.3					E17	
+Feit Electric	BP40T8N-130	bulbous		39.63					E17	
+Feit Electric	BPQ40A15N/CL/2	bulbous		39.01					E17	
+Lava / Lifespan Brands	502500100	bulbous		25					E17	
+Westinghouse	433500	bulbous		9					E17	
+Westinghouse	372100	bulbous		15					E17	
+Westinghouse	370400	bulbous		20					E17	
+Westinghouse	371600	bulbous		25					E17	
+Westinghouse	393800	bulbous		40					E17	
+Westinghouse	371900	bulbous		40					E17	
+Westinghouse	372900	bulbous		40					E17	
+Westinghouse	370700	bulbous		40					E17	
+Westinghouse	432000	bulbous		25					E17	
+Westinghouse	370800	bulbous		25					E17	
+Westinghouse	394400	bulbous		40					E17	
+KEE TAT	120V25WS35E17L	bulbous		25					E17	
+KEE TAT	120V15WT22E17L	bulbous		15					E17	
+GE	F32T8/SPX30/U/6	bent		32		24				0
+GE	F32T8/SPX35/U/6	bent		32		24				0
+GE	F32T8/SPX41/U/6	bent		32		24				0
+SATCO	S8473	bent		26.52	3899	24		83.7		2475.9072
+SATCO	S8472	bent		26.54	3405	24		83.2		2568.0104
+SATCO	S8471	bent		26.15	2810	24		83.9		2550.148
+SATCO	S8458	bent		30.84	3997	24		83.5		2665.5012
+SATCO	S8457	bent		30.83	3393	24		83.1		2677.2772
+SATCO	S8456	bent		32.1	2971	24		83.2		2741.982
+Howard	FB32T8/841/6	bent		31.53	4032	24		82.1		2753.8302
+Howard	FB32T8/835/6	bent		31.25	3423	24		82.5		2854.0625
+Howard	FB31T8/835	bent		30.28	3450	24		83.4		2817.8568
+Ushio America	FB28T8 841 6 U-bend	bent		28		24				0
+Ushio America	FB32T8 841 U-bend	bent		32		24				0
+Ushio America	FB32T8 835 U-bend	bent		32		24				0
+LumaPro	5NPL4	bent		32	3000	24		82		2688
+LumaPro	5NPL5	bent		32	3500	24		82		2688
+LumaPro	5NPL6	bent		32	4100	24		82		2688
+LumaPro	5NPL7	bent		31	3000	24		82		2604
+LumaPro	5NPL8	bent		31	3500	24		82		2604
+LumaPro	5NPL9	bent		31	4100	24		82		2604
+Philips	FB32T8/TL841/6	bent		32.5	3984	24		82.6		2804.75
+Philips	FB32T8/TL835/6	bent		32.6	3337	24		83.9		2826.42
+Philips	FB32T8/TL830/6	bent		32.7	2940	24		84.4		2903.76
+Philips	FB32T8/ADV841/6/XEW	bent		25.7	4022	24		83.8		2359.26
+Philips	FB32T8/ADV835/6/XEW	bent		25.8	3360	24		83.7		2389.08
+Philips	FB32T8/ADV830/6/XEW	bent		25.7	2944	24		84.7		2413.23
+Philips	FB31T8/TL841	bent		32.2	4044	24		82.4		2814.28
+Philips	FB31T8/TL835	bent		32.3	3356	24		83.7		2784.26
+Philips	FB31T8/TL830	bent		31.7	2894	24		84.3		2732.54
+Philips	FB29T8/TL841/EW	bent		29.1	3973	24		82		2554.98
+Philips	FB29T8/TL835/EW	bent		28.6	3374	24		83.3		2528.24
+Philips	FB29T8/TL830/EW	bent		29.1	2923	24		84.4		2517.15
+Ushio	FB32T8/841	bent		31.8	3665.2	24		82.4		2671.2
+Ushio	FB32T8/835	bent		31.8	3665.2	24		82.4		2671.2
+Ushio	FB28T8/841/6	bent		27.24	3698	24		81.06		2399.844
+Ushio	FB28T8/835/6	bent		27.24	3698	24		81.06		2399.844
+Superior LifeÂ®	91602	bent		32	3500	24		83		2922.56
+Superior LifeÂ®	91608	bent		32	4100	24		82.1		2794.88
+Superior LifeÂ®	91603	bent		31	3000	24		84		2804.88
+Superior LifeÂ®	91604	bent		31	3500	24		83.4		2884.86
+Superior LifeÂ®	91605	bent		31	4100	24		82.1		2835.88
+Superior LifeÂ®	91625	bent		28	3500	24		83.4		2590.28
+Superior LifeÂ®	91626	bent		28	4100	24		82		2571.24
+Eiko	F32T8/841K/U6	bent		32	3934	24		84.2		2767.68
+Eiko	F31T8/830/U	bent		31	3041	24		83.4		2696.38
+Eiko	F31T8/835/U	bent		31	3531	24		82.9		2718.39
+Eiko	F31T8/841/U	bent		31	4195	24		83.3		2699.48
+Eiko	F32T8/835K/U6	bent		32	3349	24		83.3		2755.2
+SYLVANIA	21671; 21485 28039	bent		32	3900	24		81.1		2748.8
+SYLVANIA	21670; 21484; 28038	bent		32	3260	24		83.7		2691.2
+SYLVANIA	22051	bent		32	3330	24		83		2761.6
+SYLVANIA	22052	bent		32	3950	24		76		2697.6
+SYLVANIA	22197	bent		29	3950	24		83.4		2505.6
+SYLVANIA	21663	bent		32	2870	24		86		2688
+SYLVANIA	22445	bent		25	3840	24		86.8		2195
+SYLVANIA	22305	bent		28	3860	24		86.3		2486.4
+SYLVANIA	22304	bent		28	3330	24		86.3		2517.2
+SYLVANIA	22196	bent		29	3320	24		84.2		2554.9
+SYLVANIA	22195	bent		29	2900	24		85		2453.4
+SYLVANIA	22172	bent		30	3920	24		85.7		2712
+SYLVANIA	22171	bent		30	3250	24		86		2691
+SYLVANIA	22170	bent		30	2910	24		85.4		2703
+SYLVANIA	22057	bent		32	3880	24		86.1		2713.6
+SYLVANIA	22055	bent		32	3210	24		86.1		2688
+SYLVANIA	22054	bent		32	2910	24		85.5		2736
+SYLVANIA	22046	bent		32	2860	24		85.7		2745.6
+SYLVANIA	21879	bent		31	3960	24		81.4		2768.3
+SYLVANIA	21878	bent		31	3320	24		85		2749.7
+SYLVANIA	21877	bent		31	2900	24		85		2613.3
+SYLVANIA	21696	bent		31	4000	24		84		2638.1
+SYLVANIA	21695	bent		31	3300	24		85.7		2606.48
+SYLVANIA	21693	bent		31	2960	24		84		2628.8
+OSRAM	22127	bent		32	3950	24		80.9		2704
+Duracell	FLO10411B	bent		32	3500	24		82		2688
+Duracell	FLO10473B	bent		32	4100	24		82		2688
+Duracell	FLO10403A	bent		31	3500	24		82		2604
+Duracell	FLO10404B	bent		31	4100	24		82		2604
+Duracell	FLO10403B	bent		31	3500	24		82		2604
+GE	F26T8/SPX41/U/ECO	bent		26	4010	24		82		2314
+GE	F26T8/SPX35/U/ECO	bent		26	3320	24		84		2314
+GE	F26T8/SPX30/U/ECO	bent		26	2880	24		84		2314
+GE	F29T8/SPX41/U/ECO	bent		29	3970	24		82		2494
+GE	F29T8/SPX35/U/ECO	bent		29	3340	24		83		2494
+GE	F29T8/SPX30/U/ECO	bent		29	2910	24		84		2494
+GE	F31T8/SPX41/U/ECO	bent		31	4000	24		82		2666
+GE	F31T8/SPX35/U/ECO	bent		31	3350	24		83		2666
+GE	F31T8/SPX30/U/ECO	bent		31	2900	24		84		2635
+GE	F28T8/SPX41/U6/ECO	bent		28	3980	24		81		2520
+GE	F28T8/SPX35/U6/ECO	bent		28	3360	24		83		2520
+GE	F28T8/SPX30/U6/ECO	bent		28	2910	24		84		2520
+GE	F32T8/SPX41/U6/ECO	bent		32	3960	24		82		2752
+GE	F32T8/SPX35/U6/ECO	bent		32	3310	24		83		2752
+GE	F32T8/SPX30/U6/ECO	bent		32	2890	24		84		2752
+GE	F32T8/SP41/U6/ECO	bent		32	4020	24		82		2720
+GE	F32T8/SP35/U6/ECO	bent		32	3410	24		82		2720
+GE	F32T8/SP30/U6/ECO	bent		32	2950	24		83		2720
+GE	F32T8/SPX41/U/6	bent		32	3970	24		80		2720
+GE	F32T8/SPX35/U/6	bent		32	3440	24		81		2720
+Westinghouse	37317	bent		32	4100	24		84.2		2767.68
+Westinghouse	60469	bent		28	4100	24		83.8		2616.32
+Westinghouse	36017	bent		28	4100	24		83.8		2616.32
+GE	F32T8/SPX30/U/6	bent		32	3100	24		82		2704
+Energy Wiser	FB31/835/EW	bent		31	3500	24		82.9		2718.39
+Energy Wiser	FB31/841/EW	bent		31	4100	24		83.3		2699.48
+Energy Wiser	FB32/735/EW	bent		32	3500	24		83		2767.04
+Energy Wiser	FB32/741/EW	bent		32	4100	24		82.2		2763.52
+Energy Wiser	FB32/830/EW	bent		32	3000	24		83.3		2764.16
+Energy Wiser	FB32/835/EW	bent		32	3500	24		83.3		2755.2
+Energy Wiser	FB32/841/EW	bent		32	4100	24		84.2		2767.68
+GE	F32T8/SPX50/U/6	bent		32		24				0
+SATCO	S8475	bent		26.18	4948	24		83.8		2477.6752
+SATCO	S8474	bent		26.18	4948	24		83.8		2477.6752
+SATCO	S8463	bent		30.89	4945	24		83		2654.9955
+SATCO	S8462	bent		30.89	4945	24		83		2654.9955
+Howard	FB32T8/850/6	bent		31.49	5095	24		85.3		2804.8143
+Ushio America	FB32T8 850 U-bend	bent		32		24				0
+Philips	FB32T8/TL850/6	bent		32.6	4975	24		80.9		2862.28
+Philips	FB32T8/ADV850/6/XEW	bent		25.8	5044	24		80.9		2340.06
+Ushio	FB32T8/850	bent		31.8	4899.4	24		83.8		2639.4
+Sky-Brite PlusÂ®	91614	bent		32	5000	24		85.3		2850.24
+Sky-Brite PlusÂ®	91606	bent		31	5000	24		85.3		2749.39
+Sky-Brite PlusÂ®	91627	bent		28	5000	24		85		2484.72
+Superior LifeÂ®	91609	bent		32	6500	24		85		2963.2
+Eiko	F31T8/850/U	bent		31	5229	24		85.5		2634.69
+Eiko	F32T8/850K/U6	bent		32	4886	24		82.2		2753.6
+SYLVANIA	22168	bent		32	4760	24		87.4		2721.92
+SYLVANIA	22053	bent		32	4810	24		79		2659.2
+GE	F32T8/SPX50/U/6	bent		32	4840	24		78		2672
+Commercial Electric	3564819	linear		40		48			medium bipin	0
+Commercial Electric	F40T12/941	linear		40		48			medium bipin	0
+GE	F32T8/SPX35/ECO	linear		32		48			medium bipin	0
+Commercial Electric	3564821	linear		32		48			medium bipin	0
+Commercial Electric	3564820	linear		32		48			medium bipin	0
+SATCO	S8445	linear		31.58	4100	48		83.4	medium bipin	2965.6778
+SATCO	S8444	linear		31.97	3500	48		82.8	medium bipin	3004.8603
+SATCO	S8443	linear		31.97	3000	48		82.8	medium bipin	3004.8603
+SATCO	S8428	linear		29	4100	48		82	medium bipin	2813
+SATCO	S8427	linear		28.69	3497	48		83.5	medium bipin	2916.3385
+SATCO	S8426	linear		29.39	3030	48		84.8	medium bipin	3006.597
+SATCO	S8424	linear		26.66	3891	48		83.2	medium bipin	2643.6056
+SATCO	S2423	linear		26.23	3428	48		83.3	medium bipin	2689.8865
+SATCO	S8422	linear		25.86	3004	48		84.1	medium bipin	2605.1364
+SATCO	S8440	linear		24.27	3986	48		83.2	medium bipin	2504.4213
+SATCO	S8439	linear		24.81	3469	48		83.9	medium bipin	2540.0478
+SATCO	S8438	linear		24.29	3023	48		84.1	medium bipin	2518.6301
+SATCO	S8420	linear		30.8	3934	48		83.4	medium bipin	2779.392
+SATCO	S8419	linear		30.48	3487	48		82.5	medium bipin	2819.7048
+SATCO	S8418	linear		30.58	2982	48		83.8	medium bipin	2874.2142
+Howard	F28T8/841/ES/ECO/IC	linear		28.29	4125	48		83	medium bipin	2895.4815
+Howard	F25T8/841/ES/ECO/IC	linear		26.06	4105	48		82.5	medium bipin	2567.1706
+Howard	F32T8/841/HL/ECO/IC	linear		32.47	4112	48		82	medium bipin	3253.8187
+GE	F32T8/SPX41/ECO	linear		32		48			medium bipin	0
+Ushio America	F32T8 850XL 48	linear		32		48			medium bipin	0
+Ushio America	F32T8 840XL 48	linear		32		48			medium bipin	0
+Ushio America	F32T8 835XL 48	linear		32		48			medium bipin	0
+Ushio America	F28T8 841 48	linear		28		48			medium bipin	0
+Ushio America	F28T8 835 48	linear		28		48			medium bipin	0
+Ushio America	F28T8 830 48	linear		28		48			medium bipin	0
+Ushio America	F32T8 841 48	linear		32		48			medium bipin	0
+Ushio America	F32T8 835 48	linear		32		48			medium bipin	0
+Ushio America	F32T8 830 48	linear		32		48			medium bipin	0
+Commercial Electric	F32T8/835	linear		32		48			medium bipin	0
+Commercial Electric	F32T8/841	linear		32		48			medium bipin	0
+Do it	F32T8/TL841/DIB*	linear		32.2	3967	48		81.4	medium bipin	2894.78
+Do it	F32T8/TL835/DIB*	linear		32.2	3380	48		83.3	medium bipin	2923.76
+FEIT	F32T8/TL841/feit*	linear		32.2	3967	48		81.4	medium bipin	2894.78
+ACE	F32T8/TL841/ACE*	linear		32.2	3967	48		81.4	medium bipin	2894.78
+Philips	F32T8/TL841 PLUS*	linear		32.2	3952	48		81.8	medium bipin	2962.4
+Philips	F32T8/TL841*	linear		32.2	3967	48		81.4	medium bipin	2894.78
+Philips	F32T8/HL741*	linear		32.2	3937	48		82	medium bipin	2894.78
+Philips	F32T8/TL835 PLUS*	linear		32.4	3356	48		83.6	medium bipin	2971.08
+Philips	F32T8/TL835*	linear		32.2	3380	48		83.3	medium bipin	2923.76
+Philips	F32T8/HL735*	linear		32.2	3360	48		83.3	medium bipin	2914.1
+Philips	F32T8/TL830 PLUS*	linear		32.2	2921	48		84.4	medium bipin	2955.96
+Philips	F32T8/TL830*	linear		32.2	2913	48		84.1	medium bipin	2894.78
+Philips	F32T8/HL730*	linear		32.1	2949	48		84.1	medium bipin	2885.79
+Philips	F32T8/VEA841/EW*	linear		27.6	3941	48		82	medium bipin	2699.28
+Philips	F32T8/VEA841/XEW*	linear		25.5	3908	48		82.2	medium bipin	2481.15
+Philips	F32T8/ADV841/EW*	linear		27.6	3969	48		82.3	medium bipin	2718.6
+Philips	F32T8/ADV841/XEW*	linear		25.5	3968	48		82.2	medium bipin	2519.4
+Philips	F32T8/ADV841/XLL*28W*	linear		27.5	3904	48		83	medium bipin	2686.75
+Philips	F32T8/ADV841/2XL*28W*	linear		27.6	3910	48		82.9	medium bipin	2655.12
+Philips	F32T8/ADV841/XLL*25W*	linear		25.5	3917	48		82.4	medium bipin	2499
+Philips	F32T8/ADV841/2XL*25W*	linear		25.5	3917	48		82.4	medium bipin	2499
+Philips	F32T8/ADV841/2XL	linear		32.7	3959	48		81.9	medium bipin	2959.35
+Philips	F32T8/ADV841*	linear		32.3	3981	48		81.9	medium bipin	3062.04
+Philips	F32T8/VEA835/EW*	linear		27.7	3308	48		83.5	medium bipin	2697.98
+Philips	F32T8/VEA835/XEW*	linear		25.7	3359	48		84.1	medium bipin	2505.75
+Philips	F32T8/ADV835/EW* (28W)	linear		27.8	3378	48		84.1	medium bipin	2729.96
+Philips	F32T8/ADV835/XEW*	linear		25.7	3349	48		84.6	medium bipin	2534.02
+Philips	F32T8/ADV835/XLL*28W*	linear		27.5	3360	48		84	medium bipin	2692.25
+Philips	F32T8/ADV835/2XL*28W*	linear		27.4	3347	48		84	medium bipin	2676.98
+Philips	F32T8/ADV835/XLL*25W*	linear		25.5	3321	48		84.4	medium bipin	2483.7
+Philips	F32T8/ADV835/2XL*25W*	linear		25.5	3321	48		84.4	medium bipin	2483.7
+Philips	F32T8/ADV835/2XL*	linear		32.5	3331	48		83.8	medium bipin	2944.5
+Philips	F32T8/ADV835*	linear		32.2	3359	48		83.6	medium bipin	3042.9
+Philips	F32T8/ADV830/EW*	linear		27.6	2948	48		84.6	medium bipin	2696.52
+Philips	F32T8/ADV830/XEW*	linear		25.6	2918	48		84.8	medium bipin	2524.16
+Philips	F32T8/ADV830/XLL*28W*	linear		27.2	2890	48		84.9	medium bipin	2720
+Philips	F32T8/ADV830/XLL*25W*	linear		25.4	2908	48		85	medium bipin	2466.34
+Philips	F32T8/ADV830/2XL*28W*	linear		27.7	2870	48		84.8	medium bipin	2659.2
+Philips	F32T8/ADV830/2XL*25W*	linear		25.4	2908	48		85	medium bipin	2466.34
+Philips	F32T8/ADV830*	linear		32	2950	48		84.2	medium bipin	3030.4
+Ushio	F28T8/841	linear		27.54	4128	48		81.98	medium bipin	2547.7254
+Ushio	F28T8/835	linear		27.54	4128	48		81.98	medium bipin	2547.7254
+Ushio	F28T8/830	linear		27.54	4128	48		81.98	medium bipin	2547.7254
+Ushio	F28T8/841/ES	linear		26.66	4100	48		82	medium bipin	2399.4
+Ushio	F28T8/835/ES	linear		26.23	3500	48		82	medium bipin	2360.7
+Ushio	F32T8XL/835	linear		32.2	3800	48		81.8	medium bipin	3187.8
+Ushio	F32T8XL/841	linear		32.2	3800	48		81.8	medium bipin	3187.8
+Ushio	F32T8/841/HL	linear		32.2	3800	48		81.8	medium bipin	3187.8
+Ushio	F32T8/830	linear		32.2	3800	48		81.8	medium bipin	3187.8
+USHIO	F25T8/841ES	linear		24.27	3986	48		83.2	medium bipin	2504.4213
+USHIO	F25T8/835ES	linear		24.81	3428	48		83.9	medium bipin	2544.2655
+Ushio	F32T8/841	linear		32.2	3800	48		81.8	medium bipin	3187.8
+Ushio	F32T8/835	linear		32.2	3800	48		81.8	medium bipin	3187.8
+MaxLite	F32T8/835XL	linear		32	3500	48		82.7	medium bipin	2922.88
+MaxLite	F32T8/841XL	linear		32	4100	48		82.3	medium bipin	2942.72
+MaxLite	F32T8/25WS/841	linear		28	4100	48		82.8	medium bipin	2580.48
+MaxLite	F32T8/830XL	linear		32	3000	48		83.5	medium bipin	2957.44
+Superior LifeÂ®	91607	linear		32	4100	48		83.4	medium bipin	2887.68
+Superior LifeÂ®	91601	linear		32	3500	48		83.7	medium bipin	3255.68
+Superior LifeÂ®	91595	linear		32	3000	48		84.1	medium bipin	3133.12
+Superior LifeÂ®	91620	linear		28	3500	48		84	medium bipin	2883.16
+Superior LifeÂ®	91621	linear		28	4100	48		83	medium bipin	2865.8
+Superior LifeÂ®	91730	linear		25	4100	48		83	medium bipin	2462.75
+Superior LifeÂ®	91729	linear		25	3500	48		84	medium bipin	2497.25
+Superior LifeÂ®	72607	linear		32	4000	48		82.9	medium bipin	2996.48
+Superior LifeÂ®	72601	linear		32	3500	48		83.5	medium bipin	3013.76
+Sky BriteÂ®	91644	linear		32	4100	48		82.9	medium bipin	2996.48
+Sky BriteÂ®	72730	linear		25	4100	48		82.2	medium bipin	2623.5
+Superior LifeÂ®	72621	linear		28	4100	48		83.1	medium bipin	2676.8
+Eiko	F28T8/830/ES	linear		28	2970	48		84.4	medium bipin	2868.88
+Eiko	F28T8/835/ES	linear		28	3363	48		84	medium bipin	2863.84
+Eiko	F28T8/841/ES	linear		28	3995	48		85.9	medium bipin	2821.56
+Eiko	F32T8/830K/HL	linear		32	2961	48		85.1	medium bipin	3280
+Eiko	F32T8/835K/HL	linear		32	3488	48		84.8	medium bipin	3298.88
+Eiko	F32T8/841K/HL	linear		32	3921	48		84.3	medium bipin	2885.76
+Eiko	F32T8/830K	linear		32	3080	48		83.6	medium bipin	2870.4
+Eiko	F32T8/835K	linear		32	3272	48		82.9	medium bipin	2931.2
+Eiko	F32T8/841K	linear		32	3921	48		84.3	medium bipin	2885.76
+Eiko	F32T8/830/ES/25W	linear		25	2892	48		84.6	medium bipin	2591
+Eiko	F32T8/841/ES/25W	linear		25	3901	48		84.1	medium bipin	2595.25
+Eiko	F28T8/835/ES/XL	linear		28	3362	48		82.4	medium bipin	2535.4
+Eiko	F28T8/841/ES/XL	linear		28	3362	48		82.4	medium bipin	2535.4
+Eiko	F32T8/835/ES/25W/XL	linear		25	4011	48		81	medium bipin	2256
+Eiko	F32T8/841/ES/25W/XL	linear		25	4011	48		81	medium bipin	2256
+SYLVANIA	21781; 22239; 24809; 22507; 27703; 23320	linear		32	3990	48		80.3	medium bipin	2886.4
+OSRAM	22283	linear		32	2920	48		84.1	medium bipin	2931.2
+OSRAM	22295	linear		28	3960	48		84	medium bipin	2651.6
+SYLVANIA	21779; 22183; 24808; 22506; 23319	linear		32	3310	48		84.2	medium bipin	2956.8
+SYLVANIA	21777; 22360; 22455	linear		32	2920	48		84.1	medium bipin	2931.2
+SYLVANIA	22234	linear		32	4000	48		81.3	medium bipin	3184
+SYLVANIA	21763	linear		32	3330	48		84.7	medium bipin	3001.6
+SYLVANIA	21759	linear		32	2950	48		84.2	medium bipin	2924.8
+SYLVANIA	21697	linear		32	3340	48		83.9	medium bipin	3081.6
+SYLVANIA	21681	linear		32	3990	48		81.6	medium bipin	3138.24
+SYLVANIA	21680	linear		32	2940	48		84.2	medium bipin	3049.6
+SYLVANIA	21576	linear		32	3360	48		84.1	medium bipin	2928
+SYLVANIA	21528	linear		28	2940	48		84.7	medium bipin	2494.8
+SYLVANIA	20067	linear		32	4000	48		80.5	medium bipin	2896
+SYLVANIA	22484	linear		28	3990	48		80.3	medium bipin	2662.8
+SYLVANIA	22178; 28026	linear		28	3240	48		86	medium bipin	2688
+SYLVANIA	21421; 22471	linear		28	4000	48		80.6	medium bipin	2721.6
+SYLVANIA	22454	linear		25	2940	48		84	medium bipin	2370
+SYLVANIA	22450	linear		25	4010	48		80.8	medium bipin	2422.5
+SYLVANIA	22449	linear		32	3330	48		83.9	medium bipin	2995.2
+SYLVANIA	22447	linear		30	3960	48		80.8	medium bipin	2799
+SYLVANIA	22446	linear		30	3330	48		84	medium bipin	2757
+SYLVANIA	22349	linear		25	2900	48		85	medium bipin	2272.5
+SYLVANIA	22233	linear		25	3340	48		84.3	medium bipin	2447.5
+SYLVANIA	22232	linear		25	2900	48		84.4	medium bipin	2365
+SYLVANIA	22223	linear		25	4000	48		81.7	medium bipin	2327.5
+SYLVANIA	22222	linear		25	3410	48		84	medium bipin	2301.25
+SYLVANIA	22179	linear		28	3960	48		84	medium bipin	2651.6
+SYLVANIA	22177	linear		28	2930	48		84.2	medium bipin	2772
+SYLVANIA	22167	linear		28	3920	48		81.9	medium bipin	2620.8
+SYLVANIA	22166	linear		28	3320	48		84.3	medium bipin	2584.4
+SYLVANIA	22063	linear		30	2940	48		84.6	medium bipin	2835
+SYLVANIA	22062	linear		30	3950	48		81.7	medium bipin	2877
+SYLVANIA	22060	linear		30	3370	48		84.1	medium bipin	2853
+SYLVANIA	22039	linear		32	2650	48		84.4	medium bipin	2918.4
+SYLVANIA	21767	linear		32	3960	48		84.5	medium bipin	3027.2
+SYLVANIA	21577	linear		32	3980	48		81.3	medium bipin	2960
+SYLVANIA	21429	linear		28	2960	48		83.9	medium bipin	2564.8
+SYLVANIA	21428	linear		30	2880	48		84.4	medium bipin	2751
+SYLVANIA	21427	linear		32	2930	48		84.2	medium bipin	2889.6
+SYLVANIA	21420	linear		28	3350	48		83.3	medium bipin	2690.8
+SYLVANIA	20066	linear		32	3320	48		84.1	medium bipin	2946.24
+OSRAM	22284	linear		32	3310	48		84.2	medium bipin	2956.8
+OSRAM	21755	linear		32	4010	48		80.4	medium bipin	2950.4
+Duracell	FLO10390B	linear		32	3500	48		82	medium bipin	2848
+Duracell	FLO10391B	linear		32	4100	48		82	medium bipin	2848
+Duracell	FLO10394B	linear		28	3500	48		82	medium bipin	2548
+Duracell	FLO10395B	linear		28	4100	48		82	medium bipin	2548
+Duracell	FLO10399A	linear		32	4100	48		82	medium bipin	2976
+GE	F28T8/XL/SPP35/ECO	linear		28	3360	48		83	medium bipin	2688
+GE	F28T8/XL/SPP41/ECO	linear		28	3970	48		82	medium bipin	2688
+GE	F28T8/SXL/SPX35/ECO	linear		28	3340	48		84	medium bipin	2660
+GE	F28T8/SXL/SPX41/ECO	linear		28	3920	48		82	medium bipin	2660
+GE	F28T8/XL/SPX30/ECO	linear		28	2920	48		84	medium bipin	2716
+GE	F28T8/XL/SPX35/ECO	linear		28	3320	48		84	medium bipin	2744
+LumaPro	F28T8/835/LUMA	linear		28	3320	48		84	medium bipin	2744
+GE	F28T8/XL/SPX41/ECO	linear		28	3960	48		82	medium bipin	2744
+LumaPro	F28T8/841/LUMA	linear		28	3960	48		82	medium bipin	2744
+GE	F32T8/25W/SPX30/ECO	linear		25	2990	48		84	medium bipin	2350
+GE	F32T8/25W/SPX35/ECO	linear		25	3300	48		84	medium bipin	2400
+LumaPro	F32T8/25W/835/LUMA	linear		25	3300	48		84	medium bipin	2400
+GE	F32T8/25W/SPX41/ECO	linear		25	3950	48		82	medium bipin	2400
+LumaPro	F32T8/25W/841/LUMA	linear		25	3950	48		82	medium bipin	2400
+GE	F32T8/25W/SPP35/ECO	linear		25	3320	48		84	medium bipin	2400
+GE	F32T8/25W/SPP41/ECO	linear		25	3950	48		82	medium bipin	2400
+GE	F32T8/25W/SXL/SPX35/ECO	linear		25	3350	48		84	medium bipin	2325
+GE	F32T8/25W/SXL/SPX41/ECO	linear		25	3910	48		83	medium bipin	2325
+GE	F32T8/SPX30/ECO	linear		32	2980	48		84	medium bipin	2880
+GE	F32T8/830/PRO/ECO	linear		32	2990	48		84	medium bipin	2864
+GE	F32T8/SPX35/ECO	linear		32	3370	48		83	medium bipin	2880
+GE	F32T8/835/PRO/ECO	linear		32	3350	48		83	medium bipin	2864
+GE	F32T8/SPX41/ECO	linear		32	3930	48		82	medium bipin	2880
+GE	F32T8/841/PRO/ECO	linear		32	3960	48		82	medium bipin	2864
+GE	F32T8/KBP/ECO	linear		32	2940	48		84	medium bipin	2848
+GE	F32T8/WS/ECO	linear		32	3390	48		83	medium bipin	2848
+GE	F32T8/GB/ECO	linear		32	3950	48		82	medium bipin	2848
+GE	F32T8/SPP30/ECO	linear		32	2940	48		84	medium bipin	2848
+LumaPro	F32T8/830/LUMA	linear		32	2940	48		84	medium bipin	2848
+GE	F32T8/SPP35/ECO	linear		32	3370	48		82	medium bipin	2848
+LumaPro	F32T8/835/LUMA	linear		32	3370	48		82	medium bipin	2848
+GE	F32T8/SPP41/ECO	linear		32	3920	48		82	medium bipin	2848
+LumaPro	F32T8/841/LUMA	linear		32	3920	48		82	medium bipin	2848
+GE	F32T8/SXL/SPX35/ECO	linear		32	3420	48		83	medium bipin	2880
+GE	F32T8/SXL/SPX41/ECO	linear		32	3930	48		82	medium bipin	2880
+GE	F32T8/XL/SPX30/ECO	linear		32	2910	48		84	medium bipin	2864
+GE	F32T8/XL/SPX35/ECO	linear		32	3310	48		84	medium bipin	2864
+GE	F32T8/XL/SPX41/ECO	linear		32	3920	48		83	medium bipin	2864
+GE	F32T8/XL/SPX30/HL/ECO	linear		32	2920	48		85	medium bipin	2876.8
+GE	F32T8/XL/SPX35/HL/ECO	linear		32	3310	48		85	medium bipin	2924.8
+GE	F32T8/XL/SPX41/HL/ECO	linear		32	4010	48		83	medium bipin	2918.4
+Do-It-Best	F32T8/SPP35/DB	linear		32	3370	48		82	medium bipin	2848
+Do-It-Best	F32T8/SPP41/DB	linear		32	3920	48		82	medium bipin	2848
+Westinghouse	37334	linear		32	4100	48		84.3	medium bipin	2885.76
+Westinghouse	60798	linear		32	4100	48		84.3	medium bipin	2885.76
+Westinghouse	37413	linear		32	4100	48		84.3	medium bipin	2885.76
+Westinghouse	37411	linear		32	3500	48		82.9	medium bipin	2931.2
+Westinghouse	37324	linear		32	3000	48		84	medium bipin	2863.68
+Westinghouse	36015	linear		28	4100	48		85.9	medium bipin	2821.56
+Westinghouse	36012	linear		25	4100	48		84.4	medium bipin	2577.5
+Westinghouse	7029	linear		32	4100	48		83.4	medium bipin	3416.96
+Westinghouse	7028	linear		32	3500	48		84.8	medium bipin	3298.88
+Energy Wiser	F32T8/830/EW	linear		32	3000	48		83.6	medium bipin	2870.4
+Energy Wiser	F32T8/835/EW	linear		32	3500	48		82.9	medium bipin	2931.2
+Energy Wiser	F32T8/841/EW	linear		32	4100	48		84.3	medium bipin	2885.76
+Energy Wiser	F28T8/835/EW	linear		28	3500	48		84	medium bipin	2863.84
+Energy Wiser	F32T8/841/HL	linear		32	4100	48		84.1	medium bipin	2905.6
+Commercial Electric	3564822	linear		32		48			medium bipin	0
+SATCO	S8447	linear		31.42	6500	48		83.1	medium bipin	2854.8212
+SATCO	S8446	linear		31.74	5000	48		82.6	medium bipin	2885.8008
+SATCO	S8430	linear		29.52	4845	48		83.2	medium bipin	2932.5168
+SATCO	S8429	linear		29.52	4845	48		83.2	medium bipin	2932.5168
+SATCO	S8437	linear		26.27	4942	48		85.4	medium bipin	2663.778
+SATCO	S8425	linear		26.27	4942	48		85.4	medium bipin	2663.778
+SATCO	S8442	linear		24.7	4953	48		85.8	medium bipin	2489.513
+SATCO	S8441	linear		24.7	4953	48		85.8	medium bipin	2489.513
+SATCO	S8436	linear		30.19	6584	48		82.6	medium bipin	2795.2921
+SATCO	S8421	linear		30.32	4911	48		83	medium bipin	2749.4176
+Howard	F32T8/865/HL/ECO/IC	linear		31.44	6626	48		82.1	medium bipin	2941.212
+Howard	F25T8/850/ES/ECO/IC	linear		26.33	5204	48		82	medium bipin	2647.2182
+Howard	F32T8/850/HL/ECO/IC	linear		31.51	5176	48		82.3	medium bipin	2928.8545
+Ushio America	F28T8 850 48	linear		28		48			medium bipin	0
+Ushio America	F32T8 850 HL 48	linear		32		48			medium bipin	0
+Ushio America	F32T8 850 48	linear		32		48			medium bipin	0
+Commercial Electric	F32T8/850	linear		32		48			medium bipin	0
+Maintenance Engineering	F32T8/XFW/XTRABRITE*	linear		32.3	4978	48		80.5	medium bipin	2926.38
+Superior Lamp and Supply	F32T8/AWX8550+*	linear		32.3	4978	48		80.5	medium bipin	2926.38
+Maintenance Engineering	F32T8/AWX8550+*	linear		32.3	4978	48		80.5	medium bipin	2926.38
+Philips	F32T8/TL765 HL*	linear		32.3	6290	48		74.8	medium bipin	2910.23
+Philips	F32T8/TL850 PLUS*	linear		32.3	4939	48		80	medium bipin	2948.99
+Philips	F32T8/TL850*	linear		32.3	4978	48		80.5	medium bipin	2926.38
+Philips	F32T8/HL750*	linear		32.3	4966	48		80.1	medium bipin	2910.23
+Philips	F32T8/VEA850/XEW*	linear		25.1	4945	48		80.6	medium bipin	2402.07
+Philips	F32T8/VEA850/EW*	linear		27.7	4866	48		79.8	medium bipin	2675.82
+Philips	F32T8/ADV850/EW*	linear		27.6	4978	48		80.7	medium bipin	2685.48
+Philips	F32T8/ADV850/XEW*	linear		25.5	4978	48		80.5	medium bipin	2488.8
+Philips	F32T8/ADV850/XLL*28W*	linear		27.6	5002	48		80.5	medium bipin	2627.52
+Philips	F32T8/ADV850/2XL*28W*	linear		27.6	4926	48		80.7	medium bipin	2624.76
+Philips	F32T8/ADV850/XLL*25W*	linear		25.7	4914	48		80.8	medium bipin	2485.19
+Philips	F32T8/ADV850/2XL*25W*	linear		25.7	4914	48		80.8	medium bipin	2485.19
+Philips	F32T8/ADV850/2XL*	linear		32.3	4978	48		80.5	medium bipin	2926.38
+Philips	F32T8/ADV850*	linear		32.3	4962	48		80.2	medium bipin	2997.44
+Ushio	F28T8/850/ES	linear		26	5000	48		82	medium bipin	2340
+Ushio	F32T8XL/850	linear		32.2	5125.9	48		77.8	medium bipin	2865.8
+Ushio	F32T8/850/HL	linear		32.2	5125.9	48		77.8	medium bipin	2865.8
+USHIO	F25T8/850ES	linear		24.56	5058	48		82.2	medium bipin	2453.544
+Ushio	F32T8/850	linear		32.2	5125.9	48		77.8	medium bipin	2865.8
+MaxLite	F32T8/850XL	linear		32	5000	48		82.8	medium bipin	2848.64
+Sky-Brite PlusÂ®	91613	linear		32	5000	48		82.3	medium bipin	2974.4
+Sky-Brite PlusÂ®	91622	linear		28	5000	48		82.1	medium bipin	2817.92
+Superior LifeÂ®	82614	linear		32	6500	48		82	medium bipin	2993.6
+Sky-Brite PlusÂ®	91732	linear		25	5000	48		82	medium bipin	2513.5
+Superior LifeÂ®	72613	linear		32	5000	48		80.1	medium bipin	2997.44
+Superior LifeÂ®	72732	linear		25	5000	48		80	medium bipin	2586.5
+Sky-Brite PlusÂ®	91637	linear		25	5000	48		80	medium bipin	2586.5
+Sky-Brite PlusÂ®	91645	linear		32	5000	48		80.1	medium bipin	2997.44
+Sky BriteÂ®	91640	linear		28	5000	48		80.3	medium bipin	2693.04
+Superior LifeÂ®	72622	linear		28	5000	48		80.3	medium bipin	2693.04
+Vita-BriteÂ®	91615	linear		32	5700	48		82.3	medium bipin	2974.4
+Eiko	F28T8/865/ES	linear		28	6441	48		82.2	medium bipin	2542.4
+Eiko	F28T8/850/ES	linear		28	4979	48		86.5	medium bipin	2819.04
+Eiko	F32T8/850K/HL	linear		32	4873	48		82.1	medium bipin	2894.4
+Eiko	F32T8/850K	linear		32	4873	48		82.1	medium bipin	2894.4
+Eiko	F32T8/865K	linear		32	6508	48		83.1	medium bipin	3013.76
+Eiko	F32T8/850/ES/25W	linear		25	4953	48		85.8	medium bipin	2519.75
+Eiko	F32T8/850K/XL	linear		32	4896.9	48		79.9	medium bipin	2838.72
+Eiko	F28T8/850/ES/XL	linear		28	4910	48		80.7	medium bipin	2502.64
+Eiko	F32T8/850/ES/25W/XL	linear		25	4931	48		80.1	medium bipin	2215
+Eiko	F32T8/865K/HL	linear		32	6469	48		82.6	medium bipin	3016.64
+Eiko	F32T8/865/ES/25W	linear		25	6720	48		82.9	medium bipin	2265
+SYLVANIA	21720; 22358; 22358	linear		32	6130	48		82.3	medium bipin	2848.64
+OSRAM	21974	linear		32	6130	48		82.3	medium bipin	2848.64
+SYLVANIA	22235	linear		32	4800	48		79.1	medium bipin	3145.6
+SYLVANIA	22143; 23321	linear		32	4800	48		78.9	medium bipin	2963.2
+SYLVANIA	22026	linear		32	4750	48		83	medium bipin	2969.6
+SYLVANIA	21659	linear		32	6040	48		77	medium bipin	2905.6
+SYLVANIA	20068	linear		32	4790	48		78.4	medium bipin	2873.6
+SYLVANIA	24811; 24810	linear		32	6210	48		76	medium bipin	2816
+SYLVANIA	21660; 28027	linear		32	4780	48		78.9	medium bipin	3081.6
+SYLVANIA	22451	linear		25	4740	48		78.2	medium bipin	2227.5
+SYLVANIA	22326	linear		28	4730	48		78.7	medium bipin	2581.6
+SYLVANIA	22202	linear		30	4760	48		79.2	medium bipin	2754
+SYLVANIA	22184	linear		28	4700	48		78	medium bipin	2674
+SYLVANIA	22002	linear		32	4800	48		78.7	medium bipin	2918.4
+SYLVANIA	21422	linear		28	4770	48		77.9	medium bipin	2710.4
+OSRAM	22296	linear		28	4700	48		78	medium bipin	2674
+OSRAM	21943	linear		32	4790	48		79	medium bipin	2982.4
+Duracell	FLO10911A	linear		25	5000	48		82	medium bipin	2225
+Duracell	FLO10392B	linear		32	5000	48		82	medium bipin	2816
+Duracell	FLO10396B	linear		28	5000	48		82	medium bipin	2464
+GE	F28T8/XL/SPP50/ECO	linear		28	4940	48		79	medium bipin	2688
+GE	F28T8/SXL/SPX50/ECO	linear		28	4870	48		80	medium bipin	2660
+GE	F28T8/XL/SPX50/ECO	linear		28	4920	48		80	medium bipin	2744
+LumaPro	F28T8/850/LUMA	linear		28	4920	48		80	medium bipin	2744
+GE	F28T8/XL/SPX65/ECO	linear		28	6410	48		77	medium bipin	2632
+GE	F32T8/25W/SPX50/ECO	linear		25	4890	48		79	medium bipin	2400
+LumaPro	F32T8/25W/850/LUMA	linear		25	4890	48		79	medium bipin	2400
+GE	F32T8/25W/SPP50/ECO	linear		25	4840	48		80	medium bipin	2375
+GE	F32T8/25W/SXL/SPX50/ECO	linear		25	4870	48		80	medium bipin	2325
+GE	F32T8/SPX50/ECO	linear		32	4890	48		78	medium bipin	2848
+GE	F32T8/850/PRO/ECO	linear		32	4900	48		79	medium bipin	2848
+GE	F32T8/SPX65/ECO	linear		32	6290	48		77	medium bipin	2848
+GE	F32T8/CL/ECO	linear		32	4910	48		78	medium bipin	2816
+GE	F32T8/AS/ECO	linear		32	6370	48		81	medium bipin	2816
+GE	F32T8/SPP50/ECO	linear		32	4890	48		78	medium bipin	2816
+LumaPro	F32T8/850/LUMA	linear		32	4890	48		78	medium bipin	2816
+GE	F32T8/SPP65/ECO	linear		32	6330	48		78	medium bipin	2816
+LumaPro	F32T8/865/LUMA	linear		32	6330	48		78	medium bipin	2816
+GE	F32T8/SXL/SPX50/ECO	linear		32	4860	48		79	medium bipin	2880
+GE	F32T8/XL/SPX65/ECO	linear		32	6350	48		77	medium bipin	2816
+GE	F32T8/XL/SPX50/ECO	linear		32	4850	48		80	medium bipin	2816
+GE	F32T8/XL/SPX50/HL/ECO	linear		32	4940	48		80	medium bipin	2918.4
+Westinghouse	60766	linear		32	5000	48		85.4	medium bipin	3238.72
+Westinghouse	60800	linear		32	5000	48		82.1	medium bipin	2894.4
+Westinghouse	37307	linear		32	5000	48		82.1	medium bipin	2894.4
+Westinghouse	36016	linear		28	5000	48		86.5	medium bipin	2819.04
+Energy Wiser	F32T8/850/EW	linear		32	5000	48		82.1	medium bipin	2894.4
+Energy Wiser	F32T8/865/EW	linear		32	6500	48		83.1	medium bipin	3013.76
+SATCO	S8145	linear		51.91	4209	48		80.9	miniature bipin	4487.6195
+SATCO	S8144	linear		53.94	3472	48		81.7	miniature bipin	4653.4038
+Howard	F54T5/841/HO	linear		54.6	3985	48		82.2	miniature bipin	4651.92
+Ushio America	F49T5HO 841 ES 46	linear		49		48			miniature bipin	0
+Ushio America	F54T5HO 835 46	linear		54		48			miniature bipin	0
+Ushio America	F54T5HO 830 46	linear		54		48			miniature bipin	0
+Ushio America	F54T5HO 841 46	linear		54		48			miniature bipin	0
+Luma	F54T5/835/HO	linear		54.4	3413	48		82.4	miniature bipin	4569.6
+Luma	F54T5/841/HO	linear		54.6	3985	48		82.2	miniature bipin	4651.92
+Philips	F54T5/841/HO/A/EA*	linear		48.7	3932	48		81.5	miniature bipin	4587.54
+Philips	F54T5/841/HO/EA*	linear		48.7	3932	48		81.5	miniature bipin	4587.54
+Philips	F54T5/841/HO*	linear		53.6	3935	48		83	miniature bipin	4711.44
+Philips	F54T5/835/HO*	linear		53.7	3427	48		81.6	miniature bipin	4779.3
+Philips	F54T5/830/HO/EA*	linear		48.7	2809	48		83.9	miniature bipin	4417.09
+Philips	F54T5/830/HO/A/EA*	linear		48.7	2809	48		83.9	miniature bipin	4417.09
+Philips	F54T5/830/HO*	linear		53.7	2877	48		83	miniature bipin	4677.27
+Philips	F54T5/835/HO/A/EA*	linear		48.8	3383	48		82.5	miniature bipin	4587.2
+Philips	F54T5/835/HO/EA*	linear		48.8	3383	48		82.5	miniature bipin	4587.2
+Ushio	F49T5HO/841/ES	linear		49	4100	48		80	miniature bipin	4214
+Ushio	F49T5HO/835/ES	linear		49	3500	48		80	miniature bipin	4214
+Ushio	F54T5HO/835	linear		56.5	4063	48		79.3	miniature bipin	4994.6
+Ushio	F54T5HO/830	linear		56.5	4063	48		79.3	miniature bipin	4994.6
+Ushio	F54T5HO/841	linear		56.5	4063	48		79.3	miniature bipin	4994.6
+MaxLite	F54T5HO/835	linear		54	3500	48		83.8	miniature bipin	4563
+MaxLite	F54T5HO/841	linear		54	4100	48		83.3	miniature bipin	4417.2
+Superior LifeÂ®	91720	linear		54	3500	48		82.4	miniature bipin	4536
+Superior LifeÂ®	91722	linear		54	4100	48		81	miniature bipin	4668.3
+Superior LifeÂ®	91719	linear		54	3000	48		83.8	miniature bipin	4471.2
+Superior LifeÂ®	91726	linear		49	4100	48		86	miniature bipin	4199.3
+Eiko	F49T5/HO/835	linear		49	3435	48		83	miniature bipin	4756.43
+Eiko	F49T5/HO/841	linear		49	4127	48		83.7	miniature bipin	4763.78
+Eiko	F54T5/HO/830	linear		54	3536	48		80.4	miniature bipin	5163.48
+Eiko	F54T5/HO/835	linear		54	3536	48		80.4	miniature bipin	5163.48
+Eiko	F54T5/HO/841	linear		54	4185	48		81.4	miniature bipin	5112.72
+SYLVANIA	20906; 20437; 27629	linear		54	3974	48		83	miniature bipin	4499.28
+SYLVANIA	20904	linear		54	3312	48		82.6	miniature bipin	4509
+OSRAM	21093	linear		54	4000	48		79.8	miniature bipin	4492.8
+SYLVANIA	21071	linear		54	3270	48		83.1	miniature bipin	4757.4
+SYLVANIA	21070	linear		54	2928	48		83.4	miniature bipin	4627.8
+SYLVANIA	21043	linear		54	4140	48		78.2	miniature bipin	5189.4
+SYLVANIA	21042	linear		54	3560	48		79.8	miniature bipin	4784.4
+SYLVANIA	20964	linear		54	3920	48		80.9	miniature bipin	4870.8
+SYLVANIA	20903	linear		54	2854	48		82.4	miniature bipin	4460.4
+SYLVANIA	20198	linear		54	3979	48		83	miniature bipin	4336.2
+SYLVANIA	20197	linear		54	3380	48		83	miniature bipin	4606.2
+Duracell	FLO10369A	linear		55	4055	48		82.9	miniature bipin	4537.5
+Duracell	FLO10369B	linear		55	4055	48		82.9	miniature bipin	4537.5
+GE	F54W/T5/830/ECO	linear		54	2900	48		84	miniature bipin	4482
+GE	F54W/T5/835/ECO	linear		54	3400	48		84	miniature bipin	4482
+GE	F54W/T5/841/ECO	linear		54	4060	48		82	miniature bipin	4482
+GE	F54T5/830/WM/ECO	linear		51	2870	48		84	miniature bipin	4488
+GE	F54T5/835/WM/ECO	linear		51	3480	48		83	miniature bipin	4488
+GE	F54T5/841/WM/ECO	linear		51	4070	48		82	miniature bipin	4488
+GE	F54T5/XL/830/ECO	linear		54	2950	48		84	miniature bipin	4482
+GE	F54T5/XL/835/ECO	linear		54	3490	48		83	miniature bipin	4482
+GE	F54T5/XL/841/ECO	linear		54	4010	48		82	miniature bipin	4482
+GE	F54T5/835ECO/PRO	linear		54	3510	48		83	miniature bipin	4482
+GE	F54T5/841ECO/PRO	linear		54	4070	48		83	miniature bipin	4482
+Westinghouse	37363	linear		49	4100	48		83.7	miniature bipin	4763.78
+Westinghouse	37362	linear		49	3500	48		83	miniature bipin	4756.43
+Lumapro	4XMJ7	linear		54	4100	48		81.4	miniature bipin	5112.45
+Westinghouse	7008	linear		54	4100	48		81.4	miniature bipin	5112.45
+Westinghouse	7007	linear		54	3500	48		80.4	miniature bipin	5163.588
+Energy Wiser	F54T5/835/HO	linear		54	3500	48		80.4	miniature bipin	5163.48
+Energy Wiser	F54T5/841/HO	linear		54	4100	48		81.4	miniature bipin	5112.72
+Energy Wiser	F54T5/830/HO	linear		54	3000	48		82.6	miniature bipin	4403.7
+SATCO	S8123	linear		53.53	5111	48		81.2	miniature bipin	4376.6128
+SATCO	S8122	linear		53.53	5111	48		81.2	miniature bipin	4376.6128
+Howard	F54T5/850/HO	linear		54.8	5057	48		83.6	miniature bipin	4521
+Ushio America	F49T5HO 850 ES 46	linear		49		48			miniature bipin	0
+Ushio America	F54T5HO 850 46	linear		54		48			miniature bipin	0
+Luma	F54T5/850/HO	linear		54.8	5057	48		83.6	miniature bipin	4521
+Philips	F54T5/865/HO*	linear		53.7	6271	48		82.6	miniature bipin	4365.81
+Philips	F54T5/850/HO/A/EA*	linear		48.7	4898	48		84.3	miniature bipin	4485.27
+Philips	F54T5/850/HO/EA*	linear		48.7	4898	48		84.3	miniature bipin	4485.27
+Philips	F54T5/850/HO*	linear		53.6	4960	48		82.8	miniature bipin	4566.72
+Ushio	F49T5HO/850/ES	linear		49	5000	48		80	miniature bipin	4018
+Ushio	F54T5HO/850	linear		56.1	5287.8	48		75.4	miniature bipin	4852.089
+MaxLite	F54T5HO/850	linear		54	5000	48		84.9	miniature bipin	4228.2
+Sky-Brite PlusÂ®	91727	linear		49	5000	48		83.2	miniature bipin	4155.2
+Sky-Brite PlusÂ®	91723	linear		54	5000	48		86.1	miniature bipin	4455
+Superior LifeÂ®	91725	linear		54	6500	48		83	miniature bipin	4631.04
+Vita-BriteÂ®	91724	linear		54	5700	48		83.6	miniature bipin	4455
+Vita-BriteÂ®	91728	linear		49	5700	48		83.2	miniature bipin	4155.2
+Eiko	F49T5/HO/850	linear		49	4999	48		83.2	miniature bipin	4702.04
+Eiko	F49T5/HO/865	linear		49	6648	48		83.3	miniature bipin	4571.21
+Eiko	F54T5/HO/850	linear		54	5257	48		83.1	miniature bipin	5028.48
+Eiko	F54T5/HO/865	linear		32	6407	48		82.3	miniature bipin	2607.36
+SYLVANIA	20949	linear		54	4823	48		83.8	miniature bipin	4373.46
+SYLVANIA	21044	linear		54	5080	48		80.4	miniature bipin	4854.6
+SYLVANIA	20199	linear		54	4637	48		84.1	miniature bipin	4185
+OSRAM	20613	linear		54	6240	48		77.8	miniature bipin	4287.6
+Duracell	FLO10370B	linear		56.2	4964	48		84.1	miniature bipin	4602.78
+GE	F54W/T5/850/ECO	linear		54	5080	48		85	miniature bipin	4320
+GE	F54W/T5/865/ECO	linear		54	6590	48		85	miniature bipin	4158
+GE	F54T5/850/WM/ECO	linear		51	5110	48		86	miniature bipin	4284
+GE	F54T5/865/WM/ECO	linear		51	6590	48		86	miniature bipin	4182
+GE	F54T5/XL/850/ECO	linear		54	4990	48		85	miniature bipin	4320
+GE	F54T5/XL/865/ECO	linear		54	6680	48		85	miniature bipin	4158
+GE	F54T5/850ECO/PRO	linear		54	5130	48		85	miniature bipin	4320
+Lumapro	4XMJ8	linear		54	5000	48		83.1	miniature bipin	5028.372
+Westinghouse	37365	linear		49	5000	48		83.6	miniature bipin	4702.04
+Westinghouse	7032	linear		54	5000	48		83.1	miniature bipin	5028.372
+Energy Wiser	F54T5/850/HO	linear		54	5000	48		83.1	miniature bipin	5028.48
+SATCO	S8133	linear		27.88	4081	48		83.7	miniature bipin	2635.2176
+SATCO	S8132	linear		27.88	4081	48		83.7	miniature bipin	2635.2176
+SATCO	S8131	linear		27.91	2994	48		83.6	miniature bipin	2604.003
+Ushio America	F28T5 841 46	linear		28		48			miniature bipin	0
+Ushio America	F28T5 835 46	linear		28		48			miniature bipin	0
+Ushio America	F28T5 830 46	linear		28		48			miniature bipin	0
+Philips	F28T5/841*	linear		27.4	3994	48		83.6	miniature bipin	2655.06
+Philips	F28T5/835*	linear		27.5	3421	48		83.4	miniature bipin	2722.5
+Philips	F28T5/830*	linear		26.9	2874	48		83.6	miniature bipin	2552.81
+Ushio	F28T5/830	linear		28.6	3640.2	48		81	miniature bipin	2858.284
+Ushio	F28T5/841	linear		28.6	3640.2	48		81	miniature bipin	2858.284
+Ushio	F28T5/835	linear		28.6	3640.2	48		81	miniature bipin	2858.284
+MaxLite	F28T5/841	linear		28	4100	48		84.9	miniature bipin	2606.8
+Superior LifeÂ®	91706	linear		28	3000	48		84.8	miniature bipin	2517.2
+Superior LifeÂ®	91708	linear		28	4100	48		84.4	miniature bipin	2514.4
+Superior LifeÂ®	91713	linear		28	3500	48		83.6	miniature bipin	2494.8
+Superior LifeÂ®	72722	linear		54	4100	48		85.1	miniature bipin	5059.26
+Eiko	F28T5/835	linear		28	3484	48		82.7	miniature bipin	2632.84
+Eiko	F28T5/841	linear		28	4080	48		83.7	miniature bipin	2644.6
+Eiko	F28T5/830	linear		28	2994	48		83.6	miniature bipin	2612.4
+SYLVANIA	20901; 20065; 27706	linear		28	3295	48		84	miniature bipin	2544.92
+OSRAM	26782	linear		28	4000	48		81.5	miniature bipin	2437.96
+OSRAM	26781	linear		28	2880	48		83.9	miniature bipin	2409.4
+SYLVANIA	20902; 20062	linear		28	3980	48		83	miniature bipin	2584.4
+SYLVANIA	21311	linear		28	3880	48		81.9	miniature bipin	2676.8
+SYLVANIA	21310	linear		28	3339	48		84	miniature bipin	2573.2
+SYLVANIA	21309	linear		28	2880	48		85.5	miniature bipin	2718.8
+SYLVANIA	21060	linear		28	2880	48		84.5	miniature bipin	2881.2
+SYLVANIA	21058	linear		28	4000	48		82.4	miniature bipin	2688.84
+SYLVANIA	21057	linear		28	3540	48		81.4	miniature bipin	2760.8
+SYLVANIA	20948	linear		28	2940	48		84.2	miniature bipin	2690.8
+SYLVANIA	20944	linear		28	3890	48		83.3	miniature bipin	2576
+SYLVANIA	20943	linear		28	3257	48		83.4	miniature bipin	2648.8
+SYLVANIA	20868	linear		28	2891	48		84	miniature bipin	2503.2
+GE	F28W/T5/830/ECO	linear		28	2930	48		84	miniature bipin	2716
+GE	F28W/T5/835/ECO	linear		28	3580	48		84	miniature bipin	2716
+GE	F28W/T5/841/ECO	linear		28	3940	48		83	miniature bipin	2716
+GE	F28T5/830/WM/ECO	linear		26	2890	48		84	miniature bipin	2626
+GE	F28T5/835/WM/ECO	linear		26	3480	48		83	miniature bipin	2626
+GE	F28T5/841/WM/ECO	linear		26	4100	48		82	miniature bipin	2626
+GE	F28WT5/830/HL/ECO	linear		28	2940	48		84	miniature bipin	2772
+GE	F28WT5/835/HL/ECO	linear		28	3430	48		84	miniature bipin	2772
+GE	F28WT5/841/HL/ECO	linear		28	4080	48		83	miniature bipin	2772
+Westinghouse	7005	linear		28	4100	48		83.7	miniature bipin	2644.6
+Westinghouse	7004	linear		28	3500	48		82.7	miniature bipin	2632.84
+Westinghouse	7003	linear		28	3000	48		83.5	miniature bipin	2624.44
+Energy Wiser	F28T5/830	linear		28	3000	48		83.5	miniature bipin	2624.44
+Energy Wiser	F28T5/835	linear		28	3500	48		82.7	miniature bipin	2632.84
+Energy Wiser	F28T5/841	linear		28	4100	48		83.7	miniature bipin	2644.6
+SATCO	S8115	linear		24.7	4953	48		85.8	miniature bipin	2489.513
+SATCO	S8114	linear		24.7	4953	48		85.8	miniature bipin	2489.513
+Ushio America	F28T5 850 46	linear		28		48			miniature bipin	0
+Ushio	F28T5/850	linear		28.7	5190.2	48		77.2	miniature bipin	2581.565
+Sky-Brite PlusÂ®	91707	linear		28	5000	48		84	miniature bipin	2410.8
+Superior LifeÂ®	72723	linear		54	5000	48		83.3	miniature bipin	5016.6
+Eiko	F28T5/850	linear		28	5153	48		80.5	miniature bipin	2640.12
+Eiko	F28T5/865	linear		28	6832	48		80.3	miniature bipin	2469.04
+SYLVANIA	20061; 20990	linear		28	6100	48		79.3	miniature bipin	2388.4
+SYLVANIA	22203	linear		28	5154	48		83.2	miniature bipin	2531.2
+GE	F28W/T5/850/ECO	linear		28	5060	48		86	miniature bipin	2576
+GE	F28W/T5/865/ECO	linear		28	6510	48		86	miniature bipin	2520
+GE	F28T5/850/WM/ECO	linear		26	5000	48		86	miniature bipin	2496
+GE	F28T5/865/WM/ECO	linear		26	6600	48		84	miniature bipin	2444
+GE	F28WT5/850/HL/ECO	linear		28	4970	48		85	miniature bipin	2632
+GE	F28WT5/865/HL/ECO	linear		28	6690	48		85	miniature bipin	2576
+Westinghouse	7030	linear		28	5000	48		80.5	miniature bipin	2640.12
+Energy Wiser	F28T5/865	linear		28	6500	48		80.3	miniature bipin	2469.04
+GE	F96T8/SPX35/HO*	linear		84.9	3360	96		82.7		8821.11
+GE	F96T8/SPX41/HO*	linear		85	3928	96		81		8874
+GE	F96T12/HL41/HO/WM	linear		94.51	3969	96		81.2		9110.764
+Philips	F96T8/TL841/HO PLUS*	linear		85	3928	96		81		8874
+Philips	F96T8/TL835/HO PLUS*	linear		84.9	3360	96		82.7		8821.11
+SYLVANIA	22204	linear		86	3273.5	96		83.6		8557
+SYLVANIA	22207; 27705	linear		59	3890	96		80.9		5787.9
+SYLVANIA	22206	linear		86	3290	96		84.2		8152.8
+SYLVANIA	22205	linear		86	3890	96		81.7		8135.6
+GE	F96T8/SPX41/HO	linear		86	4050	96		81		8514
+GE	F96T8/SPX35/HO	linear		86	3430	96		82		8514
+GE	F96T8/SP41/HO	linear		86	4020	96		77		8084
+GE	F96T8/SP35/HO	linear		86	3320	96		78		8084
+GE	F96T8/SP30/HO	linear		86	2890	96		79		8084
+GE	F96T12HL41/HO/WM	linear		95	4070	96		80		8930
+GE	F96T12HL30/HO/WM	linear		95	3070	96		81		8930
+GE	F96T8/SPX50/HO*	linear		84.9	4783	96		80.7		8668.29
+Philips	F96T8/TL850/HO PLUS*	linear		84.9	4783	96		80.7		8668.29
+GE	F96T8/SPX65/HO	linear		86	6060	96		76		8170
+GE	F96T8/SPX50/HO	linear		86	4870	96		79		8342
+GE	F96T12/SP65HO/WM	linear		95	6310	96		73		8436
+GE	F96T8/XL/SPX35/2*	linear		60.4	3378	96		83.2		6003.76
+GE	F96T8/XL/SPX41/2*	linear		60.6	3942	96		81.7		5993.34
+GE	F96T12XL/HL41/WM	linear		60.42	3955	96		82.1		6095.1696
+GE	F96T12XL/HL41/WM/UPC	linear		60.42	3955	96		82.1		6095.1696
+GE	F96T12/TV/GB/UPC	linear		60.42	3955	96		82.1		6095.1696
+Philips	F96T8/TL841 PLUS*	linear		60.6	3942	96		81.7		5993.34
+Philips	F96T8/TL835 PLUS*	linear		60.4	3378	96		83.2		6003.76
+SYLVANIA	22147	linear		59	2960	96		84.2		5900
+SYLVANIA	22100	linear		54	3380	96		84.3		5826.6
+SYLVANIA	22036	linear		59	2920	96		84.7		5823.3
+SYLVANIA	21423	linear		54	3330	96		84.2		5410.8
+SYLVANIA	22149; 27744	linear		59	3980	96		81.9		5876.4
+SYLVANIA	22034	linear		59	3350	96		84.7		6041.6
+SYLVANIA	22032	linear		59	3960	96		83.6		5817.4
+SYLVANIA	21424	linear		54	3940	96		82.8		5248.8
+OSRAM	22112	linear		59	3980	96		81.9		5876.4
+GE	F96T8/XL/SP41/WMP	linear		54	3970	96		83		5594.4
+GE	F96T8/XL/SP35/WMP	linear		54	3350	96		84		5599.8
+GE	F96T8/XL/SPP41	linear		59	4000	96		82		5723
+GE	F96T8/XL/SPP35	linear		59	3420	96		83		5723
+GE	F96T8/XL/SPX41	linear		59	3970	96		82		5841
+GE	F96T8/XL/SPX35	linear		59	3410	96		84		5841
+GE	F96T8/XL/SPX30	linear		59	2930	96		84		5841
+GE	F96T8/54W/SPP41	linear		54	3990	96		82		5238
+GE	F96T8/54W/SPP35	linear		54	3330	96		83		5238
+True-Value	F96T12/TV/GB	linear		60	4040	96		81		5880
+GE	F96T12XL/HL41/WM	linear		60	4040	96		81		5880
+GE	F96T12XL/HL35/WM	linear		60	3370	96		82		5880
+GE	F96T12/SPX35/WM/ECO	linear		60	3290	96		83		5838
+GE	F96T8/XL/SPX50/2*	linear		60.9	4944	96		79.7		5937.75
+GE	F96T12XL/HL65/WM	linear		60.4	6031	96		82.1		5718.672
+SYLVANIA	27759	linear		59	6240	96		77.7		5581.4
+OSRAM	27896	linear		59	6240	96		77.7		5581.4
+Premium Life	F96T8/WITEX8550/Premium LDI*	linear		60.9	4944	96		79.7		5937.75
+PQL	F96T8/SKY-Brite PLUS	linear		60.9	4944	96		79.7		5937.75
+Philips	F96T8/TL865*	linear		60.3	6199	96		80.4		5981.76
+Philips	F96T8/TL850 PLUS*	linear		60.9	4944	96		79.7		5937.75
+SYLVANIA	22347	linear		54	4800	96		79.9		5513.4
+SYLVANIA	22174	linear		59	4750	96		82.8		5693.5
+GE	F96T8/XL/SP65WMP	linear		54	6220	96		75		5400
+GE	F96T8/XL/SP50WMP	linear		54	4960	96		80		5292
+GE	F96T8/XL/SPP50	linear		59	4930	96		79		5723
+GE	F96T8/XL/SPX50	linear		59	4920	96		80		5841
+GE	F96T12XL/HL50/WM	linear		60	4840	96		80		5880
+GE	F96T12XL/HL65/WM	linear		60	6450	96		76		5700
+Philips	43A19/EV/NTL/120*			42.53				97.8		
+Ecosmart	EcoSmart 43W A19 120V NTL*			42.53				97.8		
+Up & Up	Q29A/W/4/TAR			28.39				99.75		
+Up & Up	Q43A/W/4/TAR			42.05				99.7		
+Do it Best	53A19/SW/DIB/MS 120V			52.3				99.5		
+Do it Best	72A19/SW/DIB 120V			71.52				99.9		
+Do it Best	43A19/SW/DIB 120V			42.5				99.6		
+Ecosmart	EcoSmart 72W A19 120V CL*			71.52				99.9		
+Ecosmart	EcoSmart 72W A19 120V SW*			71.52				99.9		
+Ecosmart	EcoSmart 72W A19 120V NTL*			71				98.1		
+Ecosmart	EcoSmart 43W A19 120V SW*			42.5				99.6		
+Ecosmart	EcoSmart 29W A19 120V SW*			28.26				99.6		
+Philips	72/A19/MS/120*			71.2				99.3		
+Philips	72/A19/120 SW			71.52				99.9		
+Philips	72/A19/NTL/120V			71				98.1		
+Philips	53_A19_MS_120V_850lm			52				99.3		
+Philips	53W_A19_MS_120 1000 hour*			52.3				99.5		
+Philips	43A19/EV/120V CL*			42.5				99.6		
+Philips	43A19/EV/120V SW*			42.5				99.6		
+Philips	29A19/120 SW*			28.26				99.6		
+Control	72A/H/MSP CB			71.1				99.1		
+DG Home	72A/H/MSP DG			71.1				99.1		
+EDL	72A/H/SW EDL			71.4				99.7		
+Home	72A/H/MSP RA			71.1				99.1		
+Smart Living	72A/H/MSP SL			71.1				99.1		
+GE	72A/H/MSP/XSW			71.1				99.1		
+GE	72A/H/CL			71.4				99.7		
+GE	72A/H/RVL CL			71				82.7		
+GE	72A/H/MSP/LL50			71.2				99.2		
+GE	72A/H/MSP/HL			71.6				99.5		
+HOME	72A/H/CL RA			71.4				99.7		
+GE	72A/H/MSP/2X/USW			71.7				99.1		
+GE	72A/H/SW			71.4				99.7		
+GE	72A/H/SW DG			71.4				99.7		
+Home Depot	52604			71.91				99.25		
+SYLVANIA	50044, 52582, 52636, 10457, 52588, 52600, 52630			71.62				99.98		
+Great Value	52618, 52690			71.85				99.21		
+SHOPRITE	52625			71.85				99.21		
+SuperValu	52616			71.85				99.21		
+Topco	52664			71.85				99.21		
+HEB	52713			71.62				99.98		
+Feit Electric	Q72A/W/DL/4			71.06				99.5		
+Up & Up	Q72A/W/4/TAR			70.87				99.79		
+Our Family	Q72A/W/4/OF			70.87				99.79		
+Living Solutions	Q72A/W/2/WGLS			70.87				99.79		
+Feit Electric	Q72A/W/2			70.87				99.79		
+Utilitech	LQ72A/W/2			70.87				99.79		
+Westinghouse	36835			71.96				99.7		
+Westinghouse	5105			71.42				99.8		
+Philips	53W/A19/EV/NTL/120*			51.16				98.1		
+Up & Up	Q53A/W/4/TAR			52.25				99.7		
+Do it Best	29A19/SW/DIB 120V			28.26				99.6		
+Ecosmart	EcoSmart 43WA19 120V CL*			42.5				99.6		
+Ecosmart	EcoSmart 29W A19 120V CL*			28.26				99.6		
+Philips	43F15/EV/CL 120*			42.3				100		
+Philips	72/A19/120 CL*			71.52				99.9		
+Philips	53W_A19_MS_120 DL*			52.1				99.4		
+Philips	43A19/MS/120*			42.4				99.2		
+Philips	29A19/MS/120*			28.2				99.3		
+Philips	29A19/120 CL*			28.26				99.6		
+CVS	72A/H/MSP CVS			71.1				99.1		
+EDL	72A/H/MSP EDL			71.1				99.1		
+GE	72A/H/MSP/USW			71.1				99.1		
+EDL	72A/H/LH CO EDL			71				96.5		
+GE	72A/H/RVL/LL50			71.2				83.4		
+GE	72A/H/RVL SW			71				82.7		
+EDL	72A/H/CL EDL			71.4				99.7		
+GE	72A/H/MSP/LL25			71.2				99.2		
+GE	72A/H/MSP/2X			71.7				99.1		
+GE	72A/H/MSP			71.1				99.1		
+Best Choice	72A/H/MSP BCH			71.1				99.1		
+Eiko	72A/CL/H-120V			70.81				99.9		
+SYLVANIA	52551, 16024, 17037			71.96				99.33		
+SYLVANIA	52258			71.91				99.25		
+Home Depot	52608			71.96				99.33		
+Great Value	52682			71.62				99.98		
+Hannaford	10455			71.85				99.21		
+SYLVANIA	52622, 19010, 50006, 52633, 52612, 52580, 52670, 52669, 17041, 52258			71.85				99.21		
+Home Depot	58295, 58293			71.62				99.98		
+Western Family	Q72A/W/4/WF			70.87				99.79		
+Signature Home	Q72A/W/4/SH			70.87				99.79		
+Ace	Q72A/W/4/ACE			70.87				99.79		
+Feit Electric	Q72A/W/4			70.87				99.79		
+Feit Electric	Q72A/CL/D/2			70.2				86.3		
+Feit Electric	Q72A/CL/2			70.54				99.72		
+Westinghouse	36801			71.42				99.8		
+Westinghouse	36877			71.42				99.8		
+Sun Light	SL-A15-CL-E26			40				99.8		
+DG HOME	442272B2			72				100		
+DG HOME	442253B2			53				100		
+DG HOME	442243B2			43				100		
+DG HOME	442229B2			29				100		
+Philips	100PAR38/IRC+/FLOOD25/120*	bulbous		99.5						2059.65
+Philips	100PAR38/IRC+/SP10/120*	bulbous		99.5						2059.65
+Philips	100PAR38/IRC+/WFL40/120*	bulbous		99.5						2059.65
+Philips	40PAR30S/IRC/FLOOD25/120*	bulbous		40.4						690.84
+Philips	40PAR30S/IRC/FL25/120*	bulbous		40.4						690.84
+Philips	40PAR38/IRC/FL25/120*	bulbous		40.3						733.46
+Philips	50PAR38/IRCE/FL25/120*	bulbous		50.3						930.55
+Philips	53PAR30L/EV/SP10/120*	bulbous		53.8						984.54
+Philips	53PAR30L/EV/FL25/120*	bulbous		53.8						984.54
+Philips	53PAR30L/EV/WFL40/120*	bulbous		53.8						984.54
+Philips	53PAR30S/IRC+/WFL40/120*	bulbous		54.1						946.75
+Philips	53PAR30S/IRC+/FL25/120*	bulbous		54.1						946.75
+Philips	53PAR30S/IRC+/SP10/120*	bulbous		54.1						946.75
+Philips	53PAR38/EV/FL25/120*	bulbous		53.7						1036.41
+Philips	53PAR38/IRC+/FL25/120*	bulbous		53.7						1036.41
+Philips	55PAR30S/IRC+/WFL40/120*	bulbous		53.4						945.18
+Philips	55PAR30S/IRC+/FL25/120*	bulbous		53.4						945.18
+Philips	55PAR30S/IRC+/SP10/120*	bulbous		53.4						945.18
+Philips	55PAR38/IRC+/FL25/120*	bulbous		53.8						1054.48
+Philips	55PAR38/IRC+/WFL40/120*	bulbous		53.8						1054.48
+Philips	70PAR38/IRC/WFL40/120*	bulbous		71.1						1429.11
+Philips	70PAR38/IRC/EV/FL25/120*	bulbous		71.1						1429.11
+Philips	70PAR38/IRC/EV/SP10/120*	bulbous		71.1						1429.11
+Philips	70PAR38/IRC/FL25/120*	bulbous		71.1						1429.11
+Philips	70PAR38/IRC/FLOOD25/120*	bulbous		71.1						1429.11
+Philips	72PAR38/EV/FL25/120*	bulbous		73.3						1444.01
+Philips	83PAR38/IRC+/FL25/120*	bulbous		84.9						1748.94
+Philips	83PAR38/IRC+/WFL40/120*	bulbous		84.9						1748.94
+Philips	83PAR38/HAL/EV/FL25/120*	bulbous		84.9						1748.94
+Philips	53PAR30S/EV/FL25/120*	bulbous		54.1						946.75
+Philips	53PAR30S/EV/SP10/120*	bulbous		54.1						946.75
+Doit Best	72PAR38/EV/FL25/120*	bulbous		73.3						1444.01
+GE	70PAR HIR+ 3K SP8	bulbous		70						1379
+GE	75PARHIR+8KFL25	bulbous		75						1447.5
+GE	75PARHIR+8KSP10	bulbous		75						1447.5
+GE	80PARHIR+3KF25	bulbous		80						1568
+GE	80PARHIR+3KS10	bulbous		80						1568
+GE	83PAR/HIR+/FL25	bulbous		83						1909
+GE	83PAR/HIR+/SP10	bulbous		83						1909
+GE	45PAR/HIR+/FL25	bulbous		45						765
+GE	45PAR/HIR+/SP10	bulbous		45						765
+GE	48PAR/HIR+/FL25	bulbous		48						864
+GE	48PAR/HIR+/SP10	bulbous		48						864
+GE	48PAR30L/HIR+/FL	bulbous		48						825.6
+GE	48PAR30L/HIR+/SP	bulbous		48						825.6
+GE	48PAR30HIR+/FL30	bulbous		48						864
+GE	48PAR30HIR+/NFL	bulbous		48						864
+GE	48PAR30HIR+/SP10	bulbous		48						864
+GE	50PARHIR+3KFL25	bulbous		50						920
+GE	50PARHIR+3KSP10	bulbous		50						920
+GE	53PARHIR+XL/FL25	bulbous		53						927.5
+GE	53PARHIR+XL/SP10	bulbous		53						927.5
+GE	55PAR/HIR+/FL25	bulbous		55						1017.5
+GE	55PAR/HIR+/WFL	bulbous		55						1017.5
+GE	55PAR/HIR+/SP10	bulbous		55						1017.5
+GE	90PARH1500FL25	bulbous		90						1881
+GE	60PAR/HIR+/FL25	bulbous		60						1182
+GE	90PARH1500SP10	bulbous		90						1881
+GE	60PAR/HIR+/SP10	bulbous		60						1182
+GE	60PARH1500FL	bulbous		60						1146
+Westpointe	90PARH1500FL25 TV	bulbous		90						1881
+GE	90PARHIR+3KFL25	bulbous		90						1872
+GE	90PARHIR+3KSP10	bulbous		90						1872
+Ace	60PARH1500FL25 ACE	bulbous		60						1146
+GE	60PARH1500FL25	bulbous		60						1146
+GE	60PARH1500SP10	bulbous		60						1146
+Westpointe	60PARH1500FL25 TV	bulbous		60						1146
+GE	67PAR/HIR+/FL25	bulbous		67						1326.6
+GE	67PAR/HIR+/SP10	bulbous		67						1326.6
+GE	70PAR HIR+ 3K FL25	bulbous		70						1379
+GE	70PAR HIR+ 3K SP10	bulbous		70						1379
+SYLVANIA	16747; 16748; 16749; 16750; 16751; 16639; 16639	bulbous		80						1584
+SYLVANIA	16737; 16738; 16739; 16740	bulbous		60						1092
+SYLVANIA	16582; 16583; 16734; 16735	bulbous		50						860
+SYLVANIA	16603; 16604	bulbous		60						1086
+SYLVANIA	16151; 16152	bulbous		50						875
+SYLVANIA	16128; 16127; 16129	bulbous		60						1104
+SYLVANIA	16737; 16738; 16739; 16740	bulbous		60						1092
+Domestix	16666	bulbous		70						1351
+GREAT VALUE	16694	bulbous		70						1351
+GREAT VALUE	16695	bulbous		80						1584
+SYLVANIA	55157;55158	bulbous		90						1809
+SYLVANIA	16601; 16602	bulbous		50						860
+SYLVANIA	16565; 16566; 16567	bulbous		50						860
+SYLVANIA	16137; 16138; 16124; 16125; 16126	bulbous		50						900
+SYLVANIA	16166; 16167; 16168; 16169; 16170; 16173; 16131	bulbous		60						1074
+SYLVANIA	16590; 16591; 16592; 16636; 16635; 16742; 16743; 16744; 16745; 16746	bulbous		70						1351
+SYLVANIA	16584; 16585; 16586; 16587; 14468; 16632	bulbous		60						1074
+SYLVANIA	52385	bulbous		80						1584
+SYLVANIA	16558; 16557; 16559; 16560; 16561; 16622; 16623	bulbous		60						1110
+SYLVANIA	16139; 16140; 16142; 16632	bulbous		60						1080
+Eiko	70PAR38/H/WFL-120V	bulbous		70						1428
+Eiko	70PAR38/H/SP-120V	bulbous		70						1428
+Eiko	70PAR38/H/FL-120V	bulbous		70						1428
+Eiko	60PAR38/H/WFL-120V	bulbous		60						1108.8
+Eiko	60PAR38/H/SP-120V	bulbous		60						1108.8
+Eiko	60PAR38/H/FL-120V	bulbous		60						1108.8
+Eiko	60PAR30LN/H/SP-120V	bulbous		60						1159.8
+Eiko	60PAR30LN/H/NFL-120V	bulbous		60						1159.8
+Eiko	60PAR30LN/H/FL-120V	bulbous		60						1159.8
+Eiko	60PAR30/H/SP-120V	bulbous		60						1155.6
+Eiko	60PAR30/H/NFL-120V	bulbous		60						1155.6
+Eiko	60PAR30/H/FL-120V	bulbous		60						1155.6
+Eiko	IR71PAR38/SP	bulbous		71						1476.8
+Eiko	IR71PAR38/FL	bulbous		71						1476.8
+Eiko	IR53PAR38/FL	bulbous		53						1109.29
+Eiko	IR53PAR30LN/WFL	bulbous		53						1119.36
+Eiko	IR53PAR30LN/SP	bulbous		53						1119.36
+Eiko	IR53PAR30LN/NFL	bulbous		53						1119.36
+Eiko	IR53PAR30/SP	bulbous		53						1160.17
+Eiko	IR53PAR30/NFL	bulbous		53						1160.17
+Eiko	IR53PAR30/FL	bulbous		53						1160.17
+Eiko	75PAR38/H/NSP-130V	bulbous		75						1059
+Eiko	65PAR38/H/FL-120V	bulbous		65						902.85
+Eiko	IR53PAR38/SP	bulbous		53						1109.29
+Eiko	60PAR38/H/WFL-130V	bulbous		60						817.8
+Enviro-Lume	92033			43						712.94
+Enviro-Lume	96041			53						1134.73
+Enviro-Lume	92057			70						1311.8
+Enviro-Lume IR	96057			53						1050.99
+Enviro-Lume	92041			60						1113
+Enviro-Lume	92049			60						1110
+Feit Electric	85PAR38/QFL/ES	bulbous		86						1788.8
+Ace	85PAR38/QFL/2/ACE	bulbous		86						1788.8
+Western Family	70PAR38/QFL/WF(F)	bulbous		70.91						1457.9096
+Feit Electric	70PAR38/QFL/ES/2(F)	bulbous		70.91						1457.9096
+Feit Electric	70PAR38/QFL/ES(F)	bulbous		70.91						1457.9096
+Ace	70PAR38/QFL/2/ACE	bulbous		70.91						1457.9096
+Western Family	70PAR38/QFL/WF	bulbous		70						1379
+Feit Electric	70PAR38/QFL/ES/2	bulbous		70						1379
+Feit Electric	70PAR38/QFL/ES	bulbous		70						1379
+Ace	55PAR38/QFL/2/ACE	bulbous		56						1036
+Feit Electric	55PAR38/QFL/ES/2	bulbous		56						1036
+Feit Electric	55PAR38/QFL/ES	bulbous		56						1036
+Feit Electric	55PAR30/S/QFL/ES	bulbous		55						1006.5
+Feit Electric	55PAR30/L/QFL/ES/2	bulbous		56						996.8
+Feit Electric	55PAR30/L/QFL/ES	bulbous		56						996.8
+Westinghouse	36861			55						996.05
+Westinghouse	3683600			70						1311.8
+Westinghouse	3683700			70						1330
+Westinghouse	3685500			70						1330
+Westinghouse	3683800			60						1084.2
+Westinghouse	3683900			60						1083.6
+Westinghouse	3684100			60						1110
+Westinghouse	3685700			60						1110
+Westinghouse	3684200			60						1182.6
+Westinghouse	3685400			60						1182.6
+Westinghouse	3684500			60						1113
+Westinghouse	3684600			60						1158
+Westinghouse	3685900			70						1311.8
+Westinghouse	36836			70						1311.8
+Westinghouse	36837			70						1330
+Westinghouse	36855			70						1330
+Westinghouse	36838			60						1084.2
+Westinghouse	36839			60						1083.6
+Westinghouse	36841			60						1110
+Westinghouse	36857			60						1110
+Westinghouse	36842			60						1182.6
+Westinghouse	36854			60						1182.6
+Westinghouse	36845			60						1113
+Westinghouse	36846			60						1158
+Westinghouse	36859			70						1311.8
+Bulbrite	H60PAR30FL/ECO	bulbous		60						1103.4
+Bulbrite	H60PAR30FL/L/ECO	bulbous		60						1132.2
+Bulbrite	H60PAR38FL/ECO	bulbous		60						1108.8
+Bulbrite	H70PAR38FL/ECO	bulbous		70						1343.3
+Bulbrite	H60PAR30SP/ECO	bulbous		60						1117.2
+Bulbrite	H60PAR30WF/ECO	bulbous		60						1117.2
+Bulbrite	H60PAR30SP/L/ECO	bulbous		60						1082.4
+Bulbrite	H60PAR30WF/L/ECO	bulbous		60						1082.4
+Bulbrite	H60PAR38SP/ECO	bulbous		60						1075.2
+Bulbrite	H60PAR38WF/ECO	bulbous		60						1075.2
+Bulbrite	H70PAR38SP/ECO	bulbous		70						1306.9
+Bulbrite	H70PAR38WF/ECO	bulbous		70						1306.9
+Bulbrite	H60PAR30SP/ECO/2PK	bulbous		60						1117.2
+Bulbrite	H70PAR38SP/ECO/2PK	bulbous		70						1306.9

@@ -729,6 +729,7 @@ class Room: Audit {
                     firstChar = Int(String(firstChar) + (someString?[1])!)!
                 }
             }
+            print(firstChar)
             
             if firstChar <= 4 || firstChar >= 11 {
                 let str1 = row["elec_intvl_end_dttm"]?.components(separatedBy: " ")[1]
@@ -737,15 +738,16 @@ class Room: Audit {
                     if let digit = Int((someString?[1])!) {
                         firstChar = Int(String(firstChar) + (someString?[1])!)!
                     }
-                } else {
-                    if firstTimeChar >= 8 && firstTimeChar < 21 {
-                        let a = hour_data["Winter-Part-Peak"]
-                        hour_data["Winter-Part-Peak"] = a! + Double(row["usgAmount"]!)!
-                    } else {
-                        let a = hour_data["Winter-Off-Peak"]
-                        hour_data["Winter-Off-Peak"] = a! + Double(row["usgAmount"]!)!
-                    }
                 }
+                print(firstTimeChar)
+                if firstTimeChar >= 8 && firstTimeChar < 21 {
+                    let a = hour_data["Winter-Part-Peak"]
+                    hour_data["Winter-Part-Peak"] = a! + Double(row["usgAmount"]!)!
+                } else {
+                    let a = hour_data["Winter-Off-Peak"]
+                    hour_data["Winter-Off-Peak"] = a! + Double(row["usgAmount"]!)!
+                }
+                
                 
             } else {
                 var str = row[""]
@@ -755,18 +757,18 @@ class Room: Audit {
                     if let digit = Int((someString?[1])!) {
                         firstChar = Int(String(firstChar) + (someString?[1])!)!
                     }
-                } else {
-                    if firstTimeChar! >= 12 && firstTimeChar! < 18 {
-                        let a = hour_data["Summer-On-Peak"]
-                        hour_data["Summer-On-Peak"] = a! + Double(row["usgAmount"]!)!
-                    } else if (firstTimeChar! >= 8 && firstTimeChar! < 12) || (firstTimeChar! >= 18 && firstTimeChar! < 21){
-                        let a = hour_data["Summer-Part-Peak"]
-                        hour_data["Summer-Part-Peak"] = a! + Double(row["usgAmount"]!)!
-                    } else {
-                        let a = hour_data["Summer-Off-Peak"]
-                        hour_data["Summer-Off-Peak"] = a! + Double(row["usgAmount"]!)!
-                    }
                 }
+                if firstTimeChar! >= 12 && firstTimeChar! < 18 {
+                    let a = hour_data["Summer-On-Peak"]
+                    hour_data["Summer-On-Peak"] = a! + Double(row["usgAmount"]!)!
+                } else if (firstTimeChar! >= 8 && firstTimeChar! < 12) || (firstTimeChar! >= 18 && firstTimeChar! < 21){
+                    let a = hour_data["Summer-Part-Peak"]
+                    hour_data["Summer-Part-Peak"] = a! + Double(row["usgAmount"]!)!
+                } else {
+                    let a = hour_data["Summer-Off-Peak"]
+                    hour_data["Summer-Off-Peak"] = a! + Double(row["usgAmount"]!)!
+                }
+                
             }
         }
      
@@ -823,9 +825,16 @@ class Room: Audit {
         
         var month = 0
         
+        var found = false
+        
         //Wil: row is a string, you can't index into it with a string
         for row in rows! {
             //get to the first month
+            if row[0][0] != "0" && !found {
+                continue
+            }
+            found = true
+            
             var running_month_total = 0.0
             
             if daily_energy_usage <= 5.0 {
