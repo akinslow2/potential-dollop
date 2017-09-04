@@ -92,7 +92,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpo-W5-r2q">
-                                <rect key="frame" x="20" y="404" width="33" height="20.333333333333314"/>
+                                <rect key="frame" x="20" y="404" width="33" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -116,7 +116,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Loe-Tx-PON">
-                                <rect key="frame" x="22" y="490" width="374" height="30"/>
+                                <rect key="frame" x="22" y="491" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -163,7 +163,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91E-gE-DCh">
-                                <rect key="frame" x="20" y="432" width="379" height="50"/>
+                                <rect key="frame" x="20" y="433" width="379" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="379" id="e6E-Ai-V40"/>
                                     <constraint firstAttribute="height" constant="50" id="rSm-iV-GeK"/>
@@ -173,7 +173,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O96-1F-bol">
-                                <rect key="frame" x="357" y="528" width="37" height="30"/>
+                                <rect key="frame" x="357" y="529" width="37" height="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="donePressed:" destination="6Mw-Im-Dbh" eventType="touchUpInside" id="tk6-53-LVp"/>
@@ -550,7 +550,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Format: Street City State Year (no spaces)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgx-18-wOD">
-                                <rect key="frame" x="20" y="230" width="271.66666666666669" height="17"/>
+                                <rect key="frame" x="20" y="230" width="272" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -575,6 +575,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9v-zX-KIO">
+                                <rect key="frame" x="179" y="294" width="57" height="30"/>
+                                <state key="normal" title="Retrieve"/>
+                                <connections>
+                                    <action selector="retrievePressed:" destination="g3p-vH-O3d" eventType="touchUpInside" id="LCt-97-mfC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -587,9 +594,11 @@
                             <constraint firstItem="ty6-CZ-4jM" firstAttribute="leading" secondItem="Jar-zT-EUK" secondAttribute="leadingMargin" id="NeW-N3-fLG"/>
                             <constraint firstItem="kiF-X8-VxT" firstAttribute="top" secondItem="mgx-18-wOD" secondAttribute="bottom" constant="9.6699999999999999" id="XbK-as-Pm6"/>
                             <constraint firstItem="mgx-18-wOD" firstAttribute="leading" secondItem="Jar-zT-EUK" secondAttribute="leadingMargin" id="ZS4-rk-n9e"/>
+                            <constraint firstItem="s9v-zX-KIO" firstAttribute="centerX" secondItem="Jar-zT-EUK" secondAttribute="centerX" id="h07-cU-Yl5"/>
                             <constraint firstItem="mgx-18-wOD" firstAttribute="top" secondItem="pdK-tC-niJ" secondAttribute="bottom" constant="16.670000000000002" id="hXq-zd-ACa"/>
                             <constraint firstItem="kiF-X8-VxT" firstAttribute="trailing" secondItem="Jar-zT-EUK" secondAttribute="trailingMargin" id="l0o-YB-Yub"/>
                             <constraint firstItem="pdK-tC-niJ" firstAttribute="leading" secondItem="Jar-zT-EUK" secondAttribute="leadingMargin" id="q3L-Oj-Z4b"/>
+                            <constraint firstItem="s9v-zX-KIO" firstAttribute="top" secondItem="kiF-X8-VxT" secondAttribute="bottom" constant="8" id="xI9-gH-WpX"/>
                             <constraint firstItem="9F8-U2-mHU" firstAttribute="centerX" secondItem="Jar-zT-EUK" secondAttribute="centerX" id="yfZ-pt-nPT"/>
                         </constraints>
                     </view>
