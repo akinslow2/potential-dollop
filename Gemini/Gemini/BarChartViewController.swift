@@ -4,6 +4,7 @@
 //
 //  Created by Jordan Rosen-Kaplan on 9/3/17.
 //  Copyright © 2017 Jordan Rosen-Kaplan. All rights reserved.
+//  Taken from StackOverflow
 //
 
 import UIKit
@@ -13,30 +14,49 @@ import Foundation
 class BarChartViewController: UIViewController {
     
     @IBOutlet weak var barChartView: BarChartView!
+    let categories = ["Actual", "Theoretical"]
+    var cost = [10.0, 4.0]
     
+    /*
+     
+     Function: donePressed
+     --------------------------------
+     Saves audit data when done looking at graph
+     
+     SEGUE~ to ViewController
+     
+     */
+    @IBAction func donePressed(_ sender: Any) {
+        
+        audit.save_data()
+        
+    }
+    
+    /*
+     
+     Function: didReceiveMemoryWarning
+     --------------------------------
+     Memory warning. Should clear storage here.
+     
+     */
     override func didReceiveMemoryWarning() {
+        
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    
-    
-    let categories = ["Actual", "Ideal", "Theoretical"]
-    var cost = [0.0, 0.0, 0.0]
-    
-    func ideal_cost() -> Double {
-        
-        //let task = Pro
-        
-        return 0.0
         
     }
-    
-    
-    
+
+
+    /*
+     
+     Function: viewDidLoad
+     --------------------------------
+     Loads the view and sets up the Bar Chart View
+     
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
         barChartView.delegate = self as? ChartViewDelegate
         barChartView.noDataText = "You need to provide data for the chart."
         barChartView.chartDescription?.text = "sales vs bought "
@@ -73,6 +93,13 @@ class BarChartViewController: UIViewController {
         setChart()
     }
     
+    /*
+     
+     Function: viewDidLoad
+     --------------------------------
+     Loads data and presents it in the bar chart view
+     
+     */
     func setChart() {
         barChartView.noDataText = "You need to provide data for the chart."
         var dataEntries: [BarChartDataEntry] = []
@@ -93,7 +120,6 @@ class BarChartViewController: UIViewController {
         
         let chartData = BarChartData(dataSets: dataSets)
         
-        
         barChartView.data = chartData
         
         //background color
@@ -101,7 +127,6 @@ class BarChartViewController: UIViewController {
         
         //chart animation
         barChartView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5, easingOption: .linear)
-        
         
     }
 }

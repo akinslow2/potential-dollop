@@ -47,8 +47,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
             audit.outputs["filename"] = textField.text!
             
-            
-            
             //Reload old inputs if they exist
         
             performSegue(withIdentifier: "toPreaudit", sender: nil)
@@ -57,6 +55,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    
+    /*
+     
+     Function: retrievePressed
+     -----------------------------
+     Loads old values to dicttionary, audit.outputs
+     
+     */
     @IBAction func retrievePressed(_ sender: Any) {
         
         if (textField.text?.isEmpty)! {

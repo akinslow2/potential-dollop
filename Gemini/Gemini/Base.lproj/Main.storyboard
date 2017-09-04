@@ -437,6 +437,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="439-e4-tu5"/>
                         <barButtonItem systemItem="done" id="fPx-eT-b1b">
                             <connections>
+                                <action selector="donePressed:" destination="FNo-aQ-wl4" id="HJe-CB-MhW"/>
                                 <segue destination="g3p-vH-O3d" kind="show" id="rq6-dg-IAi"/>
                             </connections>
                         </barButtonItem>

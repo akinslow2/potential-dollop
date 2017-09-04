@@ -22,7 +22,7 @@ class TableViewController: UITableViewController {
      
      Function: viewDidLoad
      -------------------------
-     Loads view and calls define_preaudit_inputs()
+     Loads view and hides navigation bar
      
      
      */

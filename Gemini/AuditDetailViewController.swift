@@ -13,7 +13,7 @@ class AuditDetailViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var nameField: UITextField!
     var items = ["Lighting zone", "HVAC zone", "Room"]
-    var selectedValue = "Lighting zone"
+    var selectedValue = "Lighting zone" //default
 
     /*
      

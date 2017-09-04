@@ -12,14 +12,22 @@ var room: Room?
 
 class AuditTableViewController: UITableViewController {
     
+    @IBOutlet var table: UITableView!
     
+    /*
+     
+     Function: saveAudit
+     --------------------------------
+     Saves audit data when done looking at graph
+     
+     SEGUE~ to ViewController
+     
+     */
     @IBAction func saveAudit(_ sender: Any) {
         
         audit.save_data()
                 
     }
-    
-    @IBOutlet var table: UITableView!
     
     /*
      

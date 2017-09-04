@@ -15,6 +15,16 @@ class SelectingFeatureViewController: UIViewController, UIPickerViewDelegate, UI
     var filledRows = Array<Int>()
     var space_type = ""
     
+    /*
+     
+     Function: addFeature
+     ------------------------------------
+     
+     Checks to see that selectedFeature is not empty and then
+     
+     SEGUE~ to AuditInfoViewController
+     
+     */
     @IBAction func addFeature(_ sender: Any) {
         
         if selectedFeature == "" {
@@ -58,36 +68,83 @@ class SelectingFeatureViewController: UIViewController, UIPickerViewDelegate, UI
         
     }
 
+    /*
+     
+     Function: didReceiveMemoryWarning
+     --------------------------------
+     Memory warning. Should clear storage here.
+     
+     */
     override func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
         
     }
     
+    /*
+     
+     Function: numberOfComponents
+     ------------------------------
+     Essentially returns the number of columns in the
+     picker view.
+     
+     */
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         
         return 1
         
     }
     
+    /*
+     
+     Function: constructor, numberOfRowsInComponent
+     ---------------------------------------------------
+     Sets the number of rows in each column in the picker
+     view. Returns the size of the Array relevant to the
+     selected category.
+     
+     */
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
         return feature_references.count
         
     }
     
+    /*
+     
+     Function: constructor, titleForRow
+     ---------------------------------------
+     Indexes through the corresponding Array
+     and sets the titles sequentially
+     
+     */
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         return Array(feature_references.keys)[row]
         
     }
     
+    /*
+     
+     Function: didSelectRow
+     -------------------------------------
+     Saves the value of the component selected in selectedFeature
+ 
+    */
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         selectedFeature = Array(feature_references.keys)[row]
         
     }
 
+    /*
+     
+     Function: prepare for segue
+     ------------------------------------
+     Sets filledRows, space_type, and selectedFeature
+     IF going to AuditInfoViewController
+     
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toSpecs" {

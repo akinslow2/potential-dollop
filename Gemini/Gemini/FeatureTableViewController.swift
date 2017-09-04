@@ -16,6 +16,16 @@ class FeatureTableViewController: UITableViewController {
     var filledRows = Array<Int>()
     var curr_row = -1
     
+    
+    /*
+     
+     Function: saveRoom
+     -----------------------
+     If all fields are completed, saves room
+     
+     SEGUE~ to AuditTableViewController
+     
+     */
     @IBAction func saveRoom(_ sender: Any) {
         
         if filledRows.count < (room?.general_values_keys.count)! {
@@ -70,6 +80,14 @@ class FeatureTableViewController: UITableViewController {
     }
 
 
+    /*
+     
+     Function: viewDidLoad
+     -------------------------
+     Loads view, hides back button
+     
+     
+     */
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -78,12 +96,26 @@ class FeatureTableViewController: UITableViewController {
         
     }
 
+    /*
+     
+     Function: didReceiveMemoryWarning
+     --------------------------------
+     Memory warning. Should clear storage here.
+     
+     */
     override func didReceiveMemoryWarning() {
         
         super.didReceiveMemoryWarning()
         
     }
     
+    /*
+     
+     Function: viewDidAppear
+     --------------------------------
+     Updates table data.
+     
+     */
     override func viewDidAppear(_ animated: Bool) {
         
         table.reloadData()
@@ -166,7 +198,16 @@ class FeatureTableViewController: UITableViewController {
      
      Function: prepare for segue
      ------------------------------------
-     Modifies Zone Specs View Controller
+     Depends where it's going:
+     
+     IF ZoneSpecsViewController
+     THEN sets curr_spec, filledRows, curr_row, and space_type
+     
+     ELSE IF AuditInfoViewController
+     THEN sets feature, filledRows
+     
+     ELSE IF SelectingFeatureViewController
+     THEN sets space_type and filledRows
      
      */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
