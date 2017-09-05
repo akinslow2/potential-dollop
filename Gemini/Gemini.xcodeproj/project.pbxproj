@@ -43,6 +43,9 @@
 		2AE4845A1F5BBD64002E6EC7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE484501F5BBD64002E6EC7 /* SystemConfiguration.framework */; };
 		2AE4845D1F5BBD91002E6EC7 /* ParseBridgingHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE4845C1F5BBD91002E6EC7 /* ParseBridgingHeader.m */; };
 		650168BA0A65395019F4B276 /* Pods_Gemini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326F96D68821862FD9F6F472 /* Pods_Gemini.framework */; };
+		70B0554B1F5D402300CF3F6D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B0554A1F5D402300CF3F6D /* CoreLocation.framework */; };
+		70B0554F1F5D40AF00CF3F6D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B0554D1F5D40AF00CF3F6D /* Bolts.framework */; };
+		70B055501F5D40AF00CF3F6D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B0554E1F5D40AF00CF3F6D /* Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +89,9 @@
 		2AE4845B1F5BBD91002E6EC7 /* Gemini-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gemini-Bridging-Header.h"; sourceTree = "<group>"; };
 		2AE4845C1F5BBD91002E6EC7 /* ParseBridgingHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseBridgingHeader.m; sourceTree = "<group>"; };
 		326F96D68821862FD9F6F472 /* Pods_Gemini.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gemini.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70B0554A1F5D402300CF3F6D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		70B0554D1F5D40AF00CF3F6D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		70B0554E1F5D40AF00CF3F6D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		AD9B1B5C7D9FDB2BE69FBC6E /* Pods-Gemini.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gemini.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gemini/Pods-Gemini.release.xcconfig"; sourceTree = "<group>"; };
 		C85EA35E6E46F92D2B9BBAC8 /* Pods-Gemini.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gemini.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gemini/Pods-Gemini.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,10 +101,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70B0554F1F5D40AF00CF3F6D /* Bolts.framework in Frameworks */,
+				70B0554B1F5D402300CF3F6D /* CoreLocation.framework in Frameworks */,
 				2A8005401F5C95B4009C080D /* Foundation.framework in Frameworks */,
 				2AE484511F5BBD64002E6EC7 /* AudioToolbox.framework in Frameworks */,
 				2AE484521F5BBD64002E6EC7 /* CFNetwork.framework in Frameworks */,
 				2AE484531F5BBD64002E6EC7 /* CoreGraphics.framework in Frameworks */,
+				70B055501F5D40AF00CF3F6D /* Parse.framework in Frameworks */,
 				2AE484541F5BBD64002E6EC7 /* libsqlite3.tbd in Frameworks */,
 				2AE484551F5BBD64002E6EC7 /* libz.tbd in Frameworks */,
 				2AE484561F5BBD64002E6EC7 /* MobileCoreServices.framework in Frameworks */,
@@ -161,8 +170,19 @@
 				2A4B6EAA1F4BD2F700B1CD3B /* Gemini.xcdatamodeld */,
 				2AE4845C1F5BBD91002E6EC7 /* ParseBridgingHeader.m */,
 				2AE4845B1F5BBD91002E6EC7 /* Gemini-Bridging-Header.h */,
+				70B0554C1F5D40AF00CF3F6D /* Parse-macOS */,
 			);
 			path = Gemini;
+			sourceTree = "<group>";
+		};
+		70B0554C1F5D40AF00CF3F6D /* Parse-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				70B0554D1F5D40AF00CF3F6D /* Bolts.framework */,
+				70B0554E1F5D40AF00CF3F6D /* Parse.framework */,
+			);
+			name = "Parse-macOS";
+			path = "../Parse-macOS";
 			sourceTree = "<group>";
 		};
 		9C964B5CD60B713787CF8E5E /* Pods */ = {
@@ -177,6 +197,7 @@
 		CA2A0E1A2BDC2D25A7EB70DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				70B0554A1F5D402300CF3F6D /* CoreLocation.framework */,
 				2A80053F1F5C95B4009C080D /* Foundation.framework */,
 				2AE484471F5BBD64002E6EC7 /* AudioToolbox.framework */,
 				2AE484481F5BBD64002E6EC7 /* CFNetwork.framework */,
@@ -472,6 +493,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Parse-macOS",
+				);
 				INFOPLIST_FILE = Gemini/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -489,6 +514,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Parse-macOS",
+				);
 				INFOPLIST_FILE = Gemini/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
