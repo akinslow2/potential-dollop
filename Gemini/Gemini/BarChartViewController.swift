@@ -15,8 +15,19 @@ class BarChartViewController: UIViewController {
     
     @IBOutlet weak var barChartView: BarChartView!
     let categories = ["Actual", "Theoretical"]
-    var cost = [0.0, 0.0]
+    var cost = [10.0, 6.8]
     
+    /*
+     
+     Function: set_cost
+     --------------------------------
+     Loads the total cost based on 
+     SAMPLE INTERVAL DATA for now, and then
+     sets the values in cost[] to correspond 
+     with their labels (0 is current, 1 is
+     theoretical).
+     
+     */
     func set_cost() {
         
         cost[0] = (room?.total_cost())! / 52.0

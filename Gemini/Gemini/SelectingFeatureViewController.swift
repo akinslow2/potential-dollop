@@ -19,7 +19,6 @@ class SelectingFeatureViewController: UIViewController, UIPickerViewDelegate, UI
      
      Function: addFeature
      ------------------------------------
-     
      Checks to see that selectedFeature is not empty and then
      
      SEGUE~ to AuditInfoViewController

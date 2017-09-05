@@ -18,6 +18,14 @@ class Audit {
     var room_names = Array<String>()
     var audit_entry: PFObject?
     
+    /*
+     
+     Function: init
+     --------------------------------
+     Initializes an Audit object and sets audit_name
+     and filename according to the parameter.
+     
+     */
     init(audit_name_param: String) {
         
         audit_name = audit_name_param
@@ -26,6 +34,18 @@ class Audit {
         
     }
     
+    /*
+     
+     Function: set_name
+     --------------------------------
+     THIS FUNCTION MUST BE CALLED 
+     (BECAUSE WE ARE USING SINGLETONS THAT
+     ARE INSTANTIATED BEFORE THEY HAVE A NAME).
+     
+     Resets audit_name and filename according to the
+     parameter.
+     
+     */
     func set_name(audit_name_param: String) {
         
         audit_name = audit_name_param
@@ -34,7 +54,15 @@ class Audit {
         
     }
     
-    
+    /*
+     
+     Function: retrieve_data
+     --------------------------------
+     Queries the server for an entry that 
+     matches the audit_name variable, and if found, 
+     sets outputs equal to the rehydrated version.
+     
+     */
     func retrieve_data() {
         
         let query = PFQuery(className: "Audits")
@@ -49,10 +77,6 @@ class Audit {
                 
                 for object in objects! {
                     
-                    print(object["name"])
-                    print(self.audit_name)
-                    
-                    
                     if object["name"] as! String != self.audit_name {
                         
                         continue
@@ -60,8 +84,6 @@ class Audit {
                     } else {
                         
                         self.outputs = self.rehydrateOutputs(outputFileString: object["outputs"] as! String)
-                        
-                        print(self.outputs)
                         
                     }
                     
@@ -74,7 +96,14 @@ class Audit {
     }
     
     
-    
+    /*
+     
+     Function: save_data
+     --------------------------------
+     Saves outputs to the server 
+     AND CLEARS ALL VALUES
+     
+     */
     func save_data() {
         
         let auditObject = PFObject(className: "Audits")
@@ -96,6 +125,8 @@ class Audit {
             
         }
         
+        //Clears values!
+        
         outputs = Dictionary<String, String>()
         audit_name = ""
         filename = ""
@@ -103,12 +134,30 @@ class Audit {
         
     }
     
+    /*
+     
+     Function: add_room
+     --------------------------------
+     Adds a room to the list of all rooms
+     for the audit
+     
+     */
     func add_room(name: String) {
         
         room_names.append(name)
         
     }
     
+    /*
+     
+     Function: rehydrateOutputs
+     --------------------------------
+     Takes in a String that is a .description
+     output of a Dictionary<String, String> and formats
+     its elements in the same key value pairs as when it 
+     started
+     
+     */
     private func rehydrateOutputs(outputFileString: String) -> Dictionary<String, String> {
         
         let array = outputFileString.components(separatedBy: ", ")

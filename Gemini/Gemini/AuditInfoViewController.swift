@@ -221,6 +221,23 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    /*
+     
+     Function: searchForModel
+     --------------------------------
+     Checks to see that all necessary values are 
+     provided. 
+     
+     If so, checks if specific appliance exists in the reference
+     
+     If so, calls new_feature
+     
+     If not, either segues to ask for additional values or asks for them
+     on screen. 
+     
+     BUGGY
+     
+     */
     @IBAction func searchForModel(_ sender: Any) {
         
         if !(modelNumberTextField.text?.isEmpty)! && !(companyTextField.text?.isEmpty)! {
@@ -310,8 +327,6 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
                     
                 } else {
                     
-                    print("Hello")
-                    
                     performSegue(withIdentifier: "toExtra", sender: self)
                     
                 }
@@ -322,7 +337,15 @@ class AuditInfoViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    
+    /*
+     
+     Function: change_display
+     --------------------------------
+     Sets the display to unhidden in the case
+     that the given appliance was not found in 
+     the reference CSV.
+     
+     */
     func change_display() {
         
         productionLabel.isHidden = false

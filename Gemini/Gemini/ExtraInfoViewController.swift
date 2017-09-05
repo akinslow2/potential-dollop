@@ -87,6 +87,8 @@ class ExtraInfoViewController: UIViewController {
         
     }
     
+    // feature = value(index), value(index)...
+    
 //    convection= size2, capacity3, fuel type4
 //    ice maker = energy use rate5, ice harvest4, ice type3, machine type1
 //    freezer/fridge = total volume, product type, volume,
@@ -95,6 +97,19 @@ class ExtraInfoViewController: UIViewController {
 //    steam cookers = water use, production capacity, fuel type, pan capacity, steamer type
 //    griddle = fuel type, nominal width, surface area, single or double sided
     
+    
+    /*
+     
+     Function: donePressed
+     --------------------------------
+     Adds values to a dictionary, augments those
+     values to the room class, and 
+     
+     SEGUE~ to Feature Table View Controller
+     
+     BUGGY
+     
+     */
     @IBAction func donePressed(_ sender: Any) {
         
         var dict = Dictionary<String, String>()
@@ -107,7 +122,10 @@ class ExtraInfoViewController: UIViewController {
             
         } else if feature == "Ice Maker" {
             
-            //
+            dict["machine type"] = textField1.text
+            dict["ice type"] = textField2.text
+            dict["ice harvest"] = textField3.text
+            dict["energy use rate"] = textField4.text
             
         } else if feature.contains("fridge") || feature.contains("reezer") {
             
@@ -137,6 +155,14 @@ class ExtraInfoViewController: UIViewController {
         
     }
     
+    /*
+     
+     Function: viewDidLoad
+     --------------------------------
+     Loads view and hides all fields so they
+     can be unhidden as needed.
+     
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -155,11 +181,31 @@ class ExtraInfoViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    /*
+     
+     Function: didReceiveMemoryWarning
+     --------------------------------
+     Memory warning. Should clear storage here.
+     
+     */
     override func didReceiveMemoryWarning() {
+        
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
+    
+    /*
+     
+     Function: viewDidAppear
+     --------------------------------
+     This sets the values for the text fields depending
+     on what appliance is being entered (they all have different
+     requirements, which is what makes this so gross).
+     
+     BUGGY/Incomplete
+     
+     */
     override func viewDidAppear(_ animated: Bool) {
         
         var a = Array<String>()
@@ -171,6 +217,8 @@ class ExtraInfoViewController: UIViewController {
         var bIndex = -1
         var cIndex = -1
         var dIndex = -1
+        
+        //set index of desired value and text in labels
         
         if feature == "Convection Oven" {
             
@@ -232,6 +280,8 @@ class ExtraInfoViewController: UIViewController {
             //load appropriate entries
             
         }
+        
+        //gather values into array
         
         if aIndex != -1 {
             
@@ -318,6 +368,8 @@ class ExtraInfoViewController: UIViewController {
             
         }
         
+        //Set label text
+        
         var text = label1.text
         
         if !label1.isHidden {
@@ -344,10 +396,14 @@ class ExtraInfoViewController: UIViewController {
     }
     
     
-    
-    
-    
-    
+    /*
+     
+     Function: prepare
+     --------------------------------
+     This resets the values of each variable when naviagting
+     away from this view controller
+     
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "fromExtra" {
