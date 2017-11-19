@@ -996,6 +996,7 @@ class Room: Audit {
     
     private func calculate_all_peak_hours() -> Dictionary<String, Int> {
         //This gets the opening and closing hours
+        //Does not seem to allow for multiple operating hours in a day nor different operating hours each day
         var opening = audit.outputs["Operating Hours"]?.components(separatedBy: " ")[0]
         var closing = audit.outputs["Operating Hours"]?.components(separatedBy: " ")[1]
         
@@ -1008,13 +1009,17 @@ class Room: Audit {
         
         
         //Loops through all 24 hours, could be changed to loop through half-hours
+        //should be all half-hours
         for i in 1...24 {
             //If the hour i is not within the operating hours, skip it
+            //Should be i < closing_hour 
             if i <= opening_hour! || i > closing_hour! {
                 continue
             }
             
             //Find which Types of peaks this hours fits into
+            //The summer part-peak hours need to be 830 - 12 & 18 - 2130
+            //The winter part-peak hours need to be 830 - 2130
             if i >= 12 && i < 18 {
                 hour_data["Summer-On-Peak"]! += 1
             } else if (i >= 8 && i < 12) || (i >= 18 && i < 21){
@@ -1042,6 +1047,7 @@ class Room: Audit {
     * and then uses that to find the correct column for average_daily_usage. Then it adds the winter rate and the 
     * Public Purpose Program Surcharge.
     */
+    //Need to get an example of gas bill to make sure this is correct.
     private func calculate_winter_rate(gas_energy: Double) -> Double{
         //super estimation, 6 is to make it likely an overestimation
         var daily_energy_usage = gas_energy / 6
@@ -1063,6 +1069,7 @@ class Room: Audit {
             var running_month_total = 0.0
             
             //This finds the correct range for the daily-usage rate
+            //This is taking a month to be 30 days when in reality number of days differ month to month
             if daily_energy_usage <= 5.0 {
                 
                 running_month_total = Double(row[2])! * 30.0
@@ -1077,15 +1084,18 @@ class Room: Audit {
             }
             
             //This adds the winter_rate
+            //Should be row[14], summer is row[12] from the code.
+            //Also assumes under 4,000 therms which is the threshold (specific to PG&E) before the price rises
             running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row[8])!)
             
             //This adds the Public Purpose Program Surcharge
+            //Still assumes 30 days per month. 
             running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row[16])!)
 
             total_cost += running_month_total
             
             month = month + 1
-            
+            //Why for all 12 months? Needs to be 6 months, November (11) thru April (4)
             if month == 12 {
                 break
             }
@@ -1137,6 +1147,7 @@ class Room: Audit {
             }
             
             //This adds the summer_rate
+            //summer is row[12] from the data
             running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row[10])!)
             
             running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row[16])!)
