@@ -710,10 +710,13 @@ class Room: Audit {
         
         var summer_rate = calculate_summer_rate(gas_energy: gas_energy)
         
+        //Taking the average rates assumes no changes in operation for the ovens
+        //Dividing by 99976.1 assumes the gas is being measured in BTUs and we need it in therms
         var gas_cost = gas_energy / 99976.1 * (winter_rate + summer_rate) / 2
         
         
         //Calculates Summer and Winter Weekly Electric Cost
+        //fan energy rate is power output
         var summer = Double(peak_hour_schedule["Summer-On-Peak"]!) * fan_energy_rate * Double(pricing_chart["Summer-On-Peak"]!)
         summer += Double(peak_hour_schedule["Summer-Part-Peak"]!) * fan_energy_rate * Double(pricing_chart["Summer-Part-Peak"]!)
         summer += Double(peak_hour_schedule["Summer-Off-Peak"]!) * fan_energy_rate * Double(pricing_chart["Summer-Off-Peak"]!)
@@ -889,8 +892,9 @@ class Room: Audit {
     
     /* Function: total_cost
     * ---------------------
-    * This calculates the total_cost of all the energy used in the simple interval data csv. 
+    * This calculates the total_cost of all the energy used in the simple interval data csv from PG&E. 
     */
+    //Missing peak rates which is used in Time of Use (TOU) billing
     
     func total_cost() -> Double{
         var hour_data = read_in_hour_data()
@@ -910,6 +914,7 @@ class Room: Audit {
     * This method works through the simple_interval_data csv and finds all the energy that is used in each different
     * kind of bill peak (Peak, Part-Peak, Off-Peak) and stores it in a map, to be used in total_cost.
     * At the moment, this method assumes that every day is a weekday and non-holiday
+    * This is also specific to PG&E
     */
     
     private func read_in_hour_data() -> Dictionary<String, Double> {
@@ -919,7 +924,7 @@ class Room: Audit {
         
         //Loops through every row
         for row in rows! {
-            let someString = row["usg_dt"]
+            let someString = row["usg_dt"] //This is the column with day, year, and month
             var firstChar = Int((someString?[0])!)!
             if firstChar == 1 {
                 if let digit = Int((someString?[1])!) {
@@ -927,13 +932,14 @@ class Room: Audit {
                 }
             }
             
-            //This is the check if it's a winter month
+            //This is the check if it's a winter month which are between November (11) and April (4)
             if firstChar <= 4 || firstChar >= 11 {
                 //Find the time in the "elec_intvl_end_dttm" column
                 let str1 = row["elec_intvl_end_dttm"]?.components(separatedBy: " ")[1]
                 let firstTimeChar = Int((str1?[0])!)!
                 
                 //If the first number in the time is a 1 or 2, check if the hour is 2 digit
+                //In military time 0-24hrs
                 if  firstTimeChar == 1 || firstTimeChar == 2 {
                     if let digit = Int((someString?[1])!) {
                         firstChar = Int(String(firstChar) + (someString?[1])!)!
@@ -942,6 +948,7 @@ class Room: Audit {
                 
                 //Then checks to see which time the time falls under. This is the hard-coded time, but could be adjusted to 
                 //be based on a csv or formula
+                //needs to be 830 to 2130 
                 if firstTimeChar >= 8 && firstTimeChar < 21 {
                     let a = hour_data["Winter-Part-Peak"]
                     hour_data["Winter-Part-Peak"] = a! + Double(row["usgAmount"]!)!
@@ -963,6 +970,7 @@ class Room: Audit {
                 }
                 
                 //Similar to winter, but there are three different peaks
+                //Part-peak should be 830 - 12 & 18 - 2130
                 if firstTimeChar! >= 12 && firstTimeChar! < 18 {
                     let a = hour_data["Summer-On-Peak"]
                     hour_data["Summer-On-Peak"] = a! + Double(row["usgAmount"]!)!
