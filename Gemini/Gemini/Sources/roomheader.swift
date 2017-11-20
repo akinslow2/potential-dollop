@@ -32,6 +32,7 @@ class Room: Audit {
     //This dictionary maps from the optimal model number to its total energy cost (averaged weekly)
     var models_to_cost = Dictionary<String, Double>()
     
+    //In Android app all we need is plug-load and everything included in kitchen would be under that #Anthony
     var lighting = Array<Dictionary<String, String>>()
     var hvac = Array<Dictionary<String, String>>()
     var plug_load = Array<Dictionary<String, String>>()
@@ -44,7 +45,7 @@ class Room: Audit {
     var room_type = ""
     var curr_values = Dictionary<String, String>()
     
-    let lighting_specs = ["Space Type", "Measured Lux", "Area", "Units"]
+    let lighting_specs = ["Space Type", "Measured Lux", "Area", "Units"] //There are five space typye options located in column A of file Space Type which can be found in lighting folder of initial state #Anthony
     let hvac_specs = Array<String>()
     let room_specs_without_lighting = Array<String>()
     
@@ -146,13 +147,15 @@ class Room: Audit {
         
         let model_number = values["model_number"]!
         
-        let num_lamps = Int(values["num_lamps"]!)
+        let num_lamps = Int(values["num_lamps"]!) 
+        
+        //We also need a variable for number of ballasts #Anthony
         
         let test_hours = Int(values["test_hours"]!)
         
         let hours_on = Int(values["hours_on"]!)
         
-        let watts = fluorescent_lighting_watts(model_number: model_number)
+        let watts = fluorescent_lighting_watts(model_number: model_number) //This is not correct. Watts needs to be taken from a table. I will need to explain further on a call #Anthony
         
         let energy = total_energy_calculation_per_light(num_lamps: num_lamps!, test_hours: test_hours!, hours_on: hours_on!, watts: Float(watts))
         
@@ -173,11 +176,11 @@ class Room: Audit {
         
         let units_in_lumens = Bool(values["units_in_lumens"]!)
         
-        let space_type = space_type_conversion(space_type: values["space_type"]!)
+        let space_type = space_type_conversion(space_type: values["space_type"]!) //As previously mentioned should be a drop-down menu with 5 options.
         
         let area = Float(values["room-type"]!)
         
-        let room_type = values["room-type"]!
+        let room_type = values["room-type"]! //This is not needed for MVP #Anthony
         
         
         
@@ -191,11 +194,11 @@ class Room: Audit {
             
         }
 
-        let watts_usage_per_sqft = light_per_area(watts: total_watts, area: area!, room_type: room_type)
+        let watts_usage_per_sqft = light_per_area(watts: total_watts, area: area!, room_type: room_type) //Not needed for MVP #Anthony
         
         var new_dict = Dictionary<String, String>()
         
-        new_dict["watts_usage_per_sqft"] = String(watts_usage_per_sqft)
+        new_dict["watts_usage_per_sqft"] = String(watts_usage_per_sqft) //Not needed for MVP #Anthony
         
         new_dict["under_over_lighted"] = String(under_over_lighted)
 
@@ -216,7 +219,7 @@ class Room: Audit {
     func __add_kitchen_feature(values:Dictionary<String, String>) {
         let model_number = values["model_number"]!
         
-        let company = values["num_lamps"]!
+        let company = values["num_lamps"]! //Why is this num_lamps??? #Anthony
         
         let type = values["type"]!
         
@@ -403,6 +406,7 @@ class Room: Audit {
     * Replace the row[""] with the correct header name in the csv that corresponds to the parameter that must be held constant between models.
     * Then you will need to create a new find_energy_cost for the new appliance with the parameters needed for the energy cost calculations
     */
+    //The below options don't seem to be doing any calculations to find the best model. If not, I will need to explain what calcs should occur. #Anthony
     
     
     /* Griddles */
@@ -691,6 +695,8 @@ class Room: Audit {
      * To create new find energy cost method: Follow the format of the others and input the correct equation. Many times, the equation for a new
      * appliance will be the same as one already inputted and the equation can be reused.
      */
+    //Calculations are correct but the same variable total cost is used repeatedly. Does this mean I wil not be able to determine
+    //the energy costs of any individual appliance??? #Anthony
     
     
     /* Ovens except for combination ovens */
@@ -783,6 +789,7 @@ class Room: Audit {
         summer += Double(peak_hour_schedule["Summer-Part-Peak"]!) * hour_energy_use * Double(pricing_chart["Summer-Part-Peak"]!)
         summer += Double(peak_hour_schedule["Summer-Off-Peak"]!) * hour_energy_use * Double(pricing_chart["Summer-Off-Peak"]!)
         
+        //Winter is only part-peak and off-peak #Anthony
         var winter = Double(peak_hour_schedule["Winter-On-Peak"]!) * hour_energy_use * Double(pricing_chart["Winter-On-Peak"]!)
         winter += Double(peak_hour_schedule["Winter-Off-Peak"]!) * hour_energy_use * Double(pricing_chart["Winter-Off-Peak"]!)
         
@@ -801,18 +808,26 @@ class Room: Audit {
         
         var peak_hour_schedule = calculate_all_peak_hours()
         
-        //this is a place holder, because I do not know the equation
-        var hour_energy_use = 10.0
+        //this is a place holder, because I do not know the equation 184 days
+        var hour_energy_use = 10.0 //this should be a parameter requested #Anthony
+        //Also this runs 24/7 which means the hours can be constants specifically:
+        // summer-on-peak would be 6hrs-per-day*128days (because not during weekends or 3 holidays) to equal 768 hrs 
+        // summer-part-peak would be 7hrs-per-day*128 days (because not during weekends or 3 holidays) to equal 896 hrs
+        // summer-off-peak would be 11hrs-per-day*128 + 24hrs-per-day*60 days to equal 2,848 hrs #Anthony
         
         //Electric Cost:
         var summer = Double(peak_hour_schedule["Summer-On-Peak"]!) * hour_energy_use * Double(pricing_chart["Summer-On-Peak"]!)
         summer += Double(peak_hour_schedule["Summer-Part-Peak"]!) * hour_energy_use * Double(pricing_chart["Summer-Part-Peak"]!)
         summer += Double(peak_hour_schedule["Summer-Off-Peak"]!) * hour_energy_use * Double(pricing_chart["Summer-Off-Peak"]!)
         
+        //Winter should only have part-peak and off peak. #Anthony
+        //Because they are refrigerators the hours can be constant specifically:
+        //winter-part-peak would be 13hrs-per-day*124days (because not during weekends or 5 holidays) to equal 1,612 hrs
+        //winter-off-peak would be 11hrs-per-day*124days + 24hrs-per-day*57 days to equal 2,732 hrs #Anthony
         var winter = Double(peak_hour_schedule["Winter-On-Peak"]!) * hour_energy_use * Double(pricing_chart["Winter-On-Peak"]!)
         winter += Double(peak_hour_schedule["Winter-Off-Peak"]!) * hour_energy_use * Double(pricing_chart["Winter-Off-Peak"]!)
         
-        var total_electric = summer + winter
+        var total_electric = summer + winter 
         
         var total_cost = total_electric
         
@@ -834,7 +849,7 @@ class Room: Audit {
         var summer = Double(peak_hour_schedule["Summer-On-Peak"]!) * energy_use * Double(pricing_chart["Summer-On-Peak"]!)
         summer += Double(peak_hour_schedule["Summer-Part-Peak"]!) * energy_use * Double(pricing_chart["Summer-Part-Peak"]!)
         summer += Double(peak_hour_schedule["Summer-Off-Peak"]!) * energy_use * Double(pricing_chart["Summer-Off-Peak"]!)
-        
+        //Winter should be only part-peak and off-peak #Anthony
         var winter = Double(peak_hour_schedule["Winter-On-Peak"]!) * energy_use * Double(pricing_chart["Winter-On-Peak"]!)
         winter += Double(peak_hour_schedule["Winter-Off-Peak"]!) * energy_use * Double(pricing_chart["Winter-Off-Peak"]!)
         
@@ -894,12 +909,13 @@ class Room: Audit {
     * ---------------------
     * This calculates the total_cost of all the energy used in the simple interval data csv from PG&E. 
     */
-    //Missing peak rates which is used in Time of Use (TOU) billing
+    //Missing peak rates which is used in Time of Use (TOU) billing. Will need to explain to y'all further. #Anthony
     
     func total_cost() -> Double{
         var hour_data = read_in_hour_data()
         var pricing_data = get_bill_data(bill_type: audit.outputs["Rate Structure Electric"]!)
         
+        //So they did the part-peak right here...not sure why not above #Anthony
         var total_cost = hour_data["Winter-Part-Peak"]! * pricing_data["Winter-Part-Peak"]!
         total_cost = total_cost + hour_data["Winter-Off-Peak"]! * pricing_data["Winter-Off-Peak"]!
         total_cost = total_cost + hour_data["Summer-On-Peak"]! * pricing_data["Summer-On-Peak"]!
@@ -932,7 +948,7 @@ class Room: Audit {
                 }
             }
             
-            //This is the check if it's a winter month which are between November (11) and April (4)
+            //This is the check if it's a winter month which are between November (11) and April (4) 
             if firstChar <= 4 || firstChar >= 11 {
                 //Find the time in the "elec_intvl_end_dttm" column
                 let str1 = row["elec_intvl_end_dttm"]?.components(separatedBy: " ")[1]
@@ -948,7 +964,7 @@ class Room: Audit {
                 
                 //Then checks to see which time the time falls under. This is the hard-coded time, but could be adjusted to 
                 //be based on a csv or formula
-                //needs to be 830 to 2130 
+                //needs to be 830 to 2130 #Anthony
                 if firstTimeChar >= 8 && firstTimeChar < 21 {
                     let a = hour_data["Winter-Part-Peak"]
                     hour_data["Winter-Part-Peak"] = a! + Double(row["usgAmount"]!)!
@@ -970,7 +986,7 @@ class Room: Audit {
                 }
                 
                 //Similar to winter, but there are three different peaks
-                //Part-peak should be 830 - 12 & 18 - 2130
+                //Part-peak should be 830 - 12 & 18 - 2130 #Anthony
                 if firstTimeChar! >= 12 && firstTimeChar! < 18 {
                     let a = hour_data["Summer-On-Peak"]
                     hour_data["Summer-On-Peak"] = a! + Double(row["usgAmount"]!)!
@@ -996,7 +1012,7 @@ class Room: Audit {
     
     private func calculate_all_peak_hours() -> Dictionary<String, Int> {
         //This gets the opening and closing hours
-        //Does not seem to allow for multiple operating hours in a day nor different operating hours each day
+        //Does not seem to allow for multiple operating hours in a day nor different operating hours each day. #Anthony
         var opening = audit.outputs["Operating Hours"]?.components(separatedBy: " ")[0]
         var closing = audit.outputs["Operating Hours"]?.components(separatedBy: " ")[1]
         
@@ -1012,14 +1028,14 @@ class Room: Audit {
         //should be all half-hours
         for i in 1...24 {
             //If the hour i is not within the operating hours, skip it
-            //Should be i < closing_hour 
+            //Should be i < closing_hour #Anthony
             if i <= opening_hour! || i > closing_hour! {
                 continue
             }
             
             //Find which Types of peaks this hours fits into
-            //The summer part-peak hours need to be 830 - 12 & 18 - 2130
-            //The winter part-peak hours need to be 830 - 2130
+            //The summer part-peak hours need to be 830 - 12 & 18 - 2130 #Anthony
+            //The winter part-peak hours need to be 830 - 2130 #Anthony
             if i >= 12 && i < 18 {
                 hour_data["Summer-On-Peak"]! += 1
             } else if (i >= 8 && i < 12) || (i >= 18 && i < 21){
@@ -1047,7 +1063,8 @@ class Room: Audit {
     * and then uses that to find the correct column for average_daily_usage. Then it adds the winter rate and the 
     * Public Purpose Program Surcharge.
     */
-    //Need to get an example of gas bill to make sure this is correct.
+    //Need to get an example of gas bill to make sure this is correct.#Anthony
+    //This whole function is a little confusing #Anthony
     private func calculate_winter_rate(gas_energy: Double) -> Double{
         //super estimation, 6 is to make it likely an overestimation
         var daily_energy_usage = gas_energy / 6
@@ -1069,7 +1086,7 @@ class Room: Audit {
             var running_month_total = 0.0
             
             //This finds the correct range for the daily-usage rate
-            //This is taking a month to be 30 days when in reality number of days differ month to month
+            //This is taking a month to be 30 days when in reality number of days differ month to month. Should be fixed in Android version #Anthony
             if daily_energy_usage <= 5.0 {
                 
                 running_month_total = Double(row[2])! * 30.0
@@ -1084,8 +1101,8 @@ class Room: Audit {
             }
             
             //This adds the winter_rate
-            //Should be row[14], summer is row[12] from the code.
-            //Also assumes under 4,000 therms which is the threshold (specific to PG&E) before the price rises
+            //Should be row[14], summer is row[12] from the code. #Anthony
+            //Also assumes under 4,000 therms which is the threshold (specific to PG&E) before the price rises. 
             running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row[8])!)
             
             //This adds the Public Purpose Program Surcharge
@@ -1095,7 +1112,7 @@ class Room: Audit {
             total_cost += running_month_total
             
             month = month + 1
-            //Why for all 12 months? Needs to be 6 months, November (11) thru April (4)
+            //Why for all 12 months? Needs to be 6 months, November (11) thru April (4) 
             if month == 12 {
                 break
             }
@@ -1104,7 +1121,7 @@ class Room: Audit {
         
         //this returns the average to find the monthly cost
         //You can divide by 52 instead in order to make it weekly
-        return Double(total_cost / 12)
+        return Double(total_cost / 12) //This seems a bit pointless and it is not saved to a variable #Anthony
         
     }
     
@@ -1113,6 +1130,7 @@ class Room: Audit {
      * This calculates the winter rate for the gas based on the gas bill. It calculates the daily_energy_usage
      * and then uses that to find the correct column for average_daily_usage. Then it adds the winter rate and the
      * Public Purpose Program Surcharge.
+    //Directly above they copied and pasted the description, and said winter rate when they should of said summer rate #Anthony
      */
     private func calculate_summer_rate(gas_energy: Double) -> Double {
         //super estimation, 6 is to make it likely an overestimation
@@ -1147,7 +1165,7 @@ class Room: Audit {
             }
             
             //This adds the summer_rate
-            //summer is row[12] from the data
+            //summer is actually row[12] #Anthony
             running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row[10])!)
             
             running_month_total = running_month_total + (daily_energy_usage * 30.0 * Double(row[16])!)
@@ -1162,7 +1180,7 @@ class Room: Audit {
             
         }
         
-        return Double(total_cost / 12)
+        return Double(total_cost / 12) //Same issue as previous function of purpose of average & no variable for later use #Anthony
     }
 
     
@@ -1173,7 +1191,7 @@ class Room: Audit {
     */
     private func get_bill_data(bill_type: String) -> Dictionary<String, Double> {
         
-        
+        //This references file PG&E_RelevantElectricRateStructures_Current(Aug15).xls located in PG&E folder
         let rows = open_csv(filename: "pge_electric")
         
         var new_dict = Dictionary<String, Double>()
@@ -1208,6 +1226,7 @@ class Room: Audit {
             } else if row["Season"]! == "Summer" || summer {
                 summer = true
                 //If the bill has a super-peak, then this code just makes it On-Peak and shifts everything down one
+                //Not sure what the idea of a super-peak is. The next 9 lines can be deleted or commented out -Anthony
                 if row["Peak"]! == "Super-Peak" || super_exists {
                     super_exists = true
                     if row["Peak"]! == "Super-Peak" {
@@ -1217,7 +1236,7 @@ class Room: Audit {
                     } else {
                         new_dict["Summer-Off-Peak"] = Double(row["Energy"]!)
                     }
-                    
+                 //Do not delete past here -Anthony   
                 //otherwise it adds the Peak rates like normal
                 } else {
                     if row["Peak"]! == "On-Peak" {
@@ -1301,7 +1320,7 @@ class Room: Audit {
     /* ----------------------------------------- LIGHTING SECTION --------------------------------------------- */
     
     private func over_under_lamped(lux: Float, category: String, units_in_lumens: Bool) -> String {
-        
+        //Refers to file space_type located in lighting folder of initial state
         let rows = open_csv(filename: "space_unit_levels")
         
         for row in rows! {
@@ -1320,7 +1339,7 @@ class Room: Audit {
                 return "Overlighted"
                 
             } else {
-                
+                //Should return: Within recommened lighting range #Anthony
                 return "Neither under- nor overlighted"
                 
             }
@@ -1473,6 +1492,7 @@ class Room: Audit {
         
     //The parameter room_type needs to provided to the user from watts_per_sqft.csv (it is in the first column)
     //That way we can guarantee that one choice will match
+    //Not necessary for MVP you can delete or comment-out this function #Anthony
     private func light_per_area(watts: Int, area: Float, room_type: String) -> String {
         
         let watts_per_sqft = Float(watts) / area
@@ -1512,7 +1532,7 @@ class Room: Audit {
         
         let hours_per_year = Float(hours_on) / Float(test_hours) * 8760
         
-        let total_watts = watts * Float(num_lamps)
+        let total_watts = watts * Float(num_lamps) //This should be watts per ballast * number of ballasts #Anthony
         
         return hours_per_year * total_watts
         
